@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap page-search-warranty" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">담보, 보장금액으로 찾기</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents" id="contents">
+                    <div class="form-group">
+                        <h2 class="input-label">성별</h2>
+                        <div class="mt-r">
+                            <span class="btn btn-radio"><input type="radio" name="sex" id="male"><label for="male">남성</label></span>
+                            <span class="btn btn-radio"><input type="radio" name="sex" id="female"><label for="female">여성</label></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h2 class="input-label">보험 나이</h2>
+                        <div class="mt-r scroll-x">
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="all"><label for="all">전체</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age10"><label for="age10">10대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age20"><label for="age20">20대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age30"><label for="age30">30대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age40"><label for="age40">40대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age50"><label for="age50">50대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" name="age" id="age60"><label for="age60">60대</label></span>
+                            <span class="btn btn-radio"><input type="checkbox" id="direct"><label for="direct">직접입력</label></span>
+                        </div>
+                        <div class="flex-wrap mt-m age-directly" style="display: none;">
+                            <div class="form-group">
+                                <span class="f-text">
+                                    <input type="tel" pattern="[0-9]*" inputmode="numeric" placeholder="최소 보험 나이" maxlength="3" id="minAge">
+                                </span>
+                            </div>
+                            <span class="text f-24">~</span>
+                            <div class="form-group">
+                                <span class="f-text">
+                                    <input type="tel" pattern="[0-9]*" inputmode="numeric" placeholder="최대 보험 나이" maxlength="3">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="head">
+                            <h2 class="input-label">그룹</h2>
+                            <button type="button" class="btn btn-default small">그룹선택</button>
+                        </div>
+                        <div class="tags mt-r">
+                            <em class="tag" style="background: #F2F6F7;">손보 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #FAE6E5;">회사 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #F2F6F7;">손보 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            <em class="tag" style="background: #FAE6E5;">회사 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                        </div>
+                    </div>
+                    <div class="form-group pb-0">
+                        <div class="head">
+                            <h2 class="input-label">담보</h2>
+                            <a href="#layerWarranty" class="btn btn-default small e-layer">담보추가</a>
+                        </div>
+                        <!-- 담보 -->
+                        <div class="condition-box">
+                            <h3 class="text-sub-head" id="disease">질병사망</h3>
+                            <div class="form-group">
+                                <h4 class="input-label">가입여부</h4>
+                                <div class="mt-r btn-wrap">
+                                    <span class="btn btn-radio"><input type="radio" name="subscribed01" id="subscribed01" checked><label for="subscribed01">가입</label></span>
+                                    <span class="btn btn-radio"><input type="radio" name="subscribed01" id="unsubscribed01"><label for="unsubscribed01">미가입</label></span>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="form-group">
+                                    <h4 class="input-label">가입금액</h4>
+                                    <span class="f-text flex-wrap al-right">
+                                        <input type="tel" pattern="[0-9]*" inputmode="numeric" value="0" maxlength="7">
+                                        <span class="text">만원</span>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="input-label">금액조건</h4>
+                                    <div class="mt-r btn-wrap">
+                                        <span class="btn btn-radio"><input type="radio" name="amountcondition" id="more" checked><label for="more">이상</label></span>
+                                        <span class="btn btn-radio"><input type="radio" name="amountcondition" id="less"><label for="less">이하</label></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-icon close" title="담보조건 삭제" id="deleteWarranty"></button>
+                        </div>
+                        <!-- // 담보 -->
+                        <!-- <div class="condition-box">
+                            <h3 class="text-sub-head">질병수술</h3>
+                            <div class="form-group">
+                                <h4 class="input-label">가입여부</h4>
+                                <div class="mt-r btn-wrap">
+                                    <span class="btn btn-radio"><input type="radio" name="subscribed02" id="subscribed02"><label for="subscribed02">가입</label></span>
+                                    <span class="btn btn-radio"><input type="radio" name="subscribed02" id="unsubscribed02" checked><label for="unsubscribed02">미가입</label></span>
+                                </div>
+                            </div>
+                            <div class="details" style="display: none;">
+                                <div class="form-group">
+                                    <h4 class="input-label">가입금액</h4>
+                                    <span class="f-text flex-wrap al-right">
+                                        <input type="tel" pattern="[0-9]*" inputmode="numeric" value="0" maxlength="7">
+                                        <span class="text">만원</span>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="input-label">금액조건</h4>
+                                    <div class="mt-r btn-wrap">
+                                        <span class="btn btn-radio"><input type="radio" name="amountcondition02" id="more02" checked><label for="more02">이상</label></span>
+                                        <span class="btn btn-radio"><input type="radio" name="amountcondition02" id="less02"><label for="less02">이하</label></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-icon close" title="담보조건 삭제"></button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">조회/추출하기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- layer: 담보추가  -->
+        <section class="layer bottom layer-warranty" id="layerWarranty">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-sub-title">담보추가</h2>
+                    </header>
+                    <div class="content">
+                        <h3 class="text-headline-6">사망</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="dead01" name="chooseWarranty"><label for="dead01">질병사망</label></li>
+                            <li><input type="radio" id="dead02" name="chooseWarranty"><label for="dead02">재해(상해)사망</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">장해</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="disability01" name="chooseWarranty"><label for="disability01">질병후유장해80%</label></li>
+                            <li><input type="radio" id="disability02" name="chooseWarranty"><label for="disability02">질병휴유장해3~100%</label></li>
+                            <li><input type="radio" id="disability03" name="chooseWarranty"><label for="disability03">재해후유장해(상해)80%</label></li>
+                            <li><input type="radio" id="disability04" name="chooseWarranty"><label for="disability04">재해후유장해(상해)3~100%</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">암진단</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="cancer01" name="chooseWarranty"><label for="cancer01">일반암</label></li>
+                            <li><input type="radio" id="cancer02" name="chooseWarranty"><label for="cancer02">고액암</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">뇌혈관진단</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="cerebrovascular01" name="chooseWarranty"><label for="cerebrovascular01">뇌출혈</label></li>
+                            <li><input type="radio" id="cerebrovascular02" name="chooseWarranty"><label for="cerebrovascular02">뇌졸중</label></li>
+                            <li><input type="radio" id="cerebrovascular03" name="chooseWarranty"><label for="cerebrovascular03">뇌혈관질환</label></li>
+                            <li><input type="radio" id="cerebrovascular04" name="chooseWarranty"><label for="cerebrovascular04">급성심근경색</label></li>
+                            <li><input type="radio" id="cerebrovascular05" name="chooseWarranty"><label for="cerebrovascular05">허혈성심질환</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">수술비</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="surgery01" name="chooseWarranty"><label for="surgery01">질병수술</label></li>
+                            <li><input type="radio" id="surgery02" name="chooseWarranty"><label for="surgery02">재해(상해)수술</label></li>
+                            <li><input type="radio" id="surgery03" name="chooseWarranty"><label for="surgery03">암수술</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">입원비</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="hospitalization01" name="chooseWarranty"><label for="hospitalization01">질병입원(일당)</label></li>
+                            <li><input type="radio" id="hospitalization02" name="chooseWarranty"><label for="hospitalization02">재해(상해)입원(일당)</label></li>
+                            <li><input type="radio" id="hospitalization02" name="chooseWarranty"><label for="hospitalization02">암입원 일당</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">치매</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="dementia01" name="chooseWarranty"><label for="dementia01">치매진단비</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">간병</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="dead01" name="chooseWarranty"><label for="dead01">1급장기요양</label></li>
+                            <li><input type="radio" id="dead02" name="chooseWarranty"><label for="dead02">3-4급장기요양</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">실손의료비</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="loss01" name="chooseWarranty"><label for="loss01">질병입원</label></li>
+                            <li><input type="radio" id="loss02" name="chooseWarranty"><label for="loss02">상해입원</label></li>
+                            <li><input type="radio" id="loss03" name="chooseWarranty"><label for="loss03">질병통원</label></li>
+                            <li><input type="radio" id="loss04" name="chooseWarranty"><label for="loss04">상해통원</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">치과</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="dental01" name="chooseWarranty"><label for="dental01">치과보장</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">운전자</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="driver01" name="chooseWarranty"><label for="driver01">운전자보장</label></li>
+                        </ul>
+                        <h3 class="text-headline-6">화재손해</h3>
+                        <ul class="list-radio">
+                            <li><input type="radio" id="fire01" name="chooseWarranty"><label for="fire01">화재손해</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 담보추가  -->
+
+        <!-- alert 용 -->
+        <div class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <p>담보 검색 조건은<br>3개까지 추가하실 수 있습니다.</p>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </div>
+
+    </div>
+    <!-- ui관련 js -->
+    <script src="../../resources/js/event.js"></script>
+    <script>
+        $(function() {
+            const $window = window.$window || $(window);
+            const $body = $('body');
+
+            // (참고용) 직접입력 클릭 시 ui
+            $body.on('click', '#direct', function(e) {
+                let findDrict = $(e.target);
+
+                if(findDrict.prop('checked')) {
+                    $('.age-directly').slideDown('fast');
+                    $('#minAge').focus();
+                } else {
+                    $('.age-directly').slideUp('fast');
+                }
+            });
+
+            // (참고용) 담보 미가입 선택 시
+            $body.on('click', '.condition-box input[type="radio"]', function(e) {
+                let $target = $( $(e.target) );
+                let isUnsubscribed;
+                
+                $target.attr('id').slice(0, -2) == 'unsubscribed' ? isUnsubscribed = true : isUnsubscribed = false;
+                
+                if($target.prop('checked') && isUnsubscribed) {
+                    $target.parents('.condition-box').find('.details').slideUp('fast');
+                } else {
+                    $target.parents('.condition-box').find('.details').slideDown('fast');
+                }
+            });
+
+            // (참고용) 보험나이 전체 선택
+            $body.on('click', '#all', function () {
+                if (this.checked) {
+                    $('input[name="age"]').prop('checked', true);
+                } else {
+                    $('input[name="age"]').prop('checked', false);
+                }
+            });
+            $body.on('click', 'input[name="age"]:not(#all)', $('.scroll-x'), function(){
+                let allArea = $('.scroll-x'),
+                    ageChk = $('input[name="age"]:not(#all)', allArea);
+                let allCnt = ageChk.length,
+                    checkedCnt = ageChk.filter(":checked").length;
+                let requiredCheck = ageChk.filter(":not(#direct)");
+                let  count = 0;
+
+                $.each(requiredCheck, function(index, checkbox) {
+                    let checked = $(checkbox).prop('checked');
+                    count = checked ? count+= 1 : count;
+                });
+
+                if(allCnt === checkedCnt) {
+                    $('#all').prop('checked', true);
+                } else {
+                    $('#all').prop('checked', false);
+                }
+            });
+
+            // 시연용 화면(담보)
+            $body.on('click', 'input[name="chooseWarranty"]', function(){
+                const $this = $(this),
+                        $diseaseTitle = $('#disease'),
+                        $findParentLayer = $(this).closest('.layer'),
+                        $findConditionBox = $('.condition-box');
+                let checkedMailVal = $this.siblings('label').text();
+
+                $findConditionBox.fadeIn('fast');
+                $diseaseTitle.text(checkedMailVal);
+
+                closeLayer($findParentLayer);
+
+                let contentsH = $('#contents').outerHeight();
+
+                $window.scrollTop(contentsH);
+
+            });
+            $body.on('click', '#deleteWarranty', function() {
+                $('.condition-box').fadeOut('fast');
+            });
+
+
+        });
+    </script>
+
+    <!-- include 용 -->
+    <script src="../../src/js/include.js"></script>
+    </body>
+</html>

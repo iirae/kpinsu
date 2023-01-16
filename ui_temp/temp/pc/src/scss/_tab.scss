@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.area-tab {
+  .tab {
+    display: flex;
+    li {
+      border: solid 1px transparent;
+      &.on {
+        border-color: #898989;
+      }
+      a {
+        display: block;
+        padding: 10px 20px;
+      }
+    }
+  }
+  .tab-content {
+    display: none;
+    padding: 20px;
+    &.on {
+      display: block;
+    }
+  }
+}
+
+.area-tooltip {
+  position: relative;
+  &.on {
+
+    .tooltip-wrap {
+      display: block;
+    }
+  }
+  & > a {
+
+  }
+  .tooltip-wrap {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 8%);
+  }
+}

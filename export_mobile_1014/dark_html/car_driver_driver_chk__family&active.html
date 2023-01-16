@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko" class="os_unknown none unknown version_0 is-dark">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<title>카카오페이 보험서비스</title>
+	<link rel="stylesheet" type="text/css" href="../__css/common.css">
+	<link rel="stylesheet" type="text/css" href="../__css/dark.css">
+</head>
+<body>
+	<div id="kakaoWrap" class="wrap_car ">
+
+
+<header>
+    <h1 class="screen_out">카카오페이</h1>
+</header>
+<hr class="hide">
+	<main id="kakaoContent" class="cont_driver">
+		<article id="mArticle">
+			<div class="area_etc">
+        <button type="button" class="btn_prev"><span class="ico_insure ico_prev">이전페이지 이동</span></button>
+        <button type="button" class="btn_close"><span class="ico_insure ico_close">현재 페이지 닫기</span></button>
+</div>
+						<h2 class="screen_out">자동차 보험</h2>
+						<div class="area_headline">
+    <strong class="tit_headline">운전자 선택</strong>
+    <p class="desc_headline">자동차를 운전할 운전자를 선택해주세요</p>
+</div>
+<div class="area_choice area_choice_driver">
+    <div class="item_choice">
+        <input type="radio" id="radio1" name="radio" class="inp_g">
+        <label for="radio1" class="lab_g">
+            본인만 운전
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+    <div class="item_choice">
+        <input type="radio" id="radio2" name="radio" class="inp_g">
+        <label for="radio2" class="lab_g">
+            본인 + 배우자
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+        <div class="item_choice">
+        <input type="radio" id="radio3" name="radio" class="inp_g">
+        <label for="radio3" class="lab_g">
+            본인 + 지정1인
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+        <div class="item_choice">
+        <input type="radio" id="radio4" name="radio" class="inp_g" checked="checked">
+        <label for="radio4" class="lab_g">
+            가족한정
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+        <div class="item_choice_detail show"><!-- 활성화 시 show 클래스 추가 -->
+        <div class="bundle_opt">
+            <div class="box_info">
+                <p class="desc_info">자동차를 운전할 가장 나이 어린 최연소 운전자의 정보를 입력해주세요</p>
+            </div>
+            <div class="item_opt direction">
+                <label for="sltRelation3" class="opt_label">본인과의 관계</label>
+                <!-- 2019-09-09 추가 시작 -->
+                <div class="txt_opt">
+                    <span class="desc_opt">본인과의 관계</span><!-- 2019-09-09 선택된 값이 들어갑니다 -->
+                </div>
+                <!-- 2019-09-09 추가 끝 -->
+                <select name="sltRelation3" id="sltRelation3" class="opt_select">
+                    <option value="본인과의 관계" selected="selected">본인과의 관계</option>
+                    <option value="자녀">자녀</option>
+                </select>
+                <span class="ico_insure ico_select"></span>
+            </div>
+            <div class="item_tf">
+                <label for="inpName3" class="tf_label">이름</label>
+                <div class="combo_tf">
+                    <input type="text" name="inpName3" id="inpName3" class="tf_g" placeholder="예) 박우진">
+                </div>
+            </div>
+            <div class="item_tf item_date">
+                <label for="inpDate3" class="tf_label">생년월일</label>
+                <div class="combo_tf">
+                    <input type="date" name="" id="inpDate3" class="tf_date">
+                    <span class="txt_date">2000년 10월 10일</span>
+                    <span class="pld_date">생년월일을 입력하세요</span>
+                </div>
+            </div>
+            <div class="item_opt">
+                <label for="sltGender3" class="opt_label">성별</label>
+                <!-- 2019-09-09 추가 시작 -->
+                <div class="txt_opt">
+                    <span class="desc_opt">성별</span><!-- 2019-09-09 선택된 값이 들어갑니다 -->
+                </div>
+                <!-- 2019-09-09 추가 끝 -->
+                <select name="sltGender3" id="sltGender3" class="opt_select">
+                    <option value="" selected="selected">성별</option>
+                    <option value="여성">여성</option>
+                    <option value="남성">남성</option>
+                </select>
+                <span class="ico_insure ico_select"></span>
+            </div>
+        </div>
+    </div>
+        <div class="item_choice">
+        <input type="radio" id="radio5" name="radio" class="inp_g">
+        <label for="radio5" class="lab_g">
+            가족 (형제자매 제외)
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+        <div class="item_choice">
+        <input type="radio" id="radio6" name="radio" class="inp_g">
+        <label for="radio6" class="lab_g">
+            누구나 운전
+            <span class="ico_insure ico_choice"></span>
+        </label>
+            </div>
+    </div>
+<div class="item_btn fixed_type">
+    <button type="button" class="btn_g" disabled="disabled">입력완료</button><!-- 완료시 disabled="disabled" 삭제 -->
+</div>
+		</article>
+	</main>
+</div>
+</body>
+</html>

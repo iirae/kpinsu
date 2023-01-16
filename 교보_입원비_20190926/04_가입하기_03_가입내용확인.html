@@ -1,0 +1,204 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+{literal}
+<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+		project.layerPopup_1();
+	});
+	//]]>
+</script>
+
+<script type="text/javascript">
+<!--
+$(document).ready(function()
+{
+	$(".chk-ok").click(function(){
+
+		var cname = "을(를) 확인해주시기 바랍니다.";
+		var i = 0;
+
+		$(".chkCustom").each(function(index){
+
+			if(index > 0) {
+
+				if($(this).hasClass('active') == false){
+
+					alert($(this).attr('title') + cname);
+					return false;
+				}
+				else i++;
+			}
+		});
+
+		if(($(".chkCustom").length -1) == i) {
+
+			location.href = "/product.htm?mode="+ $("input[name='mode']").val() +"&mtype=step07";
+		}
+		return false;
+	});
+});
+//-->
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box mb20">
+						<div class="step_process">
+							<div><span class="st_1"><b>약관동의</b></span></div>
+							<div><span class="st_2"><b>정보입력</b></span></div>
+							<div><span class="st_3 on"><b>가입내용확인</b></span></div>
+							<div><span class="st_4"><b>결제</b></span></div>
+						</div>
+
+						<h3 class="sub-title result">기본 정보
+							<a href="{$RS.data.imgs[10].path}{$RS.data.imgs[10].img_name}" target="_blank">보험약관 확인</a><!--a href="#self" onClick="location.href='/?mode=download&savedir={$RS.data.imgs[10].path}&filename={$RS.data.imgs[10].img_name}&vfile={$RS.data.imgs[10].img_name}';">보험약관 확인</a-->
+						</h3>
+
+						<table class="resultTable">
+							<caption></caption>
+							<colgroup>
+								<col style="width:80px" /><col style="width:*" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>상품평</th>
+									<td>{$RS.data.goods_name}</td>
+								</tr>
+								<tr>
+									<th>보험사</th>
+									<td>교보라이프플래닛생명</td>
+								</tr>
+								<tr>
+									<th>기간</th>
+									<td>{$RS.ins}일 ({$RS.exp_date} ~  {$RS.im_date})</td>
+								</tr>
+								<tr>
+									<th>이메일주소</th>
+									<td>INBYU@inbyu.om</td>
+								</tr>
+								<tr>
+									<th>가입자 {$RS.list[key].no}</th>
+									<td>{$RS.list[key].user_name} ({$RS.list[key].pid})
+										<span class="price"><b>{$RS.list[key].price|number_format}원</b><a href="#self" class="lyPop_btn">보장확인</a>{$RS.list[key].year_idx}</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="total_Price">
+							<div class="in">
+								<p>총 보험료</p>
+								<p class="price"><b>{$RS.sum_price_txt|number_format}</b>원</p>
+								<p class="info-1">20년간 매년 1회 납부하실 보험료 입니다.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="in_box">
+
+						<div class="terms">
+							<div class="total-Chk">
+								<b>정보 동의</b>
+								<span class="chkCustom all" style="left:0">전체동의</span><!-- addClass : active -->
+							</div>
+
+							<div class="terms-block">
+								<div class="terms-box">
+									<p class="title ty">
+										<b>
+											기타설명
+											<span>
+												고객은 본 상품의 FAQ 및 이용에 관한 기타부가설명을 숙지하였고 확인하였으며 이에 동의 합니다.
+											</span>
+										</b>
+										<i class="chkCustom" title="기타설명">동의</i><!-- addClass : active -->
+									</p>
+								</div>
+							</div><!-- end : class : terms-block -->
+
+							<div class="terms-block">
+								<div class="terms-box">
+									<p class="title ty">
+										<b>
+											해지 사고 접수 안내
+											<span>
+												고객은 본 상품의 사고 접수 및 보험금 청구에 관한 사항을 숙지하였고 확인하였으며 이에 동의합니다.
+											</span>
+										</b>
+										<i class="chkCustom" title="해지 사고 접수 안내">동의</i><!-- addClass : active -->
+									</p>
+								</div>
+							</div><!-- end : class : terms-block -->
+
+							<div class="terms-block">
+								<div class="terms-box">
+									<p class="title ty">
+										<b>
+											이메일 수령 동의
+											<span>
+												고객은 본 상품의 가입증서를 이메일(전자우편)을 통하여 수령함에 동의합니다.
+											</span>
+										</b>
+										<i class="chkCustom" title="이메일 수령 동의">동의</i><!-- addClass : active -->
+									</p>
+								</div>
+							</div><!-- end : class : terms-block -->
+						</div><!-- end : class : terms -->
+
+						<div class="speake_box">
+							<p>
+								{$RS.data.inbyu_noti|nl2br}
+							</p>
+						</div>
+
+						<div class="btn_C_Area">
+							<!--a href="step_5.html" class="btnStyle greyHalf">이전으로</a-->
+							<a href="#none" class="btnStyle blue chk-ok">결제하기</span></a>
+						</div>
+					</div>
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+			<input type="hidden" name="mode" value="{$_GET.mode}">
+
+
+			<!-- 보장확인 layerPopup -->
+			<div class="view_lyPopup">
+				<div class="close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></div>
+				<div class="pic scroll">
+					<!-- <img src="{$RS.img_path}{$RS.goods.pop_img_8.img_name}" alt="" /> -->
+					<img src="{$RS.data.images[9]}" alt="보장확인" />
+				</div>
+			</div>
+			<div class="layer_bg"></div>
+			<!-- 보장확인 layerPopup -->
+
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

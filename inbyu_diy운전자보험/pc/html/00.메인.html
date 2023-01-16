@@ -1,0 +1,112 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+<script src="../resources/js/app-dist.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-gate"><!-- section-gate -->
+                    <div class="wrap">
+                        <h2 class="title"><span>DIY 운전자보험</span></h2>
+                        <p>
+                            내 맘대로 선택하는<br />
+                            <strong>운전자보험</strong>
+                        </p>
+                        <div class="obj">
+                            <div class="pos-relative">
+                                <div id="coin"></div>
+                                <div id="car"></div>
+                            </div>
+                        </div>
+                        <div class="obj-ie">
+                            <i class="icon coin coin-a"></i>
+                            <i class="icon coin coin-b"></i>
+                            <i class="icon car"></i>
+                        </div>
+                        <div class="action">
+                            <a href="javascript:;" class="button full large primary"><span>보험료 확인하기</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-gate -->
+
+                <div class="container section-sns"><!-- section-sns -->
+                    <div class="wrap">
+                        <p>
+                            보험상품을 다른사람과 공유해보세요
+                        </p>
+                        <div class="links">
+                            <a href="javascript:;"><i class="icon kakao"><em>카카오톡</em></i></a>
+                            <a href="javascript:;"><i class="icon facebook"><em>페이스북</em></i></a>
+                            <a href="javascript:;"><i class="icon url"><em>링크복사</em></i></a>
+                        </div>
+                    </div>
+                </div><!-- // section-sns -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('car'), // Required
+        path: '../resources/lottie/car.json', // Required
+        renderer: 'svg', // Required
+        loop: false, // Optional
+        autoplay: true, // Optional
+    });
+
+    var _animation = bodymovin.loadAnimation({
+        container: document.getElementById('coin'), // Required
+        path: '../resources/lottie/coin.json', // Required
+        renderer: 'svg', // Required
+        loop: true, // Optional
+        autoplay: true, // Optional
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

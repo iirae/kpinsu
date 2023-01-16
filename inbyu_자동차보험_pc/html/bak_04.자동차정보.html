@@ -1,0 +1,481 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="인바이유 자동차보험료 조회" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu 인바이유 자동차보험료 조회" />
+<meta property="og:title" content="인바이유 자동차보험료 조회" id="ogTitle" />
+<meta property="og:description" content="인바이유 자동차보험료 조회" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">인바이유 자동차보험료 조회</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">인바이유 자동차보험료 조회</h1>
+
+<div id="container"><!-- container -->
+
+    <div id="header"><!-- header : 투명 배경일때 is-transparent -->
+        <div class="container">
+            <div class="wrap">
+                
+                <!-- include: common header -->
+                <div data-include-path="./include/header.html"></div>
+
+            </div>
+        </div>
+    </div><!-- // header -->
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="core">자동차 정보</h2>
+                        <p class="desc">
+                            소유 중인 자동차나 구입 예정인<br />
+                            자동차 정보를 입력해주세요.
+                        </p>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-car-info"><!-- section-car-info -->
+                    <div class="wrap">
+                        <div class="items">
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;" class="js-modal-info more"><span>제조사</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;" class="js-modal-info more disabled"><span>자동차명</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;" class="js-modal-info more disabled"><span>자동차 등록연도</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;" class="js-modal-info more disabled"><span>세부모델</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;" class="js-modal-info more disabled"><span>세부옵션</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-car-info -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <a href="javascript:;" class="button large disabled"><span>다음</span></a>
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+</div><!-- // container -->
+
+<div id="modalCarInfo" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+                <div class="modal-car-info-view">
+                    <div class="info-item in"><!-- info-item -->
+                        <h3 class="title">제조사 선택</h3>
+                        <div class="items">
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand1" />
+                                    <label for="brand1">현대</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand2" />
+                                    <label for="brand2">기아</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand3" />
+                                    <label for="brand3">쌍용</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand4" />
+                                    <label for="brand4">한국GM(대우)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand5" />
+                                    <label for="brand5">르노삼성</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand6" />
+                                    <label for="brand6">외제차</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand7" />
+                                    <label for="brand7">AD모터스</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand8" />
+                                    <label for="brand8">대창</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand9" />
+                                    <label for="brand9">현EV</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="brand" id="brand10" />
+                                    <label for="brand10">CT&amp;T</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- // info-item -->
+                    <div class="info-item"><!-- info-item -->
+                        <h3 class="title">자동차명 선택</h3>
+                        <div class="items">
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name1" />
+                                    <label for="name1">쎄라토</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name2" />
+                                    <label for="name2">로제</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name3" />
+                                    <label for="name3">프라이드</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name4" />
+                                    <label for="name4">스포티지</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name5" />
+                                    <label for="name5">모닝</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name6" />
+                                    <label for="name6">모하비</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name7" />
+                                    <label for="name7">제네시스쿠페</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name8" />
+                                    <label for="name8">Porsche</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name9" />
+                                    <label for="name9">Jaguar/Daimler</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="name" id="name10" />
+                                    <label for="name10">Chrysler Corporation</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- // info-item -->
+                    <div class="info-item"><!-- info-item -->
+                        <h3 class="title">자동차 등록연도 선택</h3>
+                        <div class="items">
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year1" />
+                                    <label for="year1">2019.12.05 이후 등록</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year2" />
+                                    <label for="year2">2019.12.06 이전 등록</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year3" />
+                                    <label for="year3">2020년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year4" />
+                                    <label for="year4">2018년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year5" />
+                                    <label for="year5">2017년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year6" />
+                                    <label for="year6">2016년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year7" />
+                                    <label for="year7">2015년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year8" />
+                                    <label for="year8">2014년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year9" />
+                                    <label for="year9">2013년</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="year" id="year10" />
+                                    <label for="year10">2012년</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- // info-item -->
+                    <div class="info-item"><!-- info-item -->
+                        <h3 class="title">세부모델 선택</h3>
+                        <div class="items">
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model1" />
+                                    <label for="model1">쏘렌토 더 마스터 R2.0 디젤</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model2" />
+                                    <label for="model2">쏘렌토 더 마스터 R2.0(2020년형)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model3" />
+                                    <label for="model3">올뉴 모닝</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model4" />
+                                    <label for="model4">D2C</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model5" />
+                                    <label for="model5">NF쏘나타 2.0트랜스폼(렌트카)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model6" />
+                                    <label for="model6">더뉴카니발 3.3 가솔린(7인승 리무진)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model7" />
+                                    <label for="model7">투싼 페이스리프트 가솔린 1.6 터보</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model8" />
+                                    <label for="model8">스타렉스 RV WAGON(터보인터쿨러)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model9" />
+                                    <label for="model9">카니발하이리무진 R2.2 디젤 (7인승)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="model" id="model10" />
+                                    <label for="model10">싼타페 2.0T(TM)(2019. 5. 15~)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- // info-item -->
+                    <div class="info-item"><!-- info-item -->
+                        <h3 class="title">세부옵션 선택</h3>
+                        <div class="items">
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option1" />
+                                    <label for="option1">5인승 Mini Cooper D Countryman ALL4 Park Lane-Ed (5seat)(오토,ABS, AIR-D,IM)(디젤)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option2" />
+                                    <label for="option2">7인승 프레스티지,오토,에어컨,P/S, ABS,AIR-D,IM(엘피지(LPI, CNG포함))</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option3" />
+                                    <label for="option3">5인승 (장)프레스티지,오토,에어컨, P/S,ABS,AIR-D,IM(엘피지(LPI, CNG 포함))</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option4" />
+                                    <label for="option4">5인승 VIP,오토,에어컨,P/S,ABS, AIR-D,IM(디젤)</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option5" />
+                                    <label for="option5">5인승 (장)노블레스 스페셜,오토, 에어컨,P/S,ABS,AIR-D,IM(엘피지 (LPI, CNG포함))</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checks is-right">
+                                    <input type="radio" name="option" id="option6" />
+                                    <label for="option6">7인승 FX5 고급형,오토,에어컨(디젤)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- // info-item -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // open
+    var scrollTop;
+    $document.on('click', '.js-modal-info', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            _idx = $this.closest('.item').index(),
+            $modal = $('#modalCarInfo');
+            scrollTop = window.pageYOffset;
+
+        $html.addClass('is-overlay is-indicator');
+        $modal.addClass('in');
+        $modal.find('.info-item').eq(_idx).addClass('in').siblings().removeClass('in'); // 해당 선택항목 보여지기
+        setTimeout(function(){
+            $html.removeClass('is-indicator').css({"overflow": "hidden"});
+            $modal.addClass('anim');
+            $modal.find('.modal-car-info-view').scrollTop(0);
+            $modal.find('.info-item').eq(_idx);
+            $modal.find('.info-item').eq(_idx).siblings('.info-item');
+        }, 200);
+
+    });
+
+    // check
+    $document.on('change', '.info-item.in input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $wrap = $this.closest('.info-item'),
+            _idx = $wrap.index(),
+            $modal = $('#modalCarInfo'),
+            $formItem = $('.section-car-info .item');
+
+            $formItem.eq(_idx).addClass('in').children('.more').text($this.siblings().text()); // 선택값 폼에 입력
+            $formItem.eq(_idx).next().children('.more').removeClass('disabled');
+
+            if ( $wrap.index() !== $('.modal-car-info-view .info-item').length - 1) {
+                $wrap.removeClass('in').next().addClass('in'); // 다음 선택항목 가져오기
+            } else {
+                $('.section-button .button').removeClass('disabled').addClass('primary'); // 모든값 선택 후 버튼 활성화
+
+                $modal.removeClass('anim');
+                $html.removeAttr('style').removeClass('is-overlay');
+                window.scrollTo(0, scrollTop);
+                setTimeout(function(){
+                    $modal.removeClass('in');
+                }, 400);
+                $formItem.find('.more').removeClass('disabled');
+            }
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

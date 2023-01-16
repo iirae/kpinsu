@@ -1,0 +1,733 @@
+@charset "utf-8";
+
+.area_share .link_share .ico_insure { width: 48px; height: 48px; background-position: center center; background-size: 100%; }
+.area_share .link_share .ico_share1 { background-image: url('../_images/m640/icon_kakaotalk.png'); }
+.area_share .link_share .ico_share2 { background-image: url('../_images/m640/icon_facebook.png'); }
+.area_share .link_share .ico_share3 { background-image: url('../_images/m640/icon_url.png'); }
+
+.is-dark body { background-color: #2a2a2a; }
+.is-dark body, .is-dark th, .is-dark td, .is-dark input, .is-dark select, .is-dark textarea, .is-dark button { color:#cfcfcf; }
+.is-dark a { color: #cfcfcf; }
+.is-dark .ico_insure { background-image: url('../_images/m640/ico_insure_191024_dark.png'); }
+
+.is-dark .bg_gray { background-color: #000; }
+.is-dark .fixed_type { background-color: #2a2a2a; }
+/* .emph_error{color:#ff3c3c} */
+.is-dark .area_etc { background: #2a2a2a; }
+.is-dark .tf_g { color: #e7e7e7; }
+.is-dark .tf_g::placeholder { color: #707070; }
+.is-dark .tf_g::-webkit-input-placeholder { color: #707070; }
+.is-dark .tf_g::-moz-input-placeholder { color: #707070; }
+.is-dark .tf_g:-ms-input-placeholder { color: #707070; }
+.is-dark .tf_g:-moz-input-placeholder { color: #707070; }
+.is-dark .item_search .tf_g { border-bottom-color: #cfcfcf; }
+.is-dark .item_search.error .tf_g { border-bottom-color: #ff3c3c;}
+.is-dark .item_search.error .desc_search { color: #ff3c3c; }
+.is-dark .item_date .txt_date { color: #cfcfcf; }
+.is-dark .item_date .pld_date { color: #595959; }
+.is-dark .item_date .tf_date { color: #e7e7e7; }
+
+.is-dark .bundle_opt { border-color: #464646; background-color: #121212; }
+.is-dark .bundle_opt .item_tf .tf_label,
+.is-dark .bundle_opt .item_tf .tf_desc { color: #888; }
+.is-dark .bundle_opt .item_tf .tf_g:disabled { -webkit-text-fill-color: #e7e7e7; color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf .txt_placeholder {color:#d5d6d7}
+.is-dark .bundle_opt .item_tf .btn_line .txt_line { border-bottom: 1px solid #2e3338; color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf .tf_opt .txt_resident { color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf .tf_opt .sel_phone .opt_select { color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf .tf_opt .num_phone { color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf.direction{ background-color: #2a2a2a; }
+.is-dark .bundle_opt .item_tf.active .txt_placeholder{color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf.done .opt_select { color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf.done .tf_g { color: #e7e7e7; }
+.is-dark .bundle_opt .item_tf.done .txt_placeholder { color: #e7e7e7; }
+.is-dark .bundle_opt .item_opt .opt_label { color: #888; }
+.is-dark .bundle_opt .item_opt.direction { background-color: #2a2a2a; }
+.is-dark .bundle_opt .item_opt.direction .desc_opt { color: #b8b8b8; }
+.is-dark .bundle_opt .item_opt.active { background-color: #2a2a2a; }
+.is-dark .bundle_opt .item_opt.active .desc_opt { color: #b8b8b8; }
+.is-dark .bundle_opt .item_opt .txt_opt .desc_opt { color: #888; }
+.is-dark .bundle_opt .item_opt.done .txt_opt .desc_opt { color: #e7e7e7; }
+.is-dark .bundle_opt .item_opt.done .tf_g { color: #e7e7e7; }
+.is-dark .bundle_opt .item_optlink .opt_label { color: #888; }
+.is-dark .bundle_opt .item_optlink.direction .desc_opt { color: #b8b8b8; }
+.is-dark .bundle_opt .item_optlink.active { background-color: #2a2a2a; }
+.is-dark .bundle_opt .item_optlink.active .desc_opt{ color: #b8b8b8; }
+.is-dark .bundle_opt .item_optlink .txt_opt .desc_opt { color: #888; }
+.is-dark .bundle_opt .item_optlink.done .txt_opt .desc_opt { color: #e7e7e7; }
+.is-dark .bundle_opt .box_info .desc_info { color: #a0a0a0; }
+.is-dark .bundle_opt .box_info .emph_info:after { background-color: #000; }
+.is-dark .bundle_opt .box_info .link_info { color: #a0a0a0; }
+.is-dark .bundle_opt [class*='item'].direction:after { border-color: #707070; }
+.is-dark .bundle_opt [class*='item'].active:after { border-color: #cfcfcf; }
+.is-dark .bundle_opt [class*='item'].error:after { border-color: #ff3c3c; }
+.is-dark .item_tf.direction { background-color: #2a2a2a; }
+.is-dark .item_tf.direction:after { border-color: #707070; }
+.is-dark .item_tf.active { background-color: #2a2a2a; }
+.is-dark .item_tf.active:after { border-color: #cfcfcf; }
+.is-dark .item_choice .lab_g,
+.is-dark .item_check .lab_g { color: #e7e7e7; }
+.is-dark .item_choice .desc_choice,
+.is-dark .item_check .desc_choice { color: #0070cc; }
+.is-dark .item_choice_info { background: #000; }
+.is-dark .item_choice_info .emph_info { color: #b8b8b8; }
+.is-dark .item_choice_info .list_info li { color: #b8b8b8; }
+.is-dark .item_radio .lab_g { color: #e7e7e7; }
+.is-dark .item_yesno .desc_yesno { color: #e7e7e7; }
+.is-dark .item_yesno .sub_yesno { color: #888; }
+.is-dark .tab_menu .link_tab { color: #888; }
+.is-dark .tab_menu .on .link_tab { color: #e7e7e7; }
+.is-dark .tab_menu .on .link_tab:after { background-color: #e7e7e7; }
+.is-dark .tab_menu .circle_update { background: #ee4751; }
+.is-dark .btn_g { color: #0e1012; }
+.is-dark .btn_g.btn_text .desc_btn{ color:#5a5a5c; }
+.is-dark .btn_g.btn_dark { color: #fff; }
+.is-dark .btn_g.btn_light { color: #0e1012; }
+.is-dark .btn_g.btn_light.btn_cancle { color: #868E96; }
+.is-dark .btn_g:disabled { color: #707070; }
+.is-dark .btn_danger { color: #fff; }
+.is-dark .area_head .tit_head { color: #e7e7e7; }
+.is-dark .area_head .desc_head{ color: #b8b8b8; }
+.is-dark .area_head .emph_head{display:block;padding-top:21px;font-size:13px;color:#0070cc}
+.is-dark .cont_step .area_head { background: #2a2a2a; }
+.is-dark .area_step .link_step_cancel{color:#5a5a5c;}
+.is-dark .link_step { background-color: #464646; }
+.is-dark .link_step .tit_step { color: #888; }
+.is-dark .link_step .desc_step { color: #888; }
+.is-dark .link_step + .btn_change { color: #888; }
+.is-dark .link_step.direct{ border:1px solid  #707070; background-color: #2a2a2a; }
+.is-dark .link_step.direct .tit_step{ color: #e7e7e7; }
+
+/* 상단 영역 */
+.is-dark .area_headline .tit_headline { color: #e7e7e7; }
+.is-dark .area_headline .desc_headline { color: #888}
+.is-dark .area_headline .noti_headline { color: #0070cc; }
+.is-dark .area_headline_register { background-color: #2a2a2a; }
+.is-dark .area_headline_register .item_register { border-color: #000; }
+.is-dark .area_headline_register .item_register .desc_register { color: #b8b8b8; }
+.is-dark .area_headline_register .item_register .link_register { color: #e7e7e7; }
+.is-dark .area_headline_register .item_register .link_register:after { background-color: #e7e7e7; }
+.is-dark .area_headline_contract { background-color: #2a2a2a; }
+.is-dark .link_line { border-color: #e7e7e7; color: #e7e7e7; }
+.is-dark .link_line.link_red { border-color: #f50000; color: #f50000; }
+
+/* 선택 컨텐츠 */
+.is-dark .area_choice .tit_choice { color: #e7e7e7; }
+.is-dark .area_choice .item_choice + .tit_choice { border-color: #464646; }
+
+/* 차량번호 입력 */
+.is-dark .area_lookup .desc_lookup { color: #888; }
+
+/* 가입담보 및 보장내역 선택 */
+.is-dark .area_collateral_detail .tit_detail { color: #e7e7e7; }
+.is-dark .area_collateral_detail .desc_detail { color: #888}
+.is-dark .area_collateral_detail .badge_detail { background-color: #464646; color: #a0a0a0; }
+
+/* 할인특약 선택 */
+.is-dark .cont_discount .area_headline {background-color: #2a2a2a; }
+.is-dark .area_choice_discount { background-color: #2a2a2a; }
+.is-dark .area_choice_discount .item_date .combo_tf .tf_date { color: #cfcfcf; }
+.is-dark .area_discount_detail .emph_detail { color: #e7e7e7; }
+.is-dark .area_discount_detail .desc_detail { color: #888; }
+.is-dark .item_autosale .tit_autosale { color: #b8b8b8; }
+.is-dark .item_autosale .list_autosale li { color: #a0a0a0; }
+.is-dark .item_autosale .box_subtxt { border-color: #464646; background-color: #2a2a2a; color: #a0a0a0; }
+
+/* 설계 상세 내용  */
+.is-dark .area_detail .item_detail { border-color: #464646; }
+.is-dark .area_detail .item_detail .tit_detail { color: #e7e7e7; }
+.is-dark .area_detail .item_detail .link_change { border-color: #464646; color: #cfcfcf; }
+.is-dark .area_detail .item_detail .btn_view { border-color: #595959; color: #e7e7e7; }
+.is-dark .area_detail .item_detail .no_detail { color: #888; }
+.is-dark .area_detail .item_detail .combo_detail dt { color: #888; }
+.is-dark .area_detail .item_detail .combo_detail dd { color: #cfcfcf; }
+.is-dark .area_detail .item_det.is-dark .area_detail .item_refer .desc_referail .combo_detail dd .txt_cancel { color: #ff3c3c; }
+.is-dark .area_detail .item_detail .tbl_detail th,
+.is-dark .area_detail .item_detail .tbl_detail td { border-top-color: #464646; }
+.is-dark .area_detail .item_detail .tbl_detail th { color: #e7e7e7; }
+.is-dark .area_detail .item_detail .tbl_detail td { color: #b8b8b8; }
+.is-dark .area_detail .item_detail .combo_detail_tbl .emph_detail { color: #888; }
+.is-dark .area_detail .item_refer .desc_refer { color: #b8b8b8; }
+
+/* 약관동의 */
+.is-dark .terms_headline{ background-color: #2a2a2a; }
+.is-dark .terms_headline .tit_headline { color: #e7e7e7; }
+.is-dark .terms_headline .desc_headline { color: #b8b8b8; }
+.is-dark .terms_headline .info_headline { color: #888; }
+.is-dark .terms_headline .ico_headline { background-image:url('../_images/m640/ico_policy.png'); }
+
+.is-dark .all_agree .inp_agree:checked + .lab_agree { border-color:#464646; background-color:#121212; }
+.is-dark .all_agree .lab_agree { background-color: #2a2a2a; border-color: #707070; }
+.is-dark .all_agree .desc_agree { color: #e7e7e7; }
+.is-dark .choice_agree .inp_agree:checked + .lab_agree{ color: #a0a0a0; }
+.is-dark .choice_agree .lab_agree { color: #888; }
+.is-dark .choice_agree .desc_more { border-bottom:1px solid #595959; color: #707070; }
+.is-dark .list_terms .desc_terms { color: #888; }
+
+/* 로딩 */
+.is-dark .area_loading .ico_loading { background-image: url('../_images/m640/ico_loading.png'); }
+.is-dark .area_loading .desc_loading { color: #cfcfcf; }
+
+/* 보험료 비교 */
+.is-dark .compare_headline .tit_compare { color: #e7e7e7; }
+.is-dark .compare_headline .paging_compare { color: #707070; }
+.is-dark .compare_headline .noti_compare { color: #0070cc; }
+.is-dark .compare_headline .btn_compare { border-color: #464646; background-color: #2a2a2a; color:#cfcfcf; }
+.is-dark .area_compare .item_compare { background-color:#2a2a2a; }
+.is-dark .area_compare .item_last .desc_last { color: #888; }
+/* .is-dark .area_compare .item_last .link_last { background-color:rgba(58,73,97,0.07); } */
+.is-dark .area_compare .link_detail { border-top-color: rgba(68,75,82,0.1); color: #e7e7e7; }
+.is-dark .item_pager .btn_pager { background-color: #707070; }
+.is-dark .item_pager .btn_pager.active { background-color: #cfcfcf; }
+.is-dark .combo_car .txt_car .tit_car { color: #e7e7e7; }
+.is-dark .combo_car .txt_car .num_car { color: #b6b6c0; }
+.is-dark .combo_car .txt_car .discount_car { color: #a0a0a0; }
+.is-dark .combo_hit { border-top:1px solid rgba(68,75,82,0.1); }
+.is-dark .combo_hit .tit_hit { color: #e7e7e7; }
+.is-dark .combo_hit .desc_hit { color: #707070; }
+.is-dark .combo_hit .btn_hit { border-color: #464646; color: #cfcfcf; }
+/* .is-dark .link_compare:before { background-color:rgba(68,75,82,0.1); } */
+.is-dark .link_compare .tit_compare { color: #888; }
+.is-dark .link_compare .badge_compare { background-color:rgba(55,188,199,0.1); color:#37bcc7; }
+.is-dark .link_compare .price_compare { color: #e7e7e7; }
+.is-dark .area_comparison_head { background-color: #2a2a2a; }
+.is-dark .area_comparison_head .tit_comparison { color: #e7e7e7; }
+.is-dark .comparison-slider-wrap .swiper-pagination-bullet { background-color: #707070; }
+.is-dark .comparison-slider-wrap .swiper-pagination-bullet-active { background-color: #cfcfcf; }
+.is-dark .item_comparison .combo_car { background-color: #2a2a2a; border-color: #464646; }
+.is-dark .item_comparison .combo_car .txt_car .discount_car { color: #cfcfcf; }
+.is-dark .item_comparison .combo_car .txt_car .num_car { color: #707070; }
+.is-dark .item_comparison .combo_car .txt_car .tit_car { color: #e7e7e7; }
+.is-dark .item_comparison .combo_car .txt_car .tit_car::after { background-color: #000; }
+.is-dark .item_comparison .link_detail { color: #888; }
+.is-dark .item_comparison .link_detail:after { background-color: #707070; }
+.is-dark .area_cashsort .tit_cashsort { color: #cfcfcf; }
+.is-dark .area_cashsort .list_cashsort { background-color: #121212; }
+.is-dark .area_cashsort .list_cashsort li { background-color: #2a2a2a; border-bottom-color: #464646; }
+.is-dark .area_cashsort .list_cashsort li + li { border-top-color:  #000; }
+.is-dark .area_cashsort .link_cashsort .cover_logo { border-color: #464646; background-color: #fff; overflow: hidden; }
+.is-dark .area_cashsort .link_cashsort .cover_info .info_tit { color: #b8b8b8; }
+.is-dark .area_cashsort .link_cashsort .cover_info .info_sub { color:#37bcc7; }
+.is-dark .area_cashsort .link_cashsort .combo_cash { color: #cfcfcf; }
+.is-dark .area_cashsort .list_cashsort .cover_btn { border-color: #000; }
+.is-dark .area_cashsort .list_cashsort .cover_btn .btn_text { color: #fff; }
+.is-dark .area_cashsort .item_research { border-bottom-color: #464646; background-color:#121212; }
+.is-dark .area_cashsort .item_research .desc_research { border-top-color: #000; color: #a0a0a0; }
+.is-dark .area_cashsort .item_research .btn_research { border-color: #464646; background-color: #2a2a2a; color:#cfcfcf; }
+.is-dark .area_cashsort .item_subtxt .desc_subtxt { color: #888; }
+.is-dark .area_cashsort .item_subtxt .link_subtxt { color: #888; }
+.is-dark .area_cashsort .item_subtxt .link_subtxt:after { background-color: #707070; }
+.is-dark .area_cashsort .list_top3 { border-bottom-color: #464646; }
+
+.is-dark .modal-rank { background-color: #2a2a2a; }
+.is-dark .modal-rank .core { color: #e7e7e7; }
+.is-dark .modal-rank .desc { color: #a0a0a0; }
+
+
+/***** 펫보험 *****/
+
+/* 상품상세 */
+.is-dark .area_feature .tit_feature { color: #e7e7e7; }
+.is-dark .area_feature .tit_feature span { color: #cfcfcf; }
+.is-dark .area_feature .txt_feature { color: #e7e7e7; }
+.is-dark .area_feature .emph_feature:after { background-color: #000; }
+.is-dark .area_feature .desc_feature { color: #a0a0a0; }
+.is-dark .area_feature .ico_feature { background-image:url('../_images/m640/bg_feature_190830.png'); }
+.is-dark .area_guarantee .tit_guarantee { color: #cfcfcf; }
+.is-dark .area_guarantee .desc_guarantee { color: #b8b8b8; }
+.is-dark .info_guarantee .combo_shape .txt_info { color: #b8b8b8; }
+.is-dark .info_guarantee .bg_shape { background-image: url('../_images/m640/bg_shape_dark.png'); }
+.is-dark .info_guarantee_detail .emph_detail { color: #cfcfcf; }
+.is-dark .info_guarantee_detail .desc_detail { color: #b8b8b8; }
+.is-dark .link_guarantee_view { border-color: #595959; color: #cfcfcf; }
+.is-dark .area_noti_terms { color: #a0a0a0; }
+.is-dark .area_share .tit_share { color: #e7e7e7; }
+
+/* 상품상세 - 보장안내,청구안내 */
+.is-dark .tab_menu2 { border-bottom-color: rgba(0,0,0,0.15); }
+.is-dark .tab_menu2 li .link_tab { color: #707070; }
+.is-dark .tab_menu2 li.on .link_tab { color: #fff; }
+.is-dark .tab_menu2 li.on .link_tab:after { background: #fff; }
+.is-dark .area_guide { color: #b8b8b8; }
+.is-dark .area_guide .tit_guide { color: #cfcfcf; }
+.is-dark .area_guide .tit_guide2 { color: #cfcfcf; }
+.is-dark .area_guide .noti_guide { color: #888; }
+.is-dark .area_guide .link_animal { color: #b8b8b8; }
+
+/* 테이블 공통 클래스 */
+.is-dark .tbl_comm { border-top-color: #595959; border-bottom-color: #595959; }
+.is-dark .tbl_comm th, .is-dark .tbl_comm td { border-right-color: #595959; border-bottom-color: #595959; }
+.is-dark .tbl_comm th { color: #cfcfcf; }
+.is-dark .tbl_comm td { color: #b8b8b8; }
+.is-dark .tbl_theme1 tbody th { background: #000; }
+.is-dark .tbl_theme2 thead th { background: #000; }
+.is-dark .tbl_theme2 tfoot td { background: #464646; color: #0070cc; }
+
+/* 아코디언 */
+.is-dark .area_accordion .link_accordion { color: #e7e7e7; }
+.is-dark .area_accordion .link_accordion:after { background:rgba(0,0,33,0.16); }
+.is-dark .item_accordion_detail { color: #a0a0a0; }
+.is-dark .item_accordion_detail .noti_detail { color: #888; }
+.is-dark .item_accordion_detail .headline_info .tit_info { color: #cfcfcf; }
+.is-dark .item_accordion_detail .headline_info .txt_info { color: #888; }
+.is-dark .item_accordion_detail .info_number { color: #a0a0a0; }
+.is-dark .item_accordion_detail .info_number .emph_number_noti { color: #a0a0a0; }
+
+/* 플랜 선택 */
+.is-dark .area_choice_plan .tit_plan { color: #e7e7e7; }
+.is-dark .area_choice_plan .price_plan .emph_plan::after { background-color: #000; }
+.is-dark .area_choice_guarantee .tit_guarantee { color: #e7e7e7; }
+.is-dark .area_choice_guarantee .desc_guarantee { color: #888; }
+.is-dark .area_calc { background-color: #121212; }
+.is-dark .area_calc .tit_calc { color: #e7e7e7; }
+.is-dark .item_calc_unit dt { color: #888; }
+.is-dark .item_calc_unit dd { color: #b8b8b8; }
+.is-dark .item_calc_unit .minus_calc { color: #f50000; }
+.is-dark .item_calc_total { border-top-color:  #707070; }
+.is-dark .item_calc_total .emph_total { color: #e7e7e7; }
+.is-dark .item_calc_total .desc_total { color: #888; }
+.is-dark .item_calc_total .price_total { color: #e7e7e7; }
+.is-dark .item_calc_total .month_total { color: #888; }
+.is-dark .item_calc_total .period_total { color: #0070cc; }
+
+/* 반려견 사진 등록 */
+.is-dark .item_attach { background: #2a2a2a; }
+.is-dark .item_attach .tit_attach { color: #cfcfcf; }
+.is-dark .item_attach .desc_attach { color: #888; }
+.is-dark .item_attach .info_attach { border-top-color: #000; color: #888; }
+.is-dark .item_attach.done { background: #464646; }
+.is-dark .item_attach.done .btn_attach { background: #464646; color: #707070; }
+
+/* 계약체크 사항 */
+.is-dark .area_contract { background-color: #000; }
+.is-dark .area_contract .desc_contract { color: #888; }
+.is-dark .item_contract_total .inp_g:checked + .lab_g { border-color: #464646; background: #121212; }
+.is-dark .item_contract_total .lab_g { border-color: #707070; background: #000; }
+.is-dark .item_contract_total .desc_total { color: #e7e7e7; }
+.is-dark .item_label_role .lab_role { color: #e7e7e7; }
+.is-dark .item_contract .tit_contract { color: #e7e7e7; }
+.is-dark .item_info .tit_info { color: #888; }
+.is-dark .item_info .desc_info { color: #b8b8b8; }
+
+/* 가입 */
+.is-dark .area_join_complete .ico_complete { background-image: url('../_images/m640/img_join_complete_190902.png'); }
+.is-dark .area_join_complete .tit_complete { color: #cfcfcf; }
+.is-dark .area_join_complete .desc_complete { color: #888; }
+.is-dark .area_method { background-color: #000; }
+.is-dark .area_method .tit_method { color: #e7e7e7; }
+.is-dark .area_method .item_method { border-color: #595959; background-color: #121212; }
+.is-dark .area_method .item_method .txt_method { color: #a0a0a0; }
+.is-dark .area_method .item_method .price_method { color: #a0a0a0; }
+.is-dark .area_method .item_method .desc_method { border-top-color: #000; color: #a0a0a0; }
+.is-dark .area_method .item_method.active { border-color: #707070; background-color: #000; }
+.is-dark .area_method .item_method.active .txt_method { color: #e7e7e7; }
+.is-dark .area_method .item_method.active .price_method { color: #e7e7e7; }
+.is-dark .area_method .item_method.active .desc_method { color: #0070cc; }
+
+/* 내보험 */
+.is-dark .area_detail_gist .company_gist { color: #888; }
+.is-dark .area_detail_gist .tit_gist { color: #e7e7e7; }
+.is-dark .area_detail_gist .badge_gist.badge_doing { background:rgba(55,188,199,0.1); color: #37bcc7; }
+.is-dark .area_detail_gist .badge_gist.badge_cancel { background:rgba(255,60,60,0.15); color: #ff3c3c; }
+.is-dark .area_detail_gist .badge_gist.badge_done { background: #464646; color: #a0a0a0; }
+.is-dark .area_detail_gist .price_gist { color: #e7e7e7; }
+.is-dark .area_detail_gist .date_gist { color: #888; }
+
+/* 청구안내 */
+.is-dark .item_claim_cs .desc_claim_cs { color: #cfcfcf; }
+.is-dark .item_claim_cs .box_claim_cs { background-color: #000; }
+.is-dark .item_claim_cs .box_claim_cs .tit_claim_cs { color: #cfcfcf; }
+.is-dark .item_claim_cs .box_claim_cs .num_claim_cs { color: #cfcfcf; }
+.is-dark .item_claim_cs .time_claim_cs { color: #888; }
+.is-dark .item_claim_process { border-top-color: #464646; }
+.is-dark .item_claim_process .tit_claim_process { color: #e7e7e7; }
+.is-dark .item_claim_process .list_claim_process li .step_process { color: #888; }
+.is-dark .item_claim_process .list_claim_process li .desc_process { color: #cfcfcf; }
+
+/* 자주묻는 질문 */
+.is-dark .area_faq .link_faq { color: #e7e7e7; }
+.is-dark .area_faq .link_faq:after { background-color: rgba(42, 42, 42, .1); }
+.is-dark .area_faq .detail_faq .desc_faq { color: #a0a0a0; }
+
+/* notice 페이지 */
+.is-dark .area_notice .tit_notice { color: #cfcfcf; }
+.is-dark .area_notice .desc_notice { color: #888; }
+
+.is-dark #mask { background-color: #2a2a2a !important; }
+.is-dark .window { background-color: #2a2a2a !important; }
+
+
+@media (prefers-color-scheme: dark) {
+    body { background-color: #2a2a2a !important; }
+
+    body, th, td, input, select, textarea, button { color:#cfcfcf; }
+    a { color: #cfcfcf; }
+    .ico_insure { background-image: url('../_images/m640/ico_insure_191024_dark.png'); }
+
+    .bg_gray { background-color: #000; }
+    .fixed_type { background-color: #2a2a2a; }
+    /* .emph_error{color:#ff3c3c} */
+    .area_etc { background: #2a2a2a; }
+    .tf_g { color: #e7e7e7; }
+    .tf_g::placeholder { color: #707070; }
+    .tf_g::-webkit-input-placeholder { color: #707070; }
+    .tf_g::-moz-input-placeholder { color: #707070; }
+    .tf_g:-ms-input-placeholder { color: #707070; }
+    .tf_g:-moz-input-placeholder { color: #707070; }
+    .item_search .tf_g { border-bottom-color: #cfcfcf; }
+    .item_search.error .tf_g { border-bottom-color: #ff3c3c;}
+    .item_search.error .desc_search { color: #ff3c3c; }
+    .item_date .txt_date { color: #cfcfcf; }
+    .item_date .pld_date { color: #595959; }
+    .item_date .tf_date { color: #e7e7e7; }
+
+    .bundle_opt { border-color: #464646; background-color: #121212; }
+    .bundle_opt .item_tf .tf_label,
+    .bundle_opt .item_tf .tf_desc { color: #888; }
+    .bundle_opt .item_tf .tf_g:disabled { -webkit-text-fill-color: #e7e7e7; color: #e7e7e7; }
+    .bundle_opt .item_tf .txt_placeholder {color:#d5d6d7}
+    .bundle_opt .item_tf .btn_line .txt_line { border-bottom: 1px solid #2e3338; color: #e7e7e7; }
+    .bundle_opt .item_tf .tf_opt .txt_resident { color: #e7e7e7; }
+    .bundle_opt .item_tf .tf_opt .sel_phone .opt_select { color: #e7e7e7; }
+    .bundle_opt .item_tf .tf_opt .num_phone { color: #e7e7e7; }
+    .bundle_opt .item_tf.direction{ background-color: #2a2a2a; }
+    .bundle_opt .item_tf.active .txt_placeholder{color: #e7e7e7; }
+    .bundle_opt .item_tf.done .opt_select { color: #e7e7e7; }
+    .bundle_opt .item_tf.done .tf_g { color: #e7e7e7; }
+    .bundle_opt .item_tf.done .txt_placeholder { color: #e7e7e7; }
+    .bundle_opt .item_opt .opt_label { color: #888; }
+    .bundle_opt .item_opt.direction { background-color: #2a2a2a; }
+    .bundle_opt .item_opt.direction .desc_opt { color: #b8b8b8; }
+    .bundle_opt .item_opt.active { background-color: #2a2a2a; }
+    .bundle_opt .item_opt.active .desc_opt { color: #b8b8b8; }
+    .bundle_opt .item_opt .txt_opt .desc_opt { color: #888; }
+    .bundle_opt .item_opt.done .txt_opt .desc_opt { color: #e7e7e7; }
+    .bundle_opt .item_opt.done .tf_g { color: #e7e7e7; }
+    .bundle_opt .item_optlink .opt_label { color: #888; }
+    .bundle_opt .item_optlink.direction .desc_opt { color: #b8b8b8; }
+    .bundle_opt .item_optlink.active { background-color: #2a2a2a; }
+    .bundle_opt .item_optlink.active .desc_opt{ color: #b8b8b8; }
+    .bundle_opt .item_optlink .txt_opt .desc_opt { color: #888; }
+    .bundle_opt .item_optlink.done .txt_opt .desc_opt { color: #e7e7e7; }
+    .bundle_opt .box_info .desc_info { color: #a0a0a0; }
+    .bundle_opt .box_info .emph_info:after { background-color: #000; }
+    .bundle_opt .box_info .link_info { color: #a0a0a0; }
+    .bundle_opt [class*='item'].direction:after { border-color: #707070; }
+    .bundle_opt [class*='item'].active:after { border-color: #cfcfcf; }
+    .bundle_opt [class*='item'].error:after { border-color: #ff3c3c; }
+    .item_tf.direction { background-color: #2a2a2a; }
+    .item_tf.direction:after { border-color: #707070; }
+    .item_tf.active { background-color: #2a2a2a; }
+    .item_tf.active:after { border-color: #cfcfcf; }
+    .item_choice .lab_g,
+    .item_check .lab_g { color: #e7e7e7; }
+    .item_choice .desc_choice,
+    .item_check .desc_choice { color: #0070cc; }
+    .item_choice_info { background: #000; }
+    .item_choice_info .emph_info { color: #b8b8b8; }
+    .item_choice_info .list_info li { color: #b8b8b8; }
+    .item_radio .lab_g { color: #e7e7e7; }
+    .item_yesno .desc_yesno { color: #e7e7e7; }
+    .item_yesno .sub_yesno { color: #888; }
+    .tab_menu .link_tab { color: #888; }
+    .tab_menu .on .link_tab { color: #e7e7e7; }
+    .tab_menu .on .link_tab:after { background-color: #e7e7e7; }
+    .tab_menu .circle_update { background: #ee4751; }
+    .btn_g { color: #0e1012; }
+    .btn_g.btn_text .desc_btn{ color:#5a5a5c; }
+    .btn_g.btn_dark { color: #fff; }
+    .btn_g.btn_light { color: #0e1012; }
+    .btn_g.btn_light.btn_cancle { color: #868E96; }
+    .btn_g:disabled { color: #707070; }
+    .btn_danger { color: #fff; }
+    .area_head .tit_head { color: #e7e7e7; }
+    .area_head .desc_head{ color: #b8b8b8; }
+    .area_head .emph_head{display:block;padding-top:21px;font-size:13px;color:#0070cc}
+    .cont_step .area_head { background: #2a2a2a; }
+    .area_step .link_step_cancel{color:#5a5a5c;}
+    .link_step { background-color: #464646; }
+    .link_step .tit_step { color: #888; }
+    .link_step .desc_step { color: #888; }
+    .link_step + .btn_change { color: #888; }
+    .link_step.direct{ border:1px solid  #707070; background-color: #2a2a2a; }
+    .link_step.direct .tit_step{ color: #e7e7e7; }
+
+    /* 상단 영역 */
+    .area_headline .tit_headline { color: #e7e7e7; }
+    .area_headline .desc_headline { color: #888}
+    .area_headline .noti_headline { color: #0070cc; }
+    .area_headline_register { background-color: #2a2a2a; }
+    .area_headline_register .item_register { border-color: #000; }
+    .area_headline_register .item_register .desc_register { color: #b8b8b8; }
+    .area_headline_register .item_register .link_register { color: #e7e7e7; }
+    .area_headline_register .item_register .link_register:after { background-color: #e7e7e7; }
+    .area_headline_contract { background-color: #2a2a2a; }
+    .link_line { border-color: #e7e7e7; color: #e7e7e7; }
+    .link_line.link_red { border-color: #f50000; color: #f50000; }
+
+    /* 선택 컨텐츠 */
+    .area_choice .tit_choice { color: #e7e7e7; }
+    .area_choice .item_choice + .tit_choice { border-color: #464646; }
+
+    /* 차량번호 입력 */
+    .area_lookup .desc_lookup { color: #888; }
+
+    /* 가입담보 및 보장내역 선택 */
+    .area_collateral_detail .tit_detail { color: #e7e7e7; }
+    .area_collateral_detail .desc_detail { color: #888}
+    .area_collateral_detail .badge_detail { background-color: #464646; color: #a0a0a0; }
+
+    /* 할인특약 선택 */
+    .cont_discount .area_headline {background-color: #2a2a2a; }
+    .area_choice_discount { background-color: #2a2a2a; }
+    .area_choice_discount .item_date .combo_tf .tf_date { color: #cfcfcf; }
+    .area_discount_detail .emph_detail { color: #e7e7e7; }
+    .area_discount_detail .desc_detail { color: #888; }
+    .item_autosale .tit_autosale { color: #b8b8b8; }
+    .item_autosale .list_autosale li { color: #a0a0a0; }
+    .item_autosale .box_subtxt { border-color: #464646; background-color: #2a2a2a; color: #a0a0a0; }
+
+    /* 설계 상세 내용  */
+    .area_detail .item_detail { border-color: #464646; }
+    .area_detail .item_detail .tit_detail { color: #e7e7e7; }
+    .area_detail .item_detail .link_change { border-color: #464646; color: #cfcfcf; }
+    .area_detail .item_detail .btn_view { border-color: #595959; color: #e7e7e7; }
+    .area_detail .item_detail .no_detail { color: #888; }
+    .area_detail .item_detail .combo_detail dt { color: #888; }
+    .area_detail .item_detail .combo_detail dd { color: #cfcfcf; }
+    .area_detail .item_det.area_detail .item_refer .desc_referail .combo_detail dd .txt_cancel { color: #ff3c3c; }
+    .area_detail .item_detail .tbl_detail th,
+    .area_detail .item_detail .tbl_detail td { border-top-color: #464646; }
+    .area_detail .item_detail .tbl_detail th { color: #e7e7e7; }
+    .area_detail .item_detail .tbl_detail td { color: #b8b8b8; }
+    .area_detail .item_detail .combo_detail_tbl .emph_detail { color: #888; }
+    .area_detail .item_refer .desc_refer { color: #b8b8b8; }
+
+    /* 약관동의 */
+    .terms_headline{ background-color: #2a2a2a; }
+    .terms_headline .tit_headline { color: #e7e7e7; }
+    .terms_headline .desc_headline { color: #b8b8b8; }
+    .terms_headline .info_headline { color: #888; }
+    .terms_headline .ico_headline { background-image:url('../_images/m640/ico_policy.png'); }
+
+    .all_agree .inp_agree:checked + .lab_agree { border-color:#464646; background-color:#121212; }
+    .all_agree .lab_agree { background-color: #2a2a2a; border-color: #707070; }
+    .all_agree .desc_agree { color: #e7e7e7; }
+    .choice_agree .inp_agree:checked + .lab_agree{ color: #a0a0a0; }
+    .choice_agree .lab_agree { color: #888; }
+    .choice_agree .desc_more { border-bottom:1px solid #595959; color: #707070; }
+    .list_terms .desc_terms { color: #888; }
+
+    /* 로딩 */
+    .area_loading .ico_loading { background-image: url('../_images/m640/ico_loading.png'); }
+    .area_loading .desc_loading { color: #cfcfcf; }
+
+    /* 보험료 비교 */
+    .compare_headline .tit_compare { color: #e7e7e7; }
+    .compare_headline .paging_compare { color: #707070; }
+    .compare_headline .noti_compare { color: #0070cc; }
+    .compare_headline .btn_compare { border-color: #464646; background-color: #2a2a2a; color:#cfcfcf; }
+    .area_compare .item_compare { background-color:#2a2a2a; }
+    .area_compare .item_last .desc_last { color: #888; }
+    /* .area_compare .item_last .link_last { background-color:rgba(58,73,97,0.07); } */
+    .area_compare .link_detail { border-top-color: rgba(68,75,82,0.1); color: #e7e7e7; }
+    .item_pager .btn_pager { background-color: #707070; }
+    .item_pager .btn_pager.active { background-color: #cfcfcf; }
+    .combo_car .txt_car .tit_car { color: #e7e7e7; }
+    .combo_car .txt_car .num_car { color: #b6b6c0; }
+    .combo_car .txt_car .discount_car { color: #a0a0a0; }
+    .combo_hit { border-top:1px solid rgba(68,75,82,0.1); }
+    .combo_hit .tit_hit { color: #e7e7e7; }
+    .combo_hit .desc_hit { color: #707070; }
+    .combo_hit .btn_hit { border-color: #464646; color: #cfcfcf; }
+    /* .link_compare:before { background-color:rgba(68,75,82,0.1); } */
+    .link_compare .tit_compare { color: #888; }
+    .link_compare .badge_compare { background-color:rgba(55,188,199,0.1); color:#37bcc7; }
+    .link_compare .price_compare { color: #e7e7e7; }
+    .area_comparison_head { background-color: #2a2a2a; }
+    .area_comparison_head .tit_comparison { color: #e7e7e7; }
+    .comparison-slider-wrap .swiper-pagination-bullet { background-color: #707070; }
+    .comparison-slider-wrap .swiper-pagination-bullet-active { background-color: #cfcfcf; }
+    .item_comparison .combo_car { background-color: #2a2a2a; border-color: #464646; }
+    .item_comparison .combo_car .txt_car .discount_car { color: #cfcfcf; }
+    .item_comparison .combo_car .txt_car .num_car { color: #707070; }
+    .item_comparison .combo_car .txt_car .tit_car { color: #e7e7e7; }
+    .item_comparison .combo_car .txt_car .tit_car::after { background-color: #000; }
+    .item_comparison .link_detail { color: #888; }
+    .item_comparison .link_detail:after { background-color: #707070; }
+    .area_cashsort .tit_cashsort { color: #cfcfcf; }
+    .area_cashsort .list_cashsort { background-color: #121212; }
+    .area_cashsort .list_cashsort li { background-color: #2a2a2a; border-bottom-color: #464646; }
+    .area_cashsort .list_cashsort li + li { border-top-color:  #000; }
+    .area_cashsort .list_cashsort .cover_btn { border-color: #000; }
+    .area_cashsort .list_cashsort .cover_btn .btn_text { color: #fff; }
+    .area_cashsort .link_cashsort .cover_logo { border-color: #464646; background-color: #fff; overflow: hidden; }
+    .area_cashsort .link_cashsort .cover_info .info_tit { color: #b8b8b8; }
+    .area_cashsort .link_cashsort .cover_info .info_sub { color:#37bcc7; }
+    .area_cashsort .link_cashsort .combo_cash { color: #cfcfcf; }
+    .area_cashsort .item_research { border-bottom-color: #464646; background-color:#121212; }
+    .area_cashsort .item_research .desc_research { border-top-color: #000; color: #a0a0a0; }
+    .area_cashsort .item_research .btn_research { border-color: #464646; background-color: #2a2a2a; color:#cfcfcf; }
+    .area_cashsort .item_subtxt .desc_subtxt { color: #888; }
+    .area_cashsort .item_subtxt .link_subtxt { color: #888; }
+    .area_cashsort .item_subtxt .link_subtxt:after { background-color: #707070; }
+    .area_cashsort .list_top3 { border-bottom-color: #464646; }
+
+    .modal-rank { background-color: #2a2a2a; }
+    .modal-rank .core { color: #e7e7e7; }
+    .modal-rank .desc { color: #a0a0a0; }
+
+    /***** 펫보험 *****/
+
+    /* 상품상세 */
+    .area_feature .tit_feature { color: #e7e7e7; }
+    .area_feature .tit_feature span { color: #cfcfcf; }
+    .area_feature .txt_feature { color: #e7e7e7; }
+    .area_feature .emph_feature:after { background-color: #000; }
+    .area_feature .desc_feature { color: #a0a0a0; }
+    .area_feature .ico_feature { background-image:url('../_images/m640/bg_feature_190830.png'); }
+    .area_guarantee .tit_guarantee { color: #cfcfcf; }
+    .area_guarantee .desc_guarantee { color: #b8b8b8; }
+    .info_guarantee .combo_shape .txt_info { color: #b8b8b8; }
+    .info_guarantee .bg_shape { background-image: url('../_images/m640/bg_shape_dark.png'); }
+    .info_guarantee_detail .emph_detail { color: #cfcfcf; }
+    .info_guarantee_detail .desc_detail { color: #b8b8b8; }
+    .link_guarantee_view { border-color: #595959; color: #cfcfcf; }
+    .area_noti_terms { color: #a0a0a0; }
+    .area_share .tit_share { color: #e7e7e7; }
+
+    /* 상품상세 - 보장안내,청구안내 */
+    .tab_menu2 { border-bottom-color: rgba(0,0,0,0.15); }
+    .tab_menu2 li .link_tab { color: #707070; }
+    .tab_menu2 li.on .link_tab { color: #fff; }
+    .tab_menu2 li.on .link_tab:after { background: #fff; }
+    .area_guide { color: #b8b8b8; }
+    .area_guide .tit_guide { color: #cfcfcf; }
+    .area_guide .tit_guide2 { color: #cfcfcf; }
+    .area_guide .noti_guide { color: #888; }
+    .area_guide .link_animal { color: #b8b8b8; }
+
+    /* 테이블 공통 클래스 */
+    .tbl_comm { border-top-color: #595959; border-bottom-color: #595959; }
+    .tbl_comm th,.tbl_comm td { border-right-color: #595959; border-bottom-color: #595959; }
+    .tbl_comm th { color: #cfcfcf; }
+    .tbl_comm td { color: #b8b8b8; }
+    .tbl_theme1 tbody th { background: #000; }
+    .tbl_theme2 thead th { background: #000; }
+    .tbl_theme2 tfoot td { background: #464646; color: #0070cc; }
+
+    /* 아코디언 */
+    .area_accordion .link_accordion { color: #e7e7e7; }
+    .area_accordion .link_accordion:after { background:rgba(0,0,33,0.16); }
+    .item_accordion_detail { color: #a0a0a0; }
+    .item_accordion_detail .noti_detail { color: #888; }
+    .item_accordion_detail .headline_info .tit_info { color: #cfcfcf; }
+    .item_accordion_detail .headline_info .txt_info { color: #888; }
+    .item_accordion_detail .info_number { color: #a0a0a0; }
+    .item_accordion_detail .info_number .emph_number_noti { color: #a0a0a0; }
+
+    /* 플랜 선택 */
+    .area_choice_plan .tit_plan { color: #e7e7e7; }
+    .area_choice_plan .price_plan .emph_plan::after { background-color: #000; }
+    .area_choice_guarantee .tit_guarantee { color: #e7e7e7; }
+    .area_choice_guarantee .desc_guarantee { color: #888; }
+    .area_calc { background-color: #121212; }
+    .area_calc .tit_calc { color: #e7e7e7; }
+    .item_calc_unit dt { color: #888; }
+    .item_calc_unit dd { color: #b8b8b8; }
+    .item_calc_unit .minus_calc { color: #f50000; }
+    .item_calc_total { border-top-color:  #707070; }
+    .item_calc_total .emph_total { color: #e7e7e7; }
+    .item_calc_total .desc_total { color: #888; }
+    .item_calc_total .price_total { color: #e7e7e7; }
+    .item_calc_total .month_total { color: #888; }
+    .item_calc_total .period_total { color: #0070cc; }
+
+    /* 반려견 사진 등록 */
+    .item_attach { background: #2a2a2a; }
+    .item_attach .tit_attach { color: #cfcfcf; }
+    .item_attach .desc_attach { color: #888; }
+    .item_attach .info_attach { border-top-color: #000; color: #888; }
+    .item_attach.done { background: #464646; }
+    .item_attach.done .btn_attach { background: #464646; color: #707070; }
+
+    /* 계약체크 사항 */
+    .area_contract { background-color: #000; }
+    .area_contract .desc_contract { color: #888; }
+    .item_contract_total .inp_g:checked + .lab_g { border-color: #464646; background: #121212; }
+    .item_contract_total .lab_g { border-color: #707070; background: #000; }
+    .item_contract_total .desc_total { color: #e7e7e7; }
+    .item_label_role .lab_role { color: #e7e7e7; }
+    .item_contract .tit_contract { color: #e7e7e7; }
+    .item_info .tit_info { color: #888; }
+    .item_info .desc_info { color: #b8b8b8; }
+
+    /* 가입 */
+    .area_join_complete .ico_complete { background-image: url('../_images/m640/img_join_complete_190902.png'); }
+    .area_join_complete .tit_complete { color: #cfcfcf; }
+    .area_join_complete .desc_complete { color: #888; }
+    .area_method { background-color: #000; }
+    .area_method .tit_method { color: #e7e7e7; }
+    .area_method .item_method { border-color: #595959; background-color: #121212; }
+    .area_method .item_method .txt_method { color: #a0a0a0; }
+    .area_method .item_method .price_method { color: #a0a0a0; }
+    .area_method .item_method .desc_method { border-top-color: #000; color: #a0a0a0; }
+    .area_method .item_method.active { border-color: #707070; background-color: #000; }
+    .area_method .item_method.active .txt_method { color: #e7e7e7; }
+    .area_method .item_method.active .price_method { color: #e7e7e7; }
+    .area_method .item_method.active .desc_method { color: #0070cc; }
+
+    /* 내보험 */
+    .area_detail_gist .company_gist { color: #888; }
+    .area_detail_gist .tit_gist { color: #e7e7e7; }
+    .area_detail_gist .badge_gist.badge_doing { background:rgba(55,188,199,0.1); color: #37bcc7; }
+    .area_detail_gist .badge_gist.badge_cancel { background:rgba(255,60,60,0.15); color: #ff3c3c; }
+    .area_detail_gist .badge_gist.badge_done { background: #464646; color: #a0a0a0; }
+    .area_detail_gist .price_gist { color: #e7e7e7; }
+    .area_detail_gist .date_gist { color: #888; }
+
+    /* 청구안내 */
+    .item_claim_cs .desc_claim_cs { color: #cfcfcf; }
+    .item_claim_cs .box_claim_cs { background-color: #000; }
+    .item_claim_cs .box_claim_cs .tit_claim_cs { color: #cfcfcf; }
+    .item_claim_cs .box_claim_cs .num_claim_cs { color: #cfcfcf; }
+    .item_claim_cs .time_claim_cs { color: #888; }
+    .item_claim_process { border-top-color: #464646; }
+    .item_claim_process .tit_claim_process { color: #e7e7e7; }
+    .item_claim_process .list_claim_process li .step_process { color: #888; }
+    .item_claim_process .list_claim_process li .desc_process { color: #cfcfcf; }
+
+    /* 자주묻는 질문 */
+    .area_faq .link_faq { color: #e7e7e7; }
+    .area_faq .link_faq:after { background-color: rgba(42, 42, 42, .1); }
+    .area_faq .detail_faq .desc_faq { color: #a0a0a0; }
+
+    /* notice 페이지 */
+    .area_notice .tit_notice { color: #cfcfcf; }
+    .area_notice .desc_notice { color: #888; }
+
+    #mask { background-color: #2a2a2a !important; }
+    .window { background-color: #2a2a2a !important; }
+
+    .cont_policy .tit_policy { color: #cfcfcf !important; }
+    .cont_policy .desc_policy { color: #888 !important; }
+}
+
+.area_headline {
+    position: relative;
+}
+.area_headline .renewal {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    text-align: center;
+    color: #0070cc;
+    border-radius: 2px;
+    background-color: rgba(72, 172, 255, 0.2);
+}

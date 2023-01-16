@@ -1,0 +1,182 @@
+@table-line-height: 1.4;
+
+table {
+    &.table-col,
+    &.table-row {
+        width: 100%;
+        th, td {
+            line-height: @table-line-height;
+        }
+        th {
+            vertical-align: top;
+            label, span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+        }
+    }
+    &.table-row {
+        th, td {
+            text-align: left;
+        }
+        th {
+            label, span {
+                display: inline-block;
+            }
+        }
+    }
+    &.table-col {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-center {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-left {
+        th, td {
+            text-align: left;
+        }
+    }
+    &.eng {
+        th, td {
+            .eng();
+        }
+    }
+}
+
+table {
+    &.table-a {
+        border-top: 1px #222 solid;
+        border-bottom: 1px #c8c8c8 solid;
+        thead {
+            th {
+                padding: 20px 0;
+                .font-bold();
+                color: #222;
+                border: 0;
+                border-top: 1px #222 solid;
+                text-align: center;
+                font-size: 16px;
+                &.eng {
+                    .font-bold-eng();
+                }
+            }
+            tr:first-child th {
+                border-top: 0;
+            }
+        }
+        tbody {
+            th,
+            td {
+                padding: 20px 0;
+                font-size: 16px;
+                text-align: center;
+                border-top: 1px #e4e4e4 solid;
+                &,
+                p {
+                    color: #666;
+                }
+                p {
+                    margin: 10px 0 0;
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+            }
+            td {
+                line-height: 1.8;
+            }
+            th {
+                color: #222;
+                .font-medium();
+            }
+            .secondary {
+                color: #222;
+            }
+        }
+        tr.has-bg {
+            td {
+                background-color: #fafafa;
+            }
+        }
+        tr.total {
+            td {
+                .font-medium();
+                color: #000;
+                background-color: #f5fbf6;
+                &.eng {
+                    .font-medium-eng();
+                }
+            }
+        }
+        .list {
+            margin: 0;
+            li {
+                position: relative;
+                margin: 0 0 0 15px;
+                &::before {
+                    content: '-';
+                    position: absolute;
+                    top: 0;
+                    left: -15px;
+                }
+            }
+        }
+        td.text-left {
+            padding-left: 30px;
+        }
+        td.text-right {
+            padding-right: 50px;
+        }
+        .number-large {
+            font-size: 40px;
+            .eng();
+            color: #ccc;
+        }
+        &.table-row {
+            tbody tr:first-child th,
+            tbody tr:first-child td {
+                border-top: 0;
+            }
+            th {
+                padding-left: 40px;
+                text-align: left;
+            }
+            td {
+                text-align: left;
+            }
+        }
+    }
+    &.table-b {
+        border: 1px #e4e4e4 solid;
+        thead {
+            th {
+                padding: 10px 0;
+                color: #222;
+                text-align: center;
+                font-size: 16px;
+                .font-regular();
+                background-color: #eee;
+                border-left: 1px #e4e4e4 solid;
+                &:first-child {
+                    border: 0;
+                }
+            }
+        }
+        tbody {
+            td {
+                padding: 20px 0;
+                font-size: 16px;
+                text-align: center;
+                line-height: 1.8;
+                border-left: 1px #e4e4e4 solid;
+                &:first-child {
+                    border: 0;
+                }
+            }
+        }
+    }
+}

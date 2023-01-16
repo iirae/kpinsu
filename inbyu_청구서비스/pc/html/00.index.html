@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스 청구서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스 청구서비스</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../resources/js/lib/lodash.min.js"></script>
+    </head>
+    <body>
+    <div>
+        <div class="wrap page-main" id="wrap">
+            <header class="common-kpinsu header" id="header">
+                <h1 class="head-logo">
+                    <a href="00.index.html">
+                        <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                    </a>
+                </h1>
+            </header>
+            <!-- <header class="header">
+                <h1 class="logo"><a href="00.index.html"><img src="../resources/img/h1_logo_inbyu.png"
+                                    srcset="../resources/img/h1_logo_inbyu.png,
+                                    ../resources/img/h1_logo_inbyu_2x.png 2x"
+                                    alt="INBYU kakao company"></a></h1>
+            </header> -->
+            <div class="container" id="container">
+                <section class="section visual">
+                    <div class="inner">
+                        <div class="object">
+                            <i class="icon coin01"></i>
+                            <i class="icon coin02"></i>
+                            <i class="icon coin03"></i>
+                            <i class="icon coin04"></i>
+                            <i class="icon coin05"></i>
+                            <i class="icon coin06"></i>
+                        </div>
+                        <h2 class="title">보험금 청구 서비스</h2>
+                        <p class="text-desc">관련서류를 간편하게 사진으로 찍어<br> 보험금을 청구 할 수 있는 서비스입니다.</p>
+                        <div class="area-button">
+                            <a href="javascript:;" class="btn btn-primary">청구 시작하기</a>
+                        </div>
+                        <div class="area-scroll">
+                            <i class="icon scroll"></i>
+                        </div>
+                        <p class="info">인바이유에서 가입한 보험 뿐만 아닌, 타보험사 가입 상품도 청구가 가능합니다.</p>
+                    </div>
+                </section>
+                <section class="section progress">
+                    <div class="inner">
+                        <h2 class="title">단계에 따라 입력해주세요.</h2>
+                        <p class="text-desc">개별 보험사에 별도 회원가입 필요없이,<br> 단계별로 정보만 입력하면 청구가 가능합니다.</p>
+                        <ol>
+                            <li>보험사 선택</li>
+                            <li>청구인/피보험자 정보 입력</li>
+                            <li>사고 정보 입력</li>
+                            <li>관련 서류 사진 찍어서 첨부</li>
+                            <li><i class="icon check"></i> 청구 완료</li>
+                        </ol>
+                        <div class="text-box">
+                            <a href="#layerDocument" class="text-link e-layer">어떤 서류가 필요한가요?</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section claim">
+                    <div class="inner">
+                        <h2 class="title">얼마까지 청구되며,<br>얼마나 걸리나요?</h2>
+                        <div class="area-claim">
+                            <em>평균 약 3~5일 소요</em>
+                            <strong>100만원 이하 청구 가능</strong>
+                            <div class="bundle-bar">
+                                <span class="bar"><span></span></span>
+                                <em class="text">100만원</em>
+                            </div>
+                            <p class="text-info">서류 접수 이후 청구 기간이 보험사마다 차이가 <br>있습니다.(공휴일 및 주말 제외)</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section inquiry">
+                    <div class="inner">
+                        <h2 class="title">문의사항</h2>
+                        <p class="text-desc">세부 보상범위, 금액 또는 서류 접수 이후의<br>문의 사항은 개별 보험사로 문의해주세요.</p>
+                        <div class="area-tab">
+                            <div class="inner-wrap">
+                                <ul class="tab">
+                                    <li class="on"><a href="javascript:;">손해보험사</a></li>
+                                    <li><a href="javascript:;">생명보험사</a></li>
+                                    <li><a href="javascript:;">기타보험사</a></li>
+                                </ul>
+                                <div class="tab-content section-insu-list nonlife on">
+                                    <h3 class="blind">손해보험사</h3>
+                                    <ul class="list">
+                                        <li><i class="icon insu samsung"></i><span>삼성화재</span><em>1588-5114</em></li>
+                                        <li><i class="icon insu hyundai"></i><span>현대해상</span><em>1588-5656</em></li>
+                                        <li><i class="icon insu db"></i><span>DB손해보험</span><em>1588-0100</em></li>
+                                        <li><i class="icon insu kb"></i><span>KB손해보험</span><em>1544-0114</em></li>
+                                        <li><i class="icon insu meritz"></i><span>메리츠화재</span><em>1566-7711</em></li>
+                                        <li><i class="icon insu hanhwa"></i><span>한화손해보험</span><em>1566-8000</em></li>
+                                        <li><i class="icon insu nonghyup"></i><span>농협손해보험</span><em>1644-9000</em></li>
+                                        <li><i class="icon insu heungkuk"></i><span>흥국화재</span><em>1688-1688</em></li>
+                                        <li><i class="icon insu lotte"></i><span>롯데손해보험</span><em>1588-3344</em></li>
+                                        <li><i class="icon insu mg"></i><span>MG손해보험</span><em>1588-5959</em></li>
+                                        <li><i class="icon insu thek"></i><span>The-K손해</span><em>1566-3000</em></li>
+                                        <li><i class="icon insu aig"></i><span>AIG손해</span><em>1544-2792</em></li>
+                                        <li><i class="icon insu axa"></i><span>AXA손해</span><em>1566-1566</em></li>
+                                        <li><i class="icon insu chubb"></i><span>처브손해보험</span><em>1544-2580</em></li>
+                                        <li><i class="icon insu bnp"></i><span>BNP파리바카디프손해</span><em>1566-5800</em></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content section-insu-list life">
+                                    <h3 class="blind">생명보험사</h3>
+                                    <ul class="list">
+                                        <li><i class="icon insu samsung"></i><span>삼성생명</span><em>1577-4118</em></li>
+                                        <li><i class="icon insu hanhwa"></i><span>한화생명</span><em>1588-6363</em></li>
+                                        <li><i class="icon insu kyobo"></i><span>교보생명</span><em>1588-1810</em></li>
+                                        <li><i class="icon insu nonghyup"></i><span>농협생명</span><em>1833-4100</em></li>
+                                        <li><i class="icon insu dongyang"></i><span>동양생명</span><em>1800-1004</em></li>
+                                        <li><i class="icon insu shinhan"></i><span>신한생명</span><em>1588-5580</em></li>
+                                        <li><i class="icon insu orange"></i><span>오렌지라이프</span><em>1588-5005</em></li>
+                                        <li><i class="icon insu heungkuk"></i><span>흥국생명</span><em>1588-2288</em></li>
+                                        <li><i class="icon insu kdb"></i><span>KDB생명</span><em>1588-4040</em></li>
+                                        <li><i class="icon insu lina"></i><span>라이나생명</span><em>1588-0058</em></li>
+                                        <li><i class="icon insu life-planet"></i><span>교보라이프플래닛생명</span><em>1566-0999</em></li>
+                                        <li><i class="icon insu metlife"></i><span>메트라이프</span><em>1588-9600</em></li>
+                                        <li><i class="icon insu mirae"></i><span>미래에셋생명</span><em>1588-0220</em></li>
+                                        <li><i class="icon insu chubb"></i><span>처브라이프생명</span><em>1599-4600</em></li>
+                                        <li><i class="icon insu prudential"></i><span>푸르덴셜생명</span><em>1588-3374</em></li>
+                                        <li><i class="icon insu fubon"></i><span>푸본현대생명</span><em>1577-3311</em></li>
+                                        <li><i class="icon insu hana"></i><span>하나생명</span><em>1577-1112</em></li>
+                                        <li><i class="icon insu abl"></i><span>ABL생명</span><em>1588-4404</em></li>
+                                        <li><i class="icon insu aia"></i><span>AIA생명</span><em>02-2128-1508</em></li>
+                                        <li><i class="icon insu bnp"></i><span>BNP파리바카디프생명</span><em>1688-1118</em></li>
+                                        <li><i class="icon insu db"></i><span>DB생명</span><em>1588-3131</em></li>
+                                        <li><i class="icon insu dgb"></i><span>DGB생명</span><em>1588-4770</em></li>
+                                        <li><i class="icon insu ibk"></i><span>IBK연금보험</span><em>1577-4117</em></li>
+                                        <li><i class="icon insu kb"></i><span>KB생명</span><em>1899-0882</em></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content section-insu-list etc">
+                                    <h3 class="blind">기타보험사</h3>
+                                    <ul class="list">
+                                        <li><i class="icon insu epost"></i><span>우체국보험</span><em>1599-0100</em></li>
+                                        <li><i class="icon insu ktculife"></i><span>교직1라이프</span><em>1577-3400</em></li>
+                                        <li><i class="icon insu mg"></i><span>MG새마을금고</span><em>1588-8801</em></li>
+                                        <li><i class="icon insu cu"></i><span>신협</span><em>1566-6000</em></li>
+                                        <li><i class="icon insu suhyup"></i><span>수협</span><em>1588-1515</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="guide">
+                            <h3 class="title">기본 청구<br>방법 안내</h3>
+                            <div class="details">
+                                <div class="cs">
+                                    <h4>인바이유 고객센터</h4>
+                                    <em>1644-9381</em>
+                                </div>
+                                <ul>
+                                    <li>평일 9:30 ~ 18:00 (공휴일 휴무)</li>
+                                    <li>Email : <a href="email:help@inbyu.com">help@inbyu.com</a></li>
+                                    <li>FAX : 02-6488-9875</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <nav class="paginate" id="nav">
+                <ul>
+                    <li class="on"><a href="javascript:;" title="청구서비스 시작하기"></a></li>
+                    <li><a href="javascript:;" title="청구 프로세스"></a></li>
+                    <li><a href="javascript:;" title="소요시간"></a></li>
+                    <li><a href="javascript:;" title="문의사항"></a></li>
+                </ul>
+            </nav>
+
+            <aside class="aside" id="aside">
+                <ul>
+                    <li><a href="01.약관동의.html" class="btn btn-claim"><span>청구 시작하기</span></a></li>
+                    <li><a href="javascript:;" class="btn btn-top" id="btnTop"><span class="blind">Top</span></a></li>
+                </ul>
+            </aside>
+
+            <footer id="footer" class="common-kpinsu footer"><!-- footer -->
+                <div class="inner">
+                    <div class="terms">
+                        <ul>
+                            <li><a href="https://www.inbyu.com/info.htm?mode=agree" target="_blank">이용약관</a></li>
+                            <li><a href="https://www.inbyu.com/info.htm?mode=privacy" target="_blank"><strong>개인정보 취급방침</strong></a></li>
+                        </ul>
+                    </div>
+                    <div class="company">
+                        <h2>KP보험서비스</h2>
+                        <div class="cs">
+                            <a href="tel:1644-9381" class="tel"><strong>1644-9381</strong></a>
+                            <span>평일 09:30 ~ 18:00 (공휴일 휴무)</span><br>
+                            <span>Email : <a href="mailto:help@inbyu.com">help@inbyu.com</a><i class="pipe"></i>FAX : 02-6016-9875</span>
+                        </div>
+                        <div class="information">
+                            <div class="details">
+                                <span>대표이사 : 김영웅</span><i class="pipe"></i>
+                                <span>서울특별시 영등포구 국제금융로 10, 44층 (여의도동, 쓰리아이에프씨)</span><br>
+                                <span>보험대리점 : KP보험서비스 주식회사</span><i class="pipe"></i>
+                                <span>대리점등록번호 : 제2018090030호</span><br>
+                                <span>사업자등록번호 : 603-88-00976</span><i class="pipe"></i>
+                                <span>통신판매업 신고 : 제2018-서울영등포-0306호</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">Copyright © KP Insurance Service Co.,Ltd All Rights Reserved</div>
+                </div>
+            </footer><!-- // footer -->
+
+
+            <!-- <footer class="footer" id="footer">
+                <div class="inner">
+                    <h2><img src="../resources/img/h2_logo_inbyu.png"
+                            srcset="../resources/img/h2_logo_inbyu.png,
+                            ../resources/img/h2_logo_inbyu_2x.png 2x"
+                            alt="INBYU kakao company"></h2>
+                    <ul>
+                        <li><span>인바이유 주식회사</span><span>대리점번호 : 제201890030호</span></li>
+                        <li><span>© kakaopay corp.</span><span>© Inbyu INC</span></li>
+                    </ul>
+                </div>
+            </footer> -->
+        </div>
+
+        <section class="layer full layer-document" id="layerDocument">
+            <div class="container">
+                <div class="head with-btn">
+                    <h2>어떤 서류가 필요한가요?</h2>
+                    <a href="javascript:;" class="btn btn-close e-close"></a>
+                </div>
+                <div class="contents terms">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:50%;">
+                                <col style="width:50%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">유형</th>
+                                    <th scope="col">필요서류</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>기본 공통 서류
+                                        (통원)</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진료비 영수증</li>
+                                            <li>약제비 영수증</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>입원</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                            <li>진단 사실 확인 서류</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>진단금</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                            <li>진단 사실 확인 서류</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>수술</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서 또는<br>입퇴원 확인서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>응급</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서 또는<br>119구급구조증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>골절</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>재해사고</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>사고입증서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>신생아 입원</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>출생증명서 또는<br>가족관계증명서</li>
+                                            <li>진단서</li>
+                                            <li>입퇴원 확인서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>유산/사산</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>(유산) 진단서</li>
+                                            <li>(사산) 사산증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>자녀 보험 청구</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>가족관계증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-info point">* 보험사에서 추가 서류를 개별 요청할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+        <script src="../resources/js/lib/parallax.js"></script>
+        <script src="../resources/js/event.js"></script>
+        <!-- ui관련 js -->
+        <script>
+            $( document ).ready( function(){
+
+            });
+        </script>
+    </body>
+</html>

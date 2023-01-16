@@ -1,0 +1,309 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header with nav button -->
+    <div data-include-path="./include/header_nav.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">회원정보</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-form"><!-- section-form -->
+                    <div class="wrap">
+                        <h4 class="title">회사 기본 정보</h4>
+
+                        <p class="notice">
+                            사업자정보가 변경되신 경우 <a href="mailto:kfb@inbyu.com" class="info" title="메일 보내기">kfb@inbyu.com</a>으로 변경된 사업자등록증과 변경 사유를 보내주세요.
+                        </p>
+
+                        <div class="form">
+                            <div class="item">
+                                <p class="subject">아이디</p>
+                                <div class="grid">
+                                    <div class="col col-3-5">
+                                        <div class="module">
+                                            <input type="text" class="text" value="abc123" />
+                                        </div>
+                                    </div>
+                                    <div class="col col-2-5">
+                                        <div class="module">
+                                            <a href="#modalPw" class="js-modal button full small info"><span>비밀번호 변경</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="notice info">
+                                    아이디는 변경할 수 없습니다.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <p class="subject">회사명(상호)</p>
+                                <input type="text" class="text" value="새싹유치원" />
+                            </div>
+                            <div class="item">
+                                <p class="subject">사업자등록번호</p>
+                                <input type="text" class="text" placeholder="숫자만 입력해주세요." />
+                            </div>
+                            <div class="item">
+                                <p class="subject">사업자등록증</p>
+                                <div class="photo-list in" style="margin-top: 10px;"><!-- 이미지 등록시 in 클래스 제거 -->
+                                    <div class="item">
+                                        <a href="javascript:;"><i class="icon direct"></i><span>직접 사진 촬영</span></a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><i class="icon gallery"></i><span>앨범 사진 선택</span></a>
+                                    </div>
+                                </div>
+
+                                <div class="thumb in"><!-- 이미지 등록시 in 클래스 추가 -->
+                                    <div class="obj"><img src="../resources/img/temp/@bill.png" alt="" /></div>
+                                    <a href="javascript" class="js-thumb-delete"><i class="icon delete"><em>사업자 등록증 이미지 삭제</em></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="container section-form is-top-line"><!-- section-form -->
+                    <div class="wrap">
+                        <h4 class="title">담당자 기본정보</h4>
+
+                        <div class="form">
+                            <div class="item">
+                                <p class="subject">담당자 성명</p>
+                                <input type="text" class="text" value="이영석" />
+                            </div>
+                            <div class="item">
+                                <p class="subject">담당자 이메일</p>
+                                <input type="text" class="text" value="yungseok.lee@inbyu.com" />
+                            </div>
+                            <div class="item">
+                                <p class="subject">담당자 휴대폰번호</p>
+                                <input type="text" class="text" value="0101234567" />
+                            </div>
+                        </div>
+
+                        <div class="utill">
+                            <a href="#modalWithdrawal" class="js-modal link-has-line light"><span>회원 탈퇴</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <div class="grid">
+                    <div class="col col-1-2">
+                        <a href="javascript:;" class="button large secondary"><span>로그아웃</span></a>
+                    </div>
+                    <div class="col col-1-2">
+                        <a href="javascript:;" class="button large primary"><span>회원정보 수정</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<!-- include: nav -->
+<div data-include-path="./include/nav.html"></div>
+
+<div id="modalPw" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+
+                <div class="container modal-title"><!--  modal-title -->
+                    <div class="wrap">
+                        <h3 class="title">아이디 확인</h3>
+                    </div>
+                </div><!-- // modal-title -->
+
+                <div class="container section-form" style="margin-top: 5px;"><!-- section-form -->
+                    <div class="wrap">
+                        <div class="form">
+                            <div class="item">
+                                <p class="subject">기존 비밀번호</p>
+                                <input type="password" class="text" placeholder="기존 비밀번호 입력" />
+                            </div>
+                            <div class="item">
+                                <p class="subject">변경 비밀번호</p>
+                                <input type="password" class="text" placeholder="변경할 비밀번호 입력" />
+                            </div>
+                            <div class="item">
+                                <p class="subject">변경 비밀번호 확인</p>
+                                <input type="password" class="text" placeholder="변경할 비밀번호 확인" />
+                            </div>
+                        </div>
+
+                        <p class="notice">
+                            8자 이상 16자 미만
+                        </p>
+                        <p class="notice info">
+                            영문, 숫자, 특수문자(!,@,#,$,%,^,&,*,_,!) 포함
+                        </p>
+                    </div>
+                </div><!-- // section-form -->
+
+            </div>
+            <div class="md-modal-foot">
+                <!-- <a href="javascript:;" class="js-modal-close button primary full large"><span>비밀번호 변경</span></a> -->
+                <a href="javascript:;" class="js-modal-close button disabled full large"><span>비밀번호 변경</span></a>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<!-- modal: 회원 탈퇴
+<div id="modalWithdrawal" class="modal-container">
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+
+                <div class="container modal-title">
+                    <div class="wrap">
+                        <h3 class="title">회원 탈퇴</h3>
+                    </div>
+                </div>
+
+                <div class="container modal-withdrawal-core">
+                    <div class="wrap">
+                        <span class="info">이용해 주셔서 감사합니다.</span><br />
+                        탈퇴 사유와 더불어 <br />
+                        아래 유의사항을 확인해주세요
+                    </div>
+                </div>
+
+                <div class="container modal-withdrawal-desc section-form is-top-line">
+                    <div class="wrap">
+                        <div class="form">
+                            <div class="item">
+                                <p class="subject">탈퇴 사유</p>
+                                <select class="select" required>
+                                    <option value="">탈퇴 사유 선택</option>
+                                    <option value="1">업무 담당자 변경</option>
+                                    <option value="2">기업보험 서비스 불필요</option>
+                                    <option value="3">서비스 품질 불만</option>
+                                    <option value="4">직접 입력</option>
+                                </select>
+                                <div class="input-wrap">
+                                    <input type="text" class="text" placeholder="탈퇴 사유를 입력해주세요" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="subject">탈퇴 전 유의사항 </p>
+                                <ul class="list list-a">
+                                    <li>탈퇴하시면 아이디는 복구할 수 없습니다.</li>
+                                    <li>탈퇴 시 등록한 게시물, 비교견적, 가입내역은 삭제되지 않습니다.</li>
+                                    <li>탈퇴 회원에  대한 정보 보호를 위한 개인정보 및 기업정보, 청약 정보 등은 탈퇴일로 부터 3년 동안 보관됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="yes">
+                            <div class="checks">
+                                <input type="checkbox" id="yes" />
+                                <label for="yes">유의사항을 모두 확인했으며, 이에 동의합니다.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="md-modal-foot">
+                <div class="grid">
+                    <div class="col col-1-2">
+                        <a href="javascript:;" class="js-modal-close button secondary full large"><span>취소</span></a>
+                    </div>
+                    <div class="col col-1-2">
+                        <a href="javascript:;" class="button light full large"><span>회원 탈퇴</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 탈퇴사유
+    // $document.on('change', '.modal-withdrawal-desc select', function(e){
+    //     e.preventDefault();
+
+    //     var $this = $(this),
+    //         $target = $('.input-wrap');
+
+    //     if ($this.val() === '4') {
+    //         $target.addClass('in');
+    //     } else {
+    //         $target.removeClass('in');
+    //     }
+    // });
+
+});
+</script>
+
+<!-- include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+//* class ================================================================== */
+.set-img-retina (@file-1x; @file-2x; @width-1x; @height-1x) { // retina 이미지 처리, 보강 필요
+    background-image: url("@{file-1x}");
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+}
+
+//* less ================================================================== */
+
+/* 컨텐트 하단 여백 */
+.bottom-spacer {
+    clear: both;
+    margin-top: 120px;
+    margin-bottom: -1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    .wrap {
+        position: relative;
+    }
+    h2 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 500;
+        color: @secondary;
+        line-height: 1.29;
+    }
+    p {
+        margin: 5px 0 0;
+        color: @info;
+    }
+    .tab {
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translate(0, -50%);
+    }
+    .text-center {
+        p {
+            margin: 20px 0 0;
+            font-size: 20px;
+        }
+    }
+}
+
+.tab-content {
+    .item {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+.authentic {
+    display: none;
+    margin-top: 30px;
+    width: 400px;
+    p {
+        margin: 0 0 10px 0 !important;
+        font-size: 13px;
+        line-height: 1.46;
+    }
+    .holder {
+        position: relative;
+    }
+    .text {
+        width: 170px;
+    }
+    .buttons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        a {
+            margin-left: 7px;
+            padding: 0 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    .time {
+        position: absolute;
+        top: 50%;
+        right: 240px;
+        color: @danger;
+        transform: translate(0, -50%);
+    }
+    &.in {
+        display: block;
+    }
+}
+
+.section-form {
+    margin-top: 80px;
+    .title {
+        position: relative;
+        margin-bottom: 20px;
+        h3 {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.42;
+            color: #0e1012;
+            font-weight: 400;
+            line-height: 1.42;
+            span.vertical-middle {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 7px;
+            }
+        }
+        .desc {
+            margin: 10px 0 0;
+            font-size: 16px;
+            line-height: 1.63;
+            color: @info;
+        }
+        .utill {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 16px;
+        }
+    }
+    .no-result {
+        margin-top: 20px;
+        padding: 40px 0;
+        font-size: 16px;
+        text-align: center;
+        border-top: 2px #212529 solid;
+        border-bottom: 1px #ced4da solid;
+    }
+    .action {
+        margin-top: 30px;
+        text-align: right;
+        .button {
+            margin-left: 7px;
+            min-width: 200px;
+        }
+    }
+}
+.section-process + .section-form {
+    margin-top: 0;
+}
+
+.js-tooltip {
+    display: inline-block;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    // margin-top: 6px;
+    width: 300px;
+    color: #636b73;
+    font-size: 13px;
+    line-height: 1.46;
+    border-radius: 2px;
+    border: solid 1px #0070cc;
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translate(-50%, 30px);
+    transition: all .4s;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+    	bottom: 100%;
+    	left: 50%;
+    	height: 0;
+    	width: 0;
+    	pointer-events: none;
+    	border: solid transparent;
+    }
+    &::after {
+        margin-left: -8px;
+    	border-color: rgba(255, 255, 255, 0);
+    	border-bottom-color: #fff;
+    	border-width: 8px;
+    }
+    &::before {
+        margin-left: -9px;
+    	border-color: rgba(0, 112, 204, 0);
+    	border-bottom-color: #0070cc;
+    	border-width: 9px;
+    }
+    .module {
+        position: relative;
+        z-index: 1;
+        padding: 20px !important;
+        margin: 0 !important;
+        background-color: #fff;
+    }
+    .title {
+        margin: 20px 0 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: @primary-text;
+        &:first-child {
+            margin-top: 0;
+        }
+        & + p {
+            margin: 0;
+        }
+    }
+    &.in {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.utill-download {
+    position: relative;
+    margin: 10px 0 0;
+    text-align: right;
+    .md-modal & {
+        margin: 40px 0 0;
+    }
+}
+
+// margin
+.mt-80 {
+    margin-top: 80px;
+}
+
+// 인바이유몰 공통
+.common-kpinsu { 
+    &.footer {
+        padding-bottom: 24px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 86px;
+            // max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            overflow: hidden;
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.8;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+                text-align: left;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                float: right;
+                margin-top: -22px;
+                width: 270px;
+                text-align: right;
+            }
+            .information {
+                float: left;
+                width: calc(100% - 270px);
+            }
+            .details {
+                margin-top: 10px;
+                text-align: left;
+                span {
+                    & + span {
+                        &::before {
+                            content: "";
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #808992;
+            text-align: left;
+        }
+    }
+}

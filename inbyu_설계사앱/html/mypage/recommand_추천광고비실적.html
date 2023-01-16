@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <!-- 이 페이지는 모바일기기의 상태바의 컬러가 #ffeb00 이어야 합니다.(로건과 이야기는 되어있어요.) -->
+        <div class="wrap page-ad_perfomance" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <div class="module-tab type-solid">
+                    <div class="tab">
+                        <ul>
+                            <li class="on"><a href="javascript:;">추천광고수익실적</a></li>
+                            <li><a href="javascript:;">정산내역</a></li>
+                        </ul>
+                        <span class="tab-point"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <div class="section-ad_total">
+                    <h1 class="blind">추천광고수익실적</h1>
+                    <a href="javascript:;" class="period" id="chooseMonth"><span>2021년 1월 1일 ~ 1월 31일</span> <i class="icon arrow-down-16"></i></a>
+                    <strong class="price">5,472,530원</strong>
+                    <!-- ** 상태값 노출 뱃지
+                        내역없음: <em class="badge success">내역없음</em>
+                        계좌 미등록: 
+                                <div class="module-tooltip show">
+                                    <em class="badge error">계좌 미등록</em>
+                                    <div class="content bottom">
+                                        <p>정산금액을 입금받기 위해선<br>마이페이지에서 정산계좌를<br>정확히 등록해 주세요.</p>
+                                        <button type="button" class="btn-icon close wh-16 e-tooltip"></button>
+                                    </div>
+                                </div>
+                        정산금액 집계중:
+                                <div class="module-tooltip show">
+                                    <em class="badge proceeding">정산금액 집계중</em>
+                                    <div class="content bottom">
+                                        <p>이번 달 입금받으실 정산금액은<br>25일부터 확인하실 수 있어요.</p>
+                                        <button type="button" class="btn-icon close wh-16 e-tooltip"></button>
+                                    </div>
+                                </div>
+                        입금대기: 
+                                <div class="module-tooltip show">
+                                    <em class="badge proceeding">입금대기</em>
+                                    <div class="content bottom">
+                                        <p>위 금액은 이번달 말일에<br>입금될 예정입니다.</p>
+                                        <button type="button" class="btn-icon close wh-16 e-tooltip"></button>
+                                    </div>
+                                </div>
+                        입금완료: <em class="badge success">입금완료</em>
+                     -->
+                    <!-- 계좌 미등록 시 -->
+                    <div class="module-tooltip show">
+                        <em class="badge error">계좌 미등록</em>
+                        <div class="content bottom">
+                            <p>정산금액을 입금받기 위해선<br>마이페이지에서 정산계좌를<br>정확히 등록해 주세요.</p>
+                            <button type="button" class="btn-icon close wh-16 e-tooltip"></button>
+                        </div>
+                    </div><!-- //계좌 미등록 시 -->
+                </div>
+                <div class="contents" id="contents">
+                    <div class="inner-scroll">
+                        <!-- data 없을 경우 -->
+                        <div class="section-empty income">
+                            <i class="icon no-balance"></i>
+                            <p>이런... 위 기간에 추천코드로 발생한<br>광고수익이 없어요.<br>설계사님의 추천코드를 공유하고<br>수익을 만들어보세요.</p>
+                            <div class="area-button">
+                                <a href="javascript:;" class="btn btn-primary">추천코드 공유하기</a>
+                            </div>
+                        </div>
+                        <!-- data 있을 경우 -->
+                        <section>
+                            <h2 class="section-title">상품별 추천 광고수익 실적</h2>
+                            <div class="list">
+                                <!-- 
+                                    (logo)
+                                    ABL생명 : abl
+                                    NH농협생명 : nhlife
+                                    KDB생명 : kdb
+                                    DB생명 : dblife
+                                    한화생명 : hanhwalife
+                                    흥국생명 : heungkuk
+                                    KB생명 : kblife
+                                    DGB생명 : dgblife
+                                    동양생명 : dongyanglife
+                                    교보생명 : kyobo
+                                    미래에셋생명 : miraeasset
+                                    처브라이프 : chubblife
+                                    라이나생명 : lina
+                                    삼성생명 : samsunglife
+                                    신한생명 : shinhan
+                                    푸르덴셜생명 : prudential
+                                    메트라이프생명 : metlife
+                                    BNP파리바카디프생명 : bnp
+                                    오렌지라이프생명 : orangelife
+                                    AIA생명 : aia
+                                    IBK생명 : ibklife
+                                    푸본생명보험 : fubon
+                                    교보라이프플래닛보험 : kyobolifeplanet
+
+                                    삼성화재 : samsung
+                                    KB손해 : kbinsure
+                                    흥국화재 : heungkukfire
+                                    현대해상 : hyundai
+                                    한화손보 : hanwha
+                                    메리츠화재 : meritz
+                                    DB손보 : directdb
+                                    롯데손보 : lotte
+                                    농협손해 : nh
+                                    에이스보험 : chubb
+                                    MG손해 : mg
+                                    하나손보 : hana
+                                    AIG손해보험 : aig
+                                    AXA손해보험 : axa
+
+                                    우정사업본부(우체국) : epost
+                                 -->
+                                <!-- one -->
+                                <a href="#layerAdDetail" class="module-perfomance e-layer">
+                                    <dl>
+                                        <dt><i class="icon insu-company hanhwalife" title="한화생명"></i></dt>
+                                        <dd>
+                                            <strong class="name">다이렉트 자동차보험<br>(자동차보험료 가격비교)</strong>
+                                            <div class="total">
+                                                <span class="cases">소계<em>총 77건</em></span>
+                                                <strong class="price">5,120,000원</strong>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a><!-- //one -->
+                                <a href="#layerAdDetail" class="module-perfomance e-layer">
+                                    <dl>
+                                        <dt><i class="icon insu-company chubb" title="에이스보험"></i></dt>
+                                        <dd>
+                                            <strong class="name">특장차 운전자 안심서비스</strong>
+                                            <div class="total">
+                                                <span class="cases">소계<em>총 1건</em></span>
+                                                <strong class="price">51,030원</strong>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- layer: 추천 광고수익 실적 상세 -->
+        <section class="layer full layer-ad-detail" id="layerAdDetail">
+            <div class="container">
+                <div class="head-button">
+                    <a href="javascript:;" class="btn-icon close e-close"></a>
+                </div>
+                <div class="content p-reset">
+                    <header class="head-title fixed">
+                        <h2>추천 광고수익 실적 상세</h2>
+                    </header>
+                    <div> 
+                        <dl class="module-perfomance">
+                            <dt><img src="../../resources/img/@logo_insu_inbyu.png" alt="INBYU"></dt>
+                            <dd>
+                                <h3 class="name">다이렉트 자동차보험<br>(자동차보험료 가격비교)</h3>
+                            </dd>
+                        </dl>
+                        <section class="details">
+                            <h4 class="period">2021년 02월(01.01~01.31)</h4>
+                            <strong class="total-price">5,120,000원</strong>
+                            <div class="table-status mt-m">소계<em>총 77건</em></div>
+                            <div class="module-table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 35%">
+                                        <col style="width: 25%">
+                                        <col style="width: 40%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">거래일자</th>
+                                            <th scope="col">고객명</th>
+                                            <th scope="col" class="align-right">추천 광고수익</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2021.01.31</td>
+                                            <td>홍*동</td>
+                                            <td class="align-right">
+                                                <div class="income"><em>20,000원</em><span>정상</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021.01.28</td>
+                                            <td>홍*동</td>
+                                            <td class="align-right">
+                                                <div class="income text-error"><em>-120,000원</em><span>취소</span><!-- 취소 시 text-error 추가 -->
+                                            </td>
+                                        </tr>
+                                        <!-- 더보기 클릭 시 tr 추가 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-m">
+                                <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/lib/mobileSelect.min.js"></script>
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 년/월 선택(참고: https://github.com/onlyhom/mobile-select)
+                var yearArr = ['2020', '2021'];
+                var monthArr = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+                var mobileSelect = new MobileSelect({
+                    trigger: '#chooseMonth',
+                    wheels: [{ data: yearArr }, { data: monthArr }],
+                    position: [1, 2],   // open 시 위치 설정
+                    transitionEnd: function (indexArr, data) {
+                        
+                    },
+                    callback: function (indexArr, data) {
+                        let firstDay = new Date(data[0], (data[1] - 1), 1);
+                        let lastDay = new Date(data[0], data[1], 0);
+                        let period;
+
+                        period = data[0] + "년 " + data[1] + "월 " + firstDay.getDate() + "일 ~ " + data[1] + "월 " + lastDay.getDate() + "일"
+
+                        $('#chooseMonth span').text(period);
+                    },
+                });
+
+            });
+
+            // tab decoration: 페이지 로딩 시 필수 추가
+            $(window).on('load', function(e) {
+                let tabWraps = $('.module-tab');
+
+                $.each(tabWraps, function(index, tabWrap) {
+                    let tabs = $(tabWrap).find('.tab a');
+
+                    $.each(tabs, function(index, tab) {
+                        if($(tab).closest('li').hasClass('on')) {
+                            let tabItemWidth = $(tab).width(),
+                                tabItemPositionLeft = $(tab).closest('li').position().left;
+
+                            tabDeco(tabWrap, tabItemWidth, tabItemPositionLeft);
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

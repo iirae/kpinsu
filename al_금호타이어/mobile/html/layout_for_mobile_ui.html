@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="wrap" id="wrap">
+            <header class="header" id="header">
+                <h1><img src="../resources/img/logo.svg" alt="금호타이어"></h1>
+            </header>
+            <div class="container" id="container">
+                <h2 class="page-title">page-title</h2>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <section class="section">
+                            <h3 class="section-title">section-title</h3>
+                        </section>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <label for="checkbox">checkbox</label>
+                        </div>
+                        <div class="form-checkbox all">
+                            <input type="checkbox" id="checkboxAll">
+                            <label for="checkboxAll">all checkbox</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio" name="name">
+                            <label for="radio">radio</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio2" name="name">
+                            <label for="radio2">radio2</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio3" name="name" checked readonly>
+                            <label for="radio3">radio2</label>
+                        </div>
+                        <div>
+                            <input type="text" value="value">
+                            <input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="앞 6자리">
+                            <input type="text" readonly value="value">
+                        </div>
+                        <div class="form-group">
+                            <strong class="form-label">차종</strong>
+                            <input type="text" placeholder="차종 입력">
+                        </div>
+                        <div class="form-group type-unit">
+                            <strong class="form-label">주행거리(교체 시)</strong>
+                            <input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="주행거리 입력">
+                            <span class="unit">Km</span>
+                        </div>
+                        <div>
+                            <label for="select" class="form-select">
+                                <select name="" id="select">
+                                    <option value="">option</option>
+                                    <option value="">option</option>
+                                    <option value="">option</option>
+                                    <option value="">option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <footer class="footer fixed">
+                    <a href="javascript:;" class="btn btn-normal">fixed button</a>
+                </footer>
+            </div>
+
+            <div class="area-button">
+                <a href="#layerBottom" class="btn btn-secondary col-1 e-layer">Bottom</a>
+                <a href="#layerCenter" class="btn btn-primary col-2 e-layer">Center</a>
+            </div>
+            <div class="area-button">
+                <a href="#layerFull" class="btn btn-normal e-layer">Full</a>
+            </div>
+        </div>
+
+        <!-- center  -->
+        <div class="layer center" id="layerCenter">
+            <div class="container">
+                <div class="content">
+                    <p>사고접수 서비스를 종료하시겠습니까?</p>
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn btn-normal e-close">취소</button>
+                    <button type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom  -->
+        <div class="layer bottom" id="layerBottom">
+            <div class="container">
+                <div class="content">
+                    <p>사고접수 서비스를 종료하시겠습니까?</p>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-normal e-close">취소</button>
+                    <button type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full -->
+        <section class="layer full" id="layerFull">
+            <div class="container">
+                <div class="head-button">
+                    <a href="javascript:;" class="btn btn-close e-close"></a>
+                </div>
+                <div class="contents terms">
+                    <h2>head</h2>
+                    <pre>
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+                    </pre>
+                </div>
+                <footer class="footer">
+                    <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                </footer>
+            </div>
+        </section>
+
+        <!-- ui관련 js -->
+        <script src="../resources/js/event.js"></script>
+    </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">서비스 개선제안</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents p-0" id="contents">
+                    
+                    <div class="section-banner divide-top">
+                        <img src="../../resources/img/@img_banner_suggestion.png" alt="개선제안하고 리워드 받아가세요!">
+                    </div>
+
+                    <div class="module-tab fix section-suggestion e-tab">
+                        <div class="tab divide-top">
+                            <ul>
+                                <li class="on"><a href="#write">개선 제안하기</a></li>
+                                <li><a href="#list">제안 내역 확인</a></li>
+                            </ul>
+                            <span class="tab-point"></span>
+                        </div>
+
+                        <!-- 개선 제안하기 -->
+                        <div class="tab-content on" id="write">
+                            <h2 class="blind">개선 제안하기</h2>
+                            <div class="form-group board">
+                                <div class="head">
+                                    <strong class="input-label">제안 내용</strong>
+                                    <span class="sub">* 필수입력사항</span>
+                                </div>
+                                <div class="matter">
+                                    <span class="f-text">
+                                        <input type="text" placeholder="제목을 입력해 주세요(20자 내외)">
+                                    </span>
+                                    <div class="f-textarea">
+                                        <textarea name="" id="" cols="40" rows="5" placeholder="정확한 답변을 위해 문의내용을 자세히 입력해 주세요(1000자 내외)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file-wrap">
+                                <!-- 첨부 파일이 없을 경우 -->
+                                <div class="empty">
+                                    <input type="file" id="file" class="blind"><label for="file"><i class="icon camera"></i>첨부파일이 없습니다.<br>해당 영역을 터치한 후 이미지를 첨부해 주세요.</label>
+                                </div>
+                                <!-- 첨부 파일이 있을 경우 -->
+                                <div class="has">
+                                    <ul class="list-file">
+                                        <!-- 이미지 첨부시 -->
+                                        <li class="form-file">
+                                            <span class="inner attached"><!-- 파일 추가 시 attached class 추가 -->
+                                                <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                <a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"></a>
+                                            </span>
+                                        </li><!-- // 이미지 첨부시 -->
+                                        <li class="form-file">
+                                            <span class="inner">
+                                                <input type="file" id="file3" class="blind">
+                                                <label for="file3"><span class="blind">첨부하기</span></label>
+                                            </span>
+                                        </li>
+                                        <li class="form-file">
+                                            <span class="inner">
+                                                <input type="file" id="file3" class="blind">
+                                                <label for="file3"><span class="blind">첨부하기</span></label>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <ul class="text-info mt-s">
+                                <li>* <em class="text-em">50MB 이하</em>까지 첨부 가능합니다. <span class="sub right">(<em>27</em>/50MB)</span></li>
+                                <!-- 
+                                    <span class="sub right">(0/50MB)</span>
+                                    <span class="sub right">(<em>27</em>/50MB)</span>  0 이상 일 경우에 em 안에 값 넣기
+                                    <span class="sub right">(<em class="text-error">57</em>/50MB)</span>  50 이상 일 경우에 em 에 class text-error 넣기
+                                 -->
+                                <li>* 이미지파일(JPG, PNG, GIF) 최대 3장 등록 가능합니다.</li>
+                            </ul>
+
+                            <div class="area-button fixed">
+                                <a href="javascript:;" class="btn btn-primary disabled">등록</a>
+                            </div>
+                        </div>
+
+                        <!-- 제안 내역 확인 -->
+                        <div class="tab-content list" id="list">
+                            <h2 class="blind">제안 내역 확인</h2>
+                            <div class="status"><strong>전체</strong><span>총 4건</span></div>
+
+                            <!-- data 없을 경우 -->
+                            <div class="section-empty inquiry">
+                                <i class="icon empty-mailbox"></i>
+                                <p>제안내역이 없습니다.</p>
+                            </div>
+
+                            <!-- data 있을 경우 -->
+                            <div class="module-accordion section-board">
+                                <!-- 반복 -->
+                                <article class="accordion divide">
+                                    <header class="sub-head e-accordion">
+                                        <em class="badge danger">접수</em>
+                                        <h3 class="title">회원가입에서 자꾸 오류나는데 짜증나요. 빨리 해결 좀 해주세요.</h3>
+                                        <time datetime="2021-05-22">2021.05.22 23:00:11</time>
+                                        <i class="icon arrow-down-16 gray"></i>
+                                    </header>
+                                    <div class="collapse">
+                                        <div>
+                                            <div class="content">
+                                                <p>어쩌고 저쩌고 블라블라</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article><!-- //반복 -->
+                                <article class="accordion divide">
+                                    <header class="sub-head e-accordion">
+                                        <em class="badge good">완료</em>
+                                        <h3 class="title">회원가입에서 자꾸 오류나는데 짜증나요. 빨리 해결 좀 해주세요.</h3>
+                                        <time datetime="2021-05-22">2021.05.22 23:00:11</time>
+                                        <i class="icon arrow-down-16 gray"></i>
+                                    </header>
+                                    <div class="collapse">
+                                        <div>
+                                            <div class="content">
+                                                <p>어쩌고 저쩌고 블라블라</p>
+                                            </div>
+                                            <div class="answer">
+                                                <div class="sub">[답변] <time datetime="2021-05-22">2021.05.22 23:00:11</time></div>
+                                                <div>
+                                                    <p>어쩌고 저쩌고 블라블라</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="accordion divide">
+                                    <header class="sub-head e-accordion">
+                                        <em class="badge good">완료</em>
+                                        <h3 class="title">회원가입에서 자꾸 오류나는데 짜증나요. 빨리 해결 좀 해주세요.</h3>
+                                        <time datetime="2021-05-22">2021.05.22 23:00:11</time>
+                                        <i class="icon arrow-down-16 gray"></i>
+                                    </header>
+                                    <div class="collapse">
+                                        <div>
+                                            <div class="content">
+                                                <p>어쩌고 저쩌고 블라블라</p>
+                                                <ul class="list-file">
+                                                    <!-- 이미지 첨부시 -->
+                                                    <li class="form-file">
+                                                        <span class="inner attached">
+                                                            <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                        </span>
+                                                    </li><!-- // 이미지 첨부시 -->
+                                                    <li class="form-file">
+                                                        <span class="inner attached">
+                                                            <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                        </span>
+                                                    </li>
+                                                    <li class="form-file">
+                                                        <span class="inner attached">
+                                                            <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="answer">
+                                                <div class="sub">[답변] <time datetime="2021-05-22">2021.05.22 23:00:11</time></div>
+                                                <div>
+                                                    <p>어쩌고 저쩌고 블라블라</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 문의 유형 선택 -->
+        <section class="layer bottom layer-inquiry_type" id="layerInquiryType">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-headline-6">문의 유형을 선택해 주세요.</h2>
+                    </header>
+                    <div class="content">
+                        <ul class="list-radio">
+                            <li><input type="radio" id="member" name="typeofInquiry"><label for="member">회원 정보</label></li>
+                            <li><input type="radio" id="analysis" name="typeofInquiry"><label for="analysis">보장분석</label></li>
+                            <li><input type="radio" id="market" name="typeofInquiry"><label for="market">보험마켓</label></li>
+                            <li><input type="radio" id="compare" name="typeofInquiry"><label for="compare">비교설명</label></li>
+                            <li><input type="radio" id="ad" name="typeofInquiry"><label for="ad">광고수익 정산</label></li>
+                            <li><input type="radio" id="etc" name="typeofInquiry"><label for="etc">기타(일반 문의)</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 문의 유형 선택 -->
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 문의 유형
+                $body.on('click', 'input[name="typeofInquiry"]', function(){
+                    const $this = $(this),
+                          $input = $('#inquiryType'),
+                          $findParentLayer = $(this).closest('.layer');
+                    let checkedMailVal = $this.siblings('label').text();
+
+                    $input.val(checkedMailVal);
+
+                    closeLayer($findParentLayer);
+                });
+            });
+            
+            // tab decoration: 페이지 로딩 시 필수 추가
+            $(window).on('load', function(e) {
+                let tabWraps = $('.module-tab');
+
+                $.each(tabWraps, function(index, tabWrap) {
+                    let tabs = $(tabWrap).find('.tab a');
+
+                    $.each(tabs, function(index, tab) {
+                        if($(tab).closest('li').hasClass('on')) {
+                            let tabItemWidth = $(tab).width(),
+                                tabItemPositionLeft = $(tab).closest('li').position().left + $(tab).scrollLeft();
+
+                            tabDeco(tabWrap, tabItemWidth, tabItemPositionLeft);
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

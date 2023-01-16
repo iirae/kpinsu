@@ -1,0 +1,186 @@
+@table-line-height: 1.4;
+
+table {
+    &.table-col,
+    &.table-row {
+        width: 100%;
+        th, td {
+            line-height: @table-line-height;
+        }
+        th {
+            vertical-align: top;
+            label, span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+        }
+    }
+    &.table-row {
+        th, td {
+            text-align: left;
+        }
+        th {
+            vertical-align: middle;
+            label, span {
+                display: inline-block;
+            }
+        }
+    }
+    &.table-col {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-center {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-left {
+        th, td {
+            text-align: left;
+        }
+    }
+}
+
+table {
+    &.table-a {
+        border-top: 1px #ced4da solid;
+        th,
+        td {
+            padding: 10px 8px;
+            font-sizE: 12px;
+            border-left: 1px #ced4da solid;
+            border-bottom: 1px #ced4da solid;
+            &:first-child {
+                border-left: 0;
+            }
+            &.has-line {
+                border-left: 1px #ced4da solid;
+            }
+            &.none-line {
+                border-left: 0;
+            }
+            &.text-center {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        thead {
+            th {
+                color: #212529;
+                background-color: #f1f3f5;
+                vertical-align: middle;
+            }
+        }
+        tbody {
+            td {
+                color: #444b52;
+            }
+            th {
+                font-weight: 400;
+                color: #212529;
+            }
+        }
+        tfoot {
+            th,
+            td {
+                color: #0070cc;
+                background-color: #f1f3f5;
+            }
+        }
+        p {
+            margin: 10px 0 0;
+            &:first-child {
+                margin: 0;
+            }
+        }
+        &.table-col {
+            tbody {
+                th,
+                td {
+                    text-align: left;
+                    vertical-align: middle;
+                }
+            }
+        }
+        &.table-row {
+            th {
+                padding-left: 15px;
+                color: #212529;
+                background-color: #f1f3f5;
+            }
+            td {
+                text-align: left;
+            }
+        }
+        .is-dark & {
+            border-color: #595959;
+            th,
+            td {
+                border-color: #595959;
+            }
+            thead {
+                th {
+                    color: #cfcfcf;
+                    background-color: #000;
+                    vertical-align: middle;
+                }
+            }
+            tbody {
+                td {
+                    color: #b8b8b8;
+                }
+                th {
+                    color: #cfcfcf;
+                }
+            }
+            tfoot {
+                th,
+                td {
+                    background-color: #000;
+                }
+            }
+            &.table-row {
+                th {
+                    color: #cfcfcf;
+                    background-color: #000;
+                }
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            border-color: #595959;
+            th,
+            td {
+                border-color: #595959;
+            }
+            thead {
+                th {
+                    color: #cfcfcf;
+                    background-color: #000;
+                    vertical-align: middle;
+                }
+            }
+            tbody {
+                td {
+                    color: #b8b8b8;
+                }
+                th {
+                    color: #cfcfcf;
+                }
+            }
+            tfoot {
+                th,
+                td {
+                    background-color: #000;
+                }
+            }
+            &.table-row {
+                th {
+                    color: #cfcfcf;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}

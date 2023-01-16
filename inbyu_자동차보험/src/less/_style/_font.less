@@ -1,0 +1,62 @@
+// @import "./font/_font_circularstd.less";
+// @import "./font/_font_itcavantgardepro.less";
+// @import "./font/_font_nanumsquareround.less";
+
+.kor() {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.font-eng() {
+    font-family: 'Montserrat', 'CircularStd', 'Noto Sans KR', sans-serif;
+    .wf-active & {
+        font-family: 'Montserrat', 'CircularStd', 'Noto Sans KR', sans-serif;
+    }
+}
+.eng-dms {
+    font-family: 'DM Serif Display', 'Noto Sans KR', sans-serif;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, input, textarea, select, table, th, td {
+  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
+}
+
+[class^="font"] {
+    visibility: hidden;
+    .wf-active & {
+        visibility: visible;
+    }
+    &.font-eng {
+        // .font-eng();
+        font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    }
+}
+.kor {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.eng {
+    .font-eng();
+}
+.eng-italic {
+    @media (min-width: 1024px) {
+        &,
+        i {
+            font-style: italic;
+        }
+    }
+}
+.font-thin { font-weight: 100; }
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 700; }
+.font-black { font-weight: 900; }
+
+// .font-thin-eng { font-weight: 100; }
+// .font-extralight-eng { font-weight: 200; }
+// .font-light-eng { font-weight: 300; }
+// .font-semibold-eng { font-weight: 600; }
+.font-regular-eng { font-weight: 400; }
+.font-medium-eng { font-weight: 500; }
+.font-book-eng { font-weight: 600; }
+.font-semi-bold-eng { font-weight: 700; }
+.font-bold-eng { font-weight: 700; }
+.font-black-eng { font-weight: 700; }

@@ -1,0 +1,100 @@
+// font
+$default-font-size: 14px;
+
+// color
+$color-primary: #ffeb00;
+$color-primary-600: #ffdb00;
+$color-primary-700: #ffbd00;
+
+$color-bk: #000;
+$color-gray-900: #0e1012;   // text-basic
+$color-gray-800: #212529;   // text-default
+$color-gray-700: #444b52;   // text-sub
+$color-gray-650: #868e96;   // disabled
+$color-gray-600: #9299a1;
+$color-gray-550: #e9ecef;
+$color-gray-500: #ced4da;   // text-hint
+$color-gray-400: #edeef0;
+$color-gray-300: #f5f5f5;
+$color-gray-200: #f8f9fa;
+$color-wh: #fff;
+
+$color-danger: #ff3c3c;
+$color-info: #008dff;
+
+// bg 위치
+$bg_addr: "../img/";
+
+@mixin pseudo($width: 0, $height: 0, $display: inline-block, $position: relative) {
+    content: "";
+    position: $position;
+    display: $display;
+    width: $width;
+    height: $height;
+}
+
+@mixin textStyle($font-size: $default-font-size, $line-height: 1.5, $font-weight: 400) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+// 노치대응
+$safeAreaMap: (
+  'top': (
+    env: env(safe-area-inset-top),
+  ),
+  'right': (
+    env: env(safe-area-inset-right),
+  ),
+  'bottom': (
+    env: env(safe-area-inset-bottom),
+  ),
+  'left': (
+    env: env(safe-area-inset-left),
+  )
+);
+
+$safe-top:map-get($safeAreaMap,"top");
+$safe-right: map-get($safeAreaMap,"right");
+$safe-bottom: map-get($safeAreaMap,"bottom");
+$safe-left: map-get($safeAreaMap,"left");
+
+// * safe(bottom, env, 값);
+// * safe-area-inset 처리
+// * $dir - 방향(all, top, right, bottom, left, 생략가능)
+// * $ios - env, constant
+// * $value - 더해질 값(생략가능)
+// * $percent - height나 width값 계산 시(예 100%)
+@function safe($dir: all, $ios: 'env', $value: 0, $percent: 0) {
+	@if ($dir == all) {
+		@if ($value > 0) {
+			@return calc(#{$value} + #{map-get($safe-top, $ios)}) calc(#{$value} + #{map-get($safe-right, $ios)}) calc(#{$value} + #{map-get($safe-bottom, $ios)}) calc(#{$value} + #{map-get($safe-left, $ios)});
+		}
+		@else if ($value < 0) {
+			@return calc((#{-$value} + #{map-get($safe-top, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-right, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-bottom, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-left, $ios)}) * -1);
+		}
+		@else {
+			@return map-get($safe-top, $ios) map-get($safe-right, $ios) map-get($safe-bottom, $ios) map-get($safe-left, $ios);
+		}
+	}
+	@else {
+        @if ($value > 0) {
+            @if($percent > 0) {
+                @return calc(#{$percent} - #{$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)});
+            } @else {
+                @return calc( #{$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}); 
+            }
+        }
+        @else if ($value < 0) {
+            @if($percent > 0) {
+                @return calc((#{$percent} - #{-$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)}));
+            } @else {
+                @return calc((#{-$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}) * -1);
+            }
+		}
+		@else {
+			@return map-get(map-get($safeAreaMap,$dir), $ios);
+		}
+	}
+}

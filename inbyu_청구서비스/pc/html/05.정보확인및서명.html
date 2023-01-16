@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유 청구서비스" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="인바이유" />
+        <title>인바이유 청구서비스</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+    <div>
+        <div class="wrap" id="wrap">
+            <header class="common-kpinsu header" id="header">
+                <h1 class="head-logo">
+                    <a href="00.index.html">
+                        <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                    </a>
+                </h1>
+            </header>
+            
+            <div class="container" id="container">
+                <header class="area-title">
+                    <h2 class="page-head">정보 확인 및 서명</h2>
+                </header>
+                <div class="contents">
+                    <fieldset>
+                        <section class="section-confirm">
+                            <h2 class="blind">청구인/피보험자 정보</h2>
+                            <section class="block dl-layout">
+                                <h3 class="block-title">보험사</h3>
+                                <!-- 
+                                    * 보험사 icon 클래스
+                                    삼성: samsung
+                                    현대해상: hyundai
+                                    DB: db
+                                    KB: kb
+                                    메리츠: meritz
+                                    한화: hanhwa
+                                    농협: nonghyup
+                                    흥국: heungkuk
+                                    롯데: lotte
+                                    MG: mg
+                                    The-K: thek
+                                    AIG: aig
+                                    AXA: axa
+                                    처브: chubb
+                                    BNP파리바: bnp
+                                    교보: kyobo
+                                    동양: dongyang
+                                    신한: shinhan
+                                    오렌지: orange
+                                    KDB: kdb
+                                    라이나: lina
+                                    교보라이프플래닛: life-planet
+                                    메트라이프: metlife
+                                    미래에셋: mirae
+                                    푸르덴셜: prudential
+                                    푸본현대: fubon
+                                    하나: hana
+                                    ABL: abl
+                                    AIA: aia
+                                    DGB: dgb
+                                    IBK: ibk
+                                    우체국: epost
+                                    교직1라이프: ktculife
+                                    신협: cu
+                                    수협: suhyup
+                                -->
+                                <div class="bundle-insu"><i class="icon insu kb"></i>KB손해보험</div>
+                            </section>
+                            <section class="block">
+                                <h3 class="block-title">청구인</h3>
+                                <ul class="dl-layout">
+                                    <li>
+                                        <span>이름</span>
+                                        <strong>홍길동</strong>
+                                    </li>
+                                    <li>
+                                        <span>전화번호</span>
+                                        <strong>010-1234-5678</strong>
+                                    </li>
+                                    <li>
+                                        <span>주민등록번호</span>
+                                        <strong>990101-*******</strong>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="block">
+                                <h3 class="block-title">피보험자</h3>
+                                <ul class="dl-layout">
+                                    <li>
+                                        <span>이름</span>
+                                        <strong>홍길동</strong>
+                                    </li>
+                                    <li>
+                                        <span>전화번호</span>
+                                        <strong>010-1234-5678</strong>
+                                    </li>
+                                    <li>
+                                        <span>주민등록번호</span>
+                                        <strong>990101-*******</strong>
+                                    </li>
+                                    <li>
+                                        <span>이메일</span>
+                                        <strong>inbyu@inbyu.com</strong>
+                                    </li>
+                                    <li>
+                                        <span>직장명</span>
+                                        <strong>인바이유</strong>
+                                    </li>
+                                    <li>
+                                        <span>직무</span>
+                                        <strong>사무직</strong>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="block dl-layout">
+                                <h3 class="block-title">보험금<br>입금계좌</h3>
+                                <ul>
+                                    <li>인바이유은행</li>
+                                    <li>01234567894567</li>
+                                </ul>
+                            </section>
+                            <div class="area-button">
+                                <a href="javascript:;" class="btn btn-static">청구인/피보험자 정보 수정</a>
+                            </div>
+                        </section>
+
+                        <section class="section-confirm">
+                            <h2 class="blind">질병/상해 정보</h2>
+                            <ul class="dl-layout">
+                                <li>
+                                    <span>청구 유형</span>
+                                    <strong>홍길동</strong>
+                                </li>
+                                <li>
+                                    <span>사고일자</span>
+                                    <strong>010-1234-5678</strong>
+                                </li>
+                                <li>
+                                    <span>병원/약국명</span>
+                                    <strong>인바이유병원</strong>
+                                </li>
+                                <li>
+                                    <span>사고(발병) 경위</span>
+                                    <strong>계단에서 넘어짐</strong>
+                                </li>
+                                <li>
+                                    <span>병명 또는 진단명</span>
+                                    <strong>골절</strong>
+                                </li>
+                            </ul>
+                            <section class="block">
+                                <h3 class="block-title">첨부 서류</h3>
+                                <ul class="list-file">
+                                    <li class="form-file"><span class="inner"><img src="../resources/img/@document.jpg" alt=""></span></li>
+                                    <li class="form-file"><span class="inner"><img src="../resources/img/@document.jpg" alt=""></span></li>
+                                    <li class="form-file"><span class="inner"><img src="../resources/img/@document.jpg" alt=""></span></li>
+                                    <li class="form-file"><span class="inner"><img src="../resources/img/@document.jpg" alt=""></span></li>
+                                </ul>
+                            </section>
+                            <div class="area-button">
+                                <a href="javascript:;" class="btn btn-static">질병/상해 정보 수정</a>
+                            </div>
+                        </section>
+
+                        <section class="section-confirm signature">
+                            <section class="block">
+                                <h2 class="block-title">청구인 서명</h2>
+                                <div class="bundle-sign">
+                                    <div class="sign">
+                                        <div class="inner">
+                                            <!-- 사인이 들어갑니다 -->
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-normal"><span>지우기</span></a>
+                                </div>
+                            </section>
+                            <section class="block">
+                                <h2 class="block-title">피보험자 서명</h2>
+                                <div class="bundle-sign">
+                                    <div class="sign">
+                                        <div class="inner">
+                                            <!-- 사인이 들어갑니다 -->
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-normal"><span>지우기</span></a>
+                                </div>
+                            </section>
+                        </section>
+                    </fieldset>
+                </div>
+                <div class="area-button">
+                    <a href="#layerConfirm" class="btn btn-primary disabled e-layer">다음</a><!-- 버튼 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- confirm  -->
+        <div class="layer center" id="layerDeleteFile">
+            <div class="container">
+                <p>첨부한 파일을 삭제하시겠습니까?</p>
+                <div class="area-button">
+                    <a href="#" class="btn btn-cancel e-close">취소</a>
+                    <button type="button" class="btn btn-static">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 필요 서류 안내 -->
+        <section class="layer full" id="layerDocument">
+            <div class="head-button align-right">
+                <a href="javascript:;" class="btn btn-close e-close"> </a>
+            </div>
+            <div class="container">
+                <div class="contents">
+                    <h2>필요 서류 안내</h2>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 50%">
+                                <col style="width: 50%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">유형</th>
+                                    <th scope="col">필요서류</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>기본 공통 서류<br>(통원)</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진료비 영수증</li>
+                                            <li>약제비 영수증</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>입원</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                            <li>진단 사실 확인 서류</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>진단금</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                            <li>진단 사실 확인 서류</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>수술</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서 또는</li>
+                                            <li>입퇴원 확인서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>응급</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서 또는</li>
+                                            <li>119구급구조증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>골절</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>진단서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>재해사고</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>사고입증서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>신생아 입원</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>출생증명서 또는<br>가족관계증명서</li>
+                                            <li>진단서</li>
+                                            <li>입퇴원 확인서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>유산/사산</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>(유산) 진단서</li>
+                                            <li>(사산) 사산증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>자녀 보험 청구</td>
+                                    <td>
+                                        <ul class="list type-dot">
+                                            <li>가족관계증명서</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-warn">* 보험사에서 추가 서류를 개별 요청할 수 있습니다.</p>
+                </div>
+                <div class="area-button fixed">
+                    <a href="#" class="btn btn-secondary e-close">닫기</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <script src="../resources/js/event.js"></script>
+
+        <!-- 참고: UI 확인용입니다. -->
+        <script>
+            $.datepicker.setDefaults({
+                dateFormat: 'yy-mm-dd',
+            });
+
+            $(document).ready(function(){
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+.button {
+    border: solid 1px #ced4da;
+    background-color: #f8f9fa;
+    &,
+    span {
+        color: #636b73;
+    }
+    &.primary {
+        background-color: @primary;
+        border-color: @primary;
+        &,
+        span {
+            color: @secondary;
+        }
+    }
+    &.secondary {
+        background-color: #636b73;
+        border-color: #636b73;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.info {
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+    }
+    &.disabled {
+        opacity: 1;
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+    }
+}
+
+.button {
+    box-sizing: content-box;
+    position: relative;
+    padding: 0 20px;
+    height: 56px;
+    line-height: 56px;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-radius: 8px;
+    &:hover {
+        text-decoration: none;
+    }
+    &.small {
+        padding: 0 6px;
+        min-width: 60px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 13px;
+        font-weight: 400;
+        border-radius: 4px;
+    }
+    &.large {
+        height: 60px;
+        line-height: 60px;
+        font-size: 17px;
+        border-radius: 0;
+        font-weight: bold;
+    }
+}
+
+.section-button {
+    margin-top: 30px;
+    .button {
+        width: 100%;
+    }
+    .notice {
+        margin: 10px 0 0;
+        font-size: 13px;
+    }
+}

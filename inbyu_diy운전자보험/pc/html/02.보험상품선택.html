@@ -1,0 +1,204 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-step"><!-- section-step -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4 in">
+                                <em>현재 위치</em>
+                                <p><span>01 보험료 확인</span></p>
+                            </div>
+                            <div class="col col-1-4 current">
+                                <p><span>02 보험상품 선택</span></p>
+                            </div>
+                            <div class="col col-1-4">
+                                <p><span>03 가입자 정보 확인</span></p>
+                            </div>
+                            <div class="col col-1-4">
+                                <p><span>04 보험료 결제</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-step -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">원하는 보험상품을<br /> 선택하세요</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-price"><!-- section-price -->
+                    <div class="wrap">
+                        <div class="summary">
+                            <h3 class="title">기본 보장</h3>
+                            <ul class="info-summary">
+                                <li>
+                                    <span class="subject">교통사고처리지원금(자가용, 동승자포함)(특약)</span>
+                                    <span class="price">3천만원</span>
+                                </li>
+                                <li>
+                                    <span class="subject">자동차사고 변호사선임비(자가용)(특약)</span>
+                                    <span class="price">5백만원</span>
+                                </li>
+                                <li>
+                                    <span class="subject">벌금(자가용)(특약)</span>
+                                    <span class="price">3천만원</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="summary">
+                            <h3 class="title">추가 보장</h3>
+                            <ul class="info-summary">
+                                <li>
+                                    <span class="subject">교통상해사망</span>
+                                    <span class="price">3천만원</span>
+                                </li>
+                                <li>
+                                    <span class="subject">교통상해후유장해</span>
+                                    <span class="price">3천만원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- // section-price -->
+
+                <div class="container section-plan is-bottom-full"><!-- section-plan -->
+                    <div class="wrap">
+
+                        <div class="line-up">
+                            최저가 순
+                        </div>
+
+                        <div class="items">
+                            <div class="item"><!-- item -->
+                                <div class="checks">
+                                    <input type="radio" name="plan" id="plan1" />
+                                    <label for="plan1">
+                                        <span class="company">
+                                            <i class="icon brand" style="background-image: url('../resources/img/custom/icon_brand_samsung.png');"></i>
+                                            <span>삼성화재</span>
+                                        </span>
+                                        <span class="price">12,420원</span>
+                                    </label>
+                                </div>
+                                <a href="#modalDetail" class="js-modal link-has-line more" data-url="../html_ajax/view.samsung.html"><span>자세히 보기</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <div class="checks">
+                                    <input type="radio" name="plan" id="plan2" />
+                                    <label for="plan2">
+                                        <span class="company">
+                                            <i class="icon brand" style="background-image: url('../resources/img/custom/icon_brand_db.png');"></i>
+                                            <span>DB손해보험</span>
+                                        </span>
+                                        <span class="price">12,420원</span>
+                                    </label>
+                                </div>
+                                <a href="#modalDetail" class="js-modal link-has-line more" data-url="../html_ajax/view.db.html"><span>자세히 보기</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <div class="checks">
+                                    <input type="radio" name="plan" id="plan3" />
+                                    <label for="plan3">
+                                        <span class="company">
+                                            <i class="icon brand" style="background-image: url('../resources/img/custom/icon_brand_mg.png');"></i>
+                                            <span>MG손해보험</span>
+                                        </span>
+                                        <span class="price">12,420원</span>
+                                    </label>
+                                </div>
+                                <a href="#modalDetail" class="js-modal link-has-line more" data-url="../html_ajax/view.mg.html"><span>자세히 보기</span></a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <div class="checks">
+                                    <input type="radio" name="plan" id="plan4" />
+                                    <label for="plan4">
+                                        <span class="company">
+                                            <i class="icon brand" style="background-image: url('../resources/img/custom/icon_brand_hyundai.png');"></i>
+                                            <span>현대해상</span>
+                                        </span>
+                                        <span class="price">12,420원</span>
+                                    </label>
+                                </div>
+                                <a href="#modalDetail" class="js-modal link-has-line more"><span>자세히 보기</span></a>
+                            </div>
+                        </div>
+
+                        <div class="bottom-spacer" aria-hidden="true"></div>
+
+                    </div>
+                </div><!-- // section-plan -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap">
+                <a href="javascript:;" class="button large primary"><span>다음</span></a>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<div id="modalDetail" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

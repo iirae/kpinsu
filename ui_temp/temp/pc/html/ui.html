@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="인바이유" />
+        <title>인바이유</title>
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <div class="wrap" id="wrap">
+            <header class="header" id="header">
+                <h1>header</h1>
+            </header>
+            <div class="container" id="container">
+                <div class="contents" id="contents">
+                    <a href="#layerTab" class="btn btn-secondary e-layer" data-tab="tab01">tab1</a>
+                    <a href="#layerTab" class="btn btn-secondary e-layer" data-tab="tab02">tab2</a>
+                    <a href="#layerTab" class="btn btn-secondary e-layer" data-tab="tab03">tab3</a>
+
+                    <div class="area-tooltip">
+                        <a href="javascript:;" class="e-trigger">button</a>
+                        <div class="tooltip-wrap">
+                            <div class="content">
+                                <h3>title</h3>
+                                <p>content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer" id="footer">
+                <div class="inner">
+                    <h2><img src="../resources/img/h2_logo_inbyu.png"
+                            srcset="../resources/img/h2_logo_inbyu.png,
+                            ../resources/img/h2_logo_inbyu_2x.png 2x"
+                            alt="INBYU kakao company"></h2>
+                    <ul>
+                        <li><span>인바이유 주식회사</span><span>대리점번호 : 제201890030호</span></li>
+                        <li><span>© kakaopay corp.</span><span>© Inbyu INC</span></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+        <section class="layer full" id="layerTab">
+            <div class="container">
+                <div class="head">
+                    <h2>tab</h2>
+
+                    <div class="area-tab">
+                        <ul class="tab">
+                            <li><a href="#tab01">tab01</a></li>
+                            <li><a href="#tab02">tab02</a></li>
+                            <li><a href="#tab03">tab03</a></li>
+                        </ul>
+                        <div class="tab-content" id="tab01">
+                            tab01
+                        </div>
+                        <div class="tab-content" id="tab02">
+                            tab02
+                        </div>
+                        <div class="tab-content" id="tab03">
+                            tab03
+                        </div>
+                    </div>
+                </div>
+                <div class="contents terms">
+                </div>
+                <div class="area-button">
+                    <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                </div>
+            </div>
+        </section>
+
+        <script src="../resources/js/event.js"></script>
+    </body>
+</html>

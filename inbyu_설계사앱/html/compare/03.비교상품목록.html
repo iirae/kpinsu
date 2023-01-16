@@ -1,0 +1,790 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <span class="al-right">
+                    <a href="javascript:;" class="btn-icon close"></a>
+                </span>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline"><em>선택한 상품과 비교할</em><br>비교상품 리스트를<br>확인해 주세요</h1>
+                </header>
+                <div class="contents" id="contents">
+                    <div class="p-compare_list">
+                        <header class="head-compare">
+                            <h2>김나박 고객님의 가입상품</h2>
+                        </header>
+
+                        <section class="section-insu-terms">
+                            <h3 class="title"><span>생보보장</span><span>연금</span><span>변액</span><span>적립형</span><span>일반</span></h3>
+                            <div class="module-accordion">
+                                <div class="accordion">
+                                    <header class="head">
+                                        <div>
+                                            <em>동부화재</em>
+                                            <h4><span class="e-accordion">VA 변액연금보험 무배당 1종 적립형</span> <a href="javascript:;" title="pdf로 보기" target="_blank"><i class="icon pdf"></i></a></h4>
+                                        </div>
+                                        <button type="button" class="btn-icon arrow-down-16 e-accordion" title="상세내용 펼쳐보기"></button>
+                                    </header>
+                                    <div class="form-text-button">
+                                        <span><input type="text" placeholder="증권 또는 청약번호 입력"></span>
+                                        <button type="button" class="btn btn-normal">저장</button><!-- 저장된 값이 있는 경우 텍스트 '수정'으로 변경  -->
+                                    </div>
+                                    <div class="collapse">
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기본계약 (보장명 / 보장금액)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>- 외무추상장해(일반상해후유장해포함)/1억</li>
+                                                                <li>- 일반상해사망/1억</li>
+                                                                <li>- 갱신형 치아보존치료비(크라운연간3개한)/10만</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험금이 지급되지 않는 경우</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>담보별 약관 참조</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">월 납입 보험료</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남</th>
+                                                        <td><strong class="text-em">19,816원</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">여</th>
+                                                        <td><strong class="text-em">14,900원</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="4">해지 환급금 예시</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">납입보험료</th>
+                                                        <th scope="col">환급금</th>
+                                                        <th scope="col">환급률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험기간 / 갱신여부</th>
+                                                        <th scope="col">부가기능 특약 수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>80세 / 비갱신</td>
+                                                        <td>58개</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약1</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>일반상해사망(의무)</td>
+                                                        <td>비갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약2</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(임플란트 무제한) (영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약3</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(크라운 연간3개한) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약4</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아근관치료비(치아신경치료) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약5</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 영구치상실치료비<br>(상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">상품특징</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>1. 치아관련 질병 및 상해로 인한 치아보철치료비 보장<br>
+                                                                    -임플란트 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>2. 치아관련 질병 및 상해로 인한 치아 보존치료비 보장<br>
+                                                                    -크라운 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>3. 치과뿐만 아니라 안과, 이비인후과 수술까지 보장</li>
+                                                                <li>4. 얼굴관련 상해흉터복원 수술부터 시각/청각/언어 장애까지 보장</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section-insu-terms similar">
+                            <h3 class="title">보험청약상품과 동종∙유사 상품</h3>
+                            <div class="module-accordion">
+                                <div class="accordion">
+                                    <header class="head">
+                                        <button type="button" class="btn-icon refresh" title="상품 변경하기"></button>
+                                        <div>
+                                            <em>현대해상</em>
+                                            <h4><span class="e-accordion">무배당퍼펙트플러스종합보험<br>(100세만기형)(Hi2103)</span> <a href="javascript:;" title="pdf로 보기" target="_blank"><i class="icon pdf"></i></a></h4>
+                                        </div>
+                                        <button type="button" class="btn-icon arrow-down-16 e-accordion" title="상세내용 펼쳐보기"></button>
+                                    </header>
+                                    <div class="collapse">
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기본계약 (보장명 / 보장금액)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>- 외무추상장해(일반상해후유장해포함)/1억</li>
+                                                                <li>- 일반상해사망/1억</li>
+                                                                <li>- 갱신형 치아보존치료비(크라운연간3개한)/10만</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험금이 지급되지 않는 경우</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>담보별 약관 참조</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">월 납입 보험료</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남</th>
+                                                        <td><strong class="text-em">19,816원</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">여</th>
+                                                        <td><strong class="text-em">14,900원</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="4">해지 환급금 예시</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">납입보험료</th>
+                                                        <th scope="col">환급금</th>
+                                                        <th scope="col">환급률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험기간 / 갱신여부</th>
+                                                        <th scope="col">부가기능 특약 수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>80세 / 비갱신</td>
+                                                        <td>58개</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약1</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>일반상해사망(의무)</td>
+                                                        <td>비갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약2</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(임플란트 무제한) (영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약3</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(크라운 연간3개한) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약4</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아근관치료비(치아신경치료) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약5</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 영구치상실치료비<br>(상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">상품특징</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>1. 치아관련 질병 및 상해로 인한 치아보철치료비 보장<br>
+                                                                    -임플란트 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>2. 치아관련 질병 및 상해로 인한 치아 보존치료비 보장<br>
+                                                                    -크라운 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>3. 치과뿐만 아니라 안과, 이비인후과 수술까지 보장</li>
+                                                                <li>4. 얼굴관련 상해흉터복원 수술부터 시각/청각/언어 장애까지 보장</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- 상품설명서 PDF파일이 없을 경우 -->
+                                <div class="accordion no-pdf">
+                                    <header class="head">
+                                        <button type="button" class="btn-icon refresh" title="상품 변경하기"></button>
+                                        <div>
+                                            <em>현대해상</em>
+                                            <h4><span class="e-accordion">무배당퍼펙트플러스종합보험<br>(100세만기형)(Hi2103)</span> <a href="javascript:;" title="pdf로 보기" target="_blank"><i class="icon pdf"></i></a></h4>
+                                        </div>
+                                        <button type="button" class="btn-icon arrow-down-16 e-accordion" title="상세내용 펼쳐보기"></button>
+                                    </header>
+                                    <div class="collapse">
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기본계약 (보장명 / 보장금액)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>- 외무추상장해(일반상해후유장해포함)/1억</li>
+                                                                <li>- 일반상해사망/1억</li>
+                                                                <li>- 갱신형 치아보존치료비(크라운연간3개한)/10만</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험금이 지급되지 않는 경우</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>담보별 약관 참조</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">월 납입 보험료</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남</th>
+                                                        <td><strong class="text-em">19,816원</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">여</th>
+                                                        <td><strong class="text-em">14,900원</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 64px">
+                                                    <col style="width: auto">
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="4">해지 환급금 예시</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">납입보험료</th>
+                                                        <th scope="col">환급금</th>
+                                                        <th scope="col">환급률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">남(20년)</th>
+                                                        <td>4,775,840</td>
+                                                        <td>1,025,000</td>
+                                                        <td class="align-center"><em class="text-c-default">21.6</em></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">보험기간 / 갱신여부</th>
+                                                        <th scope="col">부가기능 특약 수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>80세 / 비갱신</td>
+                                                        <td>58개</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="module-table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약1</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>일반상해사망(의무)</td>
+                                                        <td>비갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약2</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(임플란트 무제한) (영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약3</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아보철치료비(크라운 연간3개한) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약4</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 치아근관치료비(치아신경치료) (유치 및 영구치, 상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: auto">
+                                                    <col style="width: 60px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">선택가입특약5</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>갱신형 영구치상실치료비<br>(상해 및 질병)</td>
+                                                        <td>갱신</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">상품특징</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <ul>
+                                                                <li>1. 치아관련 질병 및 상해로 인한 치아보철치료비 보장<br>
+                                                                    -임플란트 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>2. 치아관련 질병 및 상해로 인한 치아 보존치료비 보장<br>
+                                                                    -크라운 지급한도 선택가능(무제한, 연간 3개한)</li>
+                                                                <li>3. 치과뿐만 아니라 안과, 이비인후과 수술까지 보장</li>
+                                                                <li>4. 얼굴관련 상해흉터복원 수술부터 시각/청각/언어 장애까지 보장</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- 상품안내표 정보가 없을 경우 -->
+                                <div class="accordion no-info">
+                                    <header class="head">
+                                        <button type="button" class="btn-icon refresh" title="상품 변경하기"></button>
+                                        <div>
+                                            <em>현대해상</em>
+                                            <h4><span class="e-accordion">무배당퍼펙트플러스종합보험<br>(100세만기형)(Hi2103)</span> <a href="javascript:;" title="pdf로 보기" target="_blank"><i class="icon pdf"></i></a></h4>
+                                        </div>
+                                        <button type="button" class="btn-icon arrow-down-16 e-accordion" title="상세내용 펼쳐보기"></button>
+                                    </header>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary">비교설명확인서 링크전송</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- alert 용 -->
+        <section class="layer center layer-alert" id="layerAlert">
+            <div class="container">
+                <div class="content p-reset">
+                    <header class="head">
+                        <h2>등록완료</h2>
+                    </header>
+                    <div> 
+                        <p>증권 또는 청약번호가<br>등록완료 되었습니다.</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

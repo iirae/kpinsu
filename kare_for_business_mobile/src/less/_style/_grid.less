@@ -1,0 +1,35 @@
+/* grid system */
+// mixins ========================================================================== */
+.width(@size, @full: 640){
+    width: percentage(@size / @full);
+}
+.margin-left(@size, @full: 640){
+    margin-left: percentage(@size / @full);
+}
+.margin-right(@size, @full: 640){
+    margin-right: percentage(@size / @full);
+}
+.padding-left(@size, @full: 640){
+    padding-left: percentage(@size / @full);
+}
+.padding-right(@size, @full: 640){
+    padding-right: percentage(@size / @full);
+}
+.set-col(@size, @full, @important: false){
+    .col(@size, @full, @important);
+}
+.set-col-m(@size, @full, @important: false){
+    @media @tablet {
+        .col(@size, @full, @important);
+    }
+}
+.set-col-l(@size, @full, @important: false){
+    @media @desktop {
+        .col(@size, @full, @important);
+    }
+}
+.set-col-xl(@size, @full, @important: false){
+    @media @wide {
+        .col(@size, @full, @important);
+    }
+}

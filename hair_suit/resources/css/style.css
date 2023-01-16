@@ -1,0 +1,618 @@
+@charset "utf-8";
+html {
+    -webkit-text-size-adjust: 100%;
+}
+body {
+  width: 100%;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    border: 0;
+    color: #636b73;
+    font-size: 14px;
+    background-color: #fff;
+    font-family: 'Noto Sans KR';
+}
+a {
+    color: #444b52;
+    text-decoration: none;
+}
+.wrap {
+    margin: 0 auto;
+    max-width: 960px;
+    min-width: 280px;
+}
+@media (max-width: 1000px) {
+    .wrap {
+        margin: 0 20px;
+    }
+}
+.icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    min-width: 14px;
+    min-height: 14px;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+    transition: opacity 0.2s;
+}
+.icon em {
+    box-sizing: content-box;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    font-family: a;
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    color: transparent;
+    width: 0 !important;
+}
+#container {
+    position: relative;
+    overflow: hidden;
+}
+
+#header {
+    text-align: center;
+}
+#header .logo {
+    margin: 0;
+}
+#header .logo .icon {
+    width: 420px;
+    height: 182px;
+    background-image: url('../../resources/img/icon_logo.png');
+}
+.bottom-spacer {
+    clear: both;
+    margin-top: 60px;
+    margin-bottom: -1px;
+    height: 1px;
+    overflow: hidden;
+}
+.reset {
+    margin: 0;
+}
+.text-right {
+    text-align: right !important;
+}
+.vertical-top {
+    vertical-align: top;
+}
+
+input.text,
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+    font-size: 15px;
+    color: #636b73;
+    border: solid 1px #ced4da;
+    background-color: #fff;
+    box-sizing: border-box;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    border-radius: 1px;
+}
+input.text,
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select {
+    min-width: 260px;
+    padding: 0 0 0 10px;
+    height: 40px;
+}
+
+input.text::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="text"]::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #ced4da;
+}
+select:not(:focus):invalid {
+  color: #ced4da;
+}
+select {
+    background: url('../img/icon_select.png') no-repeat right 8px top 50%;
+}
+.select.small {
+    width: 140px;
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.checks {
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+}
+span.checks {
+    display: inline-block;
+    margin-left: 15px;
+}
+span.checks label {
+    min-width: 50px;
+}
+span.checks:first-child {
+    margin-left: 0;
+}
+.checks label {
+    cursor: default;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+.checks input[type="radio"],
+.checks input[type="checkbox"] {
+    box-sizing: content-box;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    font-family: a;
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    color: transparent;
+}
+.checks input[type="radio"] + label,
+.checks input[type="checkbox"] + label {
+    display: block;
+}
+.checks input[type="radio"] + label::before,
+.checks input[type="checkbox"] + label::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+}
+.checks input[type="checkbox"] + label::before {
+    background-image: url('../img/icon_checkbox_off.png');
+}
+.checks input[type="radio"] + label::before {
+    border-radius: 100%;
+    border: 1px #ced4da solid;
+}
+.checks input[type="radio"] + label::after {
+    display: none;
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: #636b73;
+    border-radius: 100%;
+}
+.checks input[type="checkbox"]:checked + label::before {
+    background-image: url('../img/icon_checkbox_on.png');
+}
+.checks input[type="radio"]:checked + label::before {
+    border-color: #636b73;
+}
+.checks input[type="radio"]:checked + label::after {
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    padding: 0 25px;
+    font-size: 15px;
+    height: 40px;
+    line-height: 38px;
+    color: #3f424a;
+    text-align: center;
+    font-weight: 500;
+    background-color: #fff;
+    border: 1px #3f424a solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.button:hover {
+    text-decoration: none;
+}
+.button.full {
+    display: block;
+}
+.button.large {
+    min-width: 220px;
+    height: 60px;
+    line-height: 58px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0;
+}
+.button.primary {
+    color: #fff;
+    background-color: #3f424a;
+}
+.button.info {
+    color: #fff;
+    background-color: #636b73;
+    border-color: #636b73;
+}
+.button.secondray {
+    color: #fff;
+    background-color: #48acff;
+    border-color: #48acff;
+}
+
+.section-button {
+    margin-top: 60px;
+    text-align: center;
+}
+.section-button .button {
+    margin: 0 8px;
+    vertical-align: top;
+}
+
+.table-col.table-a {
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px #ced4da solid;
+    border-right: 1px #ced4da solid;
+}
+.table-col.table-a th,
+.table-col.table-a td {
+    table-layout: fixed;
+    padding: 0 20px;
+    color: #636b73;
+    font-size: 13px;
+    font-weight: 400;
+    height: 40px;
+    text-align: center;
+    border-left: 1px #ced4da solid;
+    border-bottom: 1px #ced4da solid;
+}
+.table-col.table-a thead th {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.table-row.table-a {
+    table-layout: fixed;
+    width: 100%;
+    border-top: 2px #212529 solid;
+}
+.table-row.table-a th,
+.table-row.table-a td {
+    padding: 30px 0;
+    color: #636b73;
+    font-size: 15px;
+    font-weight: 400;
+    height: 80px;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom: 1px #ced4da solid;
+}
+.table-row.table-a th {
+    color: #212529;
+    width: 150px;
+}
+.table-row.table-a tr:first-child th,
+.table-row.table-a tr:first-child td {
+    border-top: 0;
+}
+.table-row.table-a tr.none-line th,
+.table-row.table-a tr.none-line td {
+    padding-bottom: 0;
+    border-bottom: 0;
+    height: auto;
+}
+.table-row.table-a tr.none-line + tr th,
+.table-row.table-a tr.none-line + tr td {
+    padding-top: 20px;
+    height: auto;
+}
+.table-row.table-a p {
+    margin: 20px 0 0;
+}
+.table-row.table-a p:first-child {
+    margin-top: 0;
+}
+.table-row.table-a p .button {
+    margin-left: 7px;
+}
+.table-row.table-a p input.text {
+    margin-left: 17px;
+}
+.table-row.table-a p input.text:first-child {
+    margin-left: 0;
+}
+
+.section-agreement {
+    margin-top: 80px;
+}
+.section-agreement:first-child {
+    margin-top: 0;
+}
+.section-agreement .desc {
+    padding: 35px 20px;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 14px;
+    color: #636b73;
+    background-color: #f1f3f5;
+    box-sizing: border-box;
+}
+.section-agreement .desc pre {
+    margin: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-break: break-all;
+    font-family: 'Noto Sans KR';
+}
+.section-agreement .desc p {
+    margin: 0;
+}
+.section-agreement .core {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #0e1012;
+}
+
+.section-form {
+    margin: 80px 0 20px 0;
+}
+.section-form:first-child {
+    margin-top: 0;
+}
+.section-form h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #0e1012;
+    font-weight: 400;
+}
+.section-form p + h2 {
+    margin-top: 15px;
+}
+.section-form .table-a {
+    margin-top: 15px;
+}
+.section-form .table-sign {
+    border-bottom: 1px #ced4da solid;
+}
+.section-form .table-sign th,
+.section-form .table-sign td {
+    border-bottom: 0;
+}
+.section-form .table-sign th {
+    vertical-align: top;
+}
+.section-form .sign {
+    position: relative;
+    margin-top: 20px;
+    width: 380px;
+    height: 200px;
+    max-width: 100%;
+    overflow: hidden;
+    border: solid 1px #ced4da;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.section-form .sign:first-child {
+    margin-top: 0;
+}
+.section-form .sign::before {
+    content: '서 명';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    line-height: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #e9ecef;
+}
+.section-form .sign .inner {
+    position: relative;
+    z-index: 1;
+}
+.section-form .sign + p {
+    margin: 20px 0 0;
+}
+.section-form .sign + p .button {
+    margin: 0;
+}
+.payment-way {
+    display: none;
+}
+.payment-way.in {
+    display: block;
+}
+.payment-way ul {
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.payment-way li {
+    position: relative;
+    margin: 30px 0 0 0;
+    padding: 0 0 0 150px;
+}
+.payment-way li:first-child {
+    margin-top: 0;
+}
+.payment-way .checks {
+    margin-left: 150px;
+}
+.payment-way .subject {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: #212529;
+    font-size: 15px;
+    transform: translate(0, -50%);
+}
+
+.address .detail .core { width: 50%; }
+
+.sign-wrap {
+    position: relative;
+    padding-left: 150px;
+}
+.sign-wrap .subject {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 15px;
+    color: #212529;
+    transform: translate(0, 50%);
+}
+
+@media (max-width: 767px) {
+    #header .logo .icon {
+        width: 270px;
+        height: 129px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    input.text,
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    select {
+        min-width: auto;
+        width: 100%;
+    }
+    .checks input[type="radio"] + label::before,
+    .checks input[type="checkbox"] + label::before {
+        top: 1px;
+    }
+    .checks input[type="checkbox"] + label::before {
+        top: 3px;
+    }
+    .checks input[type="radio"] + label::after {
+        top: 5px;
+    }
+    .button {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .table-row.table-a th,
+    .table-row.table-a td {
+        font-size: 14px;
+        padding: 20px 0;
+        height: auto;
+    }
+    .table-row.table-a th {
+        width: 32%;
+    }
+    .table-row.table-a p {
+        margin: 5px 0 0;
+    }
+    .table-row.table-a p .button {
+        margin-left: 2px;
+    }
+    .table-row.table-a p input.text {
+        margin-left: 0;
+    }
+    .address .zip input.text { width: 80px; }
+    .address .detail input.text { width: 100%; margin: 5px 0 0; }
+    .address .detail input.text:first-child { margin: 0; }
+
+    .section-agreement {
+        margin-top: 40px;
+    }
+    .section-agreement .desc {
+        padding: 20px 10px;
+        height: 150px;
+    }
+    .section-agreement .core {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .section-form {
+        margin-top: 60px;
+    }
+    .section-form:first-child {
+        margin-top: 0;
+    }
+    .section-form .sign + p {
+        margin: 10px 0 0;
+    }
+    .section-form .sign + p .button {
+        margin: 0;
+    }
+    .payment-way li {
+        margin: 20px 0 0 0;
+        padding: 0;
+    }
+    .payment-way li:first-child {
+        margin-top: 0;
+    }
+    .payment-way .checks {
+        margin-left: 0;
+    }
+    .payment-way .subject {
+        position: relative;
+        top: auto;
+        font-size: 14px;
+        transform: translate(0, 0);
+        display: block;
+        margin-bottom: 5px;
+    }
+    .sign-wrap {
+        padding-left: 0;
+    }
+    .sign-wrap .subject {
+        margin-bottom: 20px !important;
+        position: relative;
+        top: auto;
+        transform: translate(0, 0);
+    }
+}

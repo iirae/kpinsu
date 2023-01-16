@@ -1,0 +1,144 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-product-title"><!-- section-product-title -->
+                    <div class="wrap">
+                        <h2 class="title">개인정보보호배상책임보험</h2>
+                        <h3 class="title">피보험자<br /> 기본 정보 등록</h3>
+                        <p class="desc">
+                            보험상품 가입을 위해 <span class="info">사업자등록증</span>을<br />
+                            확인하여 정보를 입력해 주세요.
+                        </p>
+                        <div class="step">
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in ing"></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div><!-- // section-product-title -->
+
+                <div class="container section-form"><!-- section-form -->
+                    <div class="wrap">
+                        <div class="form">
+                            <div class="item"><!-- item -->
+                                <p class="subject">상호(회사명)</p>
+                                <input type="text" class="text" value="하이랜드호텔" readonly />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">사업자등록번호</p>
+                                <input type="text" class="text" value="19281703255" readonly />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">담당자 성명</p>
+                                <input type="text" class="text" value="최성호" readonly />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">담당자 이메일</p>
+                                <input type="text" class="text" value="sj.lee@inbyu.com" readonly />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">담당자 휴대폰번호</p>
+                                <input type="text" class="text" value="01012345678" readonly />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">사업자등록증</p>
+                                <p class="notice">
+                                    <span class="info">사업자등록증을 업로드 못하는 상황</span>이시면,
+                                    <span class="info">보험가입 신청 후 kfb@inbyu.com</span> 메일을 보내주세요.
+                                </p>
+
+                                <div class="thumb in"><!-- 이미지 등록시 in 클래스 추가 -->
+                                    <div class="obj"><img src="../resources/img/temp/@bill.png" alt="" /></div>
+                                    <a href="javascript" class="js-thumb-delete"><i class="icon delete"><em>사업자 등록증 이미지 삭제</em></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <!-- <a href="javascript:;" class="button large disabled"><span>가입 기본 설문 확인</span></a> -->
+                <a href="javascript:;" class="button large primary"><span>가입 기본 설문 확인</span></a>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 이미지 등록
+    $document.on('click', '.js-thumb-delete', function(e){
+        e.preventDefault();
+
+        $('.photo-list').addClass('in');
+        $('.thumb').removeClass('in');
+    });
+
+
+});
+</script>
+</body>
+</html>

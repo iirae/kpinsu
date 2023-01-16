@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>해외여행보험</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="img/inbyu_favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="img/contents/homescreen_icon.png">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/respond.min.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+	
+<script>
+
+function layer_popup(el){
+
+	var $el = $(el);        //레이어의 id를 $el 변수에 저장
+	var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+	isDim ? $('.kakao_layer').fadeIn() : $el.fadeIn();
+
+	var $elWidth = ~~($el.outerWidth()),
+		$elHeight = ~~($el.outerHeight()),
+		docWidth = $(document).width(),
+		docHeight = $(document).height();
+
+	// 화면의 중앙에 레이어를 띄운다.
+	if ($elHeight < docHeight || $elWidth < docWidth) {
+		$el.css({
+			marginTop: -$elHeight /2,
+			marginLeft: -$elWidth/2
+		})
+	} else {
+		$el.css({top: 0, left: 0});
+	}
+
+	$el.find('a.btn-layerClose').click(function(){
+		isDim ? $('.kakao_layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+		return false;
+	});
+
+	$('.layer .dimBg').click(function(){
+		$('.kakao_layer').fadeOut();
+		return false;
+	});
+
+}
+
+function layer_close()
+{
+	$(".kakao_layer").fadeOut(200);
+	$(".dimBg").fadeOut(200);
+}
+
+$(document).ready(function(){
+
+	function frmSubmit(f_data)
+	{
+		var action = f_data['action'];
+
+		$.ajax({
+			type: "POST",
+			url: action,
+			data: f_data,
+			dataType: 'json',
+			success: function(response) {
+				if(response) {
+
+					if(response.msg)
+						alert(response.msg);
+
+					if(response.next_redirect_mobile_url) {
+
+						location.href= response.next_redirect_mobile_url;
+					}
+				}
+			}
+		});
+		return false;
+	}
+
+	$(".chk-ok").click(function(){
+
+		var cname = "을(를) 확인해주시기 바랍니다.";
+		var i = $(".open").length;
+
+		$(".open").each(function(index){
+
+			if($(this).hasClass('on') == false){
+
+				alert($(this).children(':input').attr('title') + cname);
+				return false;
+			}
+			i--;
+		});
+
+		if(i < 1) {
+
+			var f_data = {
+				action: 'certification.htm',
+				mode: 'kakao',
+				mtype: 'rest',
+			};
+			frmSubmit(f_data);
+
+			return false;
+		}
+
+	});
+});
+</script>
+
+<header id="header">
+    <div class="upper">
+        <h1 class="logo"><a href="/index.htm?mode=main"><img src="img/common/logo.jpg" alt="INBYU" /></a></h1>
+    </div>
+	<div class="downer">
+		<ul class="tab">
+			<li class="in"><a href="#!"><span>보험가입하기</span></a></li>
+			<li><a href="#!"><span>가입내역조회</span></a></li>
+			<li><a href="#!"><span>보험이용안내</span></a></li>
+		</ul>
+	</div>
+</header><!-- end : id : header -->
+
+<div id="inbyuWrap">
+	<div id="inbyuContents">
+
+		<h2 class="hide">컨텐츠</h2>
+		<div class="step_process">
+			<div>약관동의</div>
+			<div>정보입력</div>
+			<div class="on">가입내용확인</div>
+			<div>결제</div>
+		</div>
+
+		<div class="in_box type">
+			<h2 class="sub-title">가입내용확인</h2>
+
+			<table class="resultTable">
+				<caption></caption>
+				<colgroup>
+					<col style="width:70px" /><col style="width:*" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="col">상품명</th>
+						<td>{$RS.data.v3_goods_name}</td>
+					</tr>
+					<tr>
+						<th scope="col">보험사</th>
+						<td>{$RS.data.insu.com_name}</td>
+					</tr>
+					<tr>
+						<th scope="col">보험기간</th>
+						<td>
+							<p><b>{$RS.ins}일</b></p>
+							<p class="day">{$RS.list[0].exp_date} {$RS.list[0].exp_hour}시 ~  {$RS.list[0].im_date} {$RS.list[0].im_hour}시</p>
+						</td>
+					</tr>
+{section name=key loop=$RS.list}
+					<tr>
+						<th scope="col">가입자 {$RS.list[key].no}</th>
+						<td>{$RS.list[key].user_name} ({$RS.list[key].pid})
+							<span class="price"><b>{$RS.list[key].price|number_format}원</b><a href="#self" class="viewPopup" title="보장확인 팝업 보기">보장확인</a>{$RS.list[key].year_idx}</span>
+
+							<div class="full_LayerPop">
+								<div class="popH">보장확인</div>
+								<div class="inner test">
+									<div class="scroll" id="scroll">
+										<div class="in_Box">
+											<p class="title">직접 설계하는 보장내용</p>
+											<table class="tableType">
+												<caption>직접 설계하는 보장내용 테이블</caption>
+												<colgroup>
+													<col style="width:63%" /><col style="width:38%" />
+												</colgroup>
+												<thead>
+													<tr>
+														<th scope="col" style="text-align: center;">담보명</th>
+														<th scope="col" style="text-align: center;">가입금액</th>
+													</tr>
+												</thead>
+												<tbody>
+	{section name=sub loop=$RS.list[key].insu.com_cover}
+
+		{if $RS.list[key].insu.com_cover[sub].key == "gc1" || $RS.list[key].insu.com_cover[sub].key == "gc3" || $RS.list[key].insu.com_cover[sub].key == "gc4" || $RS.list[key].insu.com_cover[sub].key == "gc5"}
+													<tr>
+														<td scope="row">{$RS.list[key].insu.com_cover[sub].cover_name}<br>{$RS.list[key].insu.com_cover[sub].cover_name_en}</td>
+														<td>{$RS.list[key].insu.com_cover[sub].cover_price}</td>
+													</tr>
+		{/if}
+	{/section}
+												</tbody>
+											</table>
+										</div>
+
+	{if $RS.list[key].se_cnt > 0}
+										<div class="in_Box">
+											<p class="title">직접 설계하는 특약내용</p>
+											<table class="tableType">
+												<caption>직접 설계하는 특약내용 테이블</caption>
+												<colgroup>
+													<col style="width:63%" /><col style="width:38%" />
+												</colgroup>
+												<thead>
+													<tr>
+														<th scope="col" style="text-align: center;">담보명</th>
+														<th scope="col" style="text-align: center;">가입금액</th>
+													</tr>
+												</thead>
+												<tbody>
+		{section name=sub loop=$RS.list[key].insu.com_cover}
+
+			{if $RS.list[key].insu.com_cover[sub].key == "gc11" || $RS.list[key].insu.com_cover[sub].key == "gc12" || $RS.list[key].insu.com_cover[sub].key == "gc13" || $RS.list[key].insu.com_cover[sub].key == "gc14"}
+													<tr>
+														<td scope="row">{$RS.list[key].insu.com_cover[sub].cover_name}<br>{$RS.list[key].insu.com_cover[sub].cover_name_en}</td>
+														<td>{$RS.list[key].insu.com_cover[sub].cover_price}</td>
+													</tr>
+			{/if}
+		{/section}
+												</tbody>
+											</table>
+										</div>
+	{/if}
+
+										<div class="in_Box">
+											<p class="title">기본 보장내용</p>
+											<table class="tableType">
+												<caption>기본 보장내용 테이블</caption>
+												<colgroup>
+													<col style="width:63%" /><col style="width:38%" />
+												</colgroup>
+												<thead>
+													<tr>
+														<th scope="col" style="text-align: center;">담보명</th>
+														<th scope="col" style="text-align: center;">가입금액</th>
+													</tr>
+												</thead>
+												<tbody>
+	{section name=sub loop=$RS.list[key].insu.com_cover}
+
+		{if $RS.list[key].insu.com_cover[sub].key != "gc1" && $RS.list[key].insu.com_cover[sub].key != "gc3" && $RS.list[key].insu.com_cover[sub].key != "gc4" && $RS.list[key].insu.com_cover[sub].key != "gc5" && $RS.list[key].insu.com_cover[sub].key != "gc11" && $RS.list[key].insu.com_cover[sub].key != "gc12" && $RS.list[key].insu.com_cover[sub].key != "gc13" && $RS.list[key].insu.com_cover[sub].key != "gc14"}
+			{if $RS.list[key].insu.com_cover[sub].cover_name != ""}
+													<tr>
+														<td scope="row">{$RS.list[key].insu.com_cover[sub].cover_name}<br>{$RS.list[key].insu.com_cover[sub].cover_name_en}</td>
+														<td>{$RS.list[key].insu.com_cover[sub].cover_price}</td>
+													</tr>
+			{/if}
+		{/if}
+	{/section}
+												</tbody>
+											</table>
+
+											<ul class="opt_list">
+												<li>상법 제732조에 의해 만 15세 미만은 사망담보가 포함되지 않습니다.</li>
+												<li>배상책임, 휴대품손해는 자기부담금 각 1만원이며, 휴대품손해는
+													각 물품당 20만원 한도에서 보상됩니다.
+												</li>
+												<li>의료비, 배상책임, 휴대품손해, 특별비용은 보험금을 지급할 다수의
+													보험계약이 체결되어 있는 경우, 약관에 따라 비례하여 보상합니다.
+												</li>
+												<li>보험계약 체결 전 반드시 약관 및 유의사항을 읽어보시기 바랍니다.</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="close"><a href="javascript:void(0)" title="레이어팝업 닫기버튼">닫기</a></div>
+							</div><!-- end : class : full_LayerPop -->
+						</td>
+					</tr>
+{/section}
+{* section name=key loop=$RS.list}
+					<tr>
+						<th>가입자 {$RS.list[key].no}</th>
+						<td>{$RS.list[key].user_name} ({$RS.list[key].pid})
+							<span class="price"><b>{$RS.list[key].price|number_format}원</b><a href="#self" class="lyPop_btn">보장확인</a>{$RS.list[key].year_idx}</span>
+						</td>
+					</tr>
+{/section *}
+				</tbody>
+			</table>
+
+			<div class="total_Price">
+				<div class="in">
+					<p>총 보험료</p>
+					<p class="price"><b>{$RS.sum_price_txt|number_format}</b>원</p>
+				</div>
+			</div>
+
+			<div class="check_Btn">
+                <a href="https://docs.google.com/viewer?url=http://kp.inbyu.com/{$RS.imgs.path}{$RS.goods_id}/해외여행보험.pdf" target="_blank">보험약관 확인</a>
+			</div>
+		</div>
+
+		<div class="in_box">
+			<div class="total-Chk">
+				<p class="chk_Mdu total">
+					<span><label for="total">소비자 권익보호 동의 체크박스</label><input type="checkbox" name="total" id="total" title="소비자 권익보호 동의 전체동의시 체크하시오." /></span><!-- class="on" checked -->
+					<label for="total">보험가입 및 결제를 위한 약관동의
+						<span>고객님의 소중한 정보보호를 위해 관련 법률과 규정에 따라 개인(신용)정보 수입, 이용, 조회, 제공에 동의하는 절차입니다.</span>
+					</label>
+				</p>
+			</div>
+
+			<div class="terms-block">
+				<!-- /// publishing /// -->
+
+{section name=key loop=$RS.agree}
+				<div class="terms-box">
+					<div class="chk_Mdu">
+						<span class="open"><label for="chk_"></label><input type="checkbox" name="chk" id="chk_" title="{$RS.agree[key].agree_title}" /></span><!-- class="on" checked -->
+						<label for="chk_"><b>(필수)</b> {$RS.agree[key].agree_title}
+							<span>{$RS.agree[key].agree_subtitle}</span>
+						</label>
+
+						<div><a href="javascript:void(0)" class="viewPopup" title="레이어팝업 열기버튼">{$RS.agree[key].agree_title} 레이어팝업 열기</a></div>
+					</div>
+
+					<div class="full_LayerPop" {if $RS.agree[key].open_fg == 'O'}style="display: block;"{/if}>
+						<div class="popH">내용확인</div>
+						<div class="inner">
+							<div class="scroll bg">
+								<div class="in_Box">
+									<p class="title">{$RS.agree[key].agree_title}</p>
+									{$RS.agree[key].agree_content|nl2br}
+								</div>
+							</div>
+						</div>
+						<div class="close"><a href="javascript:void(0)" title="레이어팝업 닫기버튼">닫기</a></div>
+					</div><!-- end : class : full_LayerPop -->
+				</div>
+{/section}
+				<div class="terms-box">
+					<div class="chk_Mdu">
+
+						<p>민감정보 및 고유식별정보의 처리에 관한 사항</p>
+
+						<div><a href="javascript:void(0)" class="viewPopup" title="레이어팝업 열기버튼">민감정보 및 고유식별정보의 처리에 관한 사항 레이어팝업 열기</a></div>
+					</div>
+
+					<div class="full_LayerPop" {if $RS.list[key].open_fg == 'O'}style="display: block;"{/if}>
+						<div class="popH">내용확인</div>
+						<div class="inner">
+							<div class="scroll bg">
+								<div class="in_Box">
+									<p class="title">민감정보 및 고유식별정보의 처리에 관한 사항</p>
+									“INBYU”는 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 <b>상기의 개인(신용)정보에 대한 개별 동의 사항</b>에 관하여 다음과 같이 귀하의 <b>민감정보(질병·상해처리정보) </b> 및 <b> 고유식별정보(주민등록번호·외국인등록번호)</b>를 처리<b>(수집·이용, 조회, 제공)</b>하고자 합니다. 이에 동의 하십니까?
+								</div>
+							</div>
+						</div>
+						<div class="close"><a href="javascript:void(0)" title="레이어팝업 닫기버튼">닫기</a></div>
+					</div><!-- end : class : full_LayerPop -->
+				</div>
+				<div class="terms-box">
+					<div class="chk_Mdu type">
+						<span class="open"><label for="chk_"></label><input type="checkbox" name="chk" id="chk_" title="질병·상해정보처리" /></span><!-- class="on" checked -->
+						<label for="chk_"><b>(필수)</b> 질병·상해정보처리</label>
+					</div>
+				</div>
+				<div class="terms-box">
+					<div class="chk_Mdu type">
+						<span class="open"><label for="chk_"></label><input type="checkbox" name="chk" id="chk_" title="주민등록번호·외국인등록번호 처리동의" /></span><!-- class="on" checked -->
+						<label for="chk_"><b>(필수)</b> 주민등록번호·외국인등록번호 처리</label>
+					</div>
+				</div>
+				<!-- <button id='count_check'>체크 수 확인</button> -->
+
+				<!-- /// publishing /// -->
+
+<!-- {section name=key loop=$RS.list} -->
+<!-- {/section} -->
+
+			</div><!-- end : class : terms-block -->
+		</div><!-- end : class : in_box -->
+
+		<div class="in_box type" style="margin-top: -11px; padding-top: 0; border-top: 1px #fff solid;">
+			<div class="speake_box">
+				<h4>결제정보</h4>
+				<p>
+					본 상품은 인바이유 주식회사와 제휴된 OOO(보험사명)에서
+					제공하며 보험사고 접수 및 보험금 지급 관련 사항은 OOO(보험사명)
+					고객서비스센터 보상문의 (0000-0000)를 통해 상담 받으시길 바랍니다.
+					보상신청시 보험사 소정의 보상신청서 및 증빙서류 (사고 증빙 및 사용
+					영수증 등)가 필요 합니다. 자세한 내용은 가입 후 발송되는 E-mail로
+					확인이 가능하며, 가입내역 확인에서도 보상내용을 확인 하실 수 있습니다.
+					단체형태로 체결되는 해외여행보험이기 때문에 고객 개개인에게 증권 및
+					약관을 교부하지 않습니다.
+					본상품은 소득공제 대상이 아닙니다.
+				</p>
+				<p class="mt20">
+					<b>상품운영회사 : 인바이유 주식회사</b>
+				</p>
+			</div>
+		</div>
+
+		<div class="fixed_Btn">
+			<a href="#none" class="btnStyle yellow chk-ok">결제</span></a>
+		</div>
+	</div><!-- end : id : inbyuContents -->
+	{literal}
+	<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+		project.fullLayerPop();
+	});
+	//]]>
+	</script>
+	{/literal}
+
+
+	<div class="kakao_layer">
+		<div class="dimBg"></div>
+		<div id="layer2" class="pop-layer">
+			<div class="pop-container">
+				<div class="pop-conts">
+					<!--content //-->
+					<p class="ctxt mb20">
+						<iframe src="about:blank" style="width: 100%; height:450px;" id="kakaopay"></iframe>
+					</p>
+
+					<!--// content-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div id="inbyuFooter">
+        <div class="top">
+            <p>트리플의 <b>보험친구</b> 인바이유</p>
+        </div>
+        <p class="copy">인바이유 주식회사 <span>|</span> 대리점번호 : 제2018090030호</p>
+        <p class="copy">ⓒ kakaopay corp. <span>|</span> ⓒ Inbyu INC.</p>
+        <p class="copy">손해보험협회 심의필 제11513호(2018.12.17)</p>
+    </div>
+
+</div><!-- end : id : inbyuWrap -->
+
+</body>
+</html>

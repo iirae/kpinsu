@@ -1,0 +1,62 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+:root { // 사용자 정의 변수
+    --site-name: '';
+}
+
+@primary               : #ffeb00;
+@secondary             : #0e1012;
+@info                  : #48acff;
+@warning               : #cc0000;
+@danger                : #ff3c3c;
+@error                 : #f50000;
+@light                 : #868e96;
+@disabled              : #6a737b;
+
+@import "./_common/_classes.less"; // 클래스
+
+@import "./_style/_setting.less";
+@import "./_style/_mixins.less";
+
+// @import "./_style/_font.less";
+@import "./_style/_grid.less";
+@import "./_style/_common.less";
+@import "./_style/_text.less";
+
+@import "./_style/ui/_form.less";
+@import "./_style/ui/_button.less";
+@import "./_style/ui/_icon.less";
+@import "./_style/ui/_table.less";
+@import "./_style/ui/_list.less";
+@import "./_style/ui/_tab.less";
+
+// layout
+@import "./_style/_layout.less";
+
+@import "./_style/module/_modal.less";
+@import "./_style/module/_overlay.less";
+@import "./_style/module/_indicator.less";
+
+// @import "./_style/plugin/_swiper.less";
+// @import "./_style/plugin/_swiper_helper.less";
+
+// page
+@import "./_style/custom/page_modal.less";
+@import "./_style/custom/page_custom.less";
+
+body, td, th, font {
+    font-size: 14px;
+    color: #444b52;
+}
+
+h1, h2, h3, h4, h5, h6,
+div, span, strong, em, table, ul, p, small, a {
+    &.primary   { color: @primary;   }
+    &.secondary { color: @secondary; }
+    &.info      { color: @info;      }
+    &.warning   { color: @warning;   }
+    &.danger    { color: @danger;    }
+    &.light     { color: @light;     }
+    &.disabled  { color: @disabled;  }
+}

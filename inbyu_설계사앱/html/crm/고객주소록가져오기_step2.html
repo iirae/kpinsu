@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <span class="al-right">
+                    <a href="javascript:;" class="btn-icon close"></a>
+                </span>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">주소록 등록하기<br><em>3개의 연락처</em>를<br> 가져옵니다</h1>
+                </header>
+                <div class="contents pt-40" id="contents">
+                    <div class="area-button">
+                        <button type="button" class="btn btn-normal">그룹관리</button>
+                    </div>
+                    <!-- 등록된 그룹이 없을 시 노출 -->
+                    <p class="mt-r text-desc">그룹을 통해 고객을 더 쉽고 편하게 관리할 수 있어요!</p>
+                    <!-- //등록된 그룹이 없을 시 노출 -->
+                    <fieldset>
+                        <!-- 등록된 그룹이 1개 이상일 경우 노출 -->
+                        <div class="form-group mt-l">
+                            <strong class="input-label">그룹</strong>
+                            <div class="mt-s tags">
+                                <em class="tag" style="background: #F2F6F7;">손보 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #FAE6E5;">회사 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary">완료</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- layer:   -->
+        <div class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <p>이미 등록된 전화번호 <br>00건이 제외되었습니다.</p>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </ㅇ><!-- //layer:   -->
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+body.overlay {
+  overflow: hidden;
+  height: 100%;
+}
+
+.wrap {
+  overflow: hidden;
+  @include width-max_min(320px, 720px);
+  padding: {
+    top: 52px;
+    right: safe(right, env);
+    right: safe(right, constant);
+    left: safe(left, env);
+    left: safe(left, constant);
+    bottom: safe(bottom, env, 60px);
+    bottom: safe(bottom, constant, 60px);
+    bottom: 60;
+  }
+
+  line-height: 1.38;
+  background: #fff;
+
+  &.full-gray {
+    min-height: 100%;
+    background: #f8f9fa;
+    box-sizing: border-box;
+  }
+
+  &.pb-0 {
+    padding-bottom: 0;
+  }
+
+  &.fixed-bottom {
+    bottom: safe(bottom, env, 60px);
+    bottom: safe(bottom, constant, 60px);
+    bottom: 60px;
+  }
+
+  .head-button {
+    z-index:20;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding: 18px 20px 10px;
+    @include width-max_min(320px, 720px);
+    height: 24px;
+    background: #fff;
+
+    .btn-close {
+      position: absolute;
+      top:18px;
+      right:20px;
+    }
+  }
+
+  .header {
+    padding: 10px 30px 20px;
+  }
+
+  .container {
+    padding: 0 0 40px;
+  }
+
+  .contents {
+    padding: 40px 30px 60px;
+
+    &.pt-0 {
+      padding-top: 0;
+    }
+
+    &.pt-20 {
+      padding-top: 20px;
+    }
+
+    &.pb-120 {
+      padding-bottom: 120px;
+    }
+
+    &.content-incorrect {
+      padding: {
+        top: 165px;
+        bottom: 0;
+      }
+    }
+  }
+
+  .area-button {
+    &.fixed {
+      z-index:50;
+      position: fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      bottom: safe(bottom, env);
+      bottom: safe(bottom, constant);
+      // @include width-max_min(320px, 720px);
+      .btn {
+        padding-bottom: safe(bottom, env);
+        padding-bottom: safe(bottom, constant);
+      }
+    }
+
+    .logo {
+      padding-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    padding: 24px;
+    color: #868e96;
+    background: #f1f3f5;
+    h2 {
+      img {
+        width: 122px;
+      }
+    }
+    ul {
+      margin-top: 14px;
+      font-size: 12px;
+      color: inherit;
+    }
+    li {
+      & + li {
+        margin-top:2px;
+      }
+      span {
+        & + span::before {
+          content: '';
+          display: inline-block;
+          margin: 0 10px;
+          width: 1px;
+          height: 11px;
+          background: #868e96;
+        }
+      }
+    }
+  }
+
+  &.page-main {
+    .footer {
+
+    }
+  }
+}

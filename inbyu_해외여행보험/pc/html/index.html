@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>인바이유 미니샵 해외여행보험</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="../resources/css/style.css" />
+	<link rel="shortcut icon" href="img/extend/trip/inbyu_favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="img/extend/trip/contents/homescreen_icon.png">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" type="text/css" href="https://www.inbyu.com//css/v3_1/trip/jquery-ui.css" />
+
+	<script type="text/javascript" src="https://www.inbyu.com/js/v3_1/trip/jquery-3.4.1.min.js?ver=20200101"></script>
+		<script type="text/javascript" src="https://www.inbyu.com//js/v3_1/jquery.easing.1.3.min.js?ver=20200101"></script>
+	<script type="text/javascript" src="https://www.inbyu.com/js/v3_1/trip/ui.js?ver=20200101"></script>
+<script type="text/javascript" src="https://www.inbyu.com/js/v3_1/trip/jquery.easing.1.3.min.js"></script><script type="text/javascript" src="https://www.inbyu.com/js/v3_1/trip/jquery-ui.min.js"></script>
+
+</head>
+<body >
+	<!-- 사명 변경 -->
+<header id="header">
+	<div class="wrap">
+		<div class="common-kpinsu header">
+			<h2 class="head-logo">
+				<a href="javascript:;" title="메인으로 이동">
+					<span><img src="../resources/img/common/logo_common_@sample.png" alt="Tire Pro"></span><!-- 콜라보 로고 있을 경우에만 노출 -->
+					<span><img src="../resources/img/common/logo_common_kpinsu.png" alt="KP보험서비스"></span>
+				</a>
+			</h2>
+		</div>
+		<div class="nav">
+			<ul class="tab">
+				<li class="in"><a href="/extend.htm?mode=trip&mtype=step01"><span>보험가입하기</span></a></li>
+				<li class=""><a href="/extend.htm?mode=trip&mtype=order"><span>가입내역조회</span></a></li>
+				<li class=""><a href="/extend.htm?mode=trip&mtype=plan"><span>보험이용안내</span></a></li>
+			</ul>
+		</div>
+	</div>
+</header><!-- end : id : header -->
+
+
+<script type="text/javascript">
+
+function fSubmit(f_data)
+{
+	var action = f_data['action'];
+
+	$.ajax({
+		type: "POST",
+		url: action,
+		data: f_data,
+		dataType: 'json',
+		success: function(response) {
+			if(response) {
+
+				if(response.msg)
+					alert(response.msg);
+
+				if(response.url)
+					location.href=response.url;
+			}
+		}
+	});
+	return false;
+}
+
+$(document).ready(function()
+{
+	$(".chk-ok").click(function(){
+
+		if($("input[name='st_date']").val() == "") {
+
+			alert('출국 일자를 입력해주세요');
+			$("input[name='st_date']").focus().addClass("on");
+			$('.dateVal_1').trigger("click");
+		}
+		else if($("select[name='st_time']").val() == "") {
+
+			alert('출발 시간을 입력해주세요');
+			$("select[name='st_time']").focus().addClass("on");
+		}
+		else if($("input[name='en_date']").val() == "") {
+
+			alert('입국 일자를 입력해주세요');
+			$("input[name='en_date']").focus().addClass("on");
+			$('.dateVal_2').trigger("click");
+		}
+		else if($("select[name='en_time']").val() == "") {
+
+			alert('자택 도착 시간을 입력해주세요');
+			$("select[name='en_time']").focus().addClass("on");
+		}
+		else {
+
+			var gender;
+
+			if($('.sexRadio>div:eq(0)').hasClass('on') == true) gender = 'M';
+			else if($('.sexRadio>div:eq(1)').hasClass('on') == true) gender = 'F';
+
+//			gender = $("input[name='gender']").val();
+
+			var f_data = {
+				action: 'extend.htm',
+				mode: 'trip',
+				mtype: 'step01_proc',
+				st_date: $("input[name='st_date']").val(),
+				st_time: $("select[name='st_time']").val(),
+				en_date: $("input[name='en_date']").val(),
+				en_time: $("select[name='en_time']").val(),
+				birthday: $("input[name='birthday']").val(),
+				gender: gender,
+			};
+			fSubmit(f_data);
+		}
+
+		return false;
+	});
+});
+//-->
+</script>
+
+
+<div id="inbyuWrap">
+
+	<div id="inbyuContents">
+
+		<h2 class="hide">컨텐츠</h2>
+		<!-- <div class="in_box">
+			<div class="stepTop-Box"><img src="../../../img/extend/trip/kakao/step01_obj.jpg" alt="" />
+				<h3>
+					안녕하세요. <b> 고객</b>님<br />
+					여행 일정이 어떻게 되시나요?
+				</h3>
+			</div>
+		</div> -->
+
+		<div class="in_box">
+			<div class="insCheck-Box">
+				<h3>
+					안녕하세요. <b> 고객</b>님<br />
+					여행 일정이 어떻게 되시나요?
+				</h3>
+
+				<h4 class="hide">여행일정 선택하기</h4>
+				<form method="get" action="#self">
+
+					<div class="joinInput-Area">
+						<div class="in">
+							<div class="join-input">
+
+								<dl class="input-zip">
+									<dd>
+										<div class="datepicker datePlace"><label for="datePic_1"><span>출국일자</span></label>
+											<div class="divInput" onfocus="this.blur()" ><b></b></div>
+											<input type="hidden" class="dateVal_1" id="datePic_1" onfocus="this.blur()" name="st_date" title="출국일자 입력" readonly />
+										</div>
+
+										<div class="cal-wrap">
+											<div id="datepicker_1"></div>
+										</div>
+										<div class="select-div">
+											<select name="st_time" id="leave" class="select" title="출국 예정 시간선택">
+												<option value="">자택 출발시간</option>>
+												<option value="00" >00시</option>
+												<option value="01" >01시</option>
+												<option value="02" >02시</option>
+												<option value="03" >03시</option>
+												<option value="04" >04시</option>
+												<option value="05" >05시</option>
+												<option value="06" >06시</option>
+												<option value="07" >07시</option>
+												<option value="08" >08시</option>
+												<option value="09" >09시</option>
+												<option value="10" >10시</option>
+												<option value="11" >11시</option>
+												<option value="12" >12시</option>
+												<option value="13" >13시</option>
+												<option value="14" >14시</option>
+												<option value="15" >15시</option>
+												<option value="16" >16시</option>
+												<option value="17" >17시</option>
+												<option value="18" >18시</option>
+												<option value="19" >19시</option>
+												<option value="20" >20시</option>
+												<option value="21" >21시</option>
+												<option value="22" >22시</option>
+												<option value="23" >23시</option>
+											</select>
+										</div>
+										<p class="text">집에서 출발하신 경우 현재와 가장 가까운 시간 선택</p>
+									</dd>
+									<dd>
+										<div class="datepicker datePlace"><label for="datePic_2"><span>입국일자</span></label>
+											<div class="divInput" onfocus="this.blur()" ><b></b></div>
+											<input type="hidden" class="dateVal_2"  id="datePic_2" onfocus="this.blur()" name='en_date' title="입국일자 입력" readonly />
+										</div>
+										<div class="cal-wrap">
+											<div id="datepicker_2"></div>
+										</div>
+										<div class="select-div">
+											<select name="en_time" class="select" title="입국 예정 시간선택">
+											<option value="">자택 도착시간</option>
+											<option value="00" >00시</option>
+											<option value="01" >01시</option>
+											<option value="02" >02시</option>
+											<option value="03" >03시</option>
+											<option value="04" >04시</option>
+											<option value="05" >05시</option>
+											<option value="06" >06시</option>
+											<option value="07" >07시</option>
+											<option value="08" >08시</option>
+											<option value="09" >09시</option>
+											<option value="10" >10시</option>
+											<option value="11" >11시</option>
+											<option value="12" >12시</option>
+											<option value="13" >13시</option>
+											<option value="14" >14시</option>
+											<option value="15" >15시</option>
+											<option value="16" >16시</option>
+											<option value="17" >17시</option>
+											<option value="18" >18시</option>
+											<option value="19" >19시</option>
+											<option value="20" >20시</option>
+											<option value="21" >21시</option>
+											<option value="22" >22시</option>
+											<option value="23" >23시</option>
+											</select>
+										</div>
+									</dd>
+									<dd>
+										<div class="birth inputPlace"><label for="birth">예:19901105</label><input type="tel" id="birth" maxlength="8" name="birthday" title="생년월일을 입력하세요" /> </div>
+										<div class="sexRadio">
+											<div><a href="#self">남</a></div><!-- addClass=on -->
+											<div><a href="#self">여</a></div>
+										</div>
+									</dd>
+								</dl>
+
+								<!-- end : 보험료 계산하기 -->
+							</div><!-- end : class : join-input -->
+						</div><!-- end : class : in -->
+					</div><!-- end : class : joinInput-Area -->
+				</form>
+			</div>
+
+			<div class="section-button">
+					<a href="#none" class="btnStyle yellow chk-ok"  id="submitBtn">다음</span></a>
+				</div>
+
+		</div><!-- end : class : in_box -->
+	</div><!-- end : id : inbyuContents -->
+
+<input type="hidden" name="name" value="">
+
+
+<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+		project.join();
+	});
+	//]]>
+</script>
+
+
+
+</div><!-- end : id : inbyuWrap -->
+
+<!-- 사명변경 -->
+<footer id="footer" class="common-kpinsu footer"><!-- footer -->
+    <div class="container">
+        <div class="wrap is-full">
+			<div class="terms">
+                <ul>
+					<li><a href="https://www.inbyu.com/info.htm?mode=agree" target="_blank">이용약관</a></li>
+					<li><a href="https://www.inbyu.com/info.htm?mode=privacy" target="_blank"><strong>개인정보 취급방침</strong></a></li>
+                </ul>
+            </div>
+            <div class="company">
+                <h2>KP보험서비스</h2>
+                <div class="cs">
+                    <a href="tel:1644-9381" class="tel"><strong>1644-9381</strong></a>
+                    <span>평일 09:30 ~ 18:00 (공휴일 휴무)</span><br>
+                    <span><a href="mailto:help@inbyu.com">help@inbyu.com</a><i class="icon pipe"></i>FAX : 02-6016-9875</span>
+                </div>
+                <div class="information">
+                    <div class="details">
+                        <span>대표이사 : 김영웅</span><i class="icon pipe"></i><span>서울특별시 영등포구 국제금융로 10, 44층(여의도동, 쓰리아이에프씨)</span>
+                        <span>보험대리점 : KP보험서비스 주식회사</span><i class="icon pipe"></i><span>대리점등록번호 : 제2018090030호</span>
+                        <span>사업자등록번호 : 603-88-00976</span><i class="icon pipe"></i><span>통신판매업 신고 : 제2018-서울영등포-0306호</span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>Copyright © KP Insurance Service Co.,Ltd All Rights Reserved</span>
+            </div>
+        </div>
+    </div>
+</footer><!-- // footer -->
+<!-- //사명변경 -->
+
+
+</div><!-- end : id : inbyuWrap -->
+</body>
+</html>

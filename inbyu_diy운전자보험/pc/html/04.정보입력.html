@@ -1,0 +1,271 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-step"><!-- section-step -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4 in">
+                                <em>현재 위치</em>
+                                <p><span>01 보험료 확인</span></p>
+                            </div>
+                            <div class="col col-1-4 in">
+                                <p><span>02 보험상품 선택</span></p>
+                            </div>
+                            <div class="col col-1-4 current">
+                                <p><span>03 가입자 정보 확인</span></p>
+                            </div>
+                            <div class="col col-1-4">
+                                <p><span>04 보험료 결제</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-step -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">보험 가입자정보를<br /> 입력해주세요</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-form-user"><!-- section-form-user -->
+                    <div class="wrap">
+                        <div class="items">
+                            <div class="item"><!-- item -->
+                                <h3 class="title">이름</h3>
+                                <input type="text" class="text" placeholder="이름 입력" value="홍길동" />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <h3 class="title">구분</h3>
+                                <div class="checks-wrap">
+                                    <span class="checks is-radio">
+                                        <input type="radio" name="nation" id="nation1" />
+                                        <label for="nation1">내국인</label>
+                                    </span>
+                                    <span class="checks is-radio">
+                                        <input type="radio" name="nation" id="nation2" />
+                                        <label for="nation2">외국인</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item toggle outside"><!-- item -->
+                                <h3 class="title">국가</h3>
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="more"><span>국가선택</span></a>
+                                    <div class="list">
+                                        <ul class="reset">
+                                            <li><a href="javascript:;"><span>가나(Ghana)</span></a></li>
+                                            <li><a href="javascript:;"><span>가봉(Gabon)</span></a></li>
+                                            <li><a href="javascript:;"><span>가이아나(Guyana)</span></a></li>
+                                            <li><a href="javascript:;"><span>감비아(Gambia)</span></a></li>
+                                            <li><a href="javascript:;"><span>과들루프(Guadeloupe)</span></a></li>
+                                            <li><a href="javascript:;"><span>과테말라(Guaemala)</span></a></li>
+                                            <li><a href="javascript:;"><span>괌(Guam)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <h3 class="title">주민등록번호</h3>
+                                <div class="grid registration-number">
+                                    <div class="col">
+                                        <div class="module">
+                                            <input type="number" class="text" placeholder="앞 6자리" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="module">
+                                            <input type="number" class="text" placeholder="뒤 7자리" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="tip"><!-- 조건 불가시 출력 -->
+                                    가입가능 연령은 만 19세 이상 ~ 80세 미만입니다
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <h3 class="title">휴대전화번호</h3>
+                                <div class="grid phone-number">
+                                    <div class="col">
+                                        <div class="module">
+                                            <div class="dropdown">
+                                                <a href="javascript:;" class="more"><span>통신사</span></a>
+                                                <div class="list">
+                                                    <ul class="reset">
+                                                        <li><a href="javascript:;"><span>SKT</span></a></li>
+                                                        <li><a href="javascript:;"><span>KT</span></a></li>
+                                                        <li><a href="javascript:;"><span>LG</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="module">
+                                            <input type="number" class="text" placeholder="숫자만 입력" />
+                                            <a href="javascript:;" class="js-code button xsmall info"><span>인증요청</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item toggle code"><!-- item -->
+                                <h3 class="title">인증번호</h3>
+                                <div class="pos-relative">
+                                    <input type="number" class="text" placeholder="인증번호 입력" />
+                                    <span class="time">02:59</span>
+                                </div>
+                                <p class="tip"><!-- 시간 초과시 -->
+                                    인증시간이 초과되었습니다. 재요청해주세요
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <h3 class="title">이메일 주소</h3>
+                                <div class="grid email">
+                                    <div class="col">
+                                        <div class="module">
+                                            <input type="text" class="text" placeholder="아이디 입력" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="module">
+                                            <div class="dropdown">
+                                                <a href="javascript:;" class="more"><span>주소 선택</span></a>
+                                                <div class="list">
+                                                    <ul class="reset">
+                                                        <li><a href="javascript:;"><span>gmail.com</span></a></li>
+                                                        <li><a href="javascript:;"><span>kakao.com</span></a></li>
+                                                        <li><a href="javascript:;"><span>naver.com</span></a></li>
+                                                        <li><a href="javascript:;"><span>hanmail.net</span></a></li>
+                                                        <li><a href="javascript:;"><span>daum.net</span></a></li>
+                                                        <li><a href="javascript:;"><span>nate.com</span></a></li>
+                                                        <li><a href="javascript:;"><span>hotmail.com</span></a></li>
+                                                        <li><a href="javascript:;" class="js-direct"><span>직접입력</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="text direct" placeholder="직접입력" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="notice">
+                                    등록하신 이메일 주소로 가입증명서를
+                                    <span class="nowrap">발송해 드립니다</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-spacer" aria-hidden="true"></div>
+                </div><!-- // section-form-user -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap">
+                <a href="javascript:;" class="button large disabled"><span>다음</span></a>
+                <!-- <a href="javascript:;" class="button large primary"><span>다음</span></a> 조건 충족시 -->
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 인증코드 발송
+    $document.on('click', '.js-code', function(e){
+        e.preventDefault();
+        var $this = $(this);
+
+        $this.children().text('재요청');
+        $('.code').addClass('in');
+    });
+
+    // 외국인 내국인
+    $document.on('change', 'input[name="nation"]', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $target = $('.outside'),
+            $numberText = $('.registration-number').siblings('.title');
+            
+        $('.dropdown').removeClass('in');
+        $html.addClass('is-dropdown');
+
+        if($('#nation2').prop('checked')) { // 외국인
+            $target.addClass('in');
+            $numberText.text('외국인등록번호');
+        } else {
+            $target.removeClass('in');
+            $numberText.text('주민등록번호');
+        }
+    });
+
+    // 이메일 직접 입력
+    $document.on('click', '.js-direct', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $target = $this.closest('.grid');
+
+        $target.addClass('is-direct').find('input.direct').focus();
+        $target.find('.dropdown').removeClass('current').find('li').removeClass('in');
+        $target.find('.more').children().text('주소 선택');
+    });
+    $document.on('focusout', 'input.direct', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $target = $this.closest('.grid');
+
+        if ( $this.val().length <= 0 ) {
+            $target.removeClass('is-direct');
+        } else {
+            $target.addClass('is-direct');
+        }
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

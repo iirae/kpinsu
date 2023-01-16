@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap page-compare" id="wrap">
+            <div class="container" id="container">
+                <header class="header pt-head">
+                    <h1 class="text-headline">상품비교설명확인서<br><em>서명요청 링크를</em><br>활용하세요</h1><!-- data가 하나도 없을 경우 -->
+                    <h1 class="text-headline">설계사님이 보낸 <em>상품비교설명확인서를</em><br>완료한 고객 리스트예요</h1><!-- data가 있을 경우 -->
+                </header>
+                <div class="contents pb-0" id="contents">
+                    <div class="module-tab flex e-tab">
+                        <div class="tab">
+                            <ul>
+                                <li class="on"><a href="#con01">이번달</a></li>
+                                <li><a href="#con02">지난달</a></li>
+                                <li><a href="#con03">이전</a></li>
+                            </ul>
+                            <span class="tab-point"></span>
+                        </div>
+
+                        <!-- data 있을 경우 노출 -->
+                        <div class="section-banner">
+                            <img src="../../resources/img/@img_banner_tip03.png" alt="상품비교설명확인서 요청링크 보내는 방법">
+                        </div><!-- //data 있을 경우 노출 -->
+
+                        <div class="section-customer-list">
+                            <div class="area-button mt-m">
+                                <button type="button" class="btn btn-normal">비교설명확인서 요청 링크 보내기</button>
+                            </div>
+
+                            <!-- data 없을 경우 -->
+                            <div class="section-empty compare">
+                                <i class="icon send"></i>
+                                <p>아직 비교설명확인서에 서명한<br>고객이 없으시군요?<br>비교설명확인서에 대한 서명요청하는 방법<br>알아보실래요?</p>
+                                <div class="area-button">
+                                    <a href="javascript:;" class="btn btn-primary">비교설명확인서 서명요청하기 Tip</a>
+                                </div>
+                            </div>
+                            <!-- 기간 내 data 없을 경우 -->
+                            <div class="section-empty compare">
+                                <i class="icon send-fail"></i>
+                                <p>현재 선택하신 기간에는<br>비교설명확인서에 서명고객이 없습니다.</p>
+                                <div class="area-button">
+                                    <a href="javascript:;" class="btn btn-primary">비교설명확인서 서명요청하기 Tip</a>
+                                </div>
+                            </div>
+
+                            <!-- tab-content 에 id 할당, tab에 id 연결 필요. (다른 방식으로 하셔도 됩니다.) -->
+                            <div class="tab-content on" id="con01">
+                                <div class="status">완료 고객 <strong>10</strong>명</div>
+                                <ul class="list mt-s">
+                                    <!-- one -->
+                                    <li class="module-customer-signed">
+                                        <div class="core">
+                                            <strong class="name">김나박</strong>
+                                            <div class="sub">
+                                                <a href="javascript:;" class="btn btn-normal small">고객서명확인서<i class="icon pdf"></i></a>
+                                                <span class="date">완료일 2021.03.03</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="info"><span>여자</span><span>1984. 09. 18(만 34세)</span></div>
+                                            <p class="insu">무배당 변액유니버셜 오늘의 종신보험 플러스 1형</p>
+                                        </div>
+                                    </li><!-- //one -->
+                                    <li class="module-customer-signed">
+                                        <div class="core">
+                                            <strong class="name">김나박</strong>
+                                            <div class="sub">
+                                                <a href="javascript:;" class="btn btn-normal small">고객서명확인서<i class="icon pdf"></i></a>
+                                                <span class="date">완료일 2021.03.03</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="info"><span>여자</span><span>1984. 09. 18(만 34세)</span></div>
+                                            <p class="insu">무배당 변액유니버셜 오늘의 종신보험 플러스 1형 무배당 변액유니버셜 오늘의 종신보험 플러스 1형</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="area-button more">
+                                    <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- include: gnb -->
+                <div data-include-path="../include/gnb.html"></div>
+        
+            </div>
+        </div>
+
+        <!-- include: alert -->
+        <div data-include-path="../include/alert.html"></div>
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+
+            // tab decoration: 페이지 로딩 시 필수 추가
+            $(window).on('load', function(e) {
+                let tabWraps = $('.module-tab');
+
+                $.each(tabWraps, function(index, tabWrap) {
+                    let tabs = $(tabWrap).find('.tab a');
+
+                    $.each(tabs, function(index, tab) {
+                        if($(tab).closest('li').hasClass('on')) {
+                            let tabItemWidth = $(tab).width(),
+                                tabItemPositionLeft = $(tab).closest('li').position().left + $(tab).scrollLeft();
+
+                            tabDeco(tabWrap, tabItemWidth, tabItemPositionLeft);
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

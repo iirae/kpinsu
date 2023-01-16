@@ -1,0 +1,62 @@
+ol.list,
+ul.list {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    list-style: none;
+    li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+ul.list-a {
+    li {
+        padding-left: 14px;
+        &::before {
+            content: '-';
+        }
+    }
+}
+
+ol.list-a {
+    li {
+        padding-left: 20px;
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &:nth-child(1)::before {
+            content: '①';
+        }
+        &:nth-child(2)::before {
+            content: '②';
+        }
+        &:nth-child(3)::before {
+            content: '③';
+        }
+        &:nth-child(4)::before {
+            content: '④';
+        }
+    }
+}
+ol.list-b {
+    margin: 0 0 0 15px;
+    padding: 0;
+    list-style: decimal;
+    li {
+        margin: 10px 0 0;
+        padding: 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <!-- 고객 정보 등록 시 노출 -->
+                    <h1 class="text-headline"><em>직접 입력하여</em><br>신규 고객 등록하기</h1>
+                    <!-- 고객 정보 수정 시 노출 -->
+                    <!-- <h1 class="text-headline"><em>고객정보 수정하기</em></h1> -->
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <div class="form-group"><!-- input error 시 class error 추가 -->
+                            <strong class="input-label">고객명</strong>
+                            <span class="f-text"><input type="text" placeholder="고객명을 입력해 주세요" maxlength="20"></span>
+                            <p class="text-error"></p>
+                        </div>
+
+                        <!-- 고객 정보 수정 시 추가 노출 -->
+                        <!-- <div class="form-group">
+                            <strong class="input-label">실명</strong>
+                            <span class="f-text"><input type="text" placeholder="보장분석 또는 상품비교확인서를 요청하세요" maxlength="10" readonly></span>
+                        </div> -->
+                        <!-- //고객 정보 수정 시 노출 -->
+
+                        <div class="form-group"><!-- input error 시 class error 추가 -->
+                            <strong class="input-label">생년월일</strong>
+                            <div class="f-text">
+                                <span class="first"><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="8" placeholder="생년월일을 입력해 주세요(YYYYMMDD)"></span>
+                            </div>
+                            <p class="text-error"></p>
+                        </div>
+                        <div class="form-group"><!-- input error 시 class error 추가 -->
+                            <strong class="input-label">전화번호</strong>
+                            <span class="f-text"><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="11" placeholder="전화번호를 입력해 주세요(-없이)" id="email"></span>
+                            <p class="text-error"></p>
+                        </div>
+                        <div class="form-group">
+                            <strong class="input-label">성별</strong>
+                            <div class="mt-r">
+                                <span class="btn btn-radio"><input type="radio" name="sex" id="male"><label for="male">남성</label></span>
+                                <span class="btn btn-radio"><input type="radio" name="sex" id="female"><label for="female">여성</label></span>
+                            </div>
+                        </div>
+                        <div class="form-group pb-0">
+                            <div class="head">
+                                <strong class="input-label">그룹</strong>
+                                <button type="button" class="btn btn-default small">그룹관리</button>
+                            </div>
+                            <div class="mt-s tags">
+                                <em class="tag" style="background: #F2F6F7;">손보 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #FAE6E5;">회사 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #F2F6F7;">손보 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #CED4D9;">집중관리용 고객리스트 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                                <em class="tag" style="background: #FAE6E5;">회사 <button type="button" class="btn-icon" title="태그 삭제하기"><i class="icon delete"></i></button></em>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">고객 정보 등록하기</a><!-- 활성 시 disabled 삭제 -->
+                    <!-- 고객 정보 수정 시 노출 -->
+                    <!-- <a href="javascript:;" class="btn btn-primary disabled">고객 정보 수정하기</a> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- alert 용 -->
+        <div class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <p>이미 등록된 고객 전화번호입니다.<br>고객 리스트를 확인해 주세요.</p>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </div>
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

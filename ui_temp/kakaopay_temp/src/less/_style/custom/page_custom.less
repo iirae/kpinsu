@@ -1,0 +1,187 @@
+
+
+.section-gate-core {
+    color: #0e1012;
+    .core {
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.25;
+    }
+    .desc {
+        margin: 15px 0 0;
+        font-size: 18px;
+        line-height: 1.33;
+        .target {
+            position: relative;
+            display: inline-block;
+            width: 47px;
+            vertical-align: top;
+            font-weight: 600;
+            .is-has-line {
+                font-weight: 600;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transform: translate(0, 100%);
+                transition: all .4s;
+                &.in {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+    .obj {
+        margin-top: 20px;
+    }
+    @media (prefers-color-scheme: dark) {
+        color: #e7e7e7;
+        .tip {
+            color: #888;
+        }
+    }
+}
+
+.section-gate-desc {
+    background-color: #444b52;
+    .item {
+        position: relative;
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+    .icon {
+        position: absolute;
+        bottom: 25px;
+        right: 30px;
+        .set-icon(138px, 134px, 'custom/icon_gate_desc_2', true);
+    }
+    p {
+        margin: 0;
+    }
+    .core {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .desc {
+        margin-top: 12px;
+        font-size: 18px;
+        line-height: 1.22;
+        letter-spacing: -0.4px;
+        color: #ced4da;
+    }
+    .guide {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: -0.4px;
+        color: #adb5bd;
+    }
+    .utill {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: -0.6px;
+        a {
+            color: #e9ecef;
+            &::before {
+                background-color: #e9ecef;
+            }
+        }
+    }
+    .upper {
+        background-color: #3d4349;
+        .desc {
+            margin-top: 12px;
+        }
+        .icon {
+            .set-icon(140px, 126px, 'custom/icon_gate_desc_1', true);
+        }
+    }
+}
+
+.section-gate-banner {
+    margin: 20px 0 30px 0;
+    a {
+        position: relative;
+        display: block;
+        padding: 20px 20px 22px;
+        border-radius: 12px;
+        border: solid 1px #e9ecef;
+        background-color: #f8f9fa;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            right: 5px;
+            .set-icon(178px, 140px, 'custom/icon_gate_banner', true);
+            @media (min-width: 340px) {
+                right: 20px;
+            }
+        }
+        .core {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.4;
+            &,
+            span {
+                color: #0e1012;
+            }
+            .is-has-line::before {
+                background-color: @primary;
+            }
+        }
+        .desc {
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.6px;
+            color: #212529;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: #212529;
+            }
+        }
+    }
+    .tip {
+        margin: 8px 0 0;
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: -0.4px;
+        color: #868e96;
+    }
+    @media (prefers-color-scheme: dark) {
+        a {
+            border-color: #464646;
+            background-color: #121212;
+            .core {
+                &,
+                span {
+                    color: #e7e7e7;
+                }
+                .is-has-line::before {
+                    background-color: @secondary;
+                }
+            }
+            .desc {
+                color: #cfcfcf;
+                &::before {
+                    background-color: #cfcfcf;
+                }
+            }
+        }
+        .tip {
+            color: #888;
+        }
+    }
+}

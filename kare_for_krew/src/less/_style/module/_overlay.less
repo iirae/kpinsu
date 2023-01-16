@@ -1,0 +1,38 @@
+@overlay-z-index: 100;
+@overlay-rgba: rgba(0, 0, 0, .7);
+@overlay-duration: 300ms;
+@overlay-timing-function: linear;
+
+.md-overlay {
+    background-color: @overlay-rgba;
+    transition:
+        transform @overlay-duration @overlay-timing-function @overlay-duration,
+        opacity @overlay-duration @overlay-timing-function @overlay-duration,
+        visibility 0s linear .4s,
+        z-index 0s linear .4s;
+    .is-overlay & {
+        z-index: @overlay-z-index;
+        transition:
+            transform @overlay-duration @overlay-timing-function 0s,
+            opacity @overlay-duration @overlay-timing-function 0s,
+            visibility 0s linear 0s,
+            z-index 0s linear 0;
+    }
+}
+
+.md-overlay {
+    visibility: hidden;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    opacity: 0;
+    .is-overlay & {
+        visibility: visible;
+        opacity: 1;
+        cursor: pointer;
+    }
+}

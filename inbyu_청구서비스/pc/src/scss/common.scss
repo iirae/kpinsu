@@ -1,0 +1,459 @@
+@charset "utf-8";
+
+@import "_reset.scss";
+@import "_mixin.scss";
+@import "_layout.scss";
+@import "_form.scss";
+@import "_button.scss";
+@import "_icon.scss";
+@import "_text.scss";
+@import "_layer.scss";
+@import "_page.scss";
+@import "_indicator.scss";
+@import "_animation.scss";
+
+.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+.notch {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: env(safe-area-inset-bottom);
+    bottom: constant(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+
+.bundle-sign {
+    position: relative;
+    .block-title + & {
+        margin-top: 17px;
+    }
+    .sign {
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+        height: 200px;
+        border: solid 1px #ced4da;
+        background: #f8f9fa;
+        border-radius: 8px;
+
+        &::before {
+            z-index: -1;
+            content: "해당 영역에 서명해주세요.";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            color: #ced4da;
+            line-height: 200px;
+            text-align: center;
+        }
+    }
+    .inner {
+        position: relative;
+    }
+    .btn {
+        position: absolute;
+        top: -45px;
+        right: 0;
+    }
+
+}
+
+.bundle-insu {
+    .icon {
+        margin-right: 5px;
+    }
+}
+
+.list {
+    &.type-dot {
+        li {
+            position: relative;
+            padding-left: 10px;
+            &:before {
+                content: 'ㆍ';
+                position: absolute;
+                top: 0;
+                left:0;
+            }
+        }
+    }
+}
+
+.row-list {
+    display: flex;
+}
+
+.table-layout {
+    border-top: solid 1px #ced4da;
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+    thead {
+        th {
+            padding: 10px;
+            font-weight: 500;
+            background: #f1f3f5;
+            & + th {
+                border-left: solid 1px #ced4da;
+            }
+        }
+    }
+    th, td {
+        border-bottom: solid 1px #ced4da;
+    }
+    td {
+        padding: 11px 10px;
+        & + td {
+            border-left: solid 1px #ced4da;
+        }
+    }
+}
+
+.dl-layout {
+    li > span,
+    .block-title {
+        flex: 0 0 145px;
+        color: #636b73;
+    }
+    li > strong,
+    & > div,
+    & > ul {
+        color: #212529;
+        font-weight: 400;
+        word-break: break-all;
+    }
+}
+
+ul.dl-layout {
+    li {
+        display: flex;
+        & + li {
+            margin-top: 10px;
+        }
+    }
+}
+
+section.dl-layout {
+    display: flex;
+    & > ul {
+        li + li {
+            margin-top: 10px;
+        }
+    }
+}
+
+// datepicker
+.datepicker-dimmed {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.ui-datepicker {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: 0 auto;
+    padding: 60px 40px 25px 40px;
+    width: 400px;
+    min-height: 465px;
+    text-align: center;
+    transform: translate3d(0, -50%, 0);
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    will-change: transform;
+    backface-visibility: hidden;
+    &.show {
+        z-index: 110;
+        opacity: 1;
+        transition:
+            visibility 0s linear,
+            z-index 0s linear,
+            opacity .2s linear,
+    }
+    .ui-datepicker-header {
+        position: relative;
+        padding: 30px 0;
+        line-height: 0;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        position: absolute;
+        top: 35px;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        background: url("../img/ico_prev.svg") no-repeat center;
+        .ui-icon {
+            overflow: hidden; 
+            position: absolute; 
+            clip: rect(0 0 0 0); 
+            margin: -1px; 
+            width: 1px; 
+            height: 1px; 
+            color: transparent;
+        }
+    }
+    .ui-datepicker-prev {
+        left: 0;
+    }
+    .ui-datepicker-next {
+        right: 0;
+        transform: rotate(180deg);
+    }
+    .ui-datepicker-year {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0e1012;
+        line-height: 1;
+    }
+    .ui-datepicker-month {
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        color: #0e1012;
+        line-height: 1.4;
+    }
+    .ui-datepicker-calendar {
+        table-layout: fixed;
+        width: 100%;
+        th {
+            padding-bottom: 13px;
+            color: #868e96;
+            font-weight: 400;
+            font-size: 12px;
+        }
+        td {
+            padding: 10px 0;
+            &,
+            a {
+                color: #636b73;
+                text-align: center;
+            }
+            a {
+                display: inline-block;
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                box-sizing: border-box;
+                border-radius: 50%;
+            }
+            > span {
+                display: block;
+                a,
+                span {
+                    display: block;
+                    padding: 13px 0;
+                }
+                span {
+                    opacity: .5;
+                }
+            }
+            &.ui-state-disabled {
+                color: #80808073;
+                & > span {
+                    color: #80808073;
+                }
+            } 
+            &.ui-datepicker-today {
+                > span {
+                    color: #212529;
+                    display: inline-block;
+                    width: 34px;
+                    height: 34px;
+                    line-height: 34px;
+                    background: $color-primary;
+                    box-sizing: border-box;
+                    border-radius: 50%;
+                    a,
+                    span {
+                        position: relative;
+                    }
+                }
+            }
+            .ui-state-active {
+                color: #212529;
+                background: $color-primary;
+            }
+        }
+        th,
+        td {
+            &:first-child {
+                &,
+                a {
+                    color: $color-danger;
+                }
+            }
+            &:last-child {
+                &,
+                a {
+                    color: $color-point;
+                }
+            }
+        }
+    }
+    .ui-datepicker-buttonpane {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        padding: 0 30px;
+        text-align: right;
+
+        .ui-datepicker-close {
+            overflow:hidden;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            font-size: 1px;
+            color: transparent;
+            text-indent: -9999px;
+            background: {
+                image: url("../img/btn_close_24.svg");
+                repeat: no-repeat;
+                position: center;
+                size: cover;
+            }
+        }
+
+        .ui-datepicker-current {
+            display: none;
+        }
+    }
+}
+
+// 인바이유몰 공통
+.common-kpinsu { 
+    &.header {
+        .head-logo {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1200px;
+            text-align: left;
+            font-size: 0;
+            a {
+                display: block;
+                line-height: 1;
+            }
+            span {
+                display: inline-block;
+                // font-size: 1rem;
+                line-height: 1;
+            }
+            img {
+                font-size: 1rem;
+                height: 100px;
+            }
+        }
+    }
+    &.footer {
+        padding-bottom: 24px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 10px;
+            max-width: 1200px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            overflow: hidden;
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.8;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+                text-align: left;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                float: right;
+                margin-top: -22px;
+                width: 270px;
+                text-align: right;
+            }
+            .information {
+                float: left;
+                width: calc(100% - 270px);
+            }
+            .details {
+                margin-top: 10px;
+                text-align: left;
+                span {
+                    & + span {
+                        &::before {
+                            content: "";
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #808992;
+            text-align: left;
+        }
+    }
+}

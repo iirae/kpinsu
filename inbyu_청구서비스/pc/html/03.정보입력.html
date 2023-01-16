@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유 청구서비스" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="인바이유" />
+        <title>인바이유 청구서비스</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+    <div>
+        <div class="wrap" id="wrap">
+            <header class="common-kpinsu header" id="header">
+                <h1 class="head-logo">
+                    <a href="00.index.html">
+                        <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                    </a>
+                </h1>
+            </header>
+            
+            <div class="container" id="container">
+                <header class="area-title">
+                    <h2 class="page-head">정보 입력</h2>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <section class="section-form">
+                            <h2 class="text-question">청구인이 피보험자(보험대상자)입니까?</h2>
+                            <ul class="row-list">
+                                <li><input type="radio" name="insuredPerson" id="whoYes" checked><label for="whoYes">네</label></li>
+                                <li><input type="radio" name="insuredPerson" id="whoNo"><label for="whoNo">아니요</label></li>
+                            </ul>
+                            <ul class="input-list">
+                                <li>
+                                    <strong>청구인 이름 <em title="필수">*</em></strong>
+                                    <div><input type="text" value="홍길동" readonly></div>
+                                </li>
+                                <li>
+                                    <strong>청구인 전화번호 <em title="필수">*</em></strong>
+                                    <div><input type="text" value="010-1234-5678" readonly></div>
+                                </li>
+                                <li class="resident-number">
+                                    <strong>주민등록번호 <em title="필수">*</em></strong>
+                                    <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="앞 6자리"><span>-</span><input class="text-security" type="password" pattern="[0-9]*" inputmode="numeric" maxlength="7" placeholder="뒤 7자리"></div>
+                                    <p class="text-warn" style="display: none;">올바른 주민등록번호를 입력해주세요.</p>
+                                </li>
+                            </ul>
+                            <ul class="input-list insured_person">
+                                <li>
+                                    <strong>청구인 이메일</strong>
+                                    <div><input type="email" placeholder="예) inbyu@inbyu.com"></div>
+                                    <p class="text-warn" style="display: none;">올바른 이메일을 입력해주세요.</p>
+                                </li>
+                                <li>
+                                    <strong>청구인 직장명</strong>
+                                    <div><input type="text" maxlength="50" placeholder="예) 인바이유"></div>
+                                </li>
+                                <li>
+                                    <strong>청구인 직무</strong>
+                                    <div><input type="text" maxlength="50" placeholder="예) 사무직"></div>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="section-form not-insured_person" style="display: none">
+                            <h2 class="blind">피보험자 정보입력</h2>
+                            <ul class="input-list">
+                                <li>
+                                    <strong>피보험자 이름 <em title="필수">*</em></strong>
+                                    <div><input type="text" maxlength="50" placeholder="이름을 입력해주세요."></div>
+                                </li>
+                                <li>
+                                    <strong>피보험자 전화번호 <em title="필수">*</em></strong>
+                                    <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="11" placeholder="(-)을 제외하고 숫자만 입력해주세요"></div>
+                                </li>
+                                <li class="resident-number">
+                                    <strong>피보험자 주민등록번호 <em title="필수">*</em></strong>
+                                    <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="앞 6자리"><span>-</span><input class="text-security" type="password" pattern="[0-9]*" inputmode="numeric" maxlength="7" placeholder="뒤 7자리"></div>
+                                    <p class="text-warn" style="display: none;">올바른 주민등록번호를 입력해주세요.</p>
+                                </li>
+                                <li>
+                                    <strong>피보험자 이메일</strong>
+                                    <div><input type="email" placeholder="예) inbyu@inbyu.com"></div>
+                                    <p class="text-warn" style="display: none;">올바른 이메일을 입력해주세요.</p>
+                                </li>
+                                <li>
+                                    <strong>피보험자 직장명</strong>
+                                    <div><input type="text" maxlength="50" placeholder="예) 인바이유"></div>
+                                </li>
+                                <li>
+                                    <strong>피보험자 직무</strong>
+                                    <div><input type="text" maxlength="50" placeholder="예) 사무직"></div>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="section-form">
+                            <h2 class="text-question">자동이체 계좌로 보험금을 수령하시겠습니까?</h2>
+                            <ul class="row-list">
+                                <li><input type="radio" name="account" id="accountYes" checked><label for="accountYes">네</label></li>
+                                <li><input type="radio" name="account" id="accountNo"><label for="accountNo">아니요</label></li>
+                            </ul>
+                            <p class="text-noti">자동이체 계좌의 경우 보험수익자 명의인 경우만 가능합니다.</p>
+                            <ul class="input-list new-account" style="display: none;">
+                                <li>
+                                    <strong>은행/증권 <em title="필수">*</em></strong>
+                                    <div class="bundle-bank">
+                                        <input type="text" placeholder="은행/증권을 선택해주세요." readonly id="bankName">
+                                        <a href="#layerBankList" class="cover e-layer"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>예금주 <em title="필수">*</em></strong>
+                                    <div><input type="text" maxlength="50" placeholder="예금주를 입력해주세요."></div>
+                                </li>
+                                <li>
+                                    <strong>계좌번호 <em title="필수">*</em></strong>
+                                    <div><input type="tel" pattern="[0-9]*" inputmode="numeric" minlength="10" maxlength="50" placeholder="(-)을 제외하고 숫자만 입력해주세요"></div>
+                                    <p class="text-warn" style="display: none;">올바른 계좌번호를 입력해주세요.</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </fieldset>
+                </div>
+                <div class="area-button">
+                    <a href="javascript:;" class="btn btn-primary disabled e-layer">다음</a><!-- 버튼 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+
+        </div>
+
+        <section class="layer full layer-bank-list" id="layerBankList">
+            <div class="container">
+                <div class="contents">
+                    <fieldset>
+                        <div class="bundle-kakaopay">
+                            <input type="radio" name="chooseBank" id="bankKakaopay">
+                            <label for="bankKakaopay"><i class="icon kakaopay"></i>카카오페이증권</label>
+                        </div>
+                        <div class="section-bank-list area-accordion">
+                            <h2 class="section-title"><span role="button" class="e-toggle">은행</span></h2>
+                            <ul class="content">
+                                <li><input type="radio" name="chooseBank" id="bank01"><label for="bank01">우리</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank02"><label for="bank02">신한</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank03"><label for="bank03">NH농협</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank04"><label for="bank04">KB국민</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank05"><label for="bank05">하나</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank06"><label for="bank06">IBK기업</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank07"><label for="bank07">외환</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank08"><label for="bank08">SC제일</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank09"><label for="bank09">씨티</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank10"><label for="bank10">KDB산업</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank11"><label for="bank11">SBI저축은행</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank12"><label for="bank12">새마을</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank13"><label for="bank13">대구</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank14"><label for="bank14">광주</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank15"><label for="bank15">우체국</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank16"><label for="bank16">신협</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank17"><label for="bank17">전북</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank18"><label for="bank18">경남</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank19"><label for="bank19">부산</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank20"><label for="bank20">수협</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank21"><label for="bank21">제주</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank22"><label for="bank22">저축은행</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank23"><label for="bank23">산림조합</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank24"><label for="bank24">케이뱅크</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank25"><label for="bank25">카카오뱅크</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank26"><label for="bank26">HSBC</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank27"><label for="bank27">중국공상</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank28"><label for="bank28">JP모간</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank29"><label for="bank29">도이치</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank30"><label for="bank30">BNP파리바</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank31"><label for="bank31">BOA</label></li>
+                                <li><input type="radio" name="chooseBank" id="bank32"><label for="bank32">중국건설</label></li>
+                            </ul>
+                        </div>
+                        <div class="section-bank-list area-accordion">
+                            <h2 class="section-title"><span role="button" class="e-toggle">증권</span></h2>
+                            <ul class="content">
+                                <li><input type="radio" name="chooseBank" id="securities01"><label for="securities01">키움</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities02"><label for="securities02">KB증권</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities03"><label for="securities03">미래에셋대우</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities04"><label for="securities04">삼성</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities05"><label for="securities05">NH투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities06"><label for="securities06">유안타</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities07"><label for="securities07">대신</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities08"><label for="securities08">한국투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities09"><label for="securities09">신한금융투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities10"><label for="securities10">유진투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities11"><label for="securities11">한화투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities12"><label for="securities12">DB금융투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities13"><label for="securities13">하나금융</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities14"><label for="securities14">하이투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities15"><label for="securities15">현대차투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities16"><label for="securities16">신영</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities17"><label for="securities17">이베스트</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities18"><label for="securities18">교보</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities19"><label for="securities19">메리츠증권</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities20"><label for="securities20">KTB투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities21"><label for="securities21">SK</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities22"><label for="securities22">부국</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities23"><label for="securities23">현대</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities24"><label for="securities24">케이프투자</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities25"><label for="securities25">한국포스증권</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities26"><label for="securities26">토스증권</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities27"><label for="securities27">미래에셋</label></li>
+                                <li><input type="radio" name="chooseBank" id="securities28"><label for="securities28">아이엠투자</label></li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="#" class="btn btn-secondary e-close">닫기</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- back  -->
+        <div class="layer center" id="layerBack">
+            <div class="container">
+                <p>이전 페이지로 이동 시<br>휴대폰 본인인증을<br>다시 진행해야 합니다.<br>
+                    <br>이전 페이지로 이동하시겠습니까?</p>
+                <div class="area-button">
+                    <a href="#" class="btn btn-cancel e-close">취소</a>
+                    <a href="javascript:history.back();" class="btn btn-static">확인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <script src="../resources/js/event.js"></script>
+
+        <!-- 참고: UI 확인용입니다. -->
+        <script>
+            $(document).ready(function(){
+                const $window = window.$window || $(window);
+                const $body = $('body');
+                let isInsuredPerson, isCurrentAccount;
+
+                // 청구인 피보험자인지 체크
+                $body.on('click', 'input[name="insuredPerson"]', function() {
+                    isInsuredPerson = $(this).is('#whoYes');
+                    
+                    if(!isInsuredPerson) {
+                        $('.not-insured_person').show();
+                        $('.insured_person').hide();
+                    } else {
+                        $('.not-insured_person').hide();
+                        $('.insured_person').show();
+                    }
+                });
+
+                // 자동이체 계좌 보험금 수령 체크
+                $body.on('click', 'input[name="account"]', function() {
+                    isCurrentAccount = $(this).is('#accountYes');
+                    let $noti = $(this).parents('.section-form').find('.text-noti');
+
+                    if(!isCurrentAccount) {
+                        $('.new-account').show();
+                        $($noti).text('보험계약자 혹은 피보험자 명의 계좌만 가능합니다.');
+                    } else {
+                        $('.new-account').hide();
+                        $($noti).text('자동이체 계좌의 경우 보험수익자 명의인 경우만 가능합니다.');
+                    }
+                });
+
+                // 은행/증권 선택
+                $body.on('click', 'input[name="chooseBank"]', function(){
+
+                    const ua = window.navigator.userAgent.toLowerCase();
+                    let $this = $(this);
+                    let checkedBankVal = $this.siblings('label').text();
+
+                    $('#bankName').val(checkedBankVal);
+
+                    let findParent = $(this).closest('.layer');
+
+                    $body.removeClass("overlay");
+
+                    if (ua.match(/iPad/i) || ua.match(/iPhone/i)) {
+                        let scrollTop = localStorage.getItem('scrollTop');
+
+                        $window.scrollTop(scrollTop);
+                    }
+                    findParent.fadeOut('fast');
+
+                    localStorage.removeItem('scrollTop')
+                });
+
+
+                let circumstance;
+                 $('#layerBankList label').on('click', function() {
+                    circumstance = $(this).children('em').text();
+                 });
+
+                 $('#layerBankList .e-close').on('click', function() {
+                    $('.eShowSibling').val(circumstance);
+
+                    const hasValue = $('.eShowSibling').val();
+
+                    if(hasValue) {
+                        $('.form-textarea').removeClass('hidden');
+                        $('.form-textarea').children('textarea').focus();
+                        setTimeout(function(){$('.form-textarea').children('textarea').focus()}, 100);
+                        
+                    } else {
+                        $('.form-textarea').addClass('hidden');
+                    }
+                 });
+
+            });
+        </script>
+    </body>
+</html>

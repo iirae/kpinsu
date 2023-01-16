@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>인바이유-보험금청구</title>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+      <a href="#" class="back">이전으로</a>
+      <!-- <a href="#" class="home">홈</a> -->
+    </div>   
+    
+    <div id="container">
+
+      <h3>
+        <b>이메일로 인증하고</b><br />
+        사용자 등록하기
+      </h3>
+
+      <ul class="form_1">
+
+        <li>
+          <div class="field-wrapper">
+            <label for="fname">이름</label>
+            <input name="fname" placeholder="이름을 입력해주세요." />
+          </div>
+        </li>
+        <li>
+
+          <div class="field-wrapper" style="width: 60%;float: left">
+            <label for="fname">이메일</label>
+            <input name="fname" placeholder="이메일 주소를 입력해주세요." />
+          </div>
+
+          <p class="add02">@</p>
+
+          <div class="field-wrapper" style="width: 30%;float: right ">
+            <label for="state"></label>
+            <select name="State" placeholder="State000" class="watermark"> 
+               <option value="" selected="selected">직접입력</option>
+            </select>
+          </div>
+        </li>
+
+      </ul>
+     
+     <!-- 입력창 쓰면 아래 인증번호발송하기 버튼 활성화!!!!  class="btn01_sel"  -->
+      <button class="btn01_sel">이메일 발송하기 </button>
+		  
+      <h4>수신된 메시지에서 인증번호를 확인한 후 입력해주세요.</h4>
+
+      <input type="text" class="inbox" value="" style="width: 68%">
+      <span class="txt01">2:59</span>
+
+      <!-- 인증번호 쓰면 아래 확인 버튼 활성화!!!!  class="btn01_sel" 으로 변경 -->
+      <button class="btn01_dis fr mt0" style="width: 30%;">확인</button>
+
+      <button class="btn_reload">이메일 재발송</button>
+
+		</div>
+    <button class="f_btn01">다음으로</button>
+
+	</div>
+</body>
+
+</html>

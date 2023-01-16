@@ -1,0 +1,828 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>Coding Convention</title>
+        <link rel="stylesheet" href="./resources/css/common.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
+         -->
+        <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/base16/atelier-seaside-light.css">
+        <script src="./resources/js/jquery-3.3.1.min.js"></script>
+        <script src="//cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <style>
+            .guide {height: 100vh; background: #f9fafc;}
+            .guide .container {display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; height: calc(100vh - 56px); box-sizing: border-box;}
+            .guide .container .contents {position:relative; overflow-y: auto; display: flex; flex-direction: column; padding-top: 0; padding-bottom: 100px; flex: 1 0 auto; width: calc(100% - 300px); height: 100%; box-sizing: border-box;}
+            .guide.contents > .inner {position: absolute; top:0; right:0; left:0; bottom:0;}
+            .guide > .header { z-index: 50; position:relative; height: 50px; font-size: 18px; line-height: 50px; text-align: center; background: #fff; box-shadow: 0 4px 5px rgba(0,0,0,0.2);}
+            .guide > .header h1 {font-size: 20px; font-weight: 500; line-height: 50px;}
+            .nav {overflow-y: auto; padding-bottom: 30px; flex: 0 0 200px; max-height: 100%; border-right: solid 1px #e7eaf3;background: #fff; box-sizing: border-box;}
+            .nav > ul > li {margin-top: 1.5rem;}
+            .nav li span,
+            .nav li a {padding: 0 30px; height: 36px; line-height: 36px; font-size: 16px; text-transform: capitalize;}
+            .nav li a {display: block;}
+            .nav li a:hover {background: rgba(0, 0, 0, 0.02);}
+            .nav li span {font-size: .9em; color: #9299a1;}
+            .nav li.on a {color: #4263eb;}
+            /* .nav ul ul li {padding-left: 16px;} */
+            .card {padding: 1.5rem; border: 0.0625rem solid rgba(231,234,243,.7); border-radius: 0.75em; background: #fff; background-clip: border-box; box-shadow: 0 6px 12px rgb(140 152 164 / 8%);}
+            .card-section {margin: 0 auto 0; width: 80%; max-width: 700px;}
+            .card-section > h2 {margin-top: 3.5rem; margin-bottom: 1rem; font-size: 26px; font-weight: 700;}
+            .card-section > h2 span {font-size: .7em;}
+            h3 {margin-top: 1.5rem; margin-bottom: .8rem; font-size: 20px; font-weight: 500;}
+            h2 + .desc,
+            h3 + .desc {font-size: 0.89rem;}
+            .code {margin-top: 1rem;}
+            .desc {margin-bottom: 1rem;font-size: 1.09375rem;}
+            .table-layout {margin-top: 10px;}
+            .table-layout table {table-layout: fixed; width:100%; border-collapse: collapse; border: dotted 1px #e8e8e8;}
+            .table-layout th, .table-layout td {padding: 7px 5px; font-size: 14px; border: dotted 1px #e8e8e8;}
+            .table-layout th {background: #f5f5f5;}
+            .table-layout tbody th {font-weight:500; text-align:left;}
+            .table-layout .center {text-align:center;}
+            .table-layout .left {text-align:left;}
+            .table-layout tbody:nth-of-type(even) {background:#f8f8f8;}
+
+            .hljs {font-size: 14px; border-radius: 6px;}
+            pre + pre {
+                margin-top: 20px;
+            }
+            .accordion {}
+            .accordion .e-accordion {position:relative; cursor: pointer;}
+            .accordion .e-accordion::after {content:"";position:absolute;top:10px;right:0; display:block;width:10px;height:10px;border:2px solid #9299a1;border-width:0 0 2px 2px;transform:rotate(-45deg);transition: transform .35s;}
+            .accordion .collapse {display: none;}
+            .accordion.expand .collapse {display: block;}
+            .accordion.expand .e-accordion::after {transform:rotate(135deg);}
+        </style>
+    </head>
+    <body>
+        <div class="wrap guide" id="wrap">
+            <header class="header">
+                <h1 class="title">Coding Convention</h1>
+            </header>
+            <div class="container" id="container">
+                <nav class="nav">
+                    <ul>
+                        <li><span>convention</span>
+                            <ul>
+                                <li><a href="#basic">기본환경</a></li>
+                                <li><a href="#naming">Naming</a></li>
+                            </ul>
+                        </li>
+                        <li><span>layout</span>
+                            <ul>
+                                <li><a href="#html">
+                                    html template</a></li>
+                            </ul>
+                        </li>
+                        <li><span>common(기존 서비스)</span>
+                            <ul>
+                                <li><a href="#header">header</a></li>
+                                <li><a href="#footer">footer</a></li>
+                                <li><a href="#insuLogo">보험사 로고</a></li>
+                            </ul>
+                        </li>
+                        <li><span>component</span>
+                            <ul>
+                                <li><a href="#color">color</a></li>
+                                <li><a href="#spacing">spacing</a></li>
+                                <li><a href="#text">text</a></li>
+                                <li><a href="#button">button</a></li>
+                                <li><a href="#icon">icon</a></li>
+                                <li><a href="#form">form</a></li>
+                                <li><a href="#tab">tab</a></li>
+                                <li><a href="#table">table</a></li>
+                                <li><a href="#tooltip">tooltip</a></li>
+                                <li><a href="#accordion">accordion</a></li>
+                                <li><a href="#dlLayout">dl-layout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="contents" id="contents">
+                    <div class="inner">
+                        <section id="basic" class="card-section">
+                            <h2>기본 환경</h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 120px;">
+                                            <col style="width: auto;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>PC</th>
+                                                <td>Chrome, Safari, Edge, IE11</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Mobile</th>
+                                                <td>AOS 5.0 ~(for App), AOS 6.0(for Web), IOS 12 ~, Chrome, safari, 삼성모바일웹브라우저</td>
+                                            </tr>
+                                            <tr>
+                                                <th>해상도</th>
+                                                <td>디자인 기준 360, 375 최적 320도 깨져 보이지 않도록 처리한다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="naming" class="card-section">
+                            <h2>Naming</h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 120px;">
+                                            <col style="width: auto;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>id</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>camelCase</li>
+                                                        <li>id 사용은 지양하되, 레이아웃을 위한 id는 허용한다. ()</li>
+
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>class</th>
+                                                <td>kebab-case</td>
+                                            </tr>
+                                            <tr>
+                                                <th>image</th>
+                                                <td>snake_case</td>
+                                            </tr>
+                                            <tr>
+                                                <th>folder, file</th>
+                                                <td>snake_case</td>
+                                            </tr>
+                                            <tr>
+                                                <th>css</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 기본적으로는 OOCSS 방식을 따르되 BEM을 혼용하여 사용한다.</li>
+                                                        <li>- 재사용 가능한 객체들은 OOCSS, 그 외에는 BEM으로 변형하여 사용한다.</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code class="html">
+&lt;!-- include: common header --&gt;
+&lt;div data-include-path="./include/header.html"&gt;&lt;/div&gt;
+
+&lt;!-- include: common footer --&gt;
+&lt;div data-include-path="./include/footer.html"&gt;&lt;/div&gt;
+
+&lt;!-- ui참고: include 용 --&gt;
+&lt;script src="../src/javascript/include.js"&gt;&lt;/script&gt;
+                                </code></pre>
+                            </div>
+                        </section>
+
+                        <section class="card-section">
+                            <div class="card">
+                                <pre><code class="html">
+&lt;!-- include: common header --&gt;
+&lt;div data-include-path="./include/header.html"&gt;&lt;/div&gt;
+
+&lt;!-- include: common footer --&gt;
+&lt;div data-include-path="./include/footer.html"&gt;&lt;/div&gt;
+
+&lt;!-- ui참고: include 용 --&gt;
+&lt;script src="../src/javascript/include.js"&gt;&lt;/script&gt;
+                                </code></pre>
+                            </div>
+                        </section>
+
+                        <section id="Header" class="card-section">
+                            <h2>Header</h2>
+                            <ul class="desc">
+                                <li>* 1200 grid</li>
+                                <li>* PC는 left 정렬 Mobile은 center 정렬을 기본으로 하되, 프로젝트 예외를 허용한다.</li>
+                                <li>* 콜라보 로고가 있을 경우와 없을 경우 모두 대응하도록 한다.</li>
+                                <li>* 콜라보 로고와 KP보험서비스 로고를 분리하여 관리 할 수 있도록 한다.</li>
+                                <li>* 한개의 어드민 등록 로고로 PC와 Mobile 둘 다 대응할 수 있도록 한다.<br>
+                                    &nbsp;&nbsp;&nbsp;PC - height: 100px;<br>
+                                    &nbsp;&nbsp;&nbsp;Mobile - height: 65px; padding-top: 10px;</li>
+                                <li>* Mobile 로고의 max-width는 300px이어야 한다.(콜라보 로고 포함)</li>
+                            </ul>
+                            <div class="card">
+                                <div class="">
+                                    <div class="pc">
+                                        <header class="common-kpinsu header">
+                                            <h2 class="head-logo">
+                                                <a href="javascript:;" title="메인으로 이동">
+                                                    <span><img src="./resources/img/logo_common_@sample.png" alt="Tire Pro"></span><!-- 콜라보 로고 있을 경우에만 노출 -->
+                                                    <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                                                </a>
+                                            </h2>
+                                        </header>
+                                    </div>
+                                    <div class="mo">
+                                        <header class="common-kpinsu header">
+                                            <h2 class="head-logo">
+                                                <a href="javascript:;" title="메인으로 이동">
+                                                    <span><img src="./resources/img/logo_common_@sample.png" alt="Tire Pro"></span><!-- 콜라보 로고 있을 경우에만 노출 -->
+                                                    <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                                                </a>
+                                            </h2>
+                                        </header>
+                                    </div>
+                                </div>
+<pre><code class="html">&lt;header class="common-kpinsu header"&gt;
+    &lt;h2 class="head-logo"&gt;
+        &lt;a href="javascript:;" title="메인으로 이동"&gt;
+            &lt;span&gt;&lt;img src="../resources/img/logo_common_@sample.png" alt="Tire Pro"&gt;&lt;/span&gt;&lt;!-- 콜라보 로고 있을 경우에만 노출 --&gt;
+            &lt;span&gt;&lt;img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h2&gt;
+&lt;/header&gt;</code></pre>
+
+<div class="module-accordion">
+    <div class="accordion">
+        <h3 class="e-accordion">PC용 css</h3>
+        <div class="collapse">
+            <pre><code class="css">
+// KP보험서비스 공통
+.common-kpinsu { 
+    &.header {
+        .head-logo {
+            margin: 0;
+            text-align: center;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 43px;
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 100px;
+            }
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+    <div class="accordion">
+        <h3 class="e-accordion">Mobile용 css</h3>
+        <div class="collapse">
+            <pre><code class="css">
+// KP보험서비스 공통
+.common-kpinsu { 
+    &.header {
+        padding-top: 10px;
+        .head-logo {
+            margin: 0;
+            text-align: center;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 28px;
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 65px;
+            }
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+</div>
+                            </div>
+                        </section>
+
+                        <section id="footer" class="card-section">
+                            <h2>Footer</h2>
+                            <ul class="desc">
+                                <li>* 1200 grid 기준. 프로젝트 그리드에 따라 달라질 수 있음</li>
+                                <li></li>
+                                    &nbsp;&nbsp;&nbsp;PC - height: 100px;<br>
+                                    &nbsp;&nbsp;&nbsp;Mobile - height: 50px;</li>
+                            </ul>
+                            <div class="card">
+                                <div class="module-accordion">
+                                    <div class="pc accordion">
+                                        <h3 class="e-accordion">PC용 html</h3>
+                                        <div class="collapse">
+<pre><code class="html">&lt;footer id="footer" class="common-kpinsu footer"&gt;&lt;!-- footer --&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="wrap is-full"&gt;
+            &lt;div class="terms"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="https://www.inbyu.com/info.htm?mode=agree" target="_blank"&gt;이용약관&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://www.inbyu.com/info.htm?mode=privacy" target="_blank"&gt;&lt;strong&gt;개인정보 취급방침&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="company"&gt;
+                &lt;h2&gt;KP보험서비스&lt;/h2&gt;
+                &lt;div class="cs"&gt;
+                    &lt;a href="tel:1644-9381" class="tel"&gt;&lt;strong&gt;1644-9381&lt;/strong&gt;&lt;/a&gt;
+                    &lt;span&gt;평일 09:30 ~ 18:00 (공휴일 휴무)&lt;/span&gt;&lt;br&gt;
+                    &lt;span&gt;Email : &lt;a href="mailto:help@inbyu.com"&gt;help@inbyu.com&lt;/a&gt;&lt;i class="pipe"&gt;&lt;/i&gt;FAX : 02-6016-9875&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="information"&gt;
+                    &lt;div class="details"&gt;
+                        &lt;span&gt;대표이사 : 김영웅&lt;/span&gt;&lt;i class="icon pipe"&gt;&lt;/i&gt;
+                        &lt;span&gt;서울특별시 영등포구 국제금융로 10, 44층 (여의도동, 쓰리아이에프씨)&lt;/span&gt;
+                        &lt;span&gt;보험대리점 : KP보험서비스 주식회사&lt;/span&gt;&lt;i class="icon pipe"&gt;&lt;/i&gt;
+                        &lt;span&gt;대리점등록번호 : 제2018090030호&lt;/span&gt;
+                        &lt;span&gt;사업자등록번호 : 603-88-00976&lt;/span&gt;&lt;i class="icon pipe"&gt;&lt;/i&gt;
+                        &lt;span&gt;통신판매업 신고 : 제2018-서울영등포-0306호&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="copyright"&gt;Copyright © KP Insurance Service Co.,Ltd All Rights Reserved&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;&lt;!-- // footer --&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="mo accordion">
+                                        <h3 class="e-accordion">Mobile용 html</h3>
+                                        <div class="collapse">
+<pre><code class="html">&lt;footer id="footer" class="common-kpinsu footer"&gt;&lt;!-- footer --&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="wrap is-full"&gt;
+            &lt;div class="terms"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="https://m.inbyu.com/info.htm?mode=agree" target="_blank"&gt;이용약관&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://m.inbyu.com/info.htm?mode=privacy" target="_blank"&gt;&lt;strong&gt;개인정보 취급방침&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="company"&gt;
+                &lt;h2&gt;KP보험서비스&lt;/h2&gt;
+                &lt;div class="cs"&gt;
+                    &lt;a href="tel:1644-9381" class="tel"&gt;&lt;strong&gt;1644-9381&lt;/strong&gt;&lt;/a&gt;
+                    &lt;span&gt;평일 09:30 ~ 18:00 (공휴일 휴무)&lt;/span&gt;&lt;br&gt;
+                    &lt;span&gt;Email : &lt;a href="mailto:help@inbyu.com"&gt;help@inbyu.com&lt;/a&gt;&lt;i class="pipe"&gt;&lt;/i&gt;FAX : 02-6016-9875&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="information"&gt;
+                    &lt;div class="details"&gt;
+                        &lt;span&gt;대표이사 : 김영웅&lt;/span&gt;
+                        &lt;span&gt;서울특별시 영등포구 국제금융로 10, 44층&lt;br&gt;(여의도동, 쓰리아이에프씨)&lt;/span&gt;
+                        &lt;span&gt;보험대리점 : KP보험서비스 주식회사&lt;/span&gt;
+                        &lt;span&gt;대리점등록번호 : 제2018090030호&lt;/span&gt;
+                        &lt;span&gt;사업자등록번호 : 603-88-00976&lt;/span&gt;
+                        &lt;span&gt;통신판매업 신고 : 제2018-서울영등포-0306호&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="copyright"&gt;Copyright © KP Insurance Service Co.,Ltd All Rights Reserved&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;&lt;!-- // footer --&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+<div class="module-accordion">
+    <div class="accordion">
+        <h3 class="e-accordion">PC용 css</h3>
+        <div class="collapse">
+            <pre><code class="css">
+// KP보험서비스 공통
+.common-kpinsu { 
+    &.footer {
+        padding-bottom: 24px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            overflow: hidden;
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.8;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+                text-align: left;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                float: right;
+                margin-top: -22px;
+                width: 250px;
+                text-align: right;
+            }
+            .information {
+                float: left;
+                width: calc(100% - 250px);
+            }
+            .details {
+                margin-top: 10px;
+                text-align: left;
+                span {
+                    & + span {
+                        &::before {
+                            content: "";
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #808992;
+            text-align: left;
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+    <div class="accordion">
+        <h3 class="e-accordion">Mobile용 css</h3>
+        <div class="collapse">
+            <pre><code class="css">
+// KP보험서비스 공통
+.common-kpinsu { 
+    &.footer {
+        padding-bottom: 28px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                font-size: 14px;
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.5;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                span {
+                    & + span {
+                        display: block;
+                    }
+                }
+            }
+            .information {
+                margin-top: 15px;
+            }
+            .details {
+                margin-top: 9px;
+                text-align: left;
+                span {
+                    display: block;
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #808992;
+            line-height: 1.83;
+            text-align: left;
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+</div>
+                            </div>
+                        </section>
+
+                        <section id="insuLogo" class="card-section">
+                            <h2>보험사 로고</h2>
+                            <ul class="desc">
+                                <li>모든 서비스 로고는 60px * 60px, 30px * 30px 을 기본으로 한다.</li>
+                            </ul>
+                            <div class="card">
+                                <div class="module-accordion">
+                                    <div>
+                                        <i class="icon insu-company abl"></i>
+                                        <i class="icon insu-company nhlife"></i>
+                                        <i class="icon insu-company kdb"></i>
+                                        <i class="icon insu-company dblife"></i>
+                                        <i class="icon insu-company hanhwalife"></i>
+                                        <i class="icon insu-company heungkuk"></i>
+                                        <i class="icon insu-company kblife"></i>
+                                        <i class="icon insu-company dgblife"></i>
+                                        <i class="icon insu-company dongyanglife"></i>
+                                        <i class="icon insu-company kyobo"></i>
+                                        <i class="icon insu-company miraeasset"></i>
+                                        <i class="icon insu-company chubblife"></i>
+                                        <i class="icon insu-company lina"></i>
+                                        <i class="icon insu-company samsunglife"></i>
+                                        <i class="icon insu-company shinhan"></i>
+                                        <i class="icon insu-company prudential"></i>
+                                        <i class="icon insu-company metlife"></i>
+                                        <i class="icon insu-company bnp"></i>
+                                        <i class="icon insu-company orangelife"></i>
+                                        <i class="icon insu-company aia"></i>
+                                        <i class="icon insu-company ibklife"></i>
+                                        <i class="icon insu-company fubon"></i>
+                                        <i class="icon insu-company kyobolifeplanet"></i>
+                                        <br>
+                                        <i class="icon insu-company samsung"></i>
+                                        <i class="icon insu-company kbinsure"></i>
+                                        <i class="icon insu-company heungkukfire"></i>
+                                        <i class="icon insu-company hyundai"></i>
+                                        <i class="icon insu-company hanwha"></i>
+                                        <i class="icon insu-company meritz"></i>
+                                        <i class="icon insu-company directdb"></i>
+                                        <i class="icon insu-company lotte"></i>
+                                        <i class="icon insu-company nh"></i>
+                                        <i class="icon insu-company chubb"></i>
+                                        <i class="icon insu-company mg"></i>
+                                        <i class="icon insu-company hana"></i>
+                                        <i class="icon insu-company aig"></i>
+                                        <i class="icon insu-company axa"></i>
+                                        <i class="icon insu-company epost"></i>
+                                    </div>
+                                    <div class="accordion">
+                                        <h3 class="e-accordion">html</h3>
+                                        <div class="collapse">
+<pre><code class="html">&lt;i class="icon insu-company abl"&gt;&lt;/i&gt;
+&lt;!-- 
+    (logo)
+    ABL생명 : abl
+    NH농협생명 : nhlife
+    KDB생명 : kdb
+    DB생명 : dblife
+    한화생명 : hanhwalife
+    흥국생명 : heungkuk
+    KB생명 : kblife
+    DGB생명 : dgblife
+    동양생명 : dongyanglife
+    교보생명 : kyobo
+    미래에셋생명 : miraeasset
+    처브라이프 : chubblife
+    라이나생명 : lina
+    삼성생명 : samsunglife
+    신한생명 : shinhan
+    푸르덴셜생명 : prudential
+    메트라이프생명 : metlife
+    BNP파리바카디프생명 : bnp
+    오렌지라이프생명 : orangelife
+    AIA생명 : aia
+    IBK생명 : ibklife
+    푸본생명보험 : fubon
+    교보라이프플래닛보험 : kyobolifeplanet
+
+    삼성화재 : samsung
+    KB손해 : kbinsure
+    흥국화재 : heungkukfire
+    현대해상 : hyundai
+    한화손보 : hanwha
+    메리츠화재 : meritz
+    DB손보 : directdb
+    롯데손보 : lotte
+    농협손해 : nh
+    에이스보험 : chubb
+    MG손해 : mg
+    하나손보 : hana
+    AIG손해보험 : aig
+    AXA손해보험 : axa
+
+    우정사업본부(우체국) : epost
+--&gt;
+
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+<div class="module-accordion">
+    <div class="accordion">
+        <h3 class="e-accordion">css</h3>
+        <div class="collapse">
+            <pre><code class="css">.icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    line-height: 1;
+    text-align:center;
+    vertical-align: middle;
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+    backface-visibility: hidden;
+    
+    // 보험사 목록
+    $insuCompanys:
+        "kyobolifeplanet" 0 0,
+        "kyobo" -30px 0,
+        "ktcu" -60px 0,
+        "nhlife" -90px 0,
+        "dongyanglife" -120px 0,
+        "lina" -150px 0,
+        "metlife" -180px 0,
+        "miraeasset" -210px 0,
+        "samsunglife" -240px 0,
+        "shinhan" -270px 0,
+        "orangelife" 0 -50px,
+        "chubblife" -30px -50px,
+        "prudential" -60px -50px,
+        "fubon" -90px -50px,
+        "hanhwalife" -120px -50px,
+        "heungkuk" -150px -50px,
+        "abl" -180px -50px,
+        "aia" -210px -50px,
+        "bnp" -240px -50px,
+        "dblife" -270px -50px,
+        "dgblife" 0 -100px,
+        "ibklife" -30px -100px,
+        "kdb" -60px -100px,
+        "hanalife" -90px -100px,
+        "kblife" -120px -100px,     // 생명보험
+
+        "nh" 0 -150px,
+        "thek" -30px -150px,
+        "lotte" -60px -150px,
+        "meritz" -90px -150px,
+        "samsung" -120px -150px,
+        "axa" -150px -150px,
+        "chubb" -180px -150px,
+        "carrot" -210px -150px,
+        "hana" -240px -150px,
+        "hanwha" -270px -150px,
+        "hyundai" 0 -200px,
+        "heungkukfire" -30px -200px,
+        "aig" -60px -200px,
+        "directdb" -90px -200px,
+        "kbinsure" -120px -200px,
+        "mg" -150px -200px,         // 손해보험
+
+        "epost" 0 -250px,
+        "kpinsu" -30px -250px,      // 기타보험
+    ;
+
+    &.insu-company {
+        width: 60px; 
+        height: 60px;
+        background-image: url(../img/img_logo_insu.png);
+        background-size: 600px auto;
+
+        @each $insuCompany, $x, $y in $insuCompanys {
+            &.#{$insuCompany} {
+                background-position: ($x * 2) ($y * 2);
+            }
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+</div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ui관련 js -->
+        <script src="./resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-step"><!-- section-step -->
+                    <div class="wrap is-full">
+                        <p>
+                            <span class="total">4</span> <em>단계 중 현재</em>
+                            <span class="current">3</span> <em>단계</em>
+                        </p>
+                    </div>
+                </div><!-- // section-step -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">보험 가입자정보를<br /> 입력해주세요</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-certification"><!-- section-certification -->
+                    <div class="wrap">
+                        <div class="items">
+                            <i class="icon certification"></i>
+                            <p class="desc">휴대폰 본인인증을 통해<br>가입을 진행해 주세요.</p>
+                        </div>
+                    </div>
+                </div><!-- // section-certification -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <div class="grid">
+                    <div class="col col-1-3">
+                        <a href="javascript:;" class="button large secondary"><span>이전</span></a>
+                    </div>
+                    <div class="col col-2-3">
+                        <a href="javascript:;" class="button large primary"><span>본인인증하기</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 인증코드 발송
+    $document.on('click', '.js-code', function(e){
+        e.preventDefault();
+        var $this = $(this);
+
+        $this.children().text('재요청');
+        $('.code').addClass('in');
+    });
+
+    // 외국인 내국인
+    $document.on('change', 'input[name="nation"]', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $target = $('.outside'),
+            $numberText = $('.registration-number').siblings('.title');
+
+        if($('#nation2').prop('checked')) { // 외국인
+            $target.addClass('in');
+            $numberText.text('외국인등록번호');
+        } else {
+            $target.removeClass('in');
+            $numberText.text('주민등록번호');
+        }
+    });
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

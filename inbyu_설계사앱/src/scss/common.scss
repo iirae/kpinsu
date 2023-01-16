@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+@import "_fonts";
+@import "_reset";
+@import "_mixin";
+
+@import "_layout";
+@import "_form";
+@import "_button";
+@import "_icon";
+@import "_badge";
+@import "_text";
+
+@import "_mobileSelect";
+@import "_swiper";
+
+@import "_module";
+@import "_layer";
+@import "_page";
+@import "_circle";
+@import "_ripple";
+@import "_indicator";
+@import "_animation";
+
+
+body{background: $color-wh;}
+body,th,td,input,select,textarea,button{font-size:16px; line-height:1.5; font-family:"Noto Sans KR", sans-serif;color:$color-text-default;}
+a{color: $color-text-default;}
+img {max-width: 100%; vertical-align: top;}
+
+.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+.notch {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: env(safe-area-inset-bottom);
+    bottom: constant(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+
+// KP보험서비스 공통
+.common-kpinsu { 
+    &.footer {
+        padding-bottom: 28px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                font-size: 14px;
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.5;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                span {
+                    & + span {
+                        display: block;
+                    }
+                }
+            }
+            .information {
+                margin-top: 15px;
+            }
+            .details {
+                margin-top: 9px;
+                text-align: left;
+                span {
+                    display: block;
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #808992;
+            line-height: 1.83;
+            text-align: left;
+            letter-spacing: -0.04em;
+        }
+    }
+}

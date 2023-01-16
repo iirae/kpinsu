@@ -1,0 +1,140 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+{literal}
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+
+	$(".all").click(function(){
+
+		if($(this).hasClass('active') == false) {
+
+			$(".chkCustom").addClass('active');
+		}
+		else {
+
+			$(".chkCustom").removeClass('active');
+		}
+	});
+
+	$(".chkCustom").click(function(){
+
+		if($(this).hasClass("active") == false) {
+
+			$(".all").removeClass('active');
+		}
+	});
+
+	$(".chk-ok").click(function(){
+
+		var cname = "을(를) 확인해주시기 바랍니다.";
+		var i = 0;
+
+		$(".chkCustom").each(function(index){
+
+			if(index > 0) {
+
+				if($(this).hasClass('active') == false){
+
+					alert($(this).attr('title') + cname);
+					return false;
+				}
+				else i++;
+			}
+		});
+
+		if(($(".chkCustom").length -1) == i) {
+
+			location.href = "/product.htm?mode="+ $("input[name='mode']").val() +"&mtype=step04";
+		}
+		return false;
+	});
+});
+//-->
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+						<div class="step_process">
+							<div><span class="st_1 on"><b>약관동의</b></span></div>
+							<div><span class="st_2"><b>정보입력</b></span></div>
+							<div><span class="st_3"><b>가입내용확인</b></span></div>
+							<div><span class="st_4"><b>결제</b></span></div>
+						</div>
+
+						<div class="step_Area">
+							<h3 class="sub-title">약관 동의</h3>
+							<div class="speake_box">
+								<h4>소비자 권익보호에 관한 사항</h4>
+								<p>본 동의를 거부하시는 경우에는 서비스계약 상담 등 정상적인 서비스 제공이 불가능하며 본 동의서에 의한 개인(신용)정보 조회는 귀하의 신용등급에 영향을 주지 않습니다.<br>
+									또한 동의하시더라도 당사 홈페이지 및 고객센터를 통해 철회하거나 서비스계약상담 목적의 연락에 대한 중단을 요청하실 수 있습니다.
+								</p>
+							</div>
+
+							<div class="terms">
+								<div class="total-Chk">
+									<b>소비자 권익보호 동의</b>
+									<span class="chkCustom all" style="left:0">전체동의</span><!-- addClass : active -->
+								</div>
+{section name=key loop=$RS.list}
+								<!-- one 약관 -->
+								<div class="terms-block">
+									<div class="terms-box">
+										<p class="title">
+											<span class="open {if $RS.list[key].open_fg == 'O'}active{/if}" id="copen{$RS.list[key].no}"></span>
+											<b>
+												{$RS.list[key].agree_title}<br>
+												<span>{$RS.list[key].agree_subtitle}</span>
+											</b>
+											<i class="chkCustom" title="{$RS.list[key].agree_title}">{$RS.list[key].chk_title}</i><!-- addClass : active -->
+										</p>
+
+										<div class="terms-see" {if $RS.list[key].open_fg == 'O'}style="display: block;"{/if}>
+											{$RS.list[key].agree_content|nl2br}
+										</div>
+									</div>
+								</div><!-- end : class : terms-block -->
+								<!-- one 약관 -->
+{/section}
+
+							</div><!-- end : class : terms -->
+
+							<div class="btn_C_Area">
+								<a href="#none" class="btnStyle blue chk-ok">다음</a>
+							</div>
+						</div><!-- end : class : step_Area -->
+					</div>
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+			<input type="hidden" name="mode" value="{$_GET.mode}">
+
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <meta property="og:title" content="KP보험서비스">
+        <meta property="og:url" content="">
+        <meta property="og:type" content="">
+        <meta property="og:image" content="../resources/img/img_og.png">
+        <meta property="og:description" content="">
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../resources/js/lib/swiper.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <!-- 이 페이지는 모바일기기의 상태바의 컬러가 #ffeb00 이어야 합니다. -->
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap page-main" id="wrap">
+            <div class="head-button">
+                <div class="al-right">
+                    <a href="#aside-alert" class="btn-icon alert on e-show-aside"></a>
+                    <a href="javascript:;" class="btn-icon setting"></a>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">행운 가득한<br>하루 되실 거예요.<br><em>김나박 설계사님</em></h1>
+                    <div class="profile"><img src="../resources/img/img_profile_default.svg" alt="프로필 이미지"></div>
+                    <div class="company"><span>삼정라이프에셋메니지먼트보험대리점</span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <div class="section total">
+                        <!-- <div class="notice-carousel swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <span class="badge new" title="new"></span>
+                                        <p>오늘은 정산 받는 날~<br>얼마의 수입이 생겼을까요?</p>
+                                        <span class="icon"><img src="../resources/img/@img_notice_icon.png" alt="아이콘"></span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <span class="badge new" title="new"></span>
+                                        <p>2 오늘은 정산 받는 날~<br>얼마의 수입이 생겼을까요?</p>
+                                        <span class="icon"><img src="../resources/img/@img_notice_icon.png" alt="아이콘"></span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <span class="badge new" title="new"></span>
+                                        <p>3 오늘은 정산 받는 날~<br>얼마의 수입이 생겼을까요?</p>
+                                        <span class="icon"><img src="../resources/img/@img_notice_icon.png" alt="아이콘"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="carousel-pagination"></div>
+                        </div> -->
+
+                        <div class="crm-area">
+                            <a href="javascript:;" title="고객 관리 바로가기">
+                                <p>오늘 관리중인 나의 고객은<br>총 1,436명 입니다.</p>
+                            </a>
+                            <a href="javascript:;" class="btn-icon bg" title="고객정보 직접 등록 바로가기"><i class="icon plus"></i></a>
+                        </div>
+
+                        <section class="">
+                            <header class="section-head">
+                                <i class="icon customer"></i>
+                                <h2>새로운 고객 반응</h2>
+                            </header>
+                            <ul class="summary">
+                                <li><div><span>보장분석</span><strong>0</strong></div></li>
+                                <li><div><span>비교설명</span><strong>0</strong></div></li>
+                                <li><div><span>광고실적</span><strong>0</strong></div></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <section class="section reaction">
+                        <header class="section-head">
+                            <i class="icon calendar"></i>
+                            <h2>최근 30일 간의 나의 고객 반응</h2> <!-- 전체 기간의 나의 고객 반응 -->
+                            <a href="#layerPeriod" class="btn-icon period e-layer" title="기간 선택"></a>
+                        </header>
+                        <section class="inner-section analysis">
+                            <header class="sub-head">
+                                <h3>보장분석</h3>
+                                <a href="javascript:;" class="more">더보기<i class="icon arrow-down-16"></i></a>
+                            </header>
+                            <div class="core">
+                                <div class="progress-bar">
+                                    <!-- data-progress에 %로 넣어주세요. -->
+                                    <div class="progress-bar--animate-circle analysis-rate" data-progress="90">
+                                        <svg class="progress-bar-content-circle">
+                                            <circle class="progress-bar-background" cx="100%" cy="100%" r="42%" />
+                                            <circle class="progress-bar-circle" cx="100%" cy="100%" r="42%" />
+                                        </svg>
+                                        <div class="progress-bar-percentage">
+                                            <span>응답 고객 수</span>
+                                            <strong class="count">479</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <ul class="segment">
+                                        <li>
+                                            <i class="icon envelope" title="확인하지 않은 고객 수"></i>
+                                            <div>
+                                                <span class="bar unread" style="width: calc( 235 / (479 + 235) * 100% );"></span>
+                                                <strong>235</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon envelope open" title="확인한 고객 수"></i>
+                                            <div>
+                                                <span class="bar" style="width: calc( 479 / (479 + 235) * 100% );"></span>
+                                                <strong>479</strong>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="rate"><span>확인율</span><strong>75%</strong></div>
+                                </div>
+                                <ul class="segment-text">
+                                    <li>
+                                        <span>미확인</span>
+                                        <strong>235 명</strong>
+                                    </li>
+                                    <li>
+                                        <span>확인</span>
+                                        <strong>479 명</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="inner-section compare">
+                            <header class="sub-head">
+                                <h3>비교설명</h3>
+                                <a href="javascript:;" class="more">더보기<i class="icon arrow-down-16"></i></a>
+                            </header>
+                            <div class="core">
+                                <div class="progress-bar">
+                                    <!-- data-progress에 %로 넣어주세요. -->
+                                    <div class="progress-bar--animate-circle compare-rate" data-progress="10">
+                                        <svg class="progress-bar-content-circle">
+                                            <circle class="progress-bar-background" cx="100%" cy="100%" r="42%" />
+                                            <circle class="progress-bar-circle" cx="100%" cy="100%" r="42%" />
+                                        </svg>
+                                        <div class="progress-bar-percentage">
+                                            <span>응답 고객 수</span>
+                                            <strong class="count">53</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <ul class="segment">
+                                        <li>
+                                            <i class="icon envelope" title="확인하지 않은 고객 수"></i>
+                                            <div>
+                                                <span class="bar unread" style="width: calc( 3 / (3 + 50) * 100% );"></span>
+                                                <strong>3</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon envelope open" title="확인한 고객 수"></i>
+                                            <div>
+                                                <span class="bar" style="width: calc( 50 / (3 + 50) * 100% );"></span>
+                                                <strong>50</strong>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="rate"><span>확인율</span><strong>99%</strong></div>
+                                </div>
+                                <ul class="segment-text">
+                                    <li>
+                                        <span>미확인</span>
+                                        <strong>3 명</strong>
+                                    </li>
+                                    <li>
+                                        <span>확인</span>
+                                        <strong>50 명</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="section get">
+                        <header class="section-head">
+                            <i class="icon saving"></i>
+                            <h2>광고수익 정산</h2>
+                            <a href="javascript:;" class="more">더보기<i class="icon arrow-down-16"></i></a>
+                        </header>
+                        <div class="core">
+                            <ul class="monthly">
+                                <!-- 
+                                    <em class="badge small nodata">내역없음</em>(계좌 미등록은 내역없음으로)
+                                    <em class="badge small proceeding">정산금액 집계중</em>
+                                    <em class="badge small proceeding">입금대기</em>
+                                    <em class="badge small success">입금완료</em>
+                                 -->
+                                <li><a href="javascript:;">
+                                    <span class="title">지난달(1건)</span>
+                                    <div>
+                                        <em class="badge small nodata">내역없음</em>
+                                        <strong class="price">0원</strong>
+                                    </div>
+                                    <i class="icon link"></i>
+                                </a></li>
+                                <li><a href="javascript:;">
+                                    <span class="title">이번달(7건)</span>
+                                    <div>
+                                        <em class="badge small proceeding">입금대기</em>
+                                        <strong class="price">2,456,500원</strong>
+                                    </div>
+                                    <i class="icon link"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="section get recommandation">
+                        <header class="section-head">
+                            <i class="icon sales"></i>
+                            <h2>추천 광고수익 정산</h2>
+                            <a href="javascript:;" class="more">더보기<i class="icon arrow-down-16"></i></a>
+                        </header>
+                        <div class="core">
+                            <ul class="monthly">
+                                <!-- 
+                                    <em class="badge small nodata">내역없음</em>(계좌 미등록은 내역없음으로)
+                                    <em class="badge small proceeding">정산금액 집계중</em>
+                                    <em class="badge small proceeding">입금대기</em>
+                                    <em class="badge small success">입금완료</em>
+                                 -->
+                                <li><a href="javascript:;">
+                                    <span class="title">지난달(0건)</span>
+                                    <div>
+                                        <em class="badge small nodata">내역없음</em>
+                                        <strong class="price">0원</strong>
+                                    </div>
+                                    <i class="icon link"></i>
+                                </a></li>
+                                <li><a href="javascript:;">
+                                    <span class="title">이번달(7건)</span>
+                                    <div>
+                                        <em class="badge small proceeding">입금대기</em>
+                                        <strong class="price">2,456,500원</strong>
+                                    </div>
+                                    <i class="icon link"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+
+                    <div class="banner-carousel swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="javascript:;"><img src="../resources/img/@img_main_banner.jpg" alt="운전자 보험료 월 2천원 이상 내고 있다면?"></a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="javascript:;"><img src="../resources/img/@img_main_banner.jpg" alt="운전자 보험료 월 2천원 이상 내고 있다면?"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- include: gnb -->
+                <div data-include-path="./include/gnb.html"></div>
+        
+            </div>
+        </div>
+
+        <!-- layer: 기간 선택  -->
+        <section class="layer bottom layer-period" id="layerPeriod">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-headline-6">기간을 선택해 주세요</h2>
+                    </header>
+                    <div class="content">
+                        <ul class="list-radio">
+                            <li><input type="radio" id="recent30" name="changePeriod"><label for="recent30">최근 30일</label></li>
+                            <li><input type="radio" id="recent60" name="changePeriod"><label for="recent60">최근 60일</label></li>
+                            <li><input type="radio" id="recent90" name="changePeriod"><label for="recent90">최근 90일</label></li>
+                            <li><input type="radio" id="all" name="changePeriod"><label for="all">전체</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 기간 선택  -->
+
+        <!-- include: alert -->
+        <div data-include-path="./include/alert.html"></div>
+    </div>
+
+    <!-- ui관련 js -->
+    <script src="../resources/js/event.js"></script>
+    <script>
+        $(function() {
+            const $window = window.$window || $(window);
+            const $body = $('body');
+
+            // 공지
+            let noticeSwiper = new Swiper(".notice-carousel", {
+                autoplay: {
+                    delay: 2000,
+                },
+                loop: true,
+                pagination: {
+                    el: ".carousel-pagination",
+                    clickable: true,
+                },
+            });
+
+            let bannerSwiper = new Swiper(".banner-carousel", {
+                autoplay: {
+                    delay: 2000,
+                },
+                loop: true,
+            });
+
+            // page 확인
+            let isMain = $('.page-main').length > 0;
+            if(isMain) {
+                homeUiEffect(isMain);
+            }
+
+            // scroll 이동 시 animation
+            $window.on('scroll', function() {
+                if( $('.section.reaction').hasClass('on') ) {
+                    // 고객응답률 animate
+                    $('.analysis-rate, .compare-rate').bekeyProgressbar({
+                        animate : true,
+                        animateText : false,
+                        stroke : 10
+                    });
+                }
+            });
+        });
+        
+    </script>
+
+    <script>
+        $(function() {
+            $('body').on('click', '.gnb li', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const targetMenu = $(this);
+                targetMenu.addClass('on').siblings().removeClass('on');
+                // console.log(targetMenu);
+            });
+        });
+    </script>
+    <!-- include 용 -->
+    <script src="../src/js/include.js"></script>
+    </body>
+</html>

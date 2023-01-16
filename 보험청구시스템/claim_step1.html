@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko" >
+	<head>
+		<title> :  : </title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable=yes, initial-scale=0.25, maximum-scale=1 minimum-scale=0, width=1400px" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0"> -->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="generator" content="editplus" />
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<!-- <meta property="og:type" content="website" />
+		<meta property="og:title" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:url" content="" /> -->
+		<!-- <link rel="shortcut icon" type="text/css" href="images/ico/favicon.ico" /> -->
+		<link rel="stylesheet" type="text/css" href="css/v3/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/v3/slick.css" />
+		<link rel="stylesheet" type="text/css" href="css/v3/slick-theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/v3/jquery.bxslider.css" />
+		<link rel="stylesheet" type="text/css" href="css/v3/jquery-ui.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/v3/jquery.mCustomScrollbar.min.css" /> 
+		<script type="text/javascript" src="js/v3/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/v3/jquery.easing.1.3.min.js"></script>
+		<script type="text/javascript" src="js/v3/ui_new.js"></script>
+		<script type="text/javascript" src="js/v3/jquery.bxslider.js"></script>
+		<script type="text/javascript" src="js/v3/slick.min.js"></script>
+		<script type="text/javascript" src="js/v3/jquery.superscrollorama.js"></script>
+		<script type="text/javascript" src="js/v3/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/v3/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/v3/jquery.mCustomScrollbar.concat.min.js"></script>
+		<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+		<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<div class="in-Layer">
+
+
+
+						<!-- *** start : *** -->
+						<!-- *** start : *** -->
+						<!-- *** start : *** -->
+						<h3 class="h3_Title claim">
+							보험금 청구 항목을 선택하세요
+						</h3>
+						
+						<div class="claimUi_Box">
+							<div class="claim-Box">
+								<dl class="input-zip">
+									<dt style="display:none"></dt>
+									<dd class="type">
+										<div class="select-div">
+											<select name="" id="" class="claimSelect select">
+												<option value="선택">선택</option>
+												<option value="type_1">외래</option>
+												<option value="type_2">약제</option>
+												<option value="type_3">입원</option>
+												<option value="type_4">비급여특약(입원)</option>
+												<option value="type_5">비급여특약(외래)</option>
+											</select>
+										</div>
+										<div class="btn choiceClaim" id="choiceClaim"><a href="javascript:void(0)">확인</a></div>
+									</dd>
+								</dl>
+								<p class="info_Text"><b>청구항목을 선택하신 뒤 확인 버튼을 눌러주세요.</b></p>
+							</div>
+
+							<form action="" method="post">
+								<div class="claim-cont">
+								<!-- -->
+									<div class="claimBLock_list"></div>
+									<div class="add-claim"></div>
+								<!-- -->
+								</div>
+
+								<div class="btn_C_Area claimBtn">
+									<a href="claim_Step2.html" class="btnStyle blueHalf">예상 수령금액 확인</a>
+									<div class="add">
+										<input type="reset" class="reset" value="입력정보 초기화" />
+										<a href="#self" class="saveAdd">임시저장 및 청구항목 추가등록</a>
+										<a href="claim_step2.html" class="check">예상 수령금액 확인</a>
+									</div>
+									<div class="edit">
+										<a href="#self" class="btnStyle greyHalf">취소</a>
+										<a href="#self" class="btnStyle blueHalf">수정</a>
+									</div>
+								</div>
+							</form>
+						</div>
+						
+						<script type="text/javascript" src="js/v3/claim.ui.js"></script>
+						<script type="text/javascript">
+						//<![CDATA[
+						$('.claimUi_Box').claimUi({
+							type : 0, //selected setting : 0=선택(default_수정mode 활용), 1=외래, 2=약제, 3=입원, 4=비급여특약(입원), 5=비급여특약(외래)
+							_n : 4 //claim-Block : 해당 건수 갯수
+						});
+						//]]>
+						</script>
+						<!-- *** end : *** -->
+						<!-- *** end : *** -->
+						<!-- *** end : *** -->
+
+
+
+
+					</div><!-- end : class : in-Layer -->
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+		</div><!-- end : id : wrap -->
+	</body>
+</html>

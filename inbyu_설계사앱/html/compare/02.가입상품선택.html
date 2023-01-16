@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap page-compare-products" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <span class="al-right">
+                    <a href="javascript:;" class="btn-icon close"></a>
+                </span>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline"><em>고객의 가입상품을</em><br>선택 또는 검색해 주세요</h1>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <div class="section-filter">
+                            <div class="form-group search filter">
+                                <span class="f-text"><input type="search" placeholder="상품명 또는 상품명 초성 검색"></span>
+                                <a href="#insuList" class="btn-icon filter e-tooltip-layer" title="보험상품 필터링하기"></a>
+                                <button class="btn-icon clear e-clear-input" title="입력 문구 삭제"></button>
+                            </div>
+                            <div class="module-selected-option">
+                                <button type="button" class="item">생보보장<i class="icon delete"></i></button>
+                                <button type="button" class="item">처브라이프<i class="icon delete"></i></button>
+                                <button type="button" class="item">정기<i class="icon delete"></i></button>
+                            </div>
+                        </div>
+                        <ul class="list-wide">
+                            <!-- 반복 
+                                (badge)
+                                생보: <em class="badge life">생보</em>
+                                손보: <em class="badge nonelife">손보</em>
+                                보장: <em class="badge life">보장</em>
+                                저축: <em class="badge saving">저축</em>
+                                저축: <em class="badge etc">중분류</em>
+
+                                (logo)
+                                ABL생명 : abl
+                                NH농협생명 : nhlife
+                                KDB생명 : kdb
+                                DB생명 : dblife
+                                한화생명 : hanhwalife
+                                흥국생명 : heungkuk
+                                KB생명 : kblife
+                                DGB생명 : dgblife
+                                동양생명 : dongyanglife
+                                교보생명 : kyobo
+                                미래에셋생명 : miraeasset
+                                처브라이프 : chubblife
+                                라이나생명 : lina
+                                삼성생명 : samsunglife
+                                신한생명 : shinhan
+                                푸르덴셜생명 : prudential
+                                메트라이프생명 : metlife
+                                BNP파리바카디프생명 : bnp
+                                오렌지라이프생명 : orangelife
+                                AIA생명 : aia
+                                IBK생명 : ibklife
+                                푸본생명보험 : fubon
+                                교보라이프플래닛보험 : kyobolifeplanet
+
+                                삼성화재 : samsung
+                                KB손해 : kbinsure
+                                흥국화재 : heungkukfire
+                                현대해상 : hyundai
+                                한화손보 : hanwha
+                                메리츠화재 : meritz
+                                DB손보 : directdb
+                                롯데손보 : lotte
+                                농협손해 : nh
+                                에이스보험 : chubb
+                                MG손해 : mg
+                                하나손보 : hana
+                                AIG손해보험 : aig
+                                AXA손해보험 : axa
+
+                                우정사업본부(우체국) : epost
+                            -->
+                            <li class="module-product">
+                                <dl>
+                                    <dt><i class="icon insu-company dblife" title="DB생명"></i></dt>
+                                    <dd>
+                                        <div class="logo"><em class="badge life">생보</em><em class="badge guarantee">보장</em><em class="badge etc">상해(기타_건강상해)</em></div>
+                                        <strong>VA 변액연금보험 무배당 1종 <i class="icon document on"></i></strong><!-- 상품안내표 있을 경우에만 on 추가 -->
+                                        <span class="desc">변액적립 일반</span>
+                                    </dd>
+                                </dl>
+                                <a href="javascript:;" class="btn btn-normal">가입 상품 선택</a>
+                                <button class="btn-icon favorite e-favorite" type="button" title="즐겨찾기 추가"></button>
+                            </li><!-- //반복 -->
+                            <li class="module-product">
+                                <dl>
+                                    <dt><i class="icon insu-company kbinsure" title="KB손해"></i></dt>
+                                    <dd>
+                                        <div class="logo"><em class="badge nonelife">손보</em><em class="badge saving">저축</em><em class="badge etc">단독실손(선택형Ⅱ)</em></div>
+                                        <strong>무배당변액유니버셜Ⅲ오늘의종신보험플러스1형우리아이좋은아이케어보장보험2종 <i class="icon document"></i></strong>
+                                        <span class="desc">비변액 기본형  |  무해지/저해지 환급금</span>
+                                    </dd>
+                                </dl>
+                                <a href="javascript:;" class="btn btn-normal">가입 상품 선택</a>
+                                <button class="btn-icon favorite e-favorite" type="button" title="즐겨찾기 추가"></button>
+                            </li>
+                        </ul>
+                        <div class="mt-r area-button more">
+                            <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="tooltip-layer layer-insu-filter" id="insuList">
+            <div class="inner">
+                <header class="head">
+                    <h2>필터 조건을 선택하세요.</h2>
+                    <button class="btn btn-default small">초기화<i class="icon refresh"></i></button>
+                </header>
+                <div class="content">
+                    <section class="section">
+                        <h3>보험종류</h3>
+                        <ul>
+                            <li><input type="checkbox" id="insu01"><label for="insu01">생보보장</label></li>
+                            <li><input type="checkbox" id="insu02"><label for="insu02">생보저축</label></li>
+                            <li><input type="checkbox" id="insu03"><label for="insu03">손보보장</label></li>
+                            <li><input type="checkbox" id="insu04"><label for="insu04">손보저축</label></li>
+                        </ul>
+                    </section>
+                    <section class="section">
+                        <h3>카테고리</h3>
+                        <ul class="expandable">
+                            <li><input type="checkbox" id="insuCategory01"><label for="insuCategory01">정기</label></li>
+                            <li><input type="checkbox" id="insuCategory02"><label for="insuCategory02">종신</label></li>
+                            <li><input type="checkbox" id="insuCategory03"><label for="insuCategory03">질명</label></li>
+                            <li><input type="checkbox" id="insuCategory04"><label for="insuCategory04">암</label></li>
+                            <li><input type="checkbox" id="insuCategory05"><label for="insuCategory05">상해</label></li>
+                            <li><input type="checkbox" id="insuCategory06"><label for="insuCategory06">CI</label></li>
+                            <li><input type="checkbox" id="insuCategory07"><label for="insuCategory07">연금</label></li>
+                            <li><input type="checkbox" id="insuCategory08"><label for="insuCategory08">연금저축</label></li>
+                        </ul>
+                        <div class="area-more">
+                            <button class="btn btn-more e-more">더보기<i class="icon more"></i></button>
+                        </div>
+                    </section>
+                    <section class="section">
+                        <h3>보험사</h3>
+                        <ul class="expandable">
+                            <li><input type="checkbox" id="insuCompany01"><label for="insuCompany01">삼성화재</label></li>
+                            <li><input type="checkbox" id="insuCompany02"><label for="insuCompany02">농협손해</label></li>
+                            <li><input type="checkbox" id="insuCompany03"><label for="insuCompany03">현대해상</label></li>
+                            <li><input type="checkbox" id="insuCompany04"><label for="insuCompany04">DB손보</label></li>
+                            <li><input type="checkbox" id="insuCompany05"><label for="insuCompany05">AIG손해보험</label></li>
+                            <li><input type="checkbox" id="insuCompany06"><label for="insuCompany06">에이스보험</label></li>
+                            <li><input type="checkbox" id="insuCompany07"><label for="insuCompany07">메리츠화재</label></li>
+                        </ul>
+                        <div class="area-more">
+                            <button class="btn btn-more e-more">더보기<i class="icon more"></i></button>
+                        </div>
+                    </section>
+                </div>
+                <div class="area-button mt-l">
+                    <button class="btn btn-primary e-sample" type="button">필터적용하기</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 필터 적용하기 클릭 후 
+                $body.on('click', '.e-sample', function(e) {
+                    e.preventDefault();
+                    let findParent = $(this).parents('.tooltip-layer');
+
+                    closeLayer(findParent);
+                    $('.e-tooltip-layer').removeClass('on');
+                });
+
+                // 필터 열기
+                $body.off('click', '.e-tooltip-layer').on('click', '.e-tooltip-layer', function(e) {
+                    e.preventDefault();
+                    let $this = $(e.target);
+                    $this.toggleClass('opened');     // 필터 버튼에 컬러 추가 시에는 on 추가/삭제
+                    filterLayer($this);
+                });
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="inbyu" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">inbyu</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">inbyu</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap text-center">
+                        <h2 class="title">전국민생활체육보험 가입</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-process"><!-- section-process -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4">
+                                <i class="icon step-a"></i>
+                                <span>01.약관동의</span>
+                            </div>
+                            <div class="col col-1-4 in">
+                                <i class="icon step-b"><em>현재위치</em></i>
+                                <span>02.정보입력</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-c"></i>
+                                <span>03.가입내용확인</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-d"></i>
+                                <span>04.결제</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-process -->
+
+                <div class="container section-pre-check"><!-- section-pre-check -->
+                    <div class="wrap">
+                        <p class="notice">
+                            질문의 답변이 사실과 다를 시에는 보험유지 또는 보험금 지급에 영향을 미칠 수 있습니다.
+                        </p>
+
+                        <div class="all">
+                            <h2 class="title">가입자 정보 입력</h2>
+                            <div class="answer">
+                                <span class="checks">
+                                    <input type="radio" id="all" name="all" />
+                                    <label for="all">모두 아니오</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="items">
+                            <div class="item"><!-- item -->
+                                <p class="question">
+                                    현재 자가용이 아닌 영업용 차량을 운전하고 있습니까?
+                                </p>
+                                <div class="answer">
+                                    <span class="checks">
+                                        <input type="radio" id="answerA1" name="answerA" />
+                                        <label for="answerA1">예</label>
+                                    </span>
+                                    <span class="checks">
+                                        <input type="radio" id="answerA2" name="answerA" />
+                                        <label for="answerA2">아니오</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="question">
+                                    현재 이륜차(오토바이)를 운전하고 있습니까?
+                                </p>
+                                <div class="answer">
+                                    <span class="checks">
+                                        <input type="radio" id="answerB1" name="answerB" />
+                                        <label for="answerB1">예</label>
+                                    </span>
+                                    <span class="checks">
+                                        <input type="radio" id="answerB2" name="answerB" />
+                                        <label for="answerB2">아니오</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="question">
+                                    현재 눈,귀,코,언어,씹는기능,정신,신경기능에 장애가 있거나 팔,다리,손(손가락포함),발(발가락포함),척추의 손실 또는 변형으로 인한 외관상 신체의 장애가 있습니까?
+                                </p>
+                                <div class="answer">
+                                    <span class="checks">
+                                        <input type="radio" id="answerC1" name="answerC" />
+                                        <label for="answerC1">예</label>
+                                    </span>
+                                    <span class="checks">
+                                        <input type="radio" id="answerC2" name="answerC" />
+                                        <label for="answerC2">아니오</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-pre-check -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <a href="javascript:;" class="button large disabled"><span>가입하기</span></a>
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // radio
+    $document.on('change', '.checks input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $target = $this.closest('.checks'),
+            $wrap = $this.closest('.section-pre-check'),
+            $submit = $('.section-button').find('.button');
+
+            console.log($wrap.find('input[type=radio]').length);
+
+        if( $target.parent().parent().hasClass('all') ) {
+            if($this.is(':checked')) {
+                $wrap.find('input[type=radio]').prop('checked', true);
+            } else {
+                $wrap.find('input[type=radio]').prop('checked', false);
+            }
+        } else {
+            if ($this.is(':checked') && $wrap.find('input[type=radio]').length - 4 === $wrap.find('input[type=radio]:checked').length) {
+                $wrap.find('.all input[type=radio]').prop('checked', true);
+            } else {
+                $wrap.find('.all input[type=radio]').prop('checked', false);
+            }
+        }
+
+        if($wrap.find('input[type=radio]').length - 3 === $wrap.find('input[type=radio]:checked').length) {
+            $submit.removeClass('disabled').addClass('secondary');
+        } else {
+            $submit.removeClass('secondary').addClass('disabled');
+        }
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

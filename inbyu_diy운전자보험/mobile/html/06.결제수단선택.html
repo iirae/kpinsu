@@ -1,0 +1,148 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-step"><!-- section-step -->
+                    <div class="wrap is-full">
+                        <p>
+                            <span class="total">4</span> <em>단계 중 현재</em>
+                            <span class="current">4</span> <em>단계</em>
+                        </p>
+                    </div>
+                </div><!-- // section-step -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">보험료 결제수단을<br /> 선택해주세요</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-pay is-bottom-full"><!-- section-pay -->
+                    <div class="wrap">
+                        <div class="items">
+                            <div class="item kakao"><!-- item -->
+                                <div class="checks small">
+                                    <input type="radio" name="pay" id="pay1" />
+                                    <label for="pay1">카카오페이</label>
+                                </div>
+                            </div>
+                            <div class="item card"><!-- item -->
+                                <div class="checks small">
+                                    <input type="radio" name="pay" id="pay2" />
+                                    <label for="pay2">신용카드</label>
+                                </div>
+                            </div>
+                            <div class="item point"><!-- item -->
+                                <div class="checks small">
+                                    <input type="radio" name="pay" id="pay3" />
+                                    <label for="pay3">제휴사 포인트</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 임시 -->
+                        <div class="item" style="margin-top: 30px;">
+                            <a href="#modalPayment" class="js-modal button info">이지웰 레이어 확인용</a>
+                        </div><!-- //임시 -->
+                    </div>
+
+                    <div class="bottom-spacer" aria-hidden="true"></div>
+                </div><!-- // section-pay -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <div class="grid">
+                    <div class="col col-1-3">
+                        <a href="javascript:;" class="button large secondary"><span>이전</span></a>
+                    </div>
+                    <div class="col col-2-3">
+                        <a href="javascript:;" class="button large disabled submit"><span>확인</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<!-- 이지웰 -->
+<div id="modalPayment" class="modal-container modal-payment"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-body">
+                <h2 class="title">이지웰</h2>
+                <div class="content">
+                    <h3 class="pay-title">결제금액</h3>
+                    <ul class="reset">
+                        <li><input type="text" readonly value="1,555,000원"></li>
+                        <li><input type="text" readonly value="내용이 들어갑니다."></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="md-modal-foot">
+                <a href="javascript:;" class="js-modal-close button secondary large col-1"><span>닫기</span></a>
+                <a href="javascript:;" class="js-modal-close button primary large col-2"><span>확인</span></a>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 버튼활성화
+    $document.on('change', '.section-pay input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $submit = $('.submit');
+
+        if ($this.is(':checked')) {
+            $submit.removeClass('disabled').addClass('primary');
+        }
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

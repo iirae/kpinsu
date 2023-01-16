@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko" >
+	<head>
+		<title>자동차보험</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+		<meta name="format-detection" content="telephone=no">
+		<!-- <link rel="shortcut icon" href="https://m.inbyu.com/img/v3/inbyu_favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="https://m.inbyu.com/img/v3/contents/homescreen_icon.png"> -->
+
+		<script type="text/javascript" src="js/v3/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/v3/jquery.easing.1.3.min.js"></script>
+		<script type="text/javascript" src="js/v3/car.ui.js"></script>
+		<script type="text/javascript" src="js/v3/layer.ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/v3/style.css" />
+		<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+		<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+
+		<script type="text/javascript">
+			//<![CDATA[
+			var className="";
+
+			function nexTest(className){
+				$(document).on('click', className, function(){
+					layerOpenBtn($(this),'top');
+				});
+			}
+
+			$(document).ready(function(){
+				$('.btn-pop').click(function(){
+					layerOpenBtn($(this), 'top');
+				});
+
+				$("input[type='radio']").click(function(){
+					var num = $(this).parent().index();
+					if( num == 0) {
+						fnCarSearchCoseReset();
+						$(this).closest(".tbl-inp").next(".tbl-inp").show();
+						$(".car-search-info .inp-tx-set i").hide();
+						$("#direct").show();
+						$("#sel").hide();
+
+					} else {
+						fnCarSearchCoseReset();
+						$(this).closest(".tbl-inp").next(".tbl-inp").hide();
+						$(".car-search-info .inp-tx-set i").show();
+						$("#direct").hide();
+						$("#sel").show();
+					}
+				});
+
+				$(".optionToggle p").on("click", function(){
+					if($(this).hasClass("on")){
+						$(this).removeClass("on");
+						$(this).next("ul").hide();
+					} else {
+						//$(".optionToggle p").removeClass("on");
+						//$(".optionToggle ul").hide();
+						$(this).addClass("on");
+						$(this).next("ul").show();
+					}
+				});
+
+				$(".layer-pop .grid-box").each(function(){
+					$(this).find("li > a").on("click",function(){
+						if($(this).find("li").hasClass("on") == false){
+							$(".layer-pop .grid-box").find("li").removeClass("on");
+							$(this).parent().addClass("on").siblings("li").removeClass("on");
+							return false;
+						}
+					});
+				});
+
+				$(".layer-pop .grid-box > li > a").on("click",function(){
+					//$(this).parent().addClass("on").siblings("li").removeClass("on");
+					return false;
+				});
+
+			});
+
+
+			/* 2번째부터 5번째 팡법까지 on 클래스 추가 */
+			$(document).on("click", ".grid-box > li > a", function(){
+				//$(this).parent().addClass("on").siblings("li").removeClass("on");
+				//return false;
+			});
+
+			//다음 팝업(이전,다음 다를 게 없어서 하나로 통일)
+			function fnNext(classNm,classNo){
+
+				var onLength="";
+
+				if(classNo =="1"){
+					onLength = $(".carBrand li.on").length;
+				}else if(classNo =="2"){
+					onLength = $("#sub04 li.on").length;
+				}else if(classNo =="3"){
+					onLength = $("#sub05 li.on").length;
+				}else if(classNo =="4"){
+					onLength = $("#sub06 li.on").length;
+				}
+
+				if(onLength =="0" && classNo =="1"){
+					$("#nextPop1").attr("data-target","");
+					alert("제조사를 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="2"){
+					$("#nextPop2").attr("data-target","");
+					alert("대표차명을 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="3"){
+					$("#nextPop3").attr("data-target","");
+					alert("연도를 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="4"){
+					$("#nextPop4").attr("data-target","");
+					alert("세부차명을 선택하세요");
+					return;
+				}else{
+					if(classNo =="1"){
+						$("#nextPop1").attr("data-target","layer-pop200");
+					}else if(classNo =="2"){
+						$("#nextPop2").attr("data-target","layer-pop300");
+					}else if(classNo =="3"){
+						$("#nextPop3").attr("data-target","layer-pop400");
+					}else if(classNo =="4"){
+						$("#nextPop4").attr("data-target","layer-pop500");
+					}
+					layerClose();
+					nexTest(classNm);
+				}
+			}
+
+			//선택할때 값 체크
+			function fnNext2(classNm,classNo){
+				var onLength="";
+
+				if(classNo =="1"){
+					onLength = $(".carBrand li.on").length;
+				}else if(classNo =="2"){
+					onLength = $("#sub04 li.on").length;
+				}else if(classNo =="3"){
+					onLength = $("#sub05 li.on").length;
+				}else if(classNo =="4"){
+					onLength = $("#sub06 li.on").length;
+				}
+
+				if(onLength =="0" && classNo =="1"){
+					$("#selPop01").attr("data-target","");
+					alert("제조사를 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="2"){
+					$("#selPop02").attr("data-target","");
+					alert("대표차명을 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="3"){
+					$("#selPop03").attr("data-target","");
+					alert("연도를 선택하세요");
+					return;
+				}else if(onLength =="0" && classNo =="4"){
+					$("#selPop04").attr("data-target","");
+					alert("세부차명을 선택하세요");
+					return;
+				}
+			}
+			//]]>
+		</script>
+		<style type="text/css">
+			.optionToggle p{padding:15px 0; font-size:15px; color:#222; text-align:center; border-bottom:1px solid #dfdfdf;}
+			.optionToggle .grid-box{display:none;}
+		</style>
+	</head>
+
+	<body >
+		<div id="inbyuWrap">
+			<div id="inbyuContents">
+				<h2 class="hide">컨텐츠</h2>
+
+				<!-- 2. 직접 차종 조회 -->
+				<div class="cnt-area car-search">
+					<h2 class="title-dep1">2. 직접 차종 조회 </h2>
+					<p class="desc-title">신차(최초신규계약) , 외제차, LPG차량, 연식 15년 이상 차량의 경우 보험료 조회에 제한이 있을 수 있습니다.</p>
+					<div class="tbl-inp text-center">
+						<span class="inp-radio-set"><input type="radio" name="carSearchCose" id="carSearchCose_1" value="1" checked><label for="carSearchCose_1">차량번호로 검색</label></span>
+						<span class="inp-radio-set"><input type="radio" name="carSearchCose" id="carSearchCose_2" value="2"> <label for="carSearchCose_2">직접 세부차종 선택</label></span>
+					</div>
+					<div class="tbl-inp">
+					<table>
+							<caption>차량번호 입력</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><label for="searchCarNo">차량번호로 입력</label></th>
+									<td>
+										<span class="inp-tx-set">
+											<input type="text" name="searchCarNo" id="searchCarNo" placeholder="예)12가1234" maxlength="7">
+											<i><button type="button" class="btn-org" id="searchCarNoBtn" name="searchCarNoBtn" onclick='javascript:fnSearchCarNo();'>확인</button></i>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- 기존차량검색 -->
+				<div class="cnt-area car-search-info" id="direct">
+					<div class="tbl-type2">
+						<!-- 1. 조회된 데이터가 있는 경우-->
+						<table>
+							<caption>조회한 차량의 제조사, 대표차명, 등록년도, 세부차명, 세부형식</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">제조사</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carMaker01"></span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">대표차명</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carName01"></span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">등록년도</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carMadeYear01"></span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">세부차명</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carNameDtl01"></span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">세부형식</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carOptDtl01"></span>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- 1. 조회된 데이터가 있는 경우-->
+
+						<!-- 2. 조회된 데이터가 없을 경우-->
+						<table style="display:none">
+							<caption>조회한 차량의 제조사, 대표차명, 등록년도, 세부차명, 세부형식</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+							<tr>
+								<td colspan="2" class="no-data">
+									조회된 데이터가 없습니다. <br/>직접 세부차종을 선택해 주세요.
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<!-- // 2.조회된 데이터가 없을 경우 -->
+					</div>
+				</div>
+				<!-- //기존차량검색 -->
+
+				<!-- 직접선택 -->
+				<div class="cnt-area car-search-info" id="sel" style="display:none;">
+					<div class="tbl-type2">
+						<!-- 1. 조회된 데이터가 있는 경우-->
+						<table>
+							<caption>조회한 차량의 제조사, 대표차명, 등록년도, 세부차명, 세부형식</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">제조사</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carMaker02"></span>
+											<a href="#" class="go-layer btn-pop" data-target="layer-pop100">선택창 열기</a>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">대표차명</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carName02"></span>
+											<a href="#" class="go-layer btn-pop" id="selPop01" data-target="layer-pop200" onclick="javascript:fnNext2('.btn-pop','1')">선택창 열기</a>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">등록년도</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carMadeYear02"></span>
+											<a href="#" class="go-layer btn-pop" id="selPop02" data-target="layer-pop300" onclick="javascript:fnNext2('.btn-pop','2')">선택창 열기</a>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">세부차명</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carNameDtl02"></span>
+											<a href="#" class="go-layer btn-pop" id="selPop03" data-target="layer-pop400" onclick="javascript:fnNext2('.btn-pop','3')">선택창 열기</a>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">세부형식</th>
+									<td>
+										<span class="inp-tx-set">
+											<span id="search_carOptDtl02"></span>
+											<a href="#" class="go-layer btn-pop" id="selPop04" data-target="layer-pop500" onclick="javascript:fnNext2('.btn-pop','4')">선택창 열기</a>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- 1. 조회된 데이터가 있는 경우-->
+					</div>
+				</div>
+				<!-- //직접선택 -->
+
+				<div class="cnt-area">
+					<div class="btn-group">
+						<a href="#none" class="btn-xl" onclick=''>다음 단계</a> <!-- btn-org 클래스 추가 시 색상 변경 -->
+					</div>
+				</div>
+				<!-- // 2. 직접 차종 조회 -->
+
+			</div>
+			</div><!-- end : id : inbyuContents -->
+
+
+		</div><!-- end : id : inbyuWrap -->
+
+
+			<!-- 1단계 레이어 팝업 -->
+			<div class="layer-pop" id="layer-pop100">
+				<div class="layer-bg"></div>
+				<div class="layer-cnt">
+					<div class="layer-top">
+						자동차 상세정보
+					</div>
+					<div class="layer-mid">
+						<div class="layer-subtit">
+							<h2>
+								제조사
+							</h2>
+							<div class="prev-next-list">
+								<a href="#" class="next-list btn-pop" data-target="layer-pop200" id="nextPop1" onclick="javascript:fnNext('.btn-pop','1')">대표차명</a>
+							</div>
+						</div>
+						<div class="cnt-area">
+							<div class="tbl-inp">
+								<div class="optionToggle">
+									<p>많이 선택한 차종 TOP5</p>
+									<ul class="grid-box button-type dual carBrand" id="">
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+									</ul>
+								</div>
+
+								<div class="optionToggle">
+									<p>국산차</p>
+									<ul class="grid-box button-type dual carBrand" id="">
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+										<li><a href="#self">현대</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="btn-group">
+							<a href="#" class="btn-xl" onclick="layerClose();">닫기</a>
+						</div>
+				</div>
+			</div>
+			<!-- //1단계 레이어 팝업 -->
+
+			<!-- 2단계 레이어 팝업 -->
+			<div class="layer-pop" id="layer-pop200">
+				<div class="layer-bg"></div>
+				<div class="layer-cnt">
+					<div class="layer-top">
+						자동차 상세정보
+					</div>
+					<div class="layer-mid">
+						<div class="layer-subtit">
+							<h2>
+								대표차명
+							</h2>
+							<div class="prev-next-list">
+								<a href="#" class="prev-list btn-pop" data-target="layer-pop100" onclick="javascript:fnNext('.btn-pop')">제조사</a>
+								<a href="#" class="next-list btn-pop" data-target="layer-pop300" id="nextPop2" onclick="javascript:fnNext('.btn-pop','2')">연도</a>
+							</div>
+						</div>
+						<div class="cnt-area">
+							<div class="tbl-inp">
+								<ul class="grid-box button-type" id="sub04">
+									<li><a href="#self" onclick="javascript:fnIsCarName('현대');">현대</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('기아');">기아</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('쌍용');">쌍용</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+						<div class="btn-group">
+							<a href="#" class="btn-xl" onclick="layerClose();">닫기</a>
+						</div>
+				</div>
+			</div>
+			<!-- //2단계 레이어 팝업 -->
+
+			<!-- 3단계 레이어 팝업 -->
+			<div class="layer-pop" id="layer-pop300">
+				<div class="layer-bg"></div>
+				<div class="layer-cnt">
+					<div class="layer-top">
+						자동차 상세정보
+					</div>
+					<div class="layer-mid">
+						<div class="layer-subtit">
+							<h2>
+								연도
+							</h2>
+							<div class="prev-next-list">
+								<a href="#" class="prev-list btn-pop" data-target="layer-pop200" onclick="javascript:fnNext('.btn-pop')">대표차명</a>
+								<a href="#" class="next-list btn-pop" data-target="layer-pop400" id="nextPop3" onclick="javascript:fnNext('.btn-pop','3')">세부차명</a>
+							</div>
+						</div>
+						<div class="cnt-area2">
+							<div class="tbl-inp">
+								<ul class="grid-box button-type" id="sub05">
+									<li><a href="#self" onclick="javascript:fnIsCarName('현대');">현대</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('기아');">기아</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('쌍용');">쌍용</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+						<div class="btn-group">
+							<a href="#" class="btn-xl" onclick="layerClose();">닫기</a>
+						</div>
+				</div>
+			</div>
+			<!-- //3단계 레이어 팝업 -->
+
+			<!-- 4단계 레이어 팝업 -->
+			<div class="layer-pop" id="layer-pop400">
+				<div class="layer-bg"></div>
+				<div class="layer-cnt">
+					<div class="layer-top">
+						자동차 상세정보
+					</div>
+					<div class="layer-mid">
+						<div class="layer-subtit">
+							<h2>
+								세부차명
+							</h2>
+							<div class="prev-next-list">
+								<a href="#" class="prev-list btn-pop" data-target="layer-pop300" onclick="javascript:fnNext('.btn-pop')">연도</a>
+								<a href="#" class="next-list btn-pop" data-target="layer-pop500" id="nextPop4" onclick="javascript:fnNext('.btn-pop','4')">세부형식</a>
+							</div>
+						</div>
+						<div class="cnt-area">
+							<div class="tbl-inp">
+								<ul class="grid-box button-type vertical" id="sub06">
+									<li><a href="#self" onclick="javascript:fnIsCarName('현대');">현대</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('기아');">기아</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('쌍용');">쌍용</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+						<div class="btn-group">
+							<a href="#" class="btn-xl" onclick="layerClose();">닫기</a>
+						</div>
+				</div>
+			</div>
+			<!-- //4단계 레이어 팝업 -->
+
+			<!-- 5단계 레이어 팝업 -->
+			<div class="layer-pop" id="layer-pop500">
+				<div class="layer-bg"></div>
+				<div class="layer-cnt">
+					<div class="layer-top">
+						자동차 상세정보
+					</div>
+					<div class="layer-mid">
+						<div class="layer-subtit">
+							<h2>
+								세부형식
+							</h2>
+							<div class="prev-next-list">
+								<a href="#" class="prev-list btn-pop" data-target="layer-pop400" onclick="javascript:fnNext('.btn-pop')">세부차명</a>
+							</div>
+						</div>
+						<div class="cnt-area">
+							<div class="tbl-inp">
+								<ul class="grid-box button-type vertical" id="sub07">
+									<li><a href="#self" onclick="javascript:fnIsCarName('현대');">현대</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('기아');">기아</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('쌍용');">쌍용</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+									<li><a href="#self" onclick="javascript:fnIsCarName('한국GM');">한국GM</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="btn-group">
+						<a href="#" class="btn-xl" id="close05" onclick="layerClose();">닫기</a>
+					</div>
+				</div>
+			</div>
+			<!-- //5단계 레이어 팝업 -->
+
+
+		<script type="text/javascript" src="js/v3/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/v3/kakao.ui.js"></script>
+		<script type="text/javascript" src="js/v3/jquery-ui.min.js"></script>
+	</body>
+</html>

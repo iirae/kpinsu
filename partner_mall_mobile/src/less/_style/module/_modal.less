@@ -1,0 +1,227 @@
+.md-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    line-height: 1;
+    background-color: #fff;
+    overflow: hidden;
+}
+.md-modal-wrapper {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+    height: 100vh;
+}
+.md-modal-holder {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.md-modal-relative {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.md-modal-inner {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin: 0 auto;
+    min-width: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+    .js-modal-close {
+        .icon {
+            .set-icon(30px, 30px, 'temp/modal_close', false);
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: -30px;
+        }
+    }
+}
+
+.modal-container {
+    display: none;
+    .outer-close {
+        display: block;
+        position: fixed;
+        z-index: 3000;
+        margin: 30px 35px;
+        top: 0;
+        right: 0;
+        .icon {
+            .set-icon(50px, 50px, 'modal/ico_close');
+        }
+    }
+    .inner-close {
+        display: block;
+        position: absolute;
+        z-index: 3000;
+        margin: 0 -54px 0 0;
+        top: 0;
+        right: 0;
+        .icon {
+            .set-icon(34px, 34px, 'modal/ico_close_inner');
+        }
+    }
+    .md-modal {
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+        transform: translate(100%, 0);
+        transition:
+            visibility 0s linear .4s,
+            z-index 0s linear .4s,
+            opacity .4s @base-easing 0s,
+            transform .4s @base-easing 0s;
+    }
+    &.in {
+        display: block;
+    }
+    &.anim {
+        .md-modal {
+            visibility: visible;
+            z-index: 1100;
+            opacity: 1;
+            transform: translate(0, 0);
+            transition:
+                visibility 0s linear 0s,
+                z-index 0s linear 0s,
+                opacity .4s @base-easing 0s,
+                transform .4s @base-easing 0s;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        .icon {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -10px 0 -1px;
+                width: 2px;
+                height: 20px;
+                background-color: #2e3338;
+                border-radius: 2px;
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    // 풀사이즈 컨텐트 모달
+    &.is-modal-content {
+        .md-modal {
+            transform: translate(0, -300px);
+        }
+        &.anim {
+            .md-modal {
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
+
+.md-modal-foot {
+    display: flex;
+    .button {
+        flex: 1;
+    }
+    .col-1 {
+        flex: 1;
+    }
+    .col-2 {
+        flex: 2;
+    }
+}
+
+// 모달 풀사이즈 일때 html
+.suit-classic.is-modal-fullsize {
+    #container {
+        height: 100%;
+        height: 100vh;
+        overflow: hidden;
+        transition: all 0s linear 0s;
+    }
+}
+.md-modal-module {
+    overflow: hidden;
+}
+
+.modal-container {
+    &.point-payment {
+        .close {
+            top: 0;
+            right: 46px;
+            .icon {
+                .set-icon(39px, 39px, 'common/icon_layer_close');
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .md-modal {
+            // background: transparent;
+            background: rgba(0, 0, 0, 0.5);
+            transform: translate(0, 0);
+        }
+        .md-modal-module {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 60px 47px;
+            width: 100%;
+            box-sizing: border-box;
+            .wrap {
+                margin: 0;
+            }
+            .title {
+                margin:0 0 40px;
+                font-size: 31px;
+                color: #fff;
+                line-height: 1.29;
+                font-weight: 400;
+                text-align: center;
+            }
+            li + li {
+                margin-top: 15px;
+            }
+            input.text {
+                height: 45px;
+                line-height: 45px;
+                border-width: 0;
+                border-radius: 10px;
+            }
+            .button.blue {
+                height: 45px;
+                line-height: 45px;
+                background: #1a97fc;
+                span {
+                    font-size: 15px;
+                    color: #fff;
+                }
+            }
+        }
+        fieldset {
+            border: none;
+        }
+    }
+}

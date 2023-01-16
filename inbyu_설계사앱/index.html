@@ -1,0 +1,840 @@
+
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="KP보험서비스" id="metaSubject" />
+<meta name="title" content="KP보험서비스" id="metaTitle" />
+<meta name="keywords" content="KP보험서비스" id="metaKeywords" />
+<meta name="description" content="KP보험서비스" id="metaDescription" />
+<meta name="author" content="KP보험서비스" />
+<meta name="copyright" content="KP보험서비스" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta property="og:title" content="KP보험서비스" id="ogTitle" />
+<meta property="og:description" content="KP보험서비스" id="ogDescription" />
+<meta property="og:image" content="./resources/img/tile.png" id="ogImage" />
+<title id="title">IA 설계사앱</title>
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="./resources/css/common.css" />
+<script src="./resources/js/lib/jquery-3.3.1.min.js"></script>
+<style>
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+    fieldset,img{border:0 none}
+    dl,ul,ol,menu,li{list-style:none}
+    blockquote, q{quotes:none}
+    blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+    input,select,textarea,button{vertical-align:middle;font-size:100%}
+    button{border:0 none;border-radius:0;background-color:transparent;cursor:pointer}
+    table{border-collapse:collapse;border-spacing:0}
+    body{-webkit-text-size-adjust:none}
+    input:checked[type='checkbox'] {background-color:#666; -webkit-appearance:checkbox}
+    input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html input[type='button'],input[type='reset'],input[type='number'], input[type='datetime-local'] {-webkit-appearance:none;border-radius:0;-webkit-border-radius:0;}
+    input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+    input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+
+    html, body {height: auto !important;}
+    body{background:#fff}
+    body,th,td,input,select,textarea,button{font-size:1rem;line-height:1.38;font-family:AppleSDGothicNeo,'Malgun Gothic','맑은 고딕',sans-serif;color:#444b52}
+    html,body{height:100%}
+
+    a{color:#444b52;text-decoration:none}
+    a:active, a:hover{text-decoration:none}
+    address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+    html {font-size: 12px;}
+    .wrap {padding:20px 30px 150px;}
+    h1 {font-size: 1.7rem; font-weight:500;}
+    h2 {margin-top: 30px; font-size: 1.3rem; font-weight:500;}
+    h3 {margin-top: 30px; font-size: 1.1rem; font-weight:500;}
+    ul, p {margin-top: 7px; color:#7b7b7b;}
+    a {text-decoration: underline;}
+    .table-layout {margin-top: 10px;}
+    .table-layout table {table-layout: fixed; width:100%; border-collapse: collapse; border: solid 1px #cdcdcd;}
+    .table-layout th, td {padding: 7px 10px; border: dashed 1px #cdcdcd;}
+    .table-layout th {background: #f1f1f1;}
+    .table-layout tbody th {font-weight:500;}
+    .table-layout tbody th strong {font-weight:700;}
+    .table-layout .center {text-align:center;}
+    .table-layout tbody:nth-of-type(even) th {background:#eaeaea;}
+    .table-layout tbody:nth-of-type(even) td {background:#f8f8f8;}
+
+    .tab-layout {display: flex; margin-top: 30px;}
+    .tab-layout li {flex: 0 0 120px; height: 36px; line-height: 36px; text-align:center; border: dashed 1px #dedede;}
+    .tab-layout li + li {margin-left: -1px;}
+    .tab-layout li.on {z-index:10; position: relative; background: rgba(0,0,0,0.03);}
+    .tab-layout li.on a {color: #11bdfb;}
+    .tab-layout a {display: block; font-size: 15px; text-decoration: none;}
+
+    .text-primary {color: #008dff;}
+
+    .title { margin: 50px 0 0; font-size: 24px; text-align: center; }
+    /* .worklist-wrap { margin: 50px 475px 50px 50px; } */
+    .worklist-wrap { margin: 50px; }
+    /* #preview { position:fixed; top: 130px; right:50px; width:375px; height: 70vh; border: 1px #000 solid; } */
+    .file.in { color: #008dff; }
+    .badge-complete, .badge-new, .badge-home {display: inline-block; padding: 0 5px; font-size: 10px; color: #fff; line-height:18px; border-radius: 3px;}
+    .badge-complete {background: #4263eb;}
+    .badge-new {background: #f7b500; text-transform: capitalize;}
+    .badge-home {line-height: 16px; background: #ff3c3c; text-transform: capitalize;}
+    .th {position: relative; height:20px;}
+    .th .badge-new {position: absolute; top: 0; right: 0;}
+    @media screen and (max-width: 768px) {
+        #preview {position: static; margin-top: 20px; width: calc(100vw - 20px);}
+        .worklist-wrap {margin: 10px;}
+    }
+</style>
+</head>
+<body>
+
+<h1 class="title">IA 설계사앱</h1>
+
+<div class="worklist-wrap">
+    <div class="table-layout">
+        <table>
+        <colgroup>
+            <col style="width: 17%;" />
+            <col style="width: 17%;" />
+            <col style="width: 17%;" />
+            <col style="width: 50px;" />
+            <col style="width: auto;" />
+        </colgroup>
+        <!-- <thead>
+            <tr>
+                <th scope="col">파일명</th>
+                <th scope="col">기본 보장</th>
+                <th scope="col">추가 보장</th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <th scope="row">ui guide</th>
+                <td>
+                    <a href="./guide.html" class="file" target="_blank">guide.html</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td>component</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th scope="row">공통<br>common</th>
+                <td>
+                    <a href="./html/common/tip_make_money.html" class="file" target="_blank">보험상품 수익 만들기 팁!</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/common/tip_send_link.html" class="file" target="_blank">보장분석 링크보내기 팁!</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/common/tip_compare.html" class="file" target="_blank">상품비교설명 이용 팁!</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/common/404.html" class="file" target="_blank">404 페이지</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/common/terms.html" class="file" target="_blank">약관</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/common/deepview.html" class="file" target="_blank">deepview</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 회원가입 
+            이메일 > 비번 > 약관 > 소속정보 였으나, 순서 변경됨
+            약관 > 이메일 > 비번 > 소속정보
+        -->
+        <tbody>
+            <tr>
+                <th scope="row">회원가입<br>signup</th>
+                <td>
+                    <a href="./html/signup/03.이용약관.html" class="file" target="_blank">03.이용약관.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/signup/03.01.약관보기.html" class="file" target="_blank">03.01.약관보기.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/01.이메일입력.html" class="file" target="_blank">01.이메일입력.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/02.간편비밀번호.html" class="file" target="_blank">02.간편비밀번호.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td>head 메세지만 다르고 공통으로 사용</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/04.보험사선택.html" class="file" target="_blank">04.보험사선택.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/05.추천코드.html" class="file" target="_blank">05.추천코드.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/06.가입완료.html" class="file" target="_blank">06.가입완료.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 로그인 -->
+        <tbody>
+            <tr>
+                <th scope="row">로그인<br>signin</th>
+                <td>
+                    <a href="./html/signin/01.이메일입력.html" class="file" target="_blank">01.이메일입력.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/signup/02.간편비밀번호.html" class="file" target="_blank">02.간편비밀번호.html</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td>회원가입 간편비밀번호 참고</td>
+            </tr>
+        </tbody>
+        <!-- 아이디 비번 찾기 -->
+        <tbody>
+            <tr>
+                <th scope="row">아이디, 비밀번호 찾기<br>find_account</th>
+                <td>
+                    <a href="./html/find_account/01.아이디찾기.html" class="file" target="_blank">01.아이디찾기.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/find_account/02.비밀번호찾기.html" class="file" target="_blank">02.비밀번호찾기.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/find_account/03.이메일발송.html" class="file" target="_blank">03.이메일발송.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td>아이디 찾기와 비밀번호 찾기는 header 메세지만 다름</td>
+            </tr>
+        </tbody>
+        <!-- home -->
+        <tbody>
+            <tr>
+                <th scope="row"><span class="badge-home">h</span> <strong>HOME</strong></th>
+                <td>
+                    <a href="./html/index.html" class="file" target="_blank">index.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 보장분석 -->
+        <tbody>
+            <tr>
+                <th scope="row">보장 분석<br>analysis</th>
+                <td>
+                    <a href="./html/analysis/보장분석.html" class="file" target="_blank">보장분석.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/analysis/보장분석상세.html" class="file" target="_blank">보장분석상세.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/analysis/01.정보입력.html" class="file" target="_blank">01.정보입력.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/analysis/02.휴대폰인증.html" class="file" target="_blank">02.휴대폰인증.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/analysis/03.이용약관.html" class="file" target="_blank">03.이용약관.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    03.01.약관보기.html
+                </td>
+                <td></td>
+                <td>layer 팝업으로 변경</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/analysis/04.휴대폰인증번호.html" class="file" target="_blank">04.휴대폰인증번호.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/analysis/05.가입완료.html" class="file" target="_blank">05.가입완료.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/analysis/for_download.html" class="file" target="_blank">for_download.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td>보장분석리포트 다운로드 비번</td>
+            </tr>
+        </tbody>
+        <!-- 보험마켓 -->
+        <tbody>
+            <tr>
+                <th scope="row">보험마켓<br>market</th>
+                <td>
+                    <a href="./html/market/보험마켓.html" class="file" target="_blank">보험마켓.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/market/보험마켓_고객용.html" class="file" target="_blank">보험마켓_고객용.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 상품비교설명 -->
+        <tbody>
+            <tr>
+                <th scope="row">상품비교설명<br>compare</th>
+                <td>
+                    <a href="./html/compare/고객목록.html" class="file" target="_blank">고객목록.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/compare/01.고객정보입력.html" class="file" target="_blank">01.고객정보입력.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/compare/02.가입상품선택.html" class="file" target="_blank">02.가입상품선택.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/compare/03.비교상품목록.html" class="file" target="_blank">03.비교상품목록.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/compare/customer_01.비교설명확인서시작.html" class="file" target="_blank">customer_01.비교설명확인서시작.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/compare/customer_02.비교설명확인서.html" class="file" target="_blank">customer_02.비교설명확인서.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/compare/customer_03.서명하기.html" class="file" target="_blank">customer_03.서명하기.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/compare/customer_04.서명제출.html" class="file" target="_blank">customer_04.서명제출.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- CRM -->
+        <tbody>
+            <tr>
+                <th scope="row">고객 관리<br>crm</th>
+                <td>
+                    <a href="./html/crm/고객목록.html" class="file" target="_blank">고객목록.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/고객상세보기.html" class="file" target="_blank">고객상세보기.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/crm/고객접촉이력.html" class="file" target="_blank">고객접촉이력.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/담보보장검색.html" class="file" target="_blank">담보보장검색.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/담보보장검색결과.html" class="file" target="_blank">담보보장검색결과.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/고객직접등록.html" class="file" target="_blank">고객직접등록.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td>고객 정보 수정도 이 페이지 참고</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>주소록에서 가져오기</td>
+                <td></td>
+                <td></td>
+                <td>네이티브에서 구현</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/고객주소록가져오기_step2.html" class="file" target="_blank">고객주소록가져오기_step2.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <a href="./html/crm/그룹관리.html" class="file" target="_blank">그룹관리.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 설정 -->
+        <tbody>
+            <tr>
+                <th scope="row">설정<br>mypage</th>
+                <td>
+                    <a href="./html/mypage/01.설정.html" class="file" target="_blank">01.설정.html</a>
+                </td>
+                <td></td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/signup/03.01.약관보기.html" class="file" target="_blank">약관보기.html</a>
+                </td>
+                <td></td>
+                <td>signup 약관과 동일</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td><strong>/profile</strong></td>
+                <td>
+                    <a href="./html/mypage/profile_내정보수정.html" class="file" target="_blank">profile_내정보수정.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/profile_소속정보수정.html" class="file" target="_blank">profile_소속정보수정.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/profile_추천코드.html" class="file" target="_blank">profile_추천코드.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/signup/02.간편비밀번호.html" class="file" target="_blank">02.비밀번호변경.html</a>
+                </td>
+                <td></td>
+                <td>회원가입 간편비밀번호 참고</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td><strong>/recommand (추천인)</strong></td>
+                <td>
+                    <a href="./html/mypage/recommand_00_info.html" class="file" target="_blank">recommand_00_info.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/recommand_01_추천인신청약관.html" class="file" target="_blank">recommand_01_추천인신청약관.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/recommand_02_추천인소속정보등록.html" class="file" target="_blank">recommand_02_추천인소속정보등록.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/recommand_03_추천인소속정보등록완료.html" class="file" target="_blank">recommand_03_추천인소속정보등록완료.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/recommand_추천광고비실적.html" class="file" target="_blank">recommand_추천광고비실적.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/recommand_정산내역.html" class="file" target="_blank">recommand_정산내역.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td><strong>/sales</strong></td>
+                <td>
+                    <a href="./html/mypage/sales_광고실적.html" class="file" target="_blank">sales_광고실적.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/sales_정산내역.html" class="file" target="_blank">sales_정산내역.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/sales_광고비정산계좌등록_약관.html" class="file" target="_blank">sales_광고비정산계좌등록_약관.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/sales_광고비정산계좌등록_계좌.html" class="file" target="_blank">sales_광고비정산계좌등록_계좌.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/sales_광고비정산계좌등록_완료.html" class="file" target="_blank">sales_광고비정산계좌등록_완료.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>/service</td>
+                <td>
+                    <a href="./html/mypage/service_notice.html" class="file" target="_blank">service_notice.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/service_faq.html" class="file" target="_blank">service_faq.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/service_inquiry.html" class="file" target="_blank">service_inquiry.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/service_suggestion.html" class="file" target="_blank">service_suggestion.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>/app</td>
+                <td>
+                    <a href="./html/mypage/app_알림설정.html" class="file" target="_blank">app_알림설정.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/app_에티켓.html" class="file" target="_blank">app_에티켓.html</a>
+                </td>
+                <td><span class="badge-complete">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>/withdrawal</td>
+                <td>
+                    <a href="./html/mypage/withdrawal_안내확인.html" class="file" target="_blank">withdrawal_안내확인.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/signup/02.간편비밀번호.html" class="file" target="_blank">02.간편비밀번호.html</a>
+                </td>
+                <td></td>
+                <td>회원가입 간편비밀번호 주석 '회원탈퇴 시' 확인</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <a href="./html/mypage/withdrawal_완료.html" class="file" target="_blank">withdrawal_완료.html</a>
+                </td>
+                <td><span class="badge-new">완료</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="./resources/js/event.js?ver=20181111"></script>
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+
+    $document.on('click', '.file', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $link = $('.file'),
+            $target = $('#preview');
+
+        $link.removeClass('in');
+        $this.addClass('in');
+        // $target.attr('src', $this.attr('href'));
+        window.open($this.attr('href'), '', 'width=377, height=640');
+        // window.open($this.attr('href'), '', 'width=734, height=512');       // g fold
+    });
+
+});
+</script>
+</body>
+</html>

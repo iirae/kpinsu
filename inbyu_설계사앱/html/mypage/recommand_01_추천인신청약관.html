@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">추천코드 자격 신청을 위한<br>이용약관에 동의해 주세요</h1>
+                    <div class="progressbar"><span class="col-3 step-1"></span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <dl class="section-terms_agree e-check_range">
+                            <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">모두 동의</label></dt>
+                            <dd>
+                                <ul>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox1"><label for="termAgreeCheckbox1">Karepl은 (추천코드를 입력한)설계사에게 광고수익이 발생할 경우, 해당 추천코드 보유자에게 별도로 정한 수익배분기준 및 일정에 따라 CPS(Cost Per Sale) 방식으로 산정된 수익을 지급합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">보험계약이 취소/해지/배서된 경우 지급(정산)된 광고수익 전부 또는 일부를 환불 합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">추천코드 신청 및 광고수익정산을 위해 입력해야 하는 사항중 '설계사님의 귀책사유'로 인한 문제 발생 시, Karepl은 책임지지 않습니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">(추천코드를 입력한)설계사가 추천코드 또는 소속을 변경하는 경우, 해당월 실적부터 추천코드 수익은 발생하지 않습니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox5"><label for="termAgreeCheckbox5">추천코드 보유자의 소속이 변경된 경우, 해당월부터 모든 추천코드 연결이 해제되고 추천코드 수익은 발생하지 않습니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox6"><label for="termAgreeCheckbox6">수익 지급 금액에 따라 발생하는 제세공과금(원천징수 3.3%) 등을 수입에서 공제하고 지급합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox7"><label for="termAgreeCheckbox7">추천코드 수익은 원단위 이하 절사하여 지급합니다.</label></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">다음</a><!-- 활성 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

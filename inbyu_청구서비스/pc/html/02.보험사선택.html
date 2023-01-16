@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유 청구서비스" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="인바이유" />
+        <title>인바이유 청구서비스</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+    <div>
+        <div class="wrap" id="wrap">
+            <header class="common-kpinsu header" id="header">
+                <h1 class="head-logo">
+                    <a href="00.index.html">
+                        <span><img src="https://wfs.inbyu.com/images/img_partner/0000.png" alt="KP보험서비스"></span>
+                    </a>
+                </h1>
+            </header>
+
+            <div class="container" id="container">
+                <header class="area-title">
+                    <h2 class="page-head">보험사 선택</h2>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <section class="section-insu_com nonlife area-accordion">
+                            <h2 class="section-title"><span role="button" class="e-toggle">손해보험사</span></h2>
+                            <ul class="content">
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu01" readonly><label for="nonLifeInsu01"><i class="insu-logo samsung"></i><span>삼성화재</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu02"><label for="nonLifeInsu02"><i class="insu-logo hyundai"></i><span>현대해상</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu03"><label for="nonLifeInsu03"><i class="insu-logo db"></i><span>DB손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu04" readonly><label for="nonLifeInsu04"><i class="insu-logo kb"></i><span>KB손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu05"><label for="nonLifeInsu05"><i class="insu-logo meritz"></i><span>메리츠화재</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu06"><label for="nonLifeInsu06"><i class="insu-logo hanhwa"></i><span>한화손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu07"><label for="nonLifeInsu07"><i class="insu-logo nonghyup"></i><span>농협손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu08"><label for="nonLifeInsu08"><i class="insu-logo heungkuk"></i><span>흥국화재</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu09"><label for="nonLifeInsu09"><i class="insu-logo lotte"></i><span>롯데손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu10"><label for="nonLifeInsu10"><i class="insu-logo mg"></i><span>MG손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu11" readonly><label for="nonLifeInsu11"><i class="insu-logo thek"></i><span>The-K손해</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu12"><label for="nonLifeInsu12"><i class="insu-logo aig"></i><span>AIG손해</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu13"><label for="nonLifeInsu13"><i class="insu-logo axa"></i><span>AXA손해</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu14"><label for="nonLifeInsu14"><i class="insu-logo chubb"></i><span>처브손해보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="nonLifeInsu15" readonly><label for="nonLifeInsu15"><i class="insu-logo bnp"></i><span>BNP파리바<br>카디프손해</span></label></li>
+                            </ul>
+                        </section>
+                        <section class="section-insu_com life area-accordion">
+                            <h2 class="section-title"><span role="button" class="e-toggle">생명보험사</span></h2>
+                            <ul class="content">
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu01"><label for="lifeInsu01"><i class="insu-logo samsung"></i><span>삼성생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu02"><label for="lifeInsu02"><i class="insu-logo hanhwa"></i><span>한화생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu03"><label for="lifeInsu03"><i class="insu-logo kyobo"></i><span>교보생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu04" readonly><label for="lifeInsu04"><i class="insu-logo nonghyup"></i><span>농협생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu05"><label for="lifeInsu05"><i class="insu-logo dongyang"></i><span>동양생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu06"><label for="lifeInsu06"><i class="insu-logo shinhan"></i><span>신한생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu07" readonly><label for="lifeInsu07"><i class="insu-logo orange"></i><span>오렌지라이프</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu08"><label for="lifeInsu08"><i class="insu-logo heungkuk"></i><span>흥국생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu09" readonly><label for="lifeInsu09"><i class="insu-logo kdb"></i><span>KDB생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu10"><label for="lifeInsu10"><i class="insu-logo lina"></i><span>라이나생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu11" readonly><label for="lifeInsu11"><i class="insu-logo life-planet"></i><span>교보라이프<br>플래닛생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu12"><label for="lifeInsu12"><i class="insu-logo metlife"></i><span>메트라이프</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu13"><label for="lifeInsu13"><i class="insu-logo mirae"></i><span>미래에셋생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu14"><label for="lifeInsu14"><i class="insu-logo chubb"></i><span>처브라이프<br>생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu15" readonly><label for="lifeInsu15"><i class="insu-logo prudential"></i><span>푸르덴셜생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu16"><label for="lifeInsu16"><i class="insu-logo fubon"></i><span>푸본현대생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu17" readonly><label for="lifeInsu17"><i class="insu-logo hana"></i><span>하나생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu18"><label for="lifeInsu18"><i class="insu-logo abl"></i><span>ABL생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu19" readonly><label for="lifeInsu19"><i class="insu-logo aia"></i><span>AIA생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu20"><label for="lifeInsu20"><i class="insu-logo bnp"></i><span>BNP파리바<br>카디프생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu21"><label for="lifeInsu21"><i class="insu-logo db"></i><span>DB생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu22"><label for="lifeInsu22"><i class="insu-logo dgb"></i><span>DGB생명</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu23" readonly><label for="lifeInsu23"><i class="insu-logo ibk"></i><span>IBK연금보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="lifeInsu24" readonly><label for="lifeInsu24"><i class="insu-logo kb"></i><span>KB생명</span></label></li>
+                            </ul>
+                        </section>
+                        <section class="section-insu_com etc area-accordion" style="display: none;">
+                            <h2 class="section-title"><span role="button" class="e-toggle">기타보험사</span></h2>
+                            <ul class="content">
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="etcInsu01"><label for="etcInsu01"><i class="insu-logo epost"></i><span>우체국보험</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="etcInsu02"><label for="etcInsu02"><i class="insu-logo ktculife"></i><span>교직1라이프</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="etcInsu03"><label for="etcInsu03"><i class="insu-logo mg"></i><span>MG새마을금고</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="etcInsu04"><label for="etcInsu04"><i class="insu-logo cu"></i><span>신협</span></label></li>
+                                <li class="form-radio"><input type="radio" name="chooseInsu" id="etcInsu05"><label for="etcInsu05"><i class="insu-logo suhyup"></i><span>수협</span></label></li>
+                            </ul>
+                        </section>
+                    </fieldset>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-primary disabled">휴대폰 본인인증</button><!-- 버튼 활성화 시 readonly 삭제 -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- confirm  -->
+        <div class="layer center" id="layerReady">
+            <div class="container">
+                <p>해당 보험사의 청구서비스는<br>현재 준비중입니다.</p>
+                <div class="area-button">
+                    <button type="submit" class="btn btn-static e-close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <script src="../resources/js/event.js"></script>
+
+        <!-- 참고: UI 확인용입니다. -->
+        <script>
+            $(document).ready(function(){
+                $('.form-radio input').on('click', function(){
+                    let allRadio = $(".form-radio input");
+                    let $this = $(this);
+                    let isReadonly = $this.is(":visible[readonly]");
+                    let count = 0;
+
+                    $.each(allRadio, function(index, radio) {
+                        let checked = $(radio).prop('checked');
+
+                        count = checked ? count+= 1 : count;
+
+                        if (count === 0 || isReadonly) {
+                            $('.btn-primary').addClass('disabled');
+                        } else {
+                            $('.btn-primary').removeClass('disabled');
+                        }
+                    });
+
+                    if(isReadonly) {
+                        $this.prop('checked', false);
+                        $('#layerReady').fadeIn('fast');
+                    }
+
+                });
+            });
+        </script>
+    </body>
+</html>

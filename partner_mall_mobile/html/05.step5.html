@@ -1,0 +1,221 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="inbyu" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">inbyu</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">inbyu</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header_simple.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap text-center">
+                        <h2 class="title">전국민생활체육보험 가입</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-process"><!-- section-process -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4">
+                                <i class="icon step-a"></i>
+                                <span>약관동의</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-b"></i>
+                                <span>정보입력</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-c"></i>
+                                <span>가입내용확인</span>
+                            </div>
+                            <div class="col col-1-4 in">
+                                <i class="icon step-d"><em>현재위치</em></i>
+                                <span>결제</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-process -->
+
+                <div class="container section-payment"><!-- section-payment -->
+                    <div class="wrap">
+						<div class="item">
+							<input type="radio" id="paymentWay1" name="paymentWay">
+							<label for="paymentWay1">신용카드 <i class="icon card"></i></label>
+						</div>
+						<div class="item">
+							<input type="radio" id="paymentWay2" name="paymentWay">
+							<label for="paymentWay2">가상계좌 <i class="icon virtual"></i></label>
+						</div>
+						<div class="item">
+							<input type="radio" id="paymentWay3" name="paymentWay">
+							<label for="paymentWay3">계좌이체 <i class="icon transfer"></i></label>
+						</div>
+						<div class="item">
+							<input type="radio" id="paymentWay4" name="paymentWay">
+							<label for="paymentWay4">카카오페이 <i class="icon kakaopay"></i></label>
+                        </div>
+                        <!-- 임시 -->
+						<div class="item">
+                            <a href="#modalPointPayment" class="js-modal button info small" style="margin-left: 10px;"><span>이제너두 레이어 확인용</span></a>
+                            <a href="#modalPayment" class="js-modal button info small" style="margin-left: 10px;"><span>이지웰 레이어 확인용</span></a>
+						</div><!-- //임시 -->
+                    </div>
+                </div><!-- // section-payment -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-2">
+                                <div class="module">
+                                    <a href="javascript:;" class="button large full info"><span>이전으로</span></a>
+                                </div>
+                            </div>
+                            <div class="col col-1-2">
+                                <div class="module">
+                                    <a href="javascript:;" class="button large full disabled"><span>결제하기</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<div id="modalPayment" class="modal-container modal-payment"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="modal-body">
+                <h2 class="modal-title">이지웰</h2>
+                <div class="content">
+                    <h3 class="pay-title">결제금액</h3>
+                    <ul class="reset">
+                        <li><input type="text" readonly value="1,555,000원"></li>
+                        <li><input type="text" readonly value="내용이 들어갑니다."></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="md-modal-foot">
+                <a href="javascript:;" class="js-modal-close button secondary large col-1"><span>닫기</span></a>
+                <a href="javascript:;" class="js-modal-close button primary large col-2"><span>확인</span></a>
+            </div>
+            <div class="md-modal-foot">
+                <a href="javascript:;" class="js-modal-close button primary large"><span>확인</span></a>
+            </div>
+        </div>
+        <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+    </div>
+</div><!-- // modal -->
+
+<div id="modalPointPayment" class="modal-container point-payment"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="wrap">
+                <h2 class="title">이제너두<br>포인트 결제</h2>
+                <fieldset>
+                    <ul class="reset">
+                        <li><input type="text" class="text" placeholder="아이디"></li>
+                        <li><input type="password" class="text" placeholder="비밀번호"></li>
+                    </ul>
+                    <div class="section-button">
+                        <button type="button" class="button large full blue"><span>포인트 조회하기</span></button>
+                    </div>
+                </fieldset>
+            </div>
+            <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // checkbox
+    $document.on('change', '.section-payment input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $submit = $('.section-button .col:last-child').find('.button');
+
+            console.log('d');
+
+        if( $this.is(':checked') ) {
+            $submit.removeClass('disabled').addClass('primary');
+        } else {
+            $submit.removeClass('primary').addClass('disabled');
+        }
+    });
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

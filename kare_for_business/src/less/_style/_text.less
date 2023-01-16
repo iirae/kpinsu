@@ -1,0 +1,121 @@
+/* text ================================================================== */
+
+
+// .thin { &:extend(.light); }
+// .thick { &:extend(.bold); }
+
+.no-font-smooth {
+    -webkit-font-smoothing : none;
+    font-smooth: never;
+}
+
+div, span, strong, em, table, ul, p, small, a {
+    &.primary { color: @primary-text !important; }
+    &.secondary { color: @secondary; }
+    &.warning { color: @warning; }
+    &.info { color: @info; }
+    &.danger { color: @danger; }
+    &.small {
+        font-size: 13px;
+    }
+    &.large {
+        font-size: 16px;
+    }
+    &.xlarge {
+        font-size: 20px;
+    }
+    &.medium {
+        font-weight: 500;
+    }
+}
+
+// :link { color: @base-link-color; }
+// :visited { color: @base-link-color; }
+// :hover { color: @base-link-hover-color; }
+// :active { color: @base-link-hover-color; }
+
+a {
+    color: @base-link-color;
+    text-decoration: none;
+
+
+    &:hover,
+    &.link,
+    &.underline { text-decoration: underline; }
+
+    &.file {
+        margin-left: 17px;
+        font-size: 16px;
+        color: @info;
+        text-decoration: underline;
+    }
+
+    &.link-has-line  {
+        display: inline-block;
+        font-weight: bold;
+        color: #444b52;
+        span {
+            position: relative;
+            display: block;
+            padding: 2px 0;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: #636b73;
+                transform: translate(0, 0);
+                transition: all .3s;
+            }
+        }
+        &:hover {
+            span::before {
+                transform: translate(0, -4px);
+            }
+        }
+        &.info {
+            font-weight: 500;
+            color: @info;
+            span::before {
+                background-color: @info;
+            }
+        }
+        &.primary {
+            font-weight: 500;
+            color: @primary-text;
+            span::before {
+                background-color: @primary-text;
+            }
+        }
+    }
+
+}
+
+
+p.tip {
+    position: relative;
+    margin: 20px 0 0;
+    padding: 0 0 2px 33px;
+    font-size: 13px;
+    line-height: 1.46;
+    color: #636b73;
+    &::before {
+        content: '!';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: bold;
+        text-align: center;
+        color: #0070cc;
+        border: solid 1px #0070cc;
+        border-radius: 100%;
+        background-color: #fff;
+    }
+}

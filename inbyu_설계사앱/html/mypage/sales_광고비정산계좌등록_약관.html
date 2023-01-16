@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">보험마켓 광고수익 정산을 위한<br> 계좌 등록 약관에 동의해 주세요</h1>
+                    <div class="progressbar"><span class="col-3 step-1"></span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <dl class="section-terms_agree e-check_range">
+                            <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">모두 동의</label></dt>
+                            <dd>
+                                <ul>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox1"><label for="termAgreeCheckbox1">광고수익 정산을 위한 계좌 등록은 반드시 회원님 본인 명의의 계좌로 등록해주셔야 합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">설계사님의 귀책사유로 인한 등록계좌 문제 발생 시 'Karepl'은 책임지지 않습니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">Karepl은 설계사에게 광고수익이 발생할 경우, 별도로 정한 수익배분기준 및 일정에 따라 CPS(Cost Per Sale) 방식으로 산정된 수익을 지급합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">보험계약이 취소/해지/배서된 경우 지금(정산)된 광고수익 전부 또는 일부를 환불 합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox5"><label for="termAgreeCheckbox5">광고수익은 제세공과금(원천징수 3.3%)을 제외하고 지급합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox6"><label for="termAgreeCheckbox6">모든 수익은 원단위 이하 절사하여 지급합니다.</label></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">다음</a><!-- 활성 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

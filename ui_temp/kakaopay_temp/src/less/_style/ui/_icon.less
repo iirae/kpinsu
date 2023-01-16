@@ -1,0 +1,31 @@
+
+i {
+    em {
+        &:extend(.sr-only);
+    }
+}
+
+span.pipe {
+    position: relative;
+    em {
+        .sr-only();
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        width: 1px;
+    }
+}
+
+span.pipe {
+    margin: 0 9px 0 7px;
+    &::before {
+        transform: translate(0, -35%);
+        height: 12px;
+        background: #dddedd;
+    }
+}

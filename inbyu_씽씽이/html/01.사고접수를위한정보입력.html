@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="title" content="씽씽이 X INBYU" />
+        <meta name="author" content="인바이유" />
+        <meta name="copyright" content="인바이유" />
+        <title>씽씽이 X INBYU</title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="../resources/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/default.date.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/default.time.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn btn-back"></a>
+                <a href="#layerClose" class="btn btn-close e-layer"></a>
+            </div>
+            <header class="header">
+                <h1 class="page-head">사고접수를 위한<br> 정보 입력</h1>
+                <p>보험지급 가능여부 확인을 위해<br> 정확한 정보를 입력해주세요.</p>
+            </header>
+            <main class="content pt-20">
+                <fieldset>
+                    <a href="#layerUsage" class="e-layer text-link">이용기록: 2010-10-20(화)</a>
+                    <ul class="section-form">
+                        <li>
+                            <strong>이름</strong>
+                            <div><input type="text" placeholder="홍길동"></div>
+                        </li>
+                        <li class="resident-number">
+                            <strong>주민등록번호</strong>
+                            <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="앞 6자리"><span>-</span><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="1" placeholder="뒤 1자리" class="security"></div>
+                        </li>
+                        <li>
+                            <strong>휴대폰번호</strong>
+                            <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="11" placeholder="숫자만 입력"></div>
+                        </li>
+                        <li class="wrap-date_time">
+                            <strong>사고일시</strong>
+                            <div>
+                                <div class="date"><input type="text" placeholder="날짜 입력" readonly id="accidentDate" class="type-calendar"></div>
+                                <div class="time"><input type="text" placeholder="시간 입력" readonly id="accidentTime" class="type-arrow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>사고위치</strong>
+                            <div><input type="text" placeholder="예시) 서울시 강남구 언주로 534 BJ타워 부근"></div>
+                        </li>
+                        <li>
+                            <strong>사고경위</strong>
+                            <div class="set-select-layer"><input type="text" placeholder="사고경위 선택" readonly class="type-arrow eShowSibling"><a href="#layerCircumstance" class="e-layer"> </a></div>
+                            <div class="form-textarea hidden">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="상세한 내용을 입력해주세요."></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
+            </main>
+            <footer class="footer">
+                <a href="#layerConfirm" class="btn btn-primary disabled e-layer">접수하기</a><!-- 버튼 활성화 시 disabled 삭제 -->
+            </footer>
+        </div>
+
+        <section class="layer usage" id="layerUsage">
+            <div class="head-button align-left">
+                <a href="javascript:;" class="btn btn-back e-close"></a>
+                <!-- <a href="#" class="btn btn-close e-close"></a> -->
+            </div>
+            <div class="container">
+                <h2>이용기록 상세</h2>
+                <div class="contents">
+                    <ul class="dl-layout">
+                        <li>
+                            <span>이름</span>
+                            <strong>김씽씽</strong>
+                        </li>
+                        <li>
+                            <span>이용기록</span>
+                            <strong>
+                                2020.10.20(화) 14:30~<br>
+                                2020.10.20(화) 15:30</strong>
+                        </li>
+                        <li>
+                            <span>이용기기</span>
+                            <strong>AA1243</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="footer">
+                <a href="#" class="btn btn-secondary e-close">닫기</a>
+            </footer>
+        </section>
+
+        <section class="layer circumstance" id="layerCircumstance">
+            <div class="dimmed"></div>
+            <div class="container">
+                <h2>사고경위를 선택해주세요.</h2>
+                <div class="contents">
+                    <ul>
+                        <li><input type="radio" id="reason01" name="reson"><label for="reason01"><em>보행자와 충돌</em> <span>대인사고</span></label></li>
+                        <li><input type="radio" id="reason02" name="reson"><label for="reason02"><em>차량과 충돌</em> <span>대물사고</span></label></li>
+                        <li><input type="radio" id="reason03" name="reson"><label for="reason03"><em>주행자 부상</em> <span>씽씽 주행자만 상해</span></label></li>
+                    </ul>
+                </div>
+                <div class="btn-area">
+                    <a href="#" class="btn btn-primary e-close">확인</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- confirm  -->
+        <div class="layer alert confirm" id="layerConfirm">
+            <div class="container">
+                <p>입력한 내용으로 접수하시겠습니까?</p>
+                <div class="btn-area">
+                    <a href="#" class="btn btn-normal e-close">취소</a>
+                    <button type="submit" class="btn btn-primary" onclick="location.href='./02.사고접수완료.html'">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- close  -->
+        <div class="layer alert" id="layerClose">
+            <div class="container">
+                <p>사고접수 서비스를 종료하시겠습니까?</p>
+                <div class="btn-area">
+                    <a href="#" class="btn btn-normal e-close">취소</a>
+                    <button type="submit" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../resources/js/picker.js"></script>
+        <script src="../resources/js/picker.date.js"></script>
+        <script src="../resources/js/picker.time.js"></script>
+        <script src="../resources/js/legacy.js"></script>
+        <script src="../resources/js/event.js"></script>
+
+        <!-- 참고: UI 확인용입니다. -->
+        <script>
+            $(document).ready(function(){
+                 let circumstance;
+
+                 $('#layerCircumstance label').on('click', function() {
+                    circumstance = $(this).children('em').text();
+                 });
+
+                 $('#layerCircumstance .e-close').on('click', function() {
+                    $('.eShowSibling').val(circumstance);
+
+                    const hasValue = $('.eShowSibling').val();
+
+                    if(hasValue) {
+                        $('.form-textarea').removeClass('hidden');
+                        $('.form-textarea').children('textarea').focus();
+                        setTimeout(()=>{$('.form-textarea').children('textarea').focus()}, 100);
+                        
+                    } else {
+                        $('.form-textarea').addClass('hidden');
+                    }
+                 });
+
+                // 참고: https://amsul.ca/pickadate.js/
+                $('#accidentDate').pickadate({
+                    monthsFull: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+                    monthsShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+                    weekdaysFull: ["일", "월", "화", "수", "목", "금", "토"],
+                    weekdaysShort: ["일", "월", "화", "수", "목", "금", "토"],
+                    format: 'yyyy-mm-dd',
+                });
+
+                $('#accidentTime').pickatime({
+                    format: 'HH:i',
+                    min: [00,00],
+                    max: [10,00],
+                    interval: 5
+                });
+
+            });
+        </script>
+    </body>
+</html>

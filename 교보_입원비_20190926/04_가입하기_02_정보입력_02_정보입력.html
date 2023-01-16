@@ -1,0 +1,454 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+						<div class="step_process">
+							<div><span class="st_1"><b>약관동의</b></span></div>
+							<div><span class="st_2 on"><b>정보입력</b></span></div>
+							<div><span class="st_3"><b>가입내용확인</b></span></div>
+							<div><span class="st_4"><b>결제</b></span></div>
+						</div>
+
+						<div class="step_Area">
+							<div class="total-price">
+								<p class="core">
+									고객님의 보험료는 <span>30,420</span>원 입니다.
+								</p>
+								<p class="desc">
+									가입을 원하시면 정보를 입력해주세요.
+								</p>
+							</div>
+
+							<form method="post" action="" autocomplete="off">
+								<legend>가입자 정보입력</legend>
+								<div class="joinInput-Area">
+									<div class="in">
+										<div class="join-input first">
+											<dl class="input-zip">
+												<dt><label>직업</label></dt>
+												<dd>
+													<p class="work-a">
+														<a href="#modalWorkA" class="js-more-modal"><span>직업 대분류 선택</span></a>
+													</p>
+													<p class="work-b mt10" style="display: none;"><!-- 대분류 선택시 노출 -->
+														<a href="#modalWorkB" class="js-more-modal"><span>직업 소분류 선택</span></a>
+													</p>
+												</dd>
+												<dt><label>운전 여부</label></dt>
+												<dd>
+													<a href="#modalDriving" class="js-more-modal driving"><span>선택</span></a>
+												</dd>
+												<dt style="width: 100%;"><label>가입자 분의 키와 몸무게를 입력해주세요.</label></dt>
+												<dd>
+													<div class="body-info">
+														<div class="item">
+															<label for="cm">키</label>
+															<input type="number" id="cm" />
+															<span>cm</span>
+														</div>
+														<div class="item">
+															<label for="kg">몸무게</label>
+															<input type="number" id="kg" />
+															<span>kg</span>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</div>
+									</div><!-- end : class : join-input -->
+								</div><!-- end : class : joinInput-Area -->
+							</form>
+
+							<div class="btn_C_Area">
+								<a href="#none" class="btnStyle blueD chk-ok">확인</a>
+							</div>
+
+						</div><!-- end : class : step_Area -->
+					</div>
+
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+
+
+			<div id="modalWorkA" class="modal"><!-- modal -->
+				<div class="modal-holder">
+					<div class="head">
+						<h4 class="title">직업 대분류 선택</h4>
+					</div>
+					<div class="body">
+						<div class="checks-list work-list-a">
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA1" name="workA" />
+									<label for="workA1">IT/인터넷</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA2" name="workA" />
+									<label for="workA2">건설/토목</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA3" name="workA" />
+									<label for="workA3">경영/기획</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA4" name="workA" />
+									<label for="workA4">공무원</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA5" name="workA" />
+									<label for="workA5">관리</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA6" name="workA" />
+									<label for="workA6">광고/홍보</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA7" name="workA" />
+									<label for="workA7">교육/연구</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA8" name="workA" />
+									<label for="workA8">금융/보험</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA9" name="workA" />
+									<label for="workA9">디자인</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA10" name="workA" />
+									<label for="workA10">미디어</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA11" name="workA" />
+									<label for="workA11">법률/종교</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA12" name="workA" />
+									<label for="workA12">사무</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA13" name="workA" />
+									<label for="workA13">상담/복지</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA14" name="workA" />
+									<label for="workA14">영업/마케팅</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA15" name="workA" />
+									<label for="workA15">의료/보건</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA16" name="workA" />
+									<label for="workA16">재무/회계</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA17" name="workA" />
+									<label for="workA17">주부/학생</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workA18" name="workA" />
+									<label for="workA18">판매/자영업</label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="foot">
+						<a href="#!" class="js-work-value-a btnStyle blueD">다음</a>
+					</div>
+				</div>
+				<a href="#!" class="js-modal-close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></a>
+			</div><!-- // modal -->
+
+			<div id="modalWorkB" class="modal"><!-- modal -->
+				<div class="modal-holder">
+					<div class="head">
+						<h4 class="title"><span>IT/인터넷</span> 소분류 선택</h4>
+					</div>
+					<div class="body">
+						<div class="checks-list work-list-b">
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB1" name="workB" />
+									<label for="workB1">정보통신(IT)관련 개발자 및 프로그래머<br />
+									(모바일 애플리케이션 프로그래머 제외)</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB2" name="workB" />
+									<label for="workB2">정보통신관련 사무직 관리자</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB3" name="workB" />
+									<label for="workB3">웹 및 멀티미디어 디자이너</label>
+								</span>
+							</div>
+							<div class="item">
+
+								<span class="checks">
+									<input type="radio" id="workB4" name="workB" />
+									<label for="workB4">온라인 쇼핑 판매원</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB5" name="workB" />
+									<label for="workB5">컴퓨터 하드웨어 개발자 및 연구원</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB6" name="workB" />
+									<label for="workB6">통신공학 개발자 및 연구원</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="workB7" name="workB" />
+									<label for="workB7">모바일 애플리케이션 프로그래머</label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="foot">
+						<a href="#!" class="js-work-value-b btnStyle blueD">다음</a>
+					</div>
+				</div>
+				<a href="#!" class="js-modal-close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></a>
+			</div><!-- // modal -->
+
+			<div id="modalDriving" class="modal"><!-- modal -->
+				<div class="modal-holder">
+					<div class="head">
+						<h4 class="title">운전여부 및 차량선택</h4>
+						<p class="desc">
+							운전을 하실 경우 운행하시는 차량을<br />
+							모두 선택해주세요.
+						</p>
+					</div>
+					<div class="body">
+						<div class="checks-list work-list-b">
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving1" name="driving" />
+									<label for="driving1">해당사항없음</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving2" name="driving" />
+									<label for="driving2">승용차 - 자가용(10인승 이하 RV차량 포함)</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving3" name="driving" />
+									<label for="driving3">승용차 - 영업용(개인/일반 택시)</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving4" name="driving" />
+									<label for="driving4">승합차 – 자가용</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving5" name="driving" />
+									<label for="driving5">승합차 – 영업용</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving6" name="driving" />
+									<label for="driving6">화물차 - 자가용(밴으로 출시된 승합차 포함)</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving7" name="driving" />
+									<label for="driving7">화물차 – 영업용</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving8" name="driving" />
+									<label for="driving8">오토바이(50cc미만 포함) – 자가용</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving9" name="driving" />
+									<label for="driving9">오토바이(50cc미만 포함) – 영업용</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving10" name="driving" />
+									<label for="driving10">기계류 - 농기계</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving11" name="driving" />
+									<label for="driving11">기계류 – 건설기계</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving12" name="driving" />
+									<label for="driving12">기타 - 폭발물/인화물수송차량</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving13" name="driving" />
+									<label for="driving13">기타 – 특장차량</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving14" name="driving" />
+									<label for="driving14">기타 - 건설/토목장비</label>
+								</span>
+							</div>
+							<div class="item">
+								<span class="checks">
+									<input type="radio" id="driving15" name="driving" />
+									<label for="driving15">기타</label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="foot">
+						<a href="#!" class="js-work-value-driving btnStyle blueD">다음</a>
+					</div>
+				</div>
+				<a href="#!" class="js-modal-close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></a>
+			</div><!-- // modal -->
+
+			<div class="overlay"></div>
+
+<script>
+$(function() {
+
+	var $window = $window || $(window),
+		$document = $document || $(document),
+		$html = $html || $('html');
+
+	$document.on('click', '.js-more-modal', function(e) { // modal open
+		e.preventDefault();
+		var $target = $(this.hash);
+
+		$html.addClass('is-modal is-overlay');
+		$target.addClass('in');
+	});
+
+	$document.on('click', '.js-modal-close', function(e) { // modal close
+		e.preventDefault();
+		var $target = $(this).closest('.modal');
+
+		$target.removeClass('in');
+		$html.removeClass('is-modal is-overlay');
+	});
+
+	$document.on('click', '.js-work-value-a', function(e) { // 대직업 선택 후 확인
+		e.preventDefault();
+		var _val = $(this).closest('.modal').find('input[type="radio"]:checked').siblings().text();
+
+		$('#modalWorkB').addClass('in').find('.title span').html(_val);
+		setTimeout(function(){
+			$('#modalWorkA').removeClass('in');
+		}, 1000);
+	});
+
+	$document.on('click', '.js-work-value-b', function(e) { // 소직업 선택 후 확인
+		e.preventDefault();
+		var $target = $(this).closest('.modal'),
+			_valA = $target.find('.title span').text(),
+			_valB = $target.find('input[type="radio"]:checked').siblings().text();
+
+		$target.removeClass('in');
+		$html.removeClass('is-modal is-overlay');
+		$('.work-a').find('span').text(_valA);
+		$('.work-b').show().find('span').text(_valB);
+	});
+
+	$document.on('click', '.js-work-value-driving', function(e) { // 운전여부 선택 후 확인
+		e.preventDefault();
+		var $target = $(this).closest('.modal'),
+			_val = $target.find('input[type="radio"]:checked').siblings().text();
+
+		$target.removeClass('in');
+		$html.removeClass('is-modal is-overlay');
+		$('.driving').find('span').text(_val);
+	});
+
+});
+</script>
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

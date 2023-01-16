@@ -1,0 +1,26 @@
+ol.list,
+ul.list {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+ul.list-a {
+    li {
+        padding-left: 14px;
+        &::before {
+            content: '-';
+        }
+    }
+}

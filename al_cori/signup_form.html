@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta content="website" property="og:type">
+        <meta content="" property="og:site_name">
+        <meta content="" property="og:url">
+        <meta content="" property="og:title">
+        <meta content="" property="og:description">
+        <title>인바이유</title>
+        <link rel="shortcut icon" href="" type="image/x-icon">        
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./css/common.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn btn-back"></a>
+            </div>
+            <header class="header">
+                <h1 class="page-head">무료보험 가입을 위한<br> 정보 입력</h1>
+                <p>정보 확인 후에 무료보험에 가입되며,<br>
+                    보험 가입 후에는 가입자<br>
+                    변경이 불가합니다.</p>
+            </header>
+            <main class="content">
+                <section class="insurance-info">
+                    <h2 class="hyundai">현대해상 화재보험</h2>
+                    <p>특정전염병보장 (20세~59세)</p>
+                    <em>가입 익일부터 60일</em>
+                    <strong>무료</strong>
+                    <a href="#layerDetails" class="eLayer">보장내용 자세히보기</a>
+                </section>
+                <fieldset>
+                    <section class="section-signup_form">
+                        <h3 class="">반려견 정보</h3>
+                        <ul>
+                            <li>
+                                <strong>반려견 이름</strong>
+                                <div><input type="text" placeholder="반려견 이름 입력"></div>
+                            </li>
+                            <li>
+                                <strong>반려견 생년월일</strong>
+                                <div><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="8" placeholder="반려견 생년월일 입력(Ex 20210101)"></div>
+                            </li>
+                            <li>
+                                <strong>품종</strong>
+                                <div><input type="text" placeholder="반려견 품종 입력"></div>
+                            </li>
+                            <li>
+                                <strong>예방접종여부</strong>
+                                <div class="form-wrap">
+                                    <span class="f-select">
+                                        <select name="" id="vaccine">
+                                            <option value="" disabled selected>접종항목</option>
+                                            <option value="">종합백신</option>
+                                            <option value="">켄넬코프</option>
+                                            <option value="">코로나장염</option>
+                                            <option value="">광견병</option>
+                                            <option value="">미접종</option>
+                                        </select>
+                                    </span>
+                                    <span>
+                                        <input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="11" placeholder="접종 일자(Ex 20210101)">
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </fieldset>
+                <p class="text-info">가장 최근에 접종하신 항목을 입력해 주세요.</p>
+            </main>
+            <footer class="footer">
+                <button type="submit" class="btn btn-primary disabled" onclick="location.href='complete.html'">확인</button>
+            </footer>
+        </div>
+
+        <section class="layer" id="layerDetails">
+            <div class="head-button">
+                <a href="#" class="btn btn-close eClose"></a>
+            </div>
+            <div class="container">
+                <h2>보장내역 상세보기</h2>
+                <div class="contents">
+                    <h3>보장 및 보험 조건</h3>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">보장</th>
+                                    <th scope="col">1인당 보상한도액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>특별전염병보장</td>
+                                    <td>2,000,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-info">보상하는 의료비는 동비용을 보장하는 다수의 보험계약이
+                        체결되어 있는 경우 약관에 따라 비례하여 보상합니다.
+                        다만, 이미 가입된 보험계약에서 보상한 금액이 본인이 부담한 의료비를 초과하였을때에는 보험금이 지급되지 아니할 수 있습니다.</p>
+                    <p class="text-info">
+                        [특정전염병발생보장 특별약관]
+                        제1 조 (보험금의 지급사유)
+                        회사는 피보험자가 보험기간 중에 특정전염병에 감염되어
+                        전염 환자로 진단 받아 치료를 받은 경우 이 특별약관 보
+                        험가입금액 전액을 보험금으로 피보험자에게 지급합니다 <br>
+                        제1 항의 특정전염병이라 함은 특정전염병분류표에서 정한
+                        제 1 군전염병의 콜레라 , 장티푸스 , 파라티푸스 , 세균성이질 ,
+                        장출혈성대장균감염증 , 페스트 , 제 2 군전염병의 파상풍 , 
+                        디프테리아 , 백일해 , 급성회색질척수염 , 일본뇌염 , 홍역 , 풍진 (독일홍역), 볼거리 제 3 군전염병의 탄저병 , 브루셀라증 , 렙토스피라증 , 성홍열 , 수막구균성수막염 , 기타 그람음성균에 의한 패혈증 , 리지오넬라병 , 발진티푸스 , 발진열 , 리켓치아타이피에 의한 발진티푸스 , 리켓치아 쯔쯔가무시에 의한
+                        발진티푸스 , 광견병 , 콩팥(신장) 증후군을 동반한 출혈열 ,
+                        말라리아를 말합니다.
+                    </p>
+                </div>
+            </div>
+            <footer class="footer">
+                <a href="#" class="btn btn-secondary eClose">닫기</a>
+            </footer>
+        </section>
+
+
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script>
+            $( document ).ready(function() {
+                $('body').on('click', '.eLayer', function (e) {
+                    let targetLayer = $($(e.currentTarget).attr("href"));
+
+                    $("body").addClass("overlay");
+                    $(targetLayer).fadeIn();
+                    e.preventDefault();
+                });
+
+                $('body').on('click', '.layer .eClose', function (e) {
+                    let findParent = $(this).parents('.layer');
+                    console.log('11111111111', findParent);
+
+                    $("body").removeClass("overlay");
+                    findParent.fadeOut();
+                    e.preventDefault();
+                });
+
+            });
+        </script>
+    </body>
+</html>

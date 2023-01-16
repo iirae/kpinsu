@@ -1,0 +1,107 @@
+.p-brand {
+    .visual {
+        img {
+            width: 100%;
+        }
+    }
+    .subject {
+        z-index: 10;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 24px;
+    }
+    .desc {
+        font-size: 28px;
+        color: $color-text-default;
+        line-height: 1.5;
+        font-weight: 500;
+        strong {
+            font-weight: 700;
+        }
+    }
+    .button {
+        a {
+            display: inline-block;
+        }
+    }
+    .info {
+        margin-top: 6px;
+        color: $color-text-sub;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .contents {
+            text-align: right;
+        }
+        .visual {
+            padding-right: 60px;
+        }
+        .desc {
+            font-size: 28px;
+        }
+        .button {
+            margin-top: 25px;
+            img {
+                max-width: 137px;
+            }
+        }
+        .info {
+            font-size: 13px;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .desc {
+            font-size: 26px;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .header {
+            padding-top: 30px;
+            height: 90px;
+            border-bottom: 1px solid #e9ecef;
+            box-sizing: border-box;
+            img {
+                width:118px;
+            }
+        }
+        .contents {
+            position: relative;
+            display: flex;
+            margin: 0 auto;
+            flex: 1 1 auto;
+            width: 100%;
+            max-width: 1200px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: -90px;
+                right: -150px;
+                display: block;
+                width: 894px;
+                height: calc(100% + 90px);
+                background: url("../img/img_brand_main.png") no-repeat 100% 50%;
+                background-size: 894px auto;
+            }
+        }
+        .subject {
+            flex: 1 1 auto;
+        }
+        .desc {
+            font-size: 38px;
+        }
+        .button {
+            margin-top: 50px;
+        }
+        .info {
+            font-size: 14px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .visual {
+            padding-right: 210px;
+        }
+    }
+}

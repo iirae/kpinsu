@@ -1,0 +1,344 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+{literal}
+<style>
+
+.pop-layer .pop-container {
+  padding: 0;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 0px;
+  padding-top: 0;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #3571B5;
+  z-index: 10;
+}
+
+.kakao_layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.kakao_layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.kakao_layer .pop-layer {
+  display: block;
+}
+
+
+</style>
+<script language="javascript">
+
+function frmSubmit(f_data)
+{
+	var action = f_data['action'];
+
+	$.ajax({
+		type: "POST",
+		url: action,
+		data: f_data,
+		dataType: 'json',
+		success: function(response) {
+			if(response) {
+
+				if(response.msg)
+					alert(response.msg);
+
+				if(response.next_redirect_mobile_url) {
+
+					location.href= response.next_redirect_mobile_url;
+/*
+					var $href = $('.btn-example').attr('href');
+
+					layer_popup($href);
+
+					$("#kakaopay").attr('src', response.next_redirect_mobile_url)
+*/
+				}
+			}
+		}
+	});
+	return false;
+}
+
+
+function layer_popup(el){
+
+	var $el = $(el);        //레이어의 id를 $el 변수에 저장
+	var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+	isDim ? $('.kakao_layer').fadeIn() : $el.fadeIn();
+
+	var $elWidth = ~~($el.outerWidth()),
+		$elHeight = ~~($el.outerHeight()),
+		docWidth = $(document).width(),
+		docHeight = $(document).height();
+
+	// 화면의 중앙에 레이어를 띄운다.
+	if ($elHeight < docHeight || $elWidth < docWidth) {
+		$el.css({
+			marginTop: -$elHeight /2,
+			marginLeft: -$elWidth/2
+		})
+	} else {
+		$el.css({top: 0, left: 0});
+	}
+
+	$el.find('a.btn-layerClose').click(function(){
+		isDim ? $('.kakao_layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+		return false;
+	});
+
+	$('.layer .dimBg').click(function(){
+		$('.kakao_layer').fadeOut();
+		return false;
+	});
+
+}
+
+function kakaoPay()
+{
+	var f_data = {
+		action: 'product.htm',
+		mode: 'kakao',
+		mtype: 'rest',
+	};
+	frmSubmit(f_data);
+
+	return false;
+}
+
+function _pay(_frm)
+{
+	if($('#sndPaymethod').val() == "0000000007") {
+
+		kakaoPay();
+		return false;
+	}
+
+	// sndReply는 kspay_wh_rcv.php (결제승인 후 결과값들을 본창의 KSPayWeb Form에 넘겨주는 페이지)의 절대경로를 넣어줍니다.
+	_frm.sndReply.value           = getLocalUrl("certification.htm?mode=ksnet&mtype=mob") ;
+
+	var agent = navigator.userAgent;
+	var midx		= agent.indexOf("MSIE");
+	var out_size	= (midx != -1 && agent.charAt(midx+5) < '7');
+	_frm.action ='https://kspay.ksnet.to/store/mb2/KSPayPWeb_utf8.jsp';
+	_frm.submit();
+}
+
+function getLocalUrl(mypage)
+{
+	var myloc = location.href;
+	return myloc.substring(0, myloc.lastIndexOf('/')) + '/' + mypage;
+}
+
+function payChange(fid)
+{
+	$("#sndPaymethod").val(fid).attr("selected", "selected");;
+}
+
+function layer_close()
+{
+	$(".kakao_layer").fadeOut(200);
+	$(".dimBg").fadeOut(200);
+}
+
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+						<div class="step_process">
+							<div><span class="st_1"><b>약관동의</b></span></div>
+							<div><span class="st_2"><b>정보입력</b></span></div>
+							<div><span class="st_3"><b>내용확인</b></span></div>
+							<div><span class="st_4 on"><b>결제</b></span></div>
+						</div>
+
+						<div class="payment-items"><!-- payment-items -->
+							<div class="item">
+								<input type="radio" id="paymentWay1" name="paymentWay" />
+								<label for="paymentWay1">신용카드 <i class="icon card"></i></label>
+							</div>
+							<div class="item">
+								<input type="radio" id="paymentWay2" name="paymentWay" />
+								<label for="paymentWay2">가상계좌 <i class="icon virtual"></i></label>
+							</div>
+							<div class="item">
+								<input type="radio" id="paymentWay3" name="paymentWay" />
+								<label for="paymentWay3">계좌이체 <i class="icon transfer"></i></label>
+							</div>
+							<div class="item">
+								<input type="radio" id="paymentWay4" name="paymentWay" />
+								<label for="paymentWay4">카카오페이 <i class="icon kakao"></i></label>
+							</div>
+						</div><!-- // payment-items -->
+
+						<div class="btn_C_Area mt40">
+							<a href="#none" onClick="_pay(document.authFrmFrame);" class="btnStyle blue chk-ok">결제하기</a>
+						</div>
+					</div>
+
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+
+
+
+			<div class="kakao_layer">
+				<div class="dimBg"></div>
+				<div id="layer2" class="pop-layer">
+					<div class="pop-container">
+						<div class="pop-conts">
+							<!--content //-->
+							<p class="ctxt mb20">
+								<iframe src="about:blank" style="width: 100%; height:450px;" id="kakaopay"></iframe>
+							</p>
+
+							<!--// content-->
+						</div>
+					</div>
+				</div>
+			</div>
+
+<form name=authFrmFrame method=post>
+<input type="hidden" name="mode" value="ksnet">
+<div style="display: none;">
+<select name="sndPaymethod" id="sndPaymethod">
+{section name=key loop=$RS.snd_paymethod}
+	<option value='{$RS.snd_paymethod[key].key}'>{$RS.snd_paymethod[key].value}</option>
+{/section}
+</select>
+
+<!-- 결과값 수신 파라메터, value값을 채우지마십시오. KSPayRcv.asp가 실행되면서 채워주는 값입니다-->
+<!--------------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------- < Part 2. 고객에게 보여지지 않는 항목 > ------------------------------------>
+<!--이부분은 결제를 위해 상점에서 기본정보를 세팅해야 하는 부분입니다.														-->
+<!--단 고객에게는 보여지면 안되는 항목이니 테스트 후 필히 hidden으로 변경해주시길 바랍니다.									-->
+
+<!-- 결제수단 -->
+
+<!-- 상점아이디 -->
+<input type=hidden name=sndStoreid size=10 maxlength=10 value="{$RS.ksnet.storeid}"><!-- 2001106151 --></td></tr>
+
+<!-- 화폐단위 원화로 설정 : 410 또는 WON -->
+<input type=hidden name=sndCurrencytype size=30 maxlength=3 value="WON">
+
+<!--상품명은 30Byte(한글 15자) 입니다. 특수문자 ' " - ` 는 사용하실수 없습니다. 따옴표,쌍따옴표,빼기,백쿼테이션 -->
+<!-- 주문번호 -->
+<input type=hidden name=sndOrdernumber size=30 maxlength=30 value="{$RS.ib_trno}">
+
+<!--주민등록번호는 필수값이 아닙니다.-->
+<input type=hidden name=sndAllregid size=30 maxlength=13 value="">
+
+<!--상점에서 적용할 할부개월수를 세팅합니다. 여기서 세팅하신 값은 KSPAY결재팝업창에서 고객이 스크롤선택하게 됩니다 -->
+<!--아래의 예의경우 고객은 0~12개월의 할부거래를 선택할수있게 됩니다. -->
+<!-- 할부개월수 -->
+<input type=hidden name=sndInstallmenttype size=30 maxlength=30 value="0:2:3:4:5:6:7:8:9:10:11:12">
+
+<!--무이자 구분값은 중요합니다. 무이자 선택하게 되면 상점쪽에서 이자를 내셔야합니다.-->
+<!--무이자 할부를 적용하지 않는 업체는 value='NONE" 로 넘겨주셔야 합니다. -->
+<!--예 : 모두 무이자 적용할 때는 value="ALL" / 무이자 미적용할 때는 value="NONE" -->
+<!--예 : 3,4,5,6개월 무이자 적용할 때는 value="3:4:5:6" -->
+<!-- 무이자구분 -->
+<input type=hidden name=sndInteresttype size=30 maxlength=30 value="NONE">
+
+<!-- 신용카드표시구분 -->
+<input type=hidden name=sndShowcard size=30 maxlength=30 value="I,M">
+
+
+<!--상품명은 30Byte(한글 15자)입니다. 특수문자 ' " - ` 는 사용하실수 없습니다. 따옴표,쌍따옴표,빼기,백쿼테이션 -->
+<!-- 상품명 -->
+<input type=hidden name=sndGoodname value="{$RS.goods_name}"><!-- 해외여행자보험 -->
+
+<!-- 가격 -->
+<input type=hidden name=sndAmount value="{$RS.sum_price}"><!-- {$RS.sum_price} -->
+
+<!-- 성명 -->
+<input type=hidden name=sndOrdername value="{$RS.list[0].user_name}">
+
+<!--KSPAY에서 결제정보를 메일로 보내줍니다.(신용카드거래에만 해당)-->
+<!-- 전자우편 -->
+<input type=hidden name=sndEmail value="{$RS.list[0].email}">
+
+<!--카드사에 SMS 서비스를 등록하신 고객에 한해서 SMS 문자메세지를 전송해 드립니다.-->
+<!--전화번호 value 값에 숫자만 넣게 해주시길 바랍니다. : '-' 가 들어가면 안됩니다.-->
+<!-- 이동전화 -->
+<input type=hidden name=sndMobile value="{$RS.list[0].user_phone}">
+
+<input type=hidden name=sndReply           		value="">
+<input type=hidden name=sndEscrow          	value="0">	  				<!--에스크로적용여부-- 0: 적용안함, 1: 적용함 -->
+<input type=hidden name=sndVirExpDt     		value="">      			<!-- 마감일시 -->
+<input type=hidden name=sndVirExpTm     		value="">      			<!-- 마감시간 -->
+<input type=hidden name=sndStoreName       	value="엘케이엠에스리미티드">   <!--회사명을 한글로 넣어주세요(최대20byte)-->
+<input type=hidden name=sndStoreNameEng    	value="LKMS">   <!--회사명을 영어로 넣어주세요(최대20byte)-->
+<input type=hidden name=sndStoreDomain     	value="https://www.inbyu.com">   <!-- 회사 도메인을 http://를 포함해서 넣어주세요-->
+<input type=hidden name=sndGoodType		   		value="1">								<!--실물(1) / 디지털(2) -->
+<input type=hidden name=sndUseBonusPoint		value="">   							<!-- 포인트거래시 60 -->
+<input type=hidden name=sndRtApp		   			value="">									<!-- 하이브리드APP 형태로 개발시 사용하는 변수 -->
+
+</div>
+
+</form>
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

@@ -1,0 +1,594 @@
+<!DOCTYPE HTML><html lang="ko" class="no-js lang-ko suit-classic">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="LKMS" id="metaSubject" />
+<meta name="title" content="LKMS" id="metaTitle" />
+<meta name="keywords" content="LKMS" id="metaKeywords" />
+<meta name="description" content="LKMS" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="LKMS" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="LKMS" />
+<meta property="og:title" content="LKMS" id="ogTitle" />
+<meta property="og:description" content="LKMS" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">LKMS</title>
+<link rel="shortcut icon" href="../resources/img/favicon.ico" />
+<link rel="apple-touch-icon" href="../resources/img/icon.png" />
+<!--
+<link rel="apple-touch-icon" sizes="57x57" href="../resources/img/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../resources/img/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../resources/img/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../resources/img/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../resources/img/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../resources/img/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../resources/img/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../resources/img/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../resources/img/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192"  href="../resources/img/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../resources/img/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../resources/img/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../resources/img/favicon-16x16.png" />
+<meta name="msapplication-TileImage" content="../resources/img/ms-icon-144x144.png" />
+-->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<script src="../resources/js/webfont.js?ver=20191031"></script>
+<link rel="stylesheet" href="../resources/css/animation.css?ver=20191031" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20191031" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20191031" />
+<link rel="stylesheet" href="../resources/css/additional.css?ver=20191031" />
+<!--
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500&amp;subset=korean" />
+-->
+<script>
+(function() {
+    var root = document.documentElement;
+    root.className = root.className.replace(/\bno-js\b/, 'js');
+    root.className += ((window.CSS && window.CSS.supports('(position: sticky) or (position: -webkit-sticky)')) ? ' csssticky' : ' no-csssticky');
+    root.className += (window.matchMedia('(-moz-touch-enabled: 1), (hover: none)')).matches ? ' no-hover' : ' hover';
+    root.style.setProperty('--window-height', window.innerHeight + 'px');
+})();
+</script>
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/setting.js"></script><!-- 개발 모드, jsp에서는 setting.js -->
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script><!-- 20180914 setting.js 추가 -->
+<script>
+window.base = (typeof window.base !== 'undefined') ? window.base : {};
+window.base.nav = [-1, -1, -1]; // 네비게이션 파라미터
+</script>
+</head>
+<body class="page-home">
+
+<div id="skipToContent"><!-- skipToContent -->
+    <a href="#content">
+        <span>본문으로 건너뛰기</span>
+    </a>
+</div><!-- // skipToContent -->
+
+<div id="container"><!-- container -->
+
+    <div id="header"><!-- header : 투명 배경일때 is-transparent -->
+        <div class="container">
+            <div class="wrap">
+                <h1 class="logo"><i class="icon"><em>LKMS</em></i></h1>
+                <div class="nav">
+                    <ul class="tab">
+                        <li><a href="#sectionA">ABOUT</a></li>
+                        <li><a href="#sectionB">HISTORY</a></li>
+                        <li><a href="#sectionC">SERVICE</a></li>
+                        <li><a href="#sectionD">VISION</a></li>
+                        <li><a href="#sectionE">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- // header -->
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div id="sectionA" class="container section section-visual js-inview-container"><!-- section-visual -->
+                    <div class="bg"></div>
+                    <div class="wrap is-padder">
+                        <p>
+                            <span class="js-jumbo nowrap">EVERYONE IS</span>
+                            <span class="js-jumbo nowrap">DIFFERENT</span>
+                        </p>
+                        <p>
+                            <span class="js-jumbo">INBYU KNOWS</span>
+                        </p>
+                        <p>
+                            <span class="js-jumbo">THE DIFFERENCE.</span>
+                        </p>
+                    </div>
+                </div><!-- // section-visual -->
+
+                <div id="sectionB" class="container section section-about js-inview-container"><!-- section-about -->
+                    <div class="wrap is-padder">
+                        <div class="pic-holder text-center">
+                            <div class="pic sm"><img src="../resources/img/custom/about_sm.jpg" alt="" /></div>
+                            <div class="pic lg"><img src="../resources/img/custom/about_lg.jpg" alt="" /></div>
+                        </div>
+                        <div class="content-holder">
+                            <div class="module">
+                                <h2 class="title eng-italic">
+                                    <span class="js-lettering">ABOUT US</span>
+                                </h2>
+                                <div class="table-lg">
+                                    <div class="cell-lg core">
+                                        <div class="module">
+                                            <p class="reset">
+                                                신 금융의 유통사업자
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell-lg desc">
+                                        <div class="module">
+                                            <p class="reset">
+                                                <span class="nowrap">급변하는 세계화 시대에 발맞추어</span><br />
+                                                <span class="nowrap">한국형 금융 유통 사업을 위한</span>
+                                                <span class="nowrap">비즈니스 환경과 흐름을 찾고</span>
+                                                <span class="nowrap">이에 따른 창조적인 아이디어와</span>
+                                                <span class="nowrap">전문적인 자문을</span>
+                                                <span class="nowrap">제공해 드립니다.</span><br />
+                                                <span class="nowrap">LKMS는 보험을 중심으로 한</span>
+                                                <span class="nowrap">Insurtech 및</span>
+                                                <span class="nowrap">Alternative investment분야에서</span>
+                                                <span class="nowrap">최적의 고객서비스를 제공함으로</span>
+                                                <span class="nowrap">고객의 사업이</span>
+                                                <span class="nowrap">경쟁력을 갖고</span>
+                                                <span class="nowrap">성공할 수 있도록</span>
+                                                <span class="nowrap">최선을 다하고 있습니다.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-about -->
+
+                <div id="sectionC" class="container section section-history js-inview-container"><!-- section-history -->
+                    <div class="wrap is-padder">
+                        <div class="grid">
+                            <div class="col pic-holder">
+                                <div class="module">
+                                    <div class="pic"></div>
+                                    <h2 class="title eng-italic">
+                                        <span class="js-lettering">HISTORY</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col content-holder">
+                                <div class="module">
+                                    <div class="list">
+                                        <div class="item in">
+                                            <span class="year">2019</span>
+                                            <p>
+                                                <span class="month">06.</span> <i class="icon kakaopay"><em>kakaopay</em></i>
+                                                <span class="nowrap">‘인바이유’ 인수, 계열사 편입</span>
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <span class="year">2017</span>
+                                            <p>
+                                                <span class="month">01.</span> 온라인보험플랫폼 인바이유 서비스 개시
+                                            </p>
+                                            <p>
+                                                <span class="month">12.</span> 인바이유 자회사 설립
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <span class="year">2016</span>
+                                            <p>
+                                                <span class="month">03.</span> 금융상품 플랫폼 사업모델 출시
+                                            </p>
+                                            <p>
+                                                <span class="month">10.</span> 보험 공동구매서비스 등 특허출원
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <span class="year">2015</span>
+                                            <p>
+                                                <span class="month">11.</span> LKMS 케어서비스 출시
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <span class="year">2014</span>
+                                            <p>
+                                                <span class="month">01.</span> LKMS 설립
+                                            </p>
+                                            <p>
+                                                <span class="month">06.</span> 보험컨설팅 방법론 개발
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-history -->
+
+                <div id="sectionD" class="container section section-service js-inview-container"><!-- section-service -->
+                    <div class="wrap is-padder">
+                        <h2 class="title eng-italic">
+                            <span class="js-lettering">SERVICE</span>
+                        </h2>
+                        <div class="swiper-pagination"></div>
+                        <div class="grid">
+                            <div class="col content-holder">
+                                <div class="module">
+                                    <div class="item">
+                                        <p class="summary">
+                                            <span class="nowrap">보험(Insurance)과 기술(Technology)을 </span>
+                                            <span class="nowrap">합친 용어로</span>
+                                            <span class="nowrap">데이터 분석,</span>
+                                            <span class="nowrap">인공지능 등</span>
+                                            <span class="nowrap">기술을</span>
+                                            <span class="nowrap">활용한</span>
+                                            <span class="nowrap">보험 서비스를 말한다.</span><br />
+                                            <span class="nowrap">인슈어테크 설명글입니다.</span>
+                                            <span class="nowrap">채워주세요.</span>
+                                        </p>
+                                        <div class="items">
+                                            <ul class="tab">
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">MINI-</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">IOT SMART</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">PET</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">AUTO</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">MICRO-</span>
+                                                            <span class="nowrap">MOBILITY</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <p class="summary">
+                                            <span class="nowrap">보험(Insurance)과 기술(Technology)을 </span>
+                                            <span class="nowrap">합친 용어로</span>
+                                            <span class="nowrap">데이터 분석,</span>
+                                            <span class="nowrap">인공지능 등</span>
+                                            <span class="nowrap">기술을</span>
+                                            <span class="nowrap">활용한</span>
+                                            <span class="nowrap">보험 서비스를 말한다.</span><br />
+                                            <span class="nowrap">인슈어테크 설명글입니다.</span>
+                                            <span class="nowrap">채워주세요.</span>
+                                        </p>
+                                        <div class="items">
+                                            <ul class="tab">
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            AVI
+                                                        </p>
+                                                        <p class="desc">
+                                                            <span class="nowrap">(부동산</span>
+                                                            <span class="nowrap">보장가액보상</span>
+                                                            <span class="nowrap">보험)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            <span class="nowrap">M&amp;A</span>
+                                                            <span class="nowrap">INSURANCE</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="module">
+                                                        <p class="core">
+                                                            RVI
+                                                        </p>
+                                                        <p class="desc">
+                                                            <span class="nowrap">(잔존가치</span>
+                                                            <span class="nowrap">보장보험)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col pic-holder">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="pic" style="background-image: url('../resources/img/custom/service_1_lg.jpg');"></div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="pic" style="background-image: url('../resources/img/custom/service_2_lg.jpg');"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"><i></i></div>
+                            <div class="swiper-button-next"><i></i></div>
+                        </div>
+
+                    </div>
+                </div><!-- // section-service -->
+
+                <div id="sectionE" class="container section section-value js-inview-container"><!-- section-value -->
+                    <div class="wrap is-full">
+                        <h2 class="title text-center">
+                            <span class="js-lettering">VALUE</span>
+                        </h2>
+                        <div class="items-wrap">
+                            <div class="links">
+                                <div class="grid">
+                                    <div class="col">
+                                        <div class="module">
+                                            <a href="javascript:;"><span>VISION</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="module">
+                                            <a href="javascript:;"><span>MISSION</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="module">
+                                            <a href="javascript:;"><span>PURSUE</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <a href="javascript:;" class="nav prev"><i class="icon"><em>이전 컨텐츠 이동</em></i></a>
+                                <a href="javascript:;" class="nav next"><i class="icon"><em>다음 컨텐츠 이동</em></i></a>
+                                <a href="javascript:;" class="close"><i class="icon"><em>상세 설명 닫기</em></i></a>
+                                <div class="items">
+                                    <div class="item vision"><!-- item -->
+                                        <div class="table-lg">
+                                            <div class="cell-lg pic-holder">
+                                                <div class="module">
+                                                    <h3>VISION</h3>
+                                                </div>
+                                            </div>
+                                            <div class="cell-lg content-holder">
+                                                <div class="module">
+                                                    <p class="core">
+                                                        <span class="nowrap">고객을 위하여 항상 변화를 </span>
+                                                        <span class="nowrap">추구하고</span>
+                                                        <span class="nowrap">신뢰받는</span>
+                                                        <span class="nowrap">보험컨설팅 전문 기업이</span>
+                                                        <span class="nowrap">되겠습니다.</span>
+                                                    </p>
+                                                    <p class="desc">
+                                                        <span class="nowrap">기존 오프라인의 복잡한 보험유통구조의 개선을 통한</span>
+                                                        <span class="nowrap">비합리적 보험료 절감 컨설팅의</span>
+                                                        <span class="nowrap">영역을 넘어</span>
+                                                        <span class="nowrap">온라인을 기반으로 하는</span>
+                                                        <span class="nowrap">진화된</span>
+                                                        <span class="nowrap">보험공동구매 방식과</span>
+                                                        <span class="nowrap">고객의 니즈를 반영하는</span>
+                                                        <span class="nowrap">다양한 참여를 통하여</span>
+                                                        <span class="nowrap">신뢰성까지 확보해 나가겠습니다.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item mission"><!-- item -->
+                                        <div class="table-lg">
+                                            <div class="cell-lg pic-holder">
+                                                <div class="module">
+                                                    <h3>MISSION</h3>
+                                                </div>
+                                            </div>
+                                            <div class="cell-lg content-holder">
+                                                <div class="module">
+                                                    <p class="core">
+                                                        <span class="nowrap">대한민국에서 온라인, </span>
+                                                        <span class="nowrap">오프라인 모두 보험컨설팅을</span>
+                                                        <span class="nowrap">가장 잘하는 회사를 만들겠습니다.</span>
+                                                    </p>
+                                                    <p class="desc">
+                                                        <span class="nowrap">보험컨설팅을 제공하는 회사들은</span>
+                                                        <span class="nowrap">많이 생겨나고 있습니다.</span>
+                                                        <span class="nowrap">그러나 회사의 이익만을</span>
+                                                        <span class="nowrap">앞세워</span>
+                                                        <span class="nowrap">고객을 위한 가치는</span>
+                                                        <span class="nowrap">생각하지 않는</span>
+                                                        <span class="nowrap">경우도 많습니다.</span>
+                                                        <span class="nowrap">우리는 회사의 이익과</span>
+                                                        <span class="nowrap">고객의 가치까지 함께</span>
+                                                        <span class="nowrap">생각하는</span>
+                                                        <span class="nowrap">목표를 가지고 있습니다.</span><br />
+                                                        <span class="nowrap">모든 고객이 만족하는</span>
+                                                        <span class="nowrap">불만족이 하나도 없는</span>
+                                                        <span class="nowrap">목표가</span>
+                                                        <span class="nowrap">아무리 어렵다 하더라도</span>
+                                                        <span class="nowrap">우리는 계속 나아갈 것 입니다.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item pursue"><!-- item -->
+                                        <div class="table-lg">
+                                            <div class="cell-lg pic-holder">
+                                                <div class="module">
+                                                    <h3>PURSUE</h3>
+                                                </div>
+                                            </div>
+                                            <div class="cell-lg content-holder">
+                                                <div class="module">
+                                                    <p class="core">
+                                                        <span class="nowrap">합법성, 전문성과 차별화를</span><br class="sm" />
+                                                        <span class="nowrap">추구합니다.</span>
+                                                    </p>
+                                                    <p class="desc">
+                                                        <span class="nowrap">보험은 보험전문가,</span>
+                                                        <span class="nowrap">플랫폼 운영은</span>
+                                                        <span class="nowrap">운영전문가가 전담합니다.</span> <br />
+                                                        <span class="nowrap">고객 참여에 따른</span>
+                                                        <span class="nowrap">차별화된 서비스를</span>
+                                                        <span class="nowrap">제공 합니다.</span><br />
+                                                        <span class="nowrap">개인고객뿐 아니라</span>
+                                                        <span class="nowrap">기업고객까지도 함께 갑니다.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-value -->
+
+                <div id="sectionF" class="container section section-contact js-inview-container"><!-- section-contact -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col content-holder">
+                                <div class="module">
+                                    <h2 class="title">
+                                        <span class="js-lettering">CONTACT</span>
+                                    </h2>
+                                    <p class="core">
+                                        <span class="nowrap">서울특별시 영등포구 국제금융로 10</span>
+                                        <span class="nowrap">Three IFC 44층</span>
+                                    </p>
+                                    <p class="desc">
+                                        <span class="subject">TEL</span>
+                                        02. 6974. 0012
+                                    </p>
+                                    <p class="desc">
+                                        <span class="subject">FAX</span>
+                                        02. 3789. 9875
+                                    </p>
+                                    <p class="desc">
+                                        <span class="subject">EMAIL</span>
+                                        lkms@lkmskorea.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col pic-holder">
+                                <div class="module">
+                                    <div class="sm"><img src="../resources/img/custom/map_sm.jpg" alt="" /></div>
+                                    <div class="lg"><img src="../resources/img/custom/map_lg.jpg" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-contact -->
+
+            </div><!-- // content -->
+
+            <div id="footer"><!-- footer -->
+                <div class="container">
+                    <div class="wrap">
+                        <div class="info">
+                            <i class="icon"></i>
+                            <p class="name">(주)엘케이엠에스 리미티드</p>
+                            <p class="address">
+                                <span class="nowrap">대표이사 : 김영웅</span>
+                                <span class="nowrap">사업자등록번호 : 104-86-53157</span>
+                                <span class="nowrap">서울특별시 영등포구 국제금융로 10 THREE IFC 44층</span>
+                            </p>
+                            <p class="tel">
+                                <span class="nowrap">TEL : 02-6974-0012</span>
+                                <span class="nowrap">FAX : 02-3789-9875</span>
+                            </p>
+                        </div>
+                        <div class="copyright">COPYRIGHT LKMS INC. ALL RIGHTS RESERVED</div>
+                    </div>
+                </div>
+            </div><!-- // footer -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+</div><!-- // container -->
+
+<div id="scrollDown"><!-- scrollDown -->
+    <i class="icon"></i>
+</div><!-- // scrollDown -->
+
+<div id="sticky" class="nav"><!-- sticky -->
+    <ul class="reset">
+        <li class="in"><a href="#sectionA"><span>MAIN</span></a></li>
+        <li><a href="#sectionB"><span>ABOUT</span></a></li>
+        <li><a href="#sectionC"><span>HISTORY</span></a></li>
+        <li><a href="#sectionD"><span>SERVICE</span></a></li>
+        <li><a href="#sectionE"><span>VALUE</span></a></li>
+        <li><a href="#sectionF"><span>CONTACT</span></a></li>
+    </ul>
+</div><!-- // sticky -->
+
+<script src="../resources/js/plugin-dist.js?ver=20191031"></script>
+<script src="../resources/js/module-dist.js?ver=20191031"></script>
+<script src="../resources/js/main.js?ver=20191031"></script>
+<script src="../resources/js/event.js?ver=20191031"></script>
+<script src="../resources/js/modal.js?ver=20191031"></script>
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+});
+</script>
+</body>
+</html>

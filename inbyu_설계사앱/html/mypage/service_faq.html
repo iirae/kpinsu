@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">자주 묻는 질문(FAQ)</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents p-row-reset pt-0" id="contents">
+                    <div class="section-search divide-top fixed">
+                        <div class="form-group search">
+                            <span class="f-text"><input type="search" placeholder="검색어를 입력해 주세요"></span>
+                            <button class="btn-icon clear e-clear-input"></button>
+                        </div>
+                        <ul class="filter-list">
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqAll" checked><label for="faqAll">전체</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqMember"><label for="faqMember">회원정보</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqAnalysis"><label for="faqAnalysis">보장분석</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqMarket"><label for="faqMarket">보험마켓</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqCompare"><label for="faqCompare">비교설명</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqAd"><label for="faqAd">광고수익정산</label></li>
+                            <li class="btn btn-radio"><input type="radio" name="faq" id="faqEtc"><label for="faqEtc">기타</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="module-accordion section-board">
+                        <!-- 반복 
+                            검색어 highlight 처리는 strong 태그로 감싸기
+                        -->
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">설계사 등록은 어떻게 하나요?</h2>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content @content</p>
+                                </div>
+                            </div>
+                        </article><!-- //반복 -->
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">광고수익 <strong>정산</strong>은 어떻게 받는건가요?</h2>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">광고수익 <strong>정산</strong>은 어떻게 받는건가요?</h2>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">광고수익 <strong>정산</strong>은 어떻게 받는건가요?</h2>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">광고수익 <strong>정산</strong>은 어떻게 받는건가요?</h2>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>해외여행보험</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="img/inbyu_favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="img/contents/homescreen_icon.png">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/respond.min.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+
+<header id="header">
+    <div class="upper">
+        <h1 class="logo"><a href="/index.htm?mode=main"><img src="img/common/logo.jpg" alt="INBYU" /></a></h1>
+    </div>
+	<div class="downer">
+		<ul class="tab">
+			<li class="in"><a href="#!"><span>보험가입하기</span></a></li>
+			<li><a href="#!"><span>가입내역조회</span></a></li>
+			<li><a href="#!"><span>보험이용안내</span></a></li>
+		</ul>
+	</div>
+</header><!-- end : id : header -->
+
+<div id="inbyuWrap">
+	<div id="inbyuContents">
+
+		<h2 class="hide">컨텐츠</h2>
+		<div class="in_box">
+			<div class="stepTop-Box"><img src="img/kakao/step08_obj.jpg" alt="" />
+				<h3>
+					감사합니다.<br />
+					가입이 완료되었습니다.
+				</h3>
+			</div>
+		</div>
+
+		<div class="in_box">
+			<table class="resultTable success">
+				<caption></caption>
+				<colgroup>
+					<col style="width:80px" /><col style="width:*" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="col">상품명</th>
+						<td>{$RS.rcs.goods_name}</td>
+					</tr>
+					<tr>
+						<th scope="col">보험사</th>
+						<td>{$RS.rcs.com.com_name}</td>
+					</tr>
+					<tr>
+						<th scope="col">보험기간</th>
+						<td>
+							<p><b>{$RS.rcs.ins}일</b></p>
+							<p class="day">{$RS.rcs.exp_date} {$RS.rcs.exp_hour}시 ~ {$RS.rcs.im_date} {$RS.rcs.im_hour}시</p>
+						</td>
+					</tr>
+{section name=key loop=$RS.list}
+					<tr>
+						<th scope="col">가입자 {$RS.list[key].no}</th>
+						<td>{$RS.list[key].user_name} ({$RS.list[key].pid})
+							<span class="price"><b>{$RS.list[key].price|number_format}원</b></span>
+						</td>
+					</tr>
+{/section}
+					<tr>
+						<th scope="col">영수일시</th>
+						<td>{$RS.rcs.receipt_date}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div><a href="/extend.htm?mode=kakaopay&mtype=order" class="btnStyle yellow chk-ok"  id="submitBtn">나의 가입내역 조회</span></a></div>
+		</div><!-- end : class : in_box -->
+
+	</div><!-- end : id : inbyuContents -->
+
+	<div id="inbyuFooter">
+		<div class="top">
+			<p>트리플의 <b>보험친구</b> 인바이유</p>
+		</div>
+		<p class="copy">인바이유 주식회사 <span>|</span> 대리점번호 : 제2018090030호</p>
+		<p class="copy">ⓒ kakaopay corp. <span>|</span> ⓒ Inbyu INC.</p>
+		<p class="copy">손해보험협회 심의필 제11513호(2018.12.17)</p>
+	</div>
+</div><!-- end : id : inbyuWrap -->
+
+</body>
+</html>

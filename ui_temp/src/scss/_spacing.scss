@@ -1,0 +1,61 @@
+// spacing
+$spacing-layout: 24px;
+$spacing-t: 6px;
+$spacing-xs: 8px;
+$spacing-s: 10px;
+$spacing-r: 16px;
+$spacing-m: 20px;
+$spacing-l: 44px;
+$spacing-xl: 60px;
+
+$spacers: (
+  0: (
+    x:   0,
+    y:   0
+  ),
+  t: (
+    x:   $spacing-t,
+    y:   $spacing-t
+  ),
+  xs: (
+    x:   $spacing-xs,
+    y:   $spacing-xs
+  ),
+  s: (
+    x:   $spacing-s,
+    y:   $spacing-s
+  ),
+  r: (
+    x:   $spacing-r,
+    y:   $spacing-r
+  ),
+  m: (
+    x:   $spacing-m,
+    y:   $spacing-m
+  ),
+  l: (
+    x:   $spacing-l,
+    y:   $spacing-l
+  ),
+  xl: (
+    x:   $spacing-xl,
+    y:   $spacing-xl
+  )
+);
+
+@mixin spacing() {
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $lengths in $spacers {
+        $length-x:   map-get($lengths, x);
+        $length-y:   map-get($lengths, y);
+
+        .#{$abbrev}-#{$size} { #{$prop}:         $length-y $length-x !important; }
+        .#{$abbrev}t-#{$size} { #{$prop}-top:    $length-y !important; }
+        .#{$abbrev}r-#{$size} { #{$prop}-right:  $length-x !important; }
+        .#{$abbrev}b-#{$size} { #{$prop}-bottom: $length-y !important; }
+        .#{$abbrev}l-#{$size} { #{$prop}-left:   $length-x !important; }
+      }
+    }
+}
+
+@include spacing;

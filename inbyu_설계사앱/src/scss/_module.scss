@@ -1,0 +1,1332 @@
+@charset "utf-8";
+.wrap {
+  .divide {
+    border-bottom: solid 10px rgba($color-text-hint,0.2);
+    &-top {
+      border-top: solid 10px rgba($color-text-hint,0.2);
+    }
+  }
+}
+
+.progressbar {
+  overflow: hidden;
+  margin: 16px 0 0 0;
+  padding: 0 24px 0 0;
+  width: 100%;
+  height: 2px;
+  background: #dde2e5;
+  span {
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $color-primary-dark;
+    animation: slidein 1s;
+
+    $per: 100%;
+    $margin: 24px;
+    @function progress($column, $i) {
+        @return calc( ( (#{$per} + #{$margin}) / #{$column}) * #{$i})
+    };
+    &.col-3 {
+      $column: 3;
+      
+      @for $i from 1 through $column {
+          &.step-#{$i} {
+            width: progress($column, $i);
+          }
+      }
+    }
+    &.col-4 {
+      $column: 4;
+      
+      @for $i from 1 through $column {
+          &.step-#{$i} {
+            width: progress($column, $i);
+          }
+      }
+    }
+    &.col-5 {
+      $column: 5;
+      
+      @for $i from 1 through $column {
+          &.step-#{$i} {
+            width: progress($column, $i);
+          }
+      }
+    }
+    &.col-6 {
+      $column: 6;
+      
+      @for $i from 1 through $column {
+          &.step-#{$i} {
+            width: progress($column, $i);
+          }
+      }
+    }
+    &.col-7 {
+      $column: 7; 
+      
+      @for $i from 1 through $column {
+          &.step-#{$i} {
+            width: progress($column, $i);
+          }
+      }
+    }
+  }
+}
+
+.scroll-x {
+  overflow-x: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  // margin: {
+  //   left: -24px;
+  //   right: -24px;
+  // }
+  // padding: 0 24px;
+}
+
+.box-info {
+  padding: $spacer-s;
+  background: rgba($color-text-hint, 0.2);
+  border-radius: 6px;
+}
+
+.module-password {
+  .dots {
+    display: flex;
+    justify-content: center;
+    .dot {
+      flex: 0 0 16px;
+      height: 16px;
+      background: #d8d8d8;
+      border-radius: 50%;
+      &.on {
+        background: $color-primary-light;
+      }
+      & + .dot {
+        margin-left: 18px;
+      }
+    }
+  }
+}
+.module-keypad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: safe(bottom, env);
+  padding-bottom: safe(bottom, constant);
+  background: $color-wh;
+  .delete {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: safe(bottom, env);
+    bottom: safe(bottom, constant);
+    display: flex;
+    justify-content: space-between;
+    // transform: translate3d(0, -72px, 0);
+    button {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  .number {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    button:last-of-type {
+      z-index: 10;
+      position: relative;
+    }
+  }
+  button {
+    flex: 0 0 33.33%;
+    height: 72px;
+    font-size: 32px;
+    color: $color-text-default;
+    line-height: 32px;;
+    font-weight: 300;
+    border: 1px solid $color-wh;
+    background: $color-bg-80;
+    &:active {
+      background: $color-primary-light;
+    }
+    &:focus, &:active {
+      outline: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    &.btn-delete_all {
+    }
+    &.btn-delete_one {
+      background: {
+        image: url("../img/btn_icon_delete_letter.svg");
+        repeat: no-repeat;
+        position: center;
+        size: 41px auto;
+      }
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1024px) {
+    .number, .delete {
+      margin: 0 auto;
+      max-width: 372px;
+    }
+  }
+  @media screen and (max-height: 600px) {
+    button {
+      height: 60px;
+      font-size: 30px;
+    }
+  }
+}
+.module-company {
+  // overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  background: $color-bg-80;
+  .list-radio {
+    padding: 0 40px 0 0;
+  }
+  .shortcuts {
+    opacity: 0;
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    transform: translate3d(40px, 0, 0);
+    transition: opacity .3s linear 1s, transform .1s linear 2s;
+    backface-visibility: hidden;
+    &.scroll {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: opacity .3s;
+    }
+    li {
+      & + li {
+        &::before {
+          content: "";
+          display: block;
+          margin: 5px auto;
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: #a8adb4;
+        }
+      }
+      a {
+        display: block;
+        width: 20px;
+        font-size: 12px;
+        color: #a8adb4;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.module-tooltip {
+  position: relative;
+  display: inline-block;
+
+  &.show {
+    .content {
+      display: block;
+      opacity: 1;
+      transition: opacity 1s;
+    }
+  }
+  .content {
+    display: none;
+    opacity: 0;
+    z-index: 90;
+    position: absolute;
+    padding: $spacer-xs $spacer-s;
+    width: 174px;
+    font-size:12px;
+    color: $color-wh;
+    line-height: 1.5;
+    text-align: left;
+    background: rgba($color-text-default, 0.9);
+    box-shadow: 0 2px 4px 0 rgba($color-text-hint, 0.4);
+    border-radius: 6px;
+    box-sizing: border-box;
+    &::before {
+      content: "";
+      z-index: 80;
+      position: absolute;
+      display: block;
+    }
+
+    $tooltip-arrow: rgba($color-text-default, 0.9);
+    @mixin border($top: transparent, $right: transparent, $left: transparent, $bottom: transparent) {
+      border-top: solid 6px #{$top};
+      border-right: solid 6px #{$right};
+      border-left: solid 6px #{$left};
+      border-bottom: solid 6px #{$bottom};
+    }
+
+    &.right {
+      top: 12px;
+      right: 46px;
+      &::before {
+        top: 8px;
+        right: -6px;
+        @include border($left: $tooltip-arrow);
+        border-right-width: 0;
+      }
+    }
+    &.left {
+      top: 12px;
+      left: 46px;
+      &::before {
+        top: 8px;
+        left: -6px;
+        @include border($right: $tooltip-arrow);
+        border-left-width: 0;
+      }
+    }
+    &.bottom {
+      top: 30px;
+      left: 50%;
+      text-align: center;
+      transform: translate(-50%, 0);
+      &::before {
+        top: -5px;
+        left: calc(50% - 8px);
+        @include border($bottom: $tooltip-arrow);
+        border-top-width: 0;
+      }
+    }
+    .btn-icon {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+    }
+  }
+}
+
+.module-dl {
+  margin-top: $spacer-xs;
+  li, a:not(.btn) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    line-height: 50px;
+    & > strong {
+      font-size: 16px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    & > span {
+      font-size: 14px;
+      color: $color-disabled;
+      text-align: right;
+      line-height: 1.5;
+    }
+  }
+  li {
+    & > a:not(.btn) {
+      position: relative;
+      padding-right: 24px;
+      flex: 1;
+      &::after {
+        @include pseudo-bg(48px, 48px);
+        position: absolute;
+        top: 0;
+        right: -24px;
+        background-image: url("../img/ico_arrow_link_center.svg");
+      }
+    }
+    &.line {
+      border-top: 1px solid $color-text-hint;
+    }
+    &.version, &.code {
+      & > span {
+        margin: {
+          right: 24px;
+        }
+        padding-left: 10px;
+        box-sizing: border-box;
+        a {
+          position: relative;
+          color: inherit;
+          text-decoration: underline;
+        }
+        .text-ellipsis {
+          max-width: calc(100vw - 230px);
+        }
+      }
+    }
+    &.code {
+      & > span {
+        a {
+          position: relative;
+          height: auto;
+          line-height: 1.53;
+          text-decoration: none;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $color-disabled;
+          }
+        }
+      }
+    }
+    .time {
+      display: block;
+      font-size: 12px;
+    }
+  }
+}
+div.module-dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  line-height: 50px;
+  & > strong {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  & > span {
+    font-size: 14px;
+    color: $color-disabled;
+    text-align: right;
+    line-height: 1.5;
+  }
+}
+
+.module-tab {
+  &.fix {
+    .tab ul {
+      justify-content: space-between;
+      width: 100%;
+      li {
+        flex: 1;
+        margin: 0;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .tab ul {
+    display: flex;
+    a {
+      &:focus, &:active {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+    }
+  }
+  &:not(.type-solid) {
+    .tab {
+      overflow-x: auto;
+      position: relative;
+      display: flex;
+      flex: 1;
+      margin: {
+        left: -24px;
+        right: -24px;
+      }
+      padding: 0 24px 0;
+      border-bottom: solid 1px $color-text-hint;
+      li {
+        margin-right: 30px;
+        white-space: nowrap;
+        &:last-of-type {
+          margin-right: 24px;
+        }
+        &.on {
+          a {
+            color: $color-secondary-dark;
+            transition: color .35s ease;
+            &::after {
+              transform: rotateY(0deg);
+            }
+          }
+        }
+        a {
+          overflow: hidden;
+          position: relative;
+          display: block;
+          padding-bottom: $spacer-xs;
+          color: $color-text-sub;
+          text-align: center;
+        }
+      }
+      .tab-point {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 0;
+        height: 3px;
+        background: $color-secondary-dark;
+        transform: translate3d(24px, 0, 0);
+        transition: .35s ease;
+      }
+    }
+  }
+  &.type-solid {
+    .tab {
+      position: relative;
+      margin: 0 auto;
+      padding: 3px;
+      width: 200px;
+      background: $color-text-hint;
+      border-radius: 6px;
+      // box-shadow: inset 0 1px 3px 0 rgba($color-bk, 0.15);
+      box-sizing: border-box;
+      li {
+        z-index: 10;
+        position: relative;
+        flex: 1;
+        text-align: center;
+        font-weight: 500;
+        &.on {
+          a {
+            color: $color-wh;
+            transition: color .5s ease;
+          }
+        }
+        a {
+          display: block;
+          font-size: 12px;
+          color: $color-disabled;
+          line-height: 2;
+          -webkit-appearance: none;
+        }
+      }
+      .tab-point {
+        z-index: 1;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        display: block;
+        width: 97px;
+        height: 24px;
+        background: $color-text-default;
+        border-radius: 6px;
+        // box-shadow: 0 1px 1px 0 rgba($color-bk, 0.24), 0 2px 4px 0 rgba($color-bk, 0.5);
+        transform: translate3d(50px, 0px, 0px);
+        transition: .5s ease;
+      }
+    }
+  }
+  .tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity .35s ease;
+    padding: $spacer-m 0 0;
+    &.on {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+// 보험마켓용
+.tab-head {
+  .text-headline {
+    display: none;
+    opacity: 0;
+    transition: opacity .35s ease;
+    &.on {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.module-table {
+  border-top: 1px solid $color-text-hint;
+  & + & {
+    margin-top: $spacer-m;
+  }
+  &.type-border {
+    th, td {
+      border-right: 1px solid $color-text-hint;
+      &:last-child {
+        border-right-width: 0;
+      }
+    }
+    thead {
+      th {
+        border-bottom: 1px solid $color-text-hint;
+      }
+    }
+  }
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  th, td {
+    padding: $spacer-xs;
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: left;
+  }
+  thead {
+    th {
+      background: rgba($color-bg-90, 0.5);
+    }
+  }
+  tbody {
+    th, td {
+      vertical-align: top;
+      border-bottom: 1px solid $color-text-hint;
+    }
+    th {
+      padding-right: 2px;
+    }
+  }
+  th {
+    font-weight: 500;
+  }
+  td {
+
+  }
+  .align-left {
+    text-align: right;
+  }
+  .align-right {
+    text-align: right;
+  }
+  .align-center {
+    text-align: center;
+  }
+}
+.table-status {
+  font-size: 14px;
+  color: $color-text-sub;
+  line-height: 1;
+  em {
+    color: $color-text-default;
+    font-weight: 500;
+    &::before {
+      content: "";
+      display: inline-block;
+      margin: 0 9px;
+      width: 1px;
+      height: 10px;
+      background: $color-disabled;
+    }
+  }
+  & + .module-table {
+    margin-top: $spacer-r;
+  }
+}
+
+// 광고실적, 정산
+a.module-calculate,
+a.module-perfomance {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: $spacer-r;
+    right: 0;
+    @include pseudo-bg(16px, 16px);
+    background-image: url(../img/ico_arrow_link.svg);
+  }
+}
+
+// 광고실적
+.module-perfomance {
+  display: flex;
+  align-items: stretch;
+  padding: $spacer-r 0;
+  width: 100%;
+  height: 128px;
+  box-sizing: border-box;
+  .list & {
+    border-bottom: solid 1px $color-text-hint;
+    &:first-of-type {
+      border-top: solid 1px $color-text-hint;
+    }
+  }
+  dl {
+    display: flex;
+    width: 100%;
+  }
+  dt {
+    margin-right: $spacer-r;
+    flex: 0 0 60px;
+    img {
+      width: 100%;
+    }
+  }
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    width: calc(100% - 76px);
+  }
+  .name {
+    margin-right: 31px;
+    font-weight: 500;
+  }
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+  .price {
+    font-size: 20px;
+    color: $color-secondary-dark;
+    line-height: 1;
+    font-weight: 400;
+  }
+  .cases {
+    font-size: 14px;
+    color: $color-text-sub;
+    line-height: 1;
+    em {
+      color: $color-text-default;
+      font-weight: 500;
+      &::before {
+        content: "";
+        display: inline-block;
+        margin: 0 9px;
+        width: 1px;
+        height: 10px;
+        background: $color-disabled;
+      }
+    }
+  }
+}
+
+// 정산
+.module-calculate {
+  display: block;
+  padding: $spacer-r 0;
+  border-bottom: solid 1px $color-text-hint;
+  &:first-of-type {
+    border-top: solid 1px $color-text-hint;
+  }
+
+  .date {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .price {
+    display: block;
+    margin: $spacer-s 0 $spacer-r;
+    font-size: 24px;
+    color: $color-bk;
+    font-weight: 400;
+    line-height: 1.42;
+  }
+}
+
+// 보험상품
+.module-insu {
+  padding: {
+    top: 29px;
+    bottom: $spacer-m;
+  }
+  border-top: solid 1px $color-text-hint;
+  &:first-of-type {
+    border-top-color: $color-bg-90;
+  }
+  dl {
+    display: flex;
+  }
+  dt {
+    margin-right: $spacer-r;
+    flex: 0 0 60px;
+    img {
+      width: 100%;
+    }
+  }
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    width: calc(100% - 76px);
+  }
+  .detail {
+    flex: 1 1 calc(100% - 70px);
+    word-break: break-all;
+    letter-spacing: -0.05em;
+    .name {
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .desc {
+      margin-top: $spacer-xs;
+      font-size: 14px;
+      color: $color-text-sub;
+      line-height: 1.43;
+    }
+    .additional {
+      margin-bottom: $spacer-xs;
+    }
+    .date {
+      margin-left: $spacer-xs;
+      font-size: 14px;
+      color: $color-text-sub;
+      line-height: 1.43;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .contractor {
+      margin: $spacer-s 0 14px;
+      font-size: 14px;
+      color: $color-text-sub;
+      line-height: 1.43;
+      li {
+        display: flex;
+        & + li {
+          margin-top: 3px;
+        }
+        span {
+          display: inline-block;
+          flex: 0 0 auto;
+          width: 55px;
+          & + span {
+            flex: 1 1 auto;
+            width: auto;
+          }
+          &:first-of-type {
+            position: relative;
+            padding-right: 4px;
+            margin-right: 9px;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 6px;
+              right: 0;
+              display: inline-block;
+              width: 1px;
+              height: 10px;
+              background: $color-text-hint;
+            }
+          }
+        }
+      }
+    }
+    .price {
+      font-size: 14px;
+      color: $color-text-sub;
+      text-align: right;
+      strong {
+        margin-left: $spacer-s;
+        font-size: 20px;
+        color: $color-text-basic;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+    }
+  }
+  .ad {
+    flex: 0 0 70px;
+    text-align: right;
+    .num {
+      display: block;
+      margin-top: 4px;
+      font-size: 20px;
+      color: $color-secondary-dark;
+      font-weight: 700;
+      line-height: 1.2;
+
+    }
+  }
+  .event {
+    position: relative;
+    margin-top: 12px;
+    padding: 4px 12px 4px 22px;
+    width: 100%;
+    font-size: 12px;
+    background: rgba($color-warning, 0.2);
+    border-radius: 6px;
+    box-sizing: border-box;
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: -7px;
+      width: 24px;
+      transform: translate3d(0, -50%, 0);
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .btn {
+    margin-top: 18px;
+  }
+  &.w-price {
+    &:first-of-type {
+      border-top-width: 0;
+    }
+    dt {
+      margin-right: $spacer-r;
+    }
+  }
+}
+
+// 보장분석
+.module-customer {
+  display: block;
+  padding: $spacer-r 0;
+  border-top: 1px solid $color-text-hint;
+  &:first-of-type {
+    border-top-color: $color-bg-90;
+  }
+  .core {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name {
+    font-size: 20px;
+    color: $color-text-basic;
+    font-weight: 500;
+    line-height: 1.3;
+    .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      vertical-align: top;
+      background: $color-error;
+      border-radius: 50%;
+    }
+  }
+  .rate {
+    display: inline-block;
+    margin-right: $spacer-s;
+    padding: 0 9px;
+    height: 20px;
+    font-size: 12px;
+    color: $color-text-sub;
+    line-height: 20px;
+    background: $color-text-hint;
+    border-radius: 3px;
+  }
+  .detail {
+    margin-top: 40px;
+    color: $color-text-sub;
+  }
+  .info {
+    font-size: 14px;
+    span {
+      & + span {
+        &::before {
+          content: "";
+          display: inline-block;
+          margin: 0 $spacer-xs;
+          width: 1px;
+          height: 10px;
+          vertical-align: middle;
+          background: $color-disabled;
+        }
+      }
+    }
+  }
+  .date {
+    margin-top: $spacer-xs;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+// 보장분석 상세 금액 설정
+.module-gauge {
+  position: relative;
+  ul {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 23px;
+      display: block;
+      width: calc(100% - 46px);
+      height: 6px;
+      background: $color-text-hint;
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+  li {
+    input:checked {
+      & + label {
+        transition: color 0.35s;
+        transition-delay: 0.35s;
+        &::before {
+          border-color: $color-text-hint;
+        }
+      }
+    }
+    label {
+      padding-left: 0;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 2;
+      text-align: center;
+      &:active {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+      &::after {
+        display: none;
+      }
+      &::before {
+        position: static;
+        margin: 0 auto;
+        transform: none;
+        margin: {
+          bottom: 12px;
+        }
+        width: 24px;
+        height: 24px;
+        border: 1px solid $color-text-hint;
+        background: $color-bg-80;
+      }
+    }
+  }
+  .drop {
+    position: absolute;
+    top: -5px;
+    left: 35px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $color-primary-dark;
+    background: $color-primary-light;
+    transform: translate(-50%, 0);
+    transition: left 0.35s;
+    &.move {
+      animation: scale-animation 0.35s ease-in-out;
+    }
+  }
+  &.index0 {
+    .drop {
+      left: 23px;
+    }
+  }
+  &.index1 {
+    .drop {
+      left: 50%;
+    }
+  }
+  &.index2 {
+    .drop {
+      left: calc(100% - 23px);
+    }
+  }
+}
+
+// 기준치 과표준 표기 바
+.module-degree {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: $color-bg-80;
+  border-radius: 9px;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 100%;
+    height: 10px;
+    background: $color-primary-dark;
+    border-radius: 9px;
+  }
+}
+
+// 아코디언 테이블
+.module-accordion {
+  border-bottom: 1px solid $color-text-hint;
+  .e-accordion {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  .head, .sub-head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: {
+      right: 36px;
+      left: $spacer-xs;
+    }
+    font-size: 14px;
+    font-weight: 500;
+    .arrow-down-16, .arrow-down-16-wh {
+      position: absolute;
+      right: $spacer-xs;
+      transition: transform .35s;
+    }
+  }
+  .head {
+    color: $color-wh;
+    line-height: 36px;
+    background: $color-disabled;
+    &.ripple {
+      &::before {
+        left: calc(100% - 14px);
+      }
+    }
+    &.e-accordion-all {
+      em {
+        flex: 1 1 auto;
+      }
+    }
+    .arrow-down-16, .arrow-down-16-wh {
+      top: 10px;
+    }
+  }
+  .sub-head {
+    line-height: 44px;
+    border-top: 1px solid $color-text-hint;
+    background: $color-bg-80;
+    &.ripple {
+      &::before {
+        left: calc(100% - 14px);
+      }
+    }
+    .arrow-down-16 {
+      top: 14px;
+    }
+  }
+  .accordion {
+    &:first-of-type {
+      .sub-head {
+        border-top-width: 0;
+      }
+    }
+    & + .accordion {
+      margin-top: -1px;
+    }
+  }
+  .collapse {
+    overflow: hidden;
+    // display: none;
+    opacity: 0;
+    max-height: 0;
+    box-sizing: border-box;
+    transition: max-height 0.3s ease-in-out, opacity 1s;
+  }
+  &.expand-all {
+    border-bottom-width: 0;
+  }
+  &.expand-all, .accordion.expand {
+    & > .collapse {
+      // display: block;
+      opacity: 1;
+      max-height: 10000px;
+    }
+    & > .head, & > .sub-head {
+      .arrow-down-16, .arrow-down-16-wh {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .module-table {
+    thead {
+      th {
+        border-bottom: 1px solid $color-text-hint;
+      }
+    }
+    td {
+      color: $color-text-sub;
+      letter-spacing: -0.05em;
+      word-break: keep-all;
+    }
+    th, td {
+      border-right: 1px solid $color-text-hint;
+      &:last-child {
+        border-right-width: 0;
+      }
+    }
+  }
+}
+
+// 필터 옵션 선택 후
+.module-selected-option {
+  margin: 4px 0 0 -2px;
+  padding-bottom: 3px;
+  .item {
+    display: inline-block;
+    margin: 6px 0 0 2px;
+    padding: 0 6px 0 14px;
+    font-size: 12px;
+    color: $color-text-sub;
+    font-weight: 500;
+    line-height: 24px;
+    background: rgba($color-secondary-light, 0.1);
+    border-radius: 12px;
+  }
+}
+
+// 가입상품선택
+.module-product {
+  position: relative;
+  padding: $spacer-m 0;
+  & + & {
+    border-top: 1px solid $color-text-hint;
+  }
+  dl {
+    display: flex;
+    & + .btn {
+      margin-top: $spacer-r;
+    }
+  }
+  dt {
+    margin-right: $spacer-r;
+    flex: 0 0 auto;
+    width: 60px;
+    img {
+      max-width: 100%;
+    }
+  }
+  dd {
+    flex: 1 1 auto;
+  }
+  strong {
+    display: block;
+    margin: $spacer-xs 0;
+    font-size: 16px;
+    color: $color-text-basic;
+    line-height: 1.5;
+    font-weight: 500;
+    word-break: break-all;
+  }
+  .desc {
+    font-size: 12px;
+    color: $color-disabled;
+    line-height: 2;
+    font-weight: 500;
+  }
+  .favorite {
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+}
+
+// 상품비교설명 확인 고객 목록
+.module-customer-signed {
+  padding: $spacer-r 0;
+  border-bottom: 1px solid $color-text-hint;
+  &:first-of-type {
+    border-top: 1px solid $color-bg-90;
+  }
+  .core {
+    display: flex;
+    justify-content: space-between;
+  }
+  .name {
+    font-size: 20px;
+    color: $color-text-basic;
+    font-weight: 500;
+  }
+  .sub {
+    text-align: right;
+    flex: 0 0 auto;
+    width: 135px;
+  }
+  .date {
+    display: block;
+    margin-top: $spacer-xs;
+    font-size: 12px;
+    color: $color-text-sub;
+  }
+  .detail {
+    margin-top: $spacer-s;
+  }
+  .info {
+    font-size: 14px;
+    color: $color-text-sub;
+    span {
+      & + span {
+        &::before {
+          content: "";
+          display: inline-block;
+          margin: -2px $spacer-xs 0;
+          width: 1px;
+          height: 10px;
+          vertical-align: middle;
+          background: $color-disabled;
+        }
+      }
+    }
+  }
+  .insu {
+    margin-top: $spacer-xs;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    word-break: keep-all;
+  }
+}
+
+.module-tip {
+  position: relative;
+  &.show {
+    .menu {
+      opacity: 1;
+      display: block;
+    }
+  }
+  .menu {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    top: 48px;
+    right: 10px;
+    display: none;
+    padding: 0 9px;
+    border: 1px solid $color-text-default;
+    background: $color-wh;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px 0 rgba(146, 153, 161, 0.4);
+    transition: opacity 0.35s;
+    li {
+      & + li {
+        border-top: 1px solid $color-text-hint;
+      }
+    }
+    button {
+      display: block;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 49px;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+
+// 고객관리 태그
+.tags {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: {
+    top: $spacer-s;
+    left: -6px;
+  }
+  .tag {
+    display: inline-block;
+    margin: 6px 0 0 6px;
+    padding: 0 6px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 6px;
+  }
+}

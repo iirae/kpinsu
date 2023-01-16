@@ -1,0 +1,229 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-product-title"><!-- section-product-title -->
+                    <div class="wrap">
+                        <h2 class="title">개인정보보호배상책임보험</h2>
+                        <h3 class="title">가입 기본 설문 작성</h3>
+                        <div class="step">
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in ing"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div><!-- // section-product-title -->
+
+                <div class="container section-facility-info"><!-- section-facility-info -->
+                    <div class="wrap">
+                        <div class="holder">
+                            <p class="company"><i class="icon brand-logo hyundai"></i> <span>현대해상</span></p>
+                            <p class="desc">일련번호 : <em class="number">C1806018144</em></p>
+                            <p class="desc">총 면적 : <em class="extent">1,044.91㎡</em></p>
+                            <p class="desc" style="padding-left: 60px; text-indent: -60px;">보장내용 :
+                                <em class="extent">기본약관 [가입]</em><br />
+                                <em class="extent">특별 약관 4종 [미가입]</em>
+                            </p>
+                            <div class="total">
+                                <span class="subject">보험료</span>
+                                <span class="price"><span>(일시납)</span> <strong>11,200원</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-facility-info -->
+
+                <div class="container section-insurance-form is-top-line"><!-- section-insurance-form -->
+                    <div class="wrap">
+                        <div class="item"><!-- item -->
+                            <h4 class="title">보험가입 시작일 <span class="essential">(필수)</span></h4>
+                            <div class="grid">
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <div class="js-datepicker">
+                                            <input type="text" class="text datepicker" placeholder="날짜 선택" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <span class="day">00시부터 1년 (365일)간 </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="notice">
+                                보험 기간은 <span class="info">보험가입 시작일 기준 00시</span>부터 입니다.
+                            </p>
+                        </div>
+                        <div class="item"><!-- item -->
+                            <h4 class="title">과거 5년간 개인정보유출 사고 이력이 있나요?</h4>
+                            <div class="checks-wrap accident-history">
+                                <span class="checks is-radio">
+                                    <input type="radio" name="accident" id="accident1" />
+                                    <label for="accident1">예</label>
+                                </span>
+                                <span class="checks is-radio">
+                                    <input type="radio" name="accident" id="accident2" />
+                                    <label for="accident2">아니오</label>
+                                </span>
+                            </div>
+
+                            <div class="accident-wrap">
+                                <div class="accident-item"><!-- item -->
+                                    <h5 class="title">사고 내용 <span class="essential">(필수)</span></h5>
+                                    <div class="grid">
+                                        <div class="col col-1-2">
+                                            <div class="module">
+                                                <div class="js-datepicker">
+                                                    <input type="text" class="text datepicker" placeholder="사고일자" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-1-2">
+                                            <div class="module">
+                                                <input type="text" class="text" placeholder="개인정보유출 인원 수" />
+                                            </div>
+                                        </div>
+                                        <div class="col col-1-1">
+                                            <div class="module">
+                                                <input type="text" class="text" placeholder="사고 및 대응내용을 간략하게 입력해 주세요." />
+                                                <p class="notice">
+                                                    위 사고로 손해배상 청구 또는 소송이 제기된 경우에만 작성해주세요.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col col-1-1">
+                                            <div class="module">
+                                                <input type="text" class="text" placeholder="1인당 손해배상금액 (숫자만 입력)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="js-accident-delete"><i class="icon delete"><em>사고내용 삭제</em></i></a>
+                                </div><!-- // item -->
+
+                                <div class="action">
+                                    <a href="javascript:;" class="button full"><span><i class="icon add"></i> 사고 내용 추가</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item"><!-- item -->
+                            <h4 class="title">전년도 매출 확인 서류 <span class="small block">(손익계산서 또는 부가가치세과세표준증명원)</span></h4>
+                            <p class="notice">
+                                <span class="info">사업자등록증을 업로드 못하는 상황</span>이시면,
+                                <span class="info">보험가입 신청 후 kfb@inbyu.com</span> 메일을 보내주세요.
+                            </p>
+
+                            <div class="thumb in"><!-- 이미지 등록시 in 클래스 추가 -->
+                                <div class="obj"><img src="../resources/img/temp/@bill.png" alt="" /></div>
+                                <a href="javascript" class="js-thumb-delete"><i class="icon delete"><em>사업자 등록증 이미지 삭제</em></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- // section-insurance-form -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <!-- <a href="javascript:;" class="button large primary"><span>피보험자 기본 정보 등록</span></a> -->
+                <a href="javascript:;" class="button large disabled"><span>피보험자 기본 정보 등록</span></a>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 과거 사고이력 유무
+    $document.on('change', '.accident-history input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $target = $('.accident-wrap');
+
+        if($this.is(':checked') && $this.closest('.checks').index() === 0) {
+            $target.addClass('in');
+        } else {
+            $target.removeClass('in');
+        }
+    });
+
+    // 사고이력 삭제
+    $document.on('click', '.js-accident-delete', function(e){
+        e.preventDefault();
+
+        $(this).closest('.accident-item').remove();
+    });
+
+    // 이미지 등록
+    $document.on('click', '.js-thumb-delete', function(e){
+        e.preventDefault();
+
+        $('.photo-list').addClass('in');
+        $('.thumb').removeClass('in');
+    });
+
+
+});
+</script>
+</body>
+</html>

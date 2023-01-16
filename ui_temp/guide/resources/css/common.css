@@ -1,0 +1,378 @@
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset, img {
+  border: 0 none;
+}
+
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+input, select, textarea, button {
+  vertical-align: middle;
+  font-size: 100%;
+}
+
+button {
+  border: 0 none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+input, button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: checkbox;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+input, textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background: #fff;
+}
+
+html, body {
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+a, button {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.icon {
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.icon.insu-company {
+  width: 60px;
+  height: 60px;
+  background-image: url(../img/img_logo_insu.png);
+  background-size: 600px auto;
+}
+
+.icon.insu-company.kyobolifeplanet {
+  background-position: 0 0;
+}
+
+.icon.insu-company.kyobo {
+  background-position: -60px 0;
+}
+
+.icon.insu-company.ktcu {
+  background-position: -120px 0;
+}
+
+.icon.insu-company.nhlife {
+  background-position: -180px 0;
+}
+
+.icon.insu-company.dongyanglife {
+  background-position: -240px 0;
+}
+
+.icon.insu-company.lina {
+  background-position: -300px 0;
+}
+
+.icon.insu-company.metlife {
+  background-position: -360px 0;
+}
+
+.icon.insu-company.miraeasset {
+  background-position: -420px 0;
+}
+
+.icon.insu-company.samsunglife {
+  background-position: -480px 0;
+}
+
+.icon.insu-company.shinhan {
+  background-position: -540px 0;
+}
+
+.icon.insu-company.orangelife {
+  background-position: 0 -100px;
+}
+
+.icon.insu-company.chubblife {
+  background-position: -60px -100px;
+}
+
+.icon.insu-company.prudential {
+  background-position: -120px -100px;
+}
+
+.icon.insu-company.fubon {
+  background-position: -180px -100px;
+}
+
+.icon.insu-company.hanhwalife {
+  background-position: -240px -100px;
+}
+
+.icon.insu-company.heungkuk {
+  background-position: -300px -100px;
+}
+
+.icon.insu-company.abl {
+  background-position: -360px -100px;
+}
+
+.icon.insu-company.aia {
+  background-position: -420px -100px;
+}
+
+.icon.insu-company.bnp {
+  background-position: -480px -100px;
+}
+
+.icon.insu-company.dblife {
+  background-position: -540px -100px;
+}
+
+.icon.insu-company.dgblife {
+  background-position: 0 -200px;
+}
+
+.icon.insu-company.ibklife {
+  background-position: -60px -200px;
+}
+
+.icon.insu-company.kdb {
+  background-position: -120px -200px;
+}
+
+.icon.insu-company.hanalife {
+  background-position: -180px -200px;
+}
+
+.icon.insu-company.kblife {
+  background-position: -240px -200px;
+}
+
+.icon.insu-company.nh {
+  background-position: 0 -300px;
+}
+
+.icon.insu-company.thek {
+  background-position: -60px -300px;
+}
+
+.icon.insu-company.lotte {
+  background-position: -120px -300px;
+}
+
+.icon.insu-company.meritz {
+  background-position: -180px -300px;
+}
+
+.icon.insu-company.samsung {
+  background-position: -240px -300px;
+}
+
+.icon.insu-company.axa {
+  background-position: -300px -300px;
+}
+
+.icon.insu-company.chubb {
+  background-position: -360px -300px;
+}
+
+.icon.insu-company.carrot {
+  background-position: -420px -300px;
+}
+
+.icon.insu-company.hana {
+  background-position: -480px -300px;
+}
+
+.icon.insu-company.hanwha {
+  background-position: -540px -300px;
+}
+
+.icon.insu-company.hyundai {
+  background-position: 0 -400px;
+}
+
+.icon.insu-company.heungkukfire {
+  background-position: -60px -400px;
+}
+
+.icon.insu-company.aig {
+  background-position: -120px -400px;
+}
+
+.icon.insu-company.directdb {
+  background-position: -180px -400px;
+}
+
+.icon.insu-company.kbinsure {
+  background-position: -240px -400px;
+}
+
+.icon.insu-company.mg {
+  background-position: -300px -400px;
+}
+
+.icon.insu-company.epost {
+  background-position: 0 -500px;
+}
+
+.icon.insu-company.kpinsu {
+  background-position: -60px -500px;
+}
+
+body {
+  background: #fff;
+}
+
+body, th, td, input, select, textarea, button {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #213434;
+}
+
+a {
+  color: #213434;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.blind {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  color: transparent;
+}
+
+.notch {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: env(safe-area-inset-bottom);
+  bottom: constant(safe-area-inset-bottom);
+  background: #f8f8f8;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.mo .common-kpinsu.header .head-logo span:not([style*="display: none"]) + span::before {
+  top: 21px;
+  width: 18px;
+  height: 18px;
+}
+
+.mo .common-kpinsu.header .head-logo img {
+  height: 50px;
+}
+
+.common-kpinsu.header .head-logo {
+  margin: 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.common-kpinsu.header .head-logo a {
+  display: block;
+}
+
+.common-kpinsu.header .head-logo span {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.common-kpinsu.header .head-logo span:not([style*="display: none"]) + span::before {
+  content: "";
+  position: relative;
+  top: 43px;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  vertical-align: top;
+  background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+  background-size: cover;
+}
+
+.common-kpinsu.header .head-logo img {
+  height: 100px;
+}

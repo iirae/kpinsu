@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">알림 설정</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents p-row-reset pt-0" id="contents">
+                    <div class="section-dl divide-top">
+                        <ul class="module-dl">
+                            <li>
+                                <strong>알림 허용</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoffAll" checked><label for="onoffAll"></label></span>
+                            </li>
+                            <li class="line lower"><a href="javascript:;">
+                                <strong>에티켓</strong>
+                                <span><em>켜짐</em><span class="time">평일 오전 09:00 ~ 오후 06:00</span></span>
+                                <!-- <span><em>꺼짐</em></span> -->
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section-dl lower">
+                        <h2>고객 반응</h2>
+                        <ul class="module-dl">
+                            <li>
+                                <strong>보장분석리포트 전송</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff2" checked><label for="onoff2"></label></span>
+                            </li>
+                            <li>
+                                <strong>상품비교설명확인서 서명</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff3" checked><label for="onoff3"></label></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section-dl lower">
+                        <h2>광고수익 정산</h2>
+                        <ul class="module-dl">
+                            <li>
+                                <strong>광고수익 실적 집계 완료</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff4" checked><label for="onoff4"></label></span>
+                            </li>
+                            <li>
+                                <strong>광고수익 입금 완료</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff5" checked><label for="onoff5"></label></span>
+                            </li>
+                            <li>
+                                <strong>광고수익 계좌등록(승인) 요청</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff6" checked><label for="onoff6"></label></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section-dl lower">
+                        <h2>서비스 알림</h2>
+                        <ul class="module-dl">
+                            <li>
+                                <strong>보험마켓 새로운 상품 추가</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff7" checked><label for="onoff7"></label></span>
+                            </li>
+                            <li>
+                                <strong>신규 공지사항 등록</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff8" checked><label for="onoff8"></label></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section-dl lower">
+                        <h2>내 소식</h2>
+                        <ul class="module-dl">
+                            <li>
+                                <strong>회원 상태 변경</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff9" checked><label for="onoff9"></label></span>
+                            </li>
+                            <li>
+                                <strong>1:1문의에 대한 답변</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff10" checked><label for="onoff10"></label></span>
+                            </li>
+                            <li>
+                                <strong>서비스개선 제안에 대한 답변</strong>
+                                <span class="form-switch"><input type="checkbox" id="onoff11" checked><label for="onoff11"></label></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 알림 허용
+                $body.on('click', '#onoffAll', function(e){
+                    let allChk = $(e.target);
+
+                    if( allChk.prop('checked') ) {
+                        $('.lower').fadeIn('fast');
+                    } else {
+                        $('.lower').fadeOut('fast');
+                    }
+
+                });
+            });
+        </script>
+    </body>
+</html>

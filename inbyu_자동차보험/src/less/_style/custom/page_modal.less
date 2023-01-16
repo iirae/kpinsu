@@ -1,0 +1,151 @@
+.modal-car-info-view {
+    position: relative;
+    padding-top: 20px;
+    height: calc(100vh - 60px);
+    .info-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        padding: 0 30px;
+        background-color: #fff;
+        height: calc(100vh - 60px);
+        overflow: hidden;
+        overflow-y: scroll;
+         -webkit-overflow-scrolling: touch;
+        transform: translate(100%, 0);
+        transition: transform 0s .5s, z-index 0s .5s, top 0s .5s;
+        &.in {
+            z-index: 1;
+            transform: translate(0, 0);
+            transition: transform .4s 0s, z-index 0s 0s, top 0s 0s;
+        }
+    }
+    .skeleton-screen {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background-image: linear-gradient( lightgray 20px, transparent 0 );
+        background-size: 200px 200px;
+        background-position: 26px 3px;
+        opacity: 1;
+        transition: opacity .4s;
+        .items {
+            margin: 60px 26px 0 26px;
+            height: calc(100vh - 60px);
+            background-image:
+                radial-gradient( circle 14px, lightgray 100%, transparent 0 ),
+                linear-gradient( lightgray 20px, transparent 0 ),
+                linear-gradient( lightgray 20px, transparent 0 ),
+                linear-gradient( lightgray 20px, transparent 0 );
+            background-repeat: repeat-y;
+            background-size:
+                28px 52px,
+                160px 157px,
+                230px 157px,
+                180px 157px;
+            background-position:
+                right -7px,
+                0 8px,
+                0 60px,
+                0 110px;
+        }
+        &.out {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+    .title {
+        margin: 0;
+        padding: 20px 0 0;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #0e1012;
+    }
+    .items {
+        margin-top: 40px;
+        .item {
+            margin-top: 30px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    .checks {
+        label {
+            font-size: 16px;
+            color: #444b52;
+            line-height: 1.38;
+        }
+        input[type="radio"] {
+            & + label::before,
+            & + label::after {
+                top: 0;
+                margin: 0;
+                display: none;
+            }
+            &:checked {
+                & + label::before,
+                & + label::after {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+#modalCarInfo.modal-container .md-modal-body {
+    height: auto;
+    overflow: hidden;
+}
+
+.modal-add,
+.modal-reward {
+    .title {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.45;
+        color: #212529;
+    }
+    .desc {
+        margin: 10px 0 0;
+        font-size: 16px;
+    }
+    .items {
+        .item {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #444b52;
+            &:first-child {
+                margin-top: 20px;
+            }
+        }
+        .checks input {
+            & + label::after {
+                display: none;
+            }
+            &:checked + label::after {
+                display: block;
+            }
+        }
+    }
+    .guide {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px #e9ecef solid;
+        font-size: 12px;
+        color: @light;
+    }
+}
+
+.modal-event {
+    div {
+        line-height: 20px;
+    }
+}

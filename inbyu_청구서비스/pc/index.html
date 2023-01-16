@@ -1,0 +1,199 @@
+
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="./resources/img/tile.png" id="ogImage" />
+<title id="title">청구서비스(모바일) IA</title>
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="./resources/css/common.css" />
+<script src="./resources/js/lib/jquery-3.3.1.min.js"></script>
+<style>
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+    fieldset,img{border:0 none}
+    dl,ul,ol,menu,li{list-style:none}
+    blockquote, q{quotes:none}
+    blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+    input,select,textarea,button{vertical-align:middle;font-size:100%}
+    button{border:0 none;border-radius:0;background-color:transparent;cursor:pointer}
+    table{border-collapse:collapse;border-spacing:0}
+    body{-webkit-text-size-adjust:none}
+    input:checked[type='checkbox'] {background-color:#666; -webkit-appearance:checkbox}
+    input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html input[type='button'],input[type='reset'],input[type='number'], input[type='datetime-local'] {-webkit-appearance:none;border-radius:0;-webkit-border-radius:0;}
+    input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+    input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+
+    body{background:#fff}
+    body,th,td,input,select,textarea,button{font-size:1rem;line-height:1.38;font-family:AppleSDGothicNeo,'Malgun Gothic','맑은 고딕',sans-serif;color:#444b52}
+    html,body{height:100%}
+
+    a{color:#444b52;text-decoration:none}
+    a:active, a:hover{text-decoration:none}
+    address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+    html {font-size: 12px;}
+    .wrap {padding:20px 30px 100px;}
+    h1 {font-size: 1.7rem; font-weight:500;}
+    h2 {margin-top: 30px; font-size: 1.3rem; font-weight:500;}
+    h3 {margin-top: 30px; font-size: 1.1rem; font-weight:500;}
+    ul, p {margin-top: 7px; color:#7b7b7b;}
+    a {text-decoration: underline;}
+    .table-layout {margin-top: 10px;}
+    .table-layout table {table-layout: fixed; width:100%; border-collapse: collapse; border: solid 1px #cdcdcd;}
+    .table-layout th, td {padding: 7px 10px; border: dashed 1px #cdcdcd;}
+    .table-layout th {background: #eaeaea;}
+    .table-layout tbody th {font-weight:500;}
+    .table-layout .center {text-align:center;}
+    .table-layout tbody:nth-of-type(even) {background:#f8f8f8;}
+
+    .tab-layout {display: flex; margin-top: 30px;}
+    .tab-layout li {flex: 0 0 120px; height: 36px; line-height: 36px; text-align:center; border: dashed 1px #dedede;}
+    .tab-layout li + li {margin-left: -1px;}
+    .tab-layout li.on {z-index:10; position: relative; background: rgba(0,0,0,0.03);}
+    .tab-layout li.on a {color: #11bdfb;}
+    .tab-layout a {display: block; font-size: 15px; text-decoration: none;}
+
+    .text-primary {color: #008dff;}
+
+    .title { padding:20px 30px 100px; }
+    .worklist-wrap { padding:20px 30px 100px; }
+    #preview { position:fixed; top: 130px; right:50px; width:375px; height: 70vh; border: 1px #000 solid; }
+    .file.in { color: #008dff; }
+</style>
+</head>
+<body>
+
+<h1 class="title">inbyu</h1>
+
+<div class="worklist-wrap">
+    <div class="table-layout">
+        <table>
+        <colgroup>
+            <col style="width: 250px;" />
+            <col style="width: 250px;" />
+            <col style="width: auto;" />
+        </colgroup>
+        <!-- <thead>
+            <tr>
+                <th scope="col">파일명</th>
+                <th scope="col">기본 보장</th>
+                <th scope="col">추가 보장</th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <th scope="row">UI guide</th>
+                <td>
+                    <a href="./guide.html" class="file" target="_blank">guide.html</a>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th scope="row">00.index</th>
+                <td>
+                    <a href="./html/00.index.html" class="file" target="_blank">00.index.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">01.약관동의</th>
+                <td>
+                    <a href="./html/01.약관동의.html" class="file" target="_blank">01.약관동의.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">02.보험사선택</th>
+                <td>
+                    <a href="./html/02.보험사선택.html" class="file" target="_blank">02.보험사선택.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">03.정보입력</th>
+                <td>
+                    <a href="./html/03.정보입력.html" class="file" target="_blank">03.정보입력.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">04.질병상해정보입력</th>
+                <td>
+                    <a href="./html/04.질병상해정보입력.html" class="file" target="_blank">04.질병상해정보입력.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">05.정보확인및서명</th>
+                <td>
+                    <a href="./html/05.정보확인및서명.html" class="file" target="_blank">05.정보확인및서명.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">06.보험사전화연결</th>
+                <td>
+                    <a href="./html/06.보험사전화연결.html" class="file" target="_blank">06.보험사전화연결.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">07.청구접수완료</th>
+                <td>
+                    <a href="./html/07.청구접수완료.html" class="file" target="_blank">07.청구접수완료.html</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">08.error</th>
+                <td>
+                    <a href="./html/08.error.html" class="file" target="_blank">08.error.html</a>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <!-- <iframe src="./html/01.약관동의.html" id="preview"></iframe> -->
+</div>
+
+
+<script src="./resources/js/event.js?ver=20181111"></script>
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+
+    // $document.on('click', '.file', function(e){
+    //     e.preventDefault();
+    //     var $this = $(this),
+    //         $link = $('.file'),
+    //         $target = $('#preview');
+
+    //     $link.removeClass('in');
+    //     $this.addClass('in');
+    //     $target.attr('src', $this.attr('href'));
+    // });
+
+});
+</script>
+</body>
+</html>

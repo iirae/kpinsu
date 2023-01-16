@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@import "_reset";
+@import "_mixin";
+@import "_icon";
+@import "_page";
+
+body{background: #fff;}
+body,th,td,input,select,textarea,button{font-size:16px; line-height:1.5; font-family:"Noto Sans KR", sans-serif;color:#0e1012;}
+a{color: #0e1012;}
+img {max-width: 100%; vertical-align: top;}
+
+.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+.notch {
+    position: fixed; 
+    left:0;
+    right:0;
+    bottom: env(safe-area-inset-bottom);
+    bottom: constant(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+

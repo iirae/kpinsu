@@ -1,0 +1,137 @@
+/* text ================================================================== */
+
+
+// .thin { &:extend(.light); }
+// .thick { &:extend(.bold); }
+
+.no-font-smooth {
+    -webkit-font-smoothing : none;
+    font-smooth: never;
+}
+
+div, span, strong, em, table, ul, p, small, a {
+    &.primary { color: @primary; }
+    &.secondary { color: @secondary; }
+    &.warning { color: @warning; }
+    &.info { color: @info; }
+    &.danger { color: @danger; }
+    &.light { color: @light; }
+    // &.small {
+    //     font-size: @before-font-size-small;
+    // }
+    &.xsmall {
+
+    }
+    &.small {
+
+    }
+    &.large {
+        // margin: 10px 0 0;
+        // font-size: @before-font-size-large;
+    }
+    &.xlarge {
+        // font-size: 19px;
+    }
+    &.xxlarge {
+
+    }
+}
+
+// :link { color: @base-link-color; }
+// :visited { color: @base-link-color; }
+// :hover { color: @base-link-hover-color; }
+// :active { color: @base-link-hover-color; }
+
+a {
+    color: @base-link-color;
+    text-decoration: none;
+
+
+    &:hover .link { text-decoration: underline; }
+
+    &.no-underline {
+        border-bottom: 0;
+    }
+}
+
+a.link-has-line {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    color: #636b73;
+    font-weight: bold;
+    text-decoration: none;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #636b73;
+    }
+    &.light {
+        color: #868e96;
+        &::before {
+            background-color: #868e96;
+        }
+    }
+    &.small {
+        font-size: 12px;
+    }
+}
+
+.is-has-line {
+    position: relative;
+    display: inline-block !important;
+    color: #0e1012;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: -2px;
+        margin-top: -12px;
+        height: 8px;
+        background-color: @primary;
+    }
+    > span {
+        position: relative;
+    }
+    &.small {
+        &::before {
+            margin-top: -10px;
+            height: 6px;
+        }
+    }
+    &.primary {
+        &::before {
+            background-color: @secondary;
+        }
+    }
+}
+
+.notice {
+    position: relative;
+    margin: 10px 0 0;
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    color: #636b73;
+    &::before {
+        content: '!';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 13px;
+        height: 13px;
+        text-align: center;
+        line-height: 13px;
+        font-weight: bold;
+        color: @info;
+        border: 1px @info solid;
+        border-radius: 100%;
+    }
+}

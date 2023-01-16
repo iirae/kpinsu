@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+i.icon {
+  display: inline-block;
+  line-height: 1;
+  text-align:center;
+  vertical-align: middle;
+  background: {
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+  &.info {
+    width: 10px;
+    height: 10px;
+    background-image: url(../img/ico_info.png);
+  }
+  &.sort {
+    width: 9px;
+    height: 10px;
+    background-image: url(../img/ico_arrow_top.png);
+  }
+  &.up {
+    width: 9px;
+    height: 10px;
+    background-image: url(../img/ico_arrow_up_blue.png);
+  }
+  &.trophy {
+    width: 24px;
+    height: 20px;
+    background-image: url(../img/ico_trophy.png);
+  }
+  &.mining {
+    width: 29px;
+    height: 22px;
+    background-image: url(../img/ico_mining.png);
+  }
+  &.fire {
+    width: 18px;
+    height: 22px;
+    background-image: url(../img/ico_fire.png);
+  }
+  &.gold {
+    width: 23px;
+    height: 22px;
+    background-image: url(../img/ico_gold.png);
+  }
+  &.silver {
+    width: 23px;
+    height: 22px;
+    background-image: url(../img/ico_silver.png);
+  }
+}

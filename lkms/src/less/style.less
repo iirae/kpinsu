@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+:root { // 사용자 정의 변수
+    --site-name: 'LKMS';
+}
+
+@primary               : #08104e; // green
+@secondary             : #000;
+@info                  : #999;
+@warning               : #ff0000;
+@danger                : #ff6440;
+@light                 : #eee;
+@disabled              : #6a737b;
+
+@import "./_common/_classes.less"; // 클래스
+@import "./_common/_easing.less"; // easing
+@import "./_common/_constants.less"; // 상수
+
+@import "./_style/_setting.less";
+@import "./_style/_mixins.less";
+@import "./_style/_mixins_responsive.less";
+
+// @import "./_style/_base.less";
+
+@import "./_style/_transition.less";
+
+@import "./_style/_helpers_non_responsive.less";
+@import "./_style/_helpers_responsive.less";
+@import "./_style/_font.less";
+@import "./_style/_grid.less";
+@import "./_style/_common.less";
+
+@import "./_style/_text.less";
+
+// @import "./_style/base/_slider.less";
+
+@import "./_style/ui/_bbs.less";
+@import "./_style/ui/_form.less";
+@import "./_style/ui/_button.less";
+@import "./_style/ui/_icon.less";
+@import "./_style/ui/_table.less";
+@import "./_style/ui/_list.less";
+@import "./_style/ui/_tab.less";
+@import "./_style/ui/_media.less";
+
+// layout
+@import "./_style/_layout.less";
+
+@import "./_style/module/_modal.less";
+@import "./_style/module/_inview.less";
+@import "./_style/module/_overlay.less";
+@import "./_style/module/_indicator.less";
+
+
+@import "./_style/plugin/_swiper.less";
+@import "./_style/plugin/_swiper_helper.less";
+
+@import "./_style/custom/text_animation.less";
+
+// page
+// @import "./_style/custom/page_modal.less";
+@import "./_style/custom/page_home.less";
+
+body, td, th, font {
+    font-size: 14px;
+    color: #222;
+}
+
+p {
+    &.primary   { color: @primary;   }
+    &.secondary { color: @secondary; }
+    &.info      { color: @info;      }
+    &.warning   { color: @warning;   }
+    &.danger    { color: @danger;    }
+    &.light     { color: @light;     }
+    &.disabled  { color: @disabled;  }
+}
+
+/* 꽉찬 cover 이미지 */
+.pic {
+    .cover-hidden {
+        visibility: hidden;
+        margin: 0 auto;
+    }
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 100% auto;
+        background-size: cover;
+    }
+}
+
+.motif-lines-holder {
+    position: absolute;
+    z-index: 10;
+}
+.motif-lines {
+    position: relative;
+    z-index: 11;
+    .holder {
+        position: absolute;
+        z-index: 12;
+        width: 300px;
+        height: 400px;
+        overflow: hidden;
+    }
+    span {
+        float: left;
+        display: block;
+        width: 3px;
+        height: 100%;
+        margin-right: 12px;
+        display: block;
+        overflow: hidden;
+        transform: translate(0, -20px);
+        &::before {
+            content: '';
+            display: block;
+            height: 100%;
+            background-color: @primary;
+            transform: translate(0, -100%);
+        }
+    }
+    &.is-light {
+        span::before {
+            background-color: #fff;
+        }
+    }
+    &.is-circle {
+        .holder {
+            transform: rotate(45deg);
+            transform-origin: 50% 50%;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        span {
+            margin-right: 8px;
+        }
+    }
+}
+
+.motif-lines {
+    .holder {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}
+
+.in .motif-lines {
+    span {
+        transform: translate(0, 0);
+        transition: transform .4s @base-easing 100ms;
+        &::before {
+            transform: translate(0, 0);
+            transition: transform .6s @base-easing 0s;
+        }
+        &:nth-of-type(5n+1) {
+            &, &::before {
+                transition-delay: 200ms;
+            }
+        }
+        &:nth-of-type(5n+2) {
+            &, &::before {
+                transition-delay: 300ms;
+            }
+        }
+        &:nth-of-type(5n+3) {
+            &, &::before {
+                transition-delay: 400ms;
+            }
+        }
+        &:nth-of-type(5n+4) {
+            &, &::before {
+                transition-delay: 500ms;
+            }
+        }
+        &:nth-of-type(5n) {
+            &, &::before {
+                transition-delay: 100ms;
+            }
+        }
+    }
+}

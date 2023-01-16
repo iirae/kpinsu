@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../../resources/js/lib/swiper.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap page-recommand-info" id="wrap">
+            <div class="head-button">
+                <span class="al-right">
+                    <a href="javascript:;" class="btn-icon close"></a>
+                </span>
+            </div>
+            <div class="container no-head-button" id="container">
+                <h1 class="blind">추천코드 알아보기</h1>
+                <div class="contents" id="contents">
+                    <div class="info-carousel swiper-container">
+                        <ol class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <figure>
+                                    <div class="image"><img src="../../resources/img/img_recommand_code_info_01.svg" alt="추천코드 설명 이미지 1"></div>
+                                    <figcaption>
+                                        <h2>추천코드란 무엇인가요?</h2>
+                                        <p>다른 설계사님이 회원님을 추천인으로 등록할 수 있는 코드예요.</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure>
+                                    <div class="image"><img src="../../resources/img/img_recommand_code_info_02.svg" alt="추천코드 설명 이미지 2"></div>
+                                    <figcaption>
+                                        <h2>누가 신청할 수 있나요?</h2>
+                                        <p>GA 조직의 관리자 또는 대표님께서 신청할 수 있어요.</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure>
+                                    <div class="image"><img src="../../resources/img/img_recommand_code_info_03.svg" alt="추천코드 설명 이미지 3"></div>
+                                    <figcaption>
+                                        <h2>어떤 혜택이 있나요?</h2>
+                                        <p>내 추천코드를 등록한 설계사님께 광고수익이 발생할 때마다 수수료를 받으실 수 있어요.</p>
+                                    </figcaption>
+                                    <div class="area-button">
+                                        <a href="javascript:;" class="btn btn-primary">추천코드 발급받기</a>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ol>
+                        <div class="carousel-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                let infoSwiper = new Swiper(".info-carousel", {
+                    pagination: {
+                        el: ".carousel-pagination",
+                    },
+                });
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <div class="al-right">
+                    <button class="btn-text">수정</button>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <div class="contents page-customer-detail" id="contents">
+                    <h1 class="blind">고객 상세 정보</h1>
+                    <section class="section-profile divide">
+                        <!-- name, nick, birth는 데이터가 없을 경우 v-if나 v-show 처리 필요 -->
+                        <strong class="name">홍길동 설계사님</strong>
+                        <em class="nick">(KP보험서비스 팀장)</em><!-- 실명이 있을 경우 () 추가, 실명이 없을 경우 () 삭제 -->
+                        <span class="birth">1984.09.18(만 34세)</span>
+                        <ul class="contact">
+                            <li><button type="button"><i class="icon contact call"></i>휴대전화</button></li>
+                            <li><button type="button"><i class="icon contact kakaotalk"></i>카카오톡</button></li>
+                            <li><button type="button"><i class="icon contact message"></i>메시지</button></li>
+                        </ul>
+                        <div class="contact-date">
+                            <a href="javascript:;">마지막 접촉일 2021.07.22</a>
+                        </div>
+                    </section>
+
+                    <section class="section-group divide">
+                        <header class="head">
+                            <h2 class="text-sub-head">그룹</h2>
+                        </header>
+                        <p class="mt-r text-center">등록된 그룹 정보가 없습니다.</p>
+                        <ul class="tags">
+                            <li class="tag" style="background: #e2f8fa;">회사</li>
+                            <li class="tag" style="background: #decaae;">최대최대글자입력샘플</li>
+                            <li class="tag" style="background: #d0c4d8;">DB고객</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="section-insu_details">
+                        <header class="area-title">
+                            <h3 class="text-sub-head">가입내역 상세</h3>
+                            <a href="javascript:;" class="text-link">보장분석 상세보기 <i class="icon link small"></i></a>
+                        </header>
+                        <ul class="list">
+                            <li><i class="icon insu-detail life"></i><em>생명보험(2건)</em><strong>355,000</strong></li>
+                            <li><i class="icon insu-detail nonelife"></i><em>손해보험(5건)</em><strong>12,000,000</strong></li>
+                            <li><i class="icon insu-detail guaranteed"></i><em>보장성(6건)</em><strong>10,355,000</strong></li>
+                            <li><i class="icon insu-detail saving"></i><em>저축성(1건)</em><strong>2,000,000</strong></li>
+                        </ul>
+                        <p class="footnote">단위: 원</p>
+                    </section>
+
+                    <!-- data 없을 경우 -->
+                    <div class="section-empty customer">
+                        <i class="icon send-fail"></i>
+                        <p>고객의 보장분석 데이터가 없습니다.<br>보장분석을 요청해보세요.</p>
+                        <div class="area-button">
+                            <a href="javascript:;" class="btn btn-primary">보장분석 요청하기</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

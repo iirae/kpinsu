@@ -1,0 +1,54 @@
+.txt {
+    &-title-lg {
+        @include textStyle(30px, 1.27);
+        &.fw-700 {
+            font-weight: 700;
+        }
+    }
+    &-title {
+        &-1 {
+            @include textStyle(26px, 1.38, 500);
+        }
+    }
+    
+    &-headline {
+        @include textStyle(18px, 1.44);
+        &.fw-500{
+            font-weight: 500;
+        }
+        &.fw-700 {
+            font-weight: 700;
+        }
+    }
+    
+    &-subheader {
+        @include textStyle(16px, 1.5);
+        &.fw-500{
+            font-weight: 500;
+        }
+    }
+
+    &-body-16 {
+        @include textStyle(16px, 1.5);
+        &.fw-500{
+            font-weight: 500;
+        }
+        &.fw-700 {
+            font-weight: 700;
+        }
+    }
+    
+    &-body-14 {
+        @include textStyle(14px, 1.43);
+        &.fw-500{
+            font-weight: 500;
+        }
+        &.fw-700 {
+            font-weight: 700;
+        }
+    }
+
+    &-footnote {
+        @include textStyle(12px, 1.5)
+    }
+}

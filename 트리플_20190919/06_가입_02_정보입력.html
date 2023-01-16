@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>해외여행보험</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="img/inbyu_favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="img/contents/homescreen_icon.png">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/respond.min.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+
+<script type="text/javascript">
+<!--
+
+function frmSubmit(f_data)
+{
+	var action = f_data['action'];
+
+	$.ajax({
+		type: "POST",
+		url: action,
+		data: f_data,
+		dataType: 'json',
+		success: function(response) {
+			if(response) {
+
+				if(response.msg)
+					alert(response.msg);
+
+				if(response.url)
+					location.replace(response.url);
+			}
+		}
+	});
+	return false;
+}
+
+$(document).ready(function()
+{
+	$(".chk-ok").click(function(){
+
+		if ($("#datePic_1").val() == "") {
+			alert("출국 예정일을 꼭 선택하세요!");
+			$("#datePic_1").focus();
+			$("#datePic_1").parent().addClass("on");
+			return false;
+		} else if ($("#datePic_2").val() == "") {
+			alert("입국 예정일을 꼭 선택하세요!");
+			$("#datePic_2").focus();
+			$("#datePic_2").parent().addClass("on");
+			return false;
+		} else if ($("#birth").val() == "") {
+			alert("생년월일을 꼭 입력하세요!");
+			$("#birth").focus();
+			$("#birth").parent().addClass("on");
+			return false;
+		} else if ($("#name").val() == "") {
+			alert("이름을 꼭 입력하세요!");
+			$("#name").focus();
+			$("#name").parent().addClass("on");
+			return false;
+		} else if ($("#engName").val() == "") {
+			alert("영문이름을 꼭 입력하세요!");
+			$("#engName").focus();
+			$("#engName").parent().addClass("on");
+			return false;
+		} else if ($("#rrn1").val() == "") {
+			alert("주민등록 앞자리를 꼭 입력하세요!");
+			$("#rrn1").focus();
+			$("#rrn1").parent().addClass("on");
+			return false;
+		} else if ($("#rrn2").val() == "") {
+			alert("주민등록 뒷자리를 꼭 입력하세요!");
+			$("#rrn2").focus();
+			$("#rrn2").parent().addClass("on");
+			return false;
+		} else if ($("#phone").val() == "") {
+			alert("휴대폰번호를 꼭 입력하세요!");
+			$("#phone").focus();
+			$("#phone").parent().addClass("on");
+			return false;
+//		} else if ($("#email").val() == "") {
+//			alert("이메일을 꼭 입력하세요!");
+//			$("#email").focus();
+//			$("#email").parent().addClass("on");
+//			return false;
+//		} else if ($("#emailChk").val() == "") {
+//			alert("이메일확인을 꼭 입력하세요!");
+//			$("#emailChk").focus();
+//			$("#emailChk").parent().addClass("on");
+//			return ;
+		} else if ($("#gName").val() == "") {
+			alert("여행국가를 꼭 선택하세요!");
+			$("#gName").focus();
+			$("#gName").parent().addClass("on");
+			return false;
+		}
+
+		var user_name = "";
+		$.each($(".user_name").serializeArray(), function(index) {
+			user_name += this.value +"^";
+		});
+
+		var eng_name = "";
+		$.each($(".eng_name").serializeArray(), function(index) {
+			eng_name += this.value +"^";
+		});
+
+		var jumin_1 = "";
+		$.each($(".jumin_1").serializeArray(), function(index) {
+			jumin_1 += this.value +"^";
+		});
+
+		var jumin_2 = "";
+		$.each($(".jumin_2").serializeArray(), function(index) {
+			jumin_2 += this.value +"^";
+		});
+
+		var user_phone = "";
+		$.each($(".user_phone").serializeArray(), function(index) {
+			user_phone += this.value +"^";
+		});
+
+		var f_data = {
+			action: 'extend.htm',
+			mode: 'kakaopay',
+			mtype: 'step04_proc',
+			st_date: $("input[name='st_date']").val(),
+			st_time: $("select[name='st_time']").val(),
+			en_date: $("input[name='en_date']").val(),
+			en_time: $("select[name='en_time']").val(),
+			email: $("input[name='email']").val(),
+			user_info_cnt: $(".user_info").length,
+			gift_fg: $("input[name='gift_fg']").val(),
+			travel_country_code: $("select[name='use_data']").val(),
+			use_data: $("select[name='use_data'] option:selected").text(),
+			user_name: user_name,
+			eng_name: eng_name,
+			jumin_1: jumin_1,
+			jumin_2: jumin_2,
+			user_phone: user_phone,
+		};
+		frmSubmit(f_data);
+
+		return false;
+	});
+});
+
+function maxLengthCheck(object)
+{
+	if (object.value.length > object.maxLength){
+		object.value = object.value.slice(0, object.maxLength);
+	}
+}
+//-->
+</script>
+
+<header id="header">
+    <div class="upper">
+        <h1 class="logo"><a href="/index.htm?mode=main"><img src="img/common/logo.jpg" alt="INBYU" /></a></h1>
+    </div>
+	<div class="downer">
+		<ul class="tab">
+			<li class="in"><a href="#!"><span>보험가입하기</span></a></li>
+			<li><a href="#!"><span>가입내역조회</span></a></li>
+			<li><a href="#!"><span>보험이용안내</span></a></li>
+		</ul>
+	</div>
+</header><!-- end : id : header -->
+
+<div id="inbyuWrap">
+	<div id="inbyuContents">
+
+		<h2 class="hide">컨텐츠</h2>
+		<div class="step_process">
+			<div>약관동의</div>
+			<div class="on">정보입력</div>
+			<div>가입내용확인</div>
+			<div>결제</div>
+		</div>
+
+		<div class="joinInput-Area">
+			<form method="post" action="">
+				<div class="in_box">
+					<h3 class="sub-title">가입자 정보입력</h3>
+					<legend>가입자 정보입력</legend>
+
+					<div class="join-input type">
+						<dl class="input-zip">
+							<dt><label for="datePic_1">출국 예정 일시 (집에서 출발하는 시간)</label></dt>
+							<dd>
+								<div class="datepicker datePlace"><label for="datePic_1"><span>출국일자</span></label>
+									<div class="divInput"><b>{$RS.serv1.st_date}</b></div>
+									<input type="hidden" class="dateVal_1" id="datePic_1" onfocus="this.blur()" name="st_date" value="{$RS.serv1.st_date}" readonly />
+								</div>
+								<div class="cal-wrap">
+									<div id="datepicker_1"></div>
+								</div>
+								<div class="select-div">
+									<select name="st_time" id="leave" class="select" title="출국 예정 시간선택">
+										<option value="">시간선택</option>
+
+		{section name=key loop=$RS.st_time}
+									<option value="{$RS.st_time[key].d_no}" {$RS.st_time[key].selected}>{$RS.st_time[key].d_no} 시</option>
+		{/section}
+
+									</select>
+								</div>
+							</dd>
+							<dt><label for="datePic_2">입국 예정 일시 (집에 도착하는 시간)</label></dt>
+							<dd>
+								<div class="datepicker datePlace"><label for="datePic_2"><span>입국일자</span></label>
+									<div class="divInput"><b>{$RS.serv1.en_date}</b></div>
+									<input type="hidden" class="dateVal_2"  id="datePic_2" onfocus="this.blur()" name="en_date" value="{$RS.serv1.en_date}" readonly />
+								</div>
+								<div class="cal-wrap">
+									<div id="datepicker_2"></div>
+								</div>
+								<div class="select-div">
+									<select name="en_time" class="select" title="입국 예정 시간선택">
+										<option value="">시간선택</option>
+
+		{section name=key loop=$RS.en_time}
+									<option value="{$RS.en_time[key].d_no}" {$RS.en_time[key].selected}>{$RS.en_time[key].d_no} 시</option>
+		{/section}
+									</select>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div><!-- end : class : in_box -->
+
+				<div class="in_box">
+					<div class="join-input">
+						<dl class="input-zip">
+							<dt><label for="name"><b>(필수)</b>가입자 이름</label></dt>
+							<dd>
+								<div class="input inputPlace"><label for="name">이름을 입력하세요.</label><input type="text" id="name" class="user_name" name="user_name[]" value="{$RS.user.name}" readonly title="이름을 입력하세요"  /> </div>
+							</dd>
+							<dt><label for="engName"><b>(필수)</b>영문 이름 (여권에 기재된 영문이름)</label></dt>
+							<dd>
+								<div class="input inputPlace"><label for="engName">여권에 기재된 영문으로 입력</label><input type="text" id="engName"  class="eng_name" name="eng_name[]" title="영문이름을 입력하세요" /> </div>
+							</dd>
+							<dt><label for="rrn1"><b>(필수)</b>주민등록번호</label></dt>
+							<dd>
+								<div class="rrtInput inputPlace"><label for="rrn1">주민번호 앞자리</label><input type="tel" id="rrn1" maxlength="6" oninput="maxLengthCheck(this)" class="jumin_1" name="jumin_1[]" value="{$RS.user.jumin_1}"{if $RS.user.jumin_1 != ""} readonly{/if} title="주민등록번호 앞자리를 입력하세요" /> </div>
+								<div class="rrtInput inputPlace"><label for="rrn2">주민번호 뒷자리</label><input type="number" id="rrn2" pattern="[0-9]*" inputmode="numeric" class="numbersOnly jumin_2" maxlength="7" oninput="maxLengthCheck(this)" name="jumin_2[]" title="주민등록번호 뒷자리를 입력하세요" /> </div>
+							</dd>
+							<dt><label for="phone"><b>(필수)</b>휴대폰번호 (-없이 숫자만 입력)</label></dt>
+							<dd>
+								<div class="input inputPlace"><label for="phone">휴대폰번호 입력</label><input type="tel" id="phone" maxlength="11" oninput="maxLengthCheck(this)" class="user_phone" name="user_phone[]" value="{$RS.user.phone_number}" {if $RS.user.phone_number}readonly {/if} title="휴대폰번호을 입력하세요" /> </div>
+							</dd>
+							<dt><label for="useChk"><b>(필수)</b>여행국가</label></dt>
+							<dd>
+								<select name="use_data" id="gName" class="select" title="여행국가를 선택하세요">
+									<option value="">여행국가를 선택하세요</option>
+{section name=key loop=$RS.g_list}
+									<option value="{$RS.g_list[key].country_code}">{$RS.g_list[key].country_name} ( {$RS.g_list[key].country_name_en} )</option>
+{/section}
+								</select>
+							</dd>
+{if $RS.user.email}
+<input type="hidden" id="email" name="email" value="{$RS.user.email}" />
+<input type="hidden" id="emailChk" name="email2" value="{$RS.user.email}" />
+{else}
+							<dt><label for="email"><b>(선택)</b>이메일</label>
+								<div class="infoB">
+									회사 메일의 경우 보험가입 확인서
+									및 약관이 수신되지 않는 경우가
+									있으니 <b>네이버, 다음, Gmail 등
+									개인 메일 주소로 적어주세요!</b>
+								</div>
+							</dt>
+							<dd>
+								<div class="input inputPlace"><label for="email">이메일 입력</label><input type="email" id="email" name="email" value="{$RS.user.email}" title="휴대이메일 주소을 입력하세요" /> </div>
+							</dd>
+{/if}
+						</dl>
+					</div>
+
+					<div class="info">
+						<p>이메일을 등록하실 경우 가입증명서를 메일로 발송해 드립니다.</p>
+						<p>가입증명서는 <b>'나의 가입내역조회'</b> 메뉴에서도 확인 가능합니다.</p>
+					</div>
+				</div><!-- end : class : in_box -->
+			</div>
+{if $RS.user.hidden == "1"}
+			<div class="addBtn-box">
+				<div class="in">
+					<div class="add_Btn"><a href="javascript:void(0)">동반자 추가</a> <span></span></div>
+				</div>
+			</div><!-- end : class : addBtn-box -->
+	{if $RS.user.hidden == "2"}
+			<div class="infoAge">
+				<p class="">동반자 추가는 만 70세 ~ 만 80세까지 가능합니다.</p>
+			</div>
+	{else}
+			<div class="infoAge">
+				<p class="">동반자 추가는 0세 ~ 만 80세까지 가능합니다.</p>
+			</div>
+	{/if}
+{/if}
+		</form>
+
+		<div class="">
+			<a href="/extend.htm?mode=kakaopay&mtype=step05" class="btnStyle yellow chk-ok" id="submitBtn">다음</span></a>
+		</div>
+	</div><!-- end : class : inbyuContents -->
+{literal}
+<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+		project.join();
+		project.addUser();
+	});
+	//]]>
+</script>
+{/literal}
+
+	<div id="inbyuFooter">
+		<div class="top">
+			<p>트리플의 <b>보험친구</b> 인바이유</p>
+		</div>
+		<p class="copy">인바이유 주식회사 <span>|</span> 대리점번호 : 제2018090030호</p>
+		<p class="copy">ⓒ kakaopay corp. <span>|</span> ⓒ Inbyu INC.</p>
+		<p class="copy">손해보험협회 심의필 제11513호(2018.12.17)</p>
+	</div>
+</div><!-- end : id : inbyuWrap -->
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+body.overlay, body.is-indicator {
+  overflow: hidden;
+  height: 100%;
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  @include width-max_min(320px, 720px);
+  padding: {
+    top: 30px;
+    right: safe(right, env);
+    right: safe(right, constant);
+    left: safe(left, env);
+    left: safe(left, constant);
+    bottom: 60px;
+    bottom: safe(bottom, env, 60px);
+    bottom: safe(bottom, constant, 60px);
+  }
+
+  line-height: 1.38;
+  background: #fff;
+
+  &.full-gray {
+    min-height: 100%;
+    background: #f8f9fa;
+    box-sizing: border-box;
+  }
+
+  &.pb-0 {
+    padding-bottom: 0;
+  }
+
+  &.fixed-bottom {
+    bottom: safe(bottom, env, 60px);
+    bottom: safe(bottom, constant, 60px);
+    bottom: 60px;
+  }
+
+  .head-button {
+    z-index:20;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding: 18px 20px 10px;
+    @include width-max_min(320px, 720px);
+    height: 24px;
+    background: #fff;
+
+    .btn-close {
+      position: absolute;
+      top:18px;
+      right:20px;
+    }
+  }
+
+  .header {
+    padding: 10px 30px 20px;
+  }
+
+  .container {
+    padding: 0 0 40px;
+  }
+
+  .contents {
+    padding: 40px 30px 60px;
+
+    &.pt-0 {
+      padding-top: 0;
+    }
+
+    &.pt-20 {
+      padding-top: 20px;
+    }
+
+    &.pb-120 {
+      padding-bottom: 120px;
+    }
+
+    &.content-incorrect {
+      padding: {
+        top: 165px;
+        bottom: 0;
+      }
+    }
+  }
+
+  .area-button {
+    &.fixed {
+      z-index:50;
+      position: fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      bottom: safe(bottom, env);
+      bottom: safe(bottom, constant);
+      display: flex;
+      .flex-1 {
+        flex: 1;
+        & + .btn {
+          flex: 2;
+        }
+      }
+    }
+
+    .logo {
+      padding-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    // common.scss 에 있음
+  }
+
+}

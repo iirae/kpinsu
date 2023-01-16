@@ -1,0 +1,299 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="kare for krew" id="metaSubject" />
+<meta name="title" content="kare for krew" id="metaTitle" />
+<meta name="keywords" content="kare for krew" id="metaKeywords" />
+<meta name="description" content="kare for krew" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="kare for krew" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="kare for krew" />
+<meta property="og:title" content="kare for krew" id="ogTitle" />
+<meta property="og:description" content="kare for krew" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for krew</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for krew</h1>
+
+<div id="container"><!-- container -->
+
+    <div id="header"><!-- header -->
+        <div class="container">
+            <div class="wrap is-full">
+                <a href="javascript:;" class="back"><i class="icon"><em>이전 페이지로 이동</em></i></a>
+                <div class="utill">
+                    <a href="javascript:;" class="setup"><i class="icon"><em>설정</em></i></a>
+                    <a href="javascript:;" class="home"><i class="icon"><em>메인</em></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- // header -->
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2>청구서 작성</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-form"><!-- section-form -->
+                    <div class="wrap">
+                        <div class="items">
+                            <div class="item"><!-- item -->
+                                <span class="subject">신청자별 보기</span>
+                                <select class="select" required>
+                                    <option value="">전체</option>
+                                    <option value="1">홍길동</option>
+                                </select>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <span class="subject">진행상태별 보기</span>
+                                <select class="select" required>
+                                    <option value="">전체</option>
+                                    <option value="1">작성중</option>
+                                </select>
+                            </div>
+
+                            <div class="action">
+                                <a href="#modalProcess" class="js-modal link-has-line"><span>보험금 지급 절차 안내</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="container section-my-bill"><!-- section-my-bill -->
+                    <div class="wrap has-core-line">
+                        <p class="count">
+                            총 00건의 청구내역이 있습니다.
+                        </p>
+                        <div class="items">
+                            <div class="item in"><!-- item 수정, 작성, 삭제가 가능할때 클래스 추가 -->
+                                <p>
+                                    <span class="label ing">작성중</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                    
+                                </p>
+                                <div class="utill">
+                                    <a href="javascript:;" class="link-has-line"><span>작성</span></a>
+                                    <a href="javascript:;" class="link-has-line"><span>삭제</span></a>
+                                </div>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label billing">청구완료</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item in"><!-- item 수정, 작성, 삭제가 가능할때 클래스 추가 -->
+                                <p>
+                                    <span class="label supplement">보완요청</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                    <span class="reason">사유: 어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고</span>
+                                </p>
+                                <div class="utill">
+                                    <a href="javascript:;" class="link-has-line"><span>수정</span></a>
+                                </div>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label billing">청구완료(보완)</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label checking">담당자 확인중</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label examination">보험사 심사중</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label close">면책종결</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p>
+                                    <span class="label finish">지급완료</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                            </div>
+                            <div class="item in"><!-- item -->
+                                <p>
+                                    <span class="label ing">작성중</span>
+                                </p>
+                                <p>
+                                    <span class="name">김영희</span>
+                                    <i class="icon pipe"><em>|</em></i>
+                                    <span class="date">2020.01.01</span>
+                                </p>
+                                <div class="utill">
+                                    <a href="javascript:;" class="link-has-line"><span>작성</span></a>
+                                    <a href="javascript:;" class="link-has-line"><span>삭제</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-my-bill -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+</div><!-- // container -->
+
+<div id="modalProcess" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+
+                <div class="container modal-title"><!-- modal-title -->
+                    <div class="wrap">
+                        <h3 class="title">보험금 지급 절차 안내</h3>
+                    </div>
+                </div><!-- // modal-title -->
+
+                <div class="container section-process"><!-- section-process -->
+                    <div class="wrap">
+                        <p class="message">
+                            청구하신 보험금은<br />
+                            <span class="primary">다음과 같은 절차로 심사 후 지급 결정됩니다.</span>
+                        </p>
+                        <div class="process has-core-line">
+                            <ul class="reset">
+                                <li>
+                                    <span class="number">01</span>
+                                    K’are for Krew를 통한 <strong><span>보험금 청구</span></strong>
+                                </li>
+                                <li>
+                                    <span class="number">02</span>
+                                    담당자 확인 후 보험사 <strong><span>서류 접수</span></strong>
+                                </li>
+                                <li>
+                                    <span class="number">03</span>
+                                    보험사의 <strong><span>보험금 지급 심사</span></strong>
+                                </li>
+                                <li>
+                                    <span class="number">04</span>
+                                    <strong><span>보험금 지급</span></strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="guide">
+                            <p>
+                                본사 담당자, 또는 보험사의 보험금 지급 심사 중
+                                <strong>추가 서류 「보완요청」 이 필요할 수 있습니다.</strong>
+                            </p>
+                            <p>
+                                <strong>보험금 청구 대상이 아닌 경우, 「면책 종결」 됩니다.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- // section-process -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div>
+            <div class="md-modal-foot">
+                <a href="javascript:;" class="js-modal-close button info large"><span>닫기</span></a>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+});
+</script>
+</body>
+</html>

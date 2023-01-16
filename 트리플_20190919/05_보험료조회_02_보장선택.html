@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>해외여행보험</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="img/inbyu_favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="img/contents/homescreen_icon.png">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/respond.min.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="https://kp.inbyu.com/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+	function com_html(response)
+	{
+		var htmls;
+
+		htmls = "";
+		$(response).each(function(index){
+
+			if(response[index].com_cover[0].goods_id && response[index].sum_price > 0) {
+
+				htmls += "	<li>";
+				htmls += "		<a href='#self' class='insu' title='"+ response[index].company.com_name +" 선택하기'>";
+				htmls += "			<span></span>";
+				htmls += "			<img src='"+ response[index].company.log_img_url +"' alt='"+ response[index].company.com_name +"' />";
+				htmls += "			<b>"+ response[index].sum_price_txt +"원</b>";
+				htmls += "		</a>";
+				//if(response[index].imgs.img_name) htmls += "		<a href='https://docs.google.com/viewer?url=http://kp.inbyu.com/"+ response[index].imgs.path + response[index].imgs.img_name +"' class='view' target='_blank' title='"+ response[index].company.com_name +" 약관보기'>약관보기</a>";
+				htmls += "		<span style='display: none;'>"+ response[index].goods_id +"</span>";
+				htmls += "	</li>";
+			}
+		});
+///{$RS.data.imgs[10].path}{$RS.data.imgs[10].img_name}
+//"+ response[index].imgs[10].path +"
+		return htmls;
+	}
+
+	function insu_fa_html(response)
+	{
+		var htmls;
+
+		htmls = "";
+
+		for(var i = 0, num = response.length; i < num; i++) {
+
+			var com_cover = response[i].com_cover;
+
+			$(com_cover).each(function(index){
+
+				if((com_cover[index].key == "gc1" || com_cover[index].key == "gc3"
+					|| com_cover[index].key == "gc4" || com_cover[index].key == "gc5")
+						&& com_cover[index].cover_name) {
+
+					htmls += "	<tr class='insu_cli gview"+ com_cover[index].goods_id +"'>";
+					htmls += "		<td scope='row'>"+ com_cover[index].cover_name +"<br>"+ com_cover[index].cover_name_en +"</td>";
+					htmls += "		<td>"+ com_cover[index].cover_price +"</td>";
+					htmls += "	</tr>";
+				}
+			});
+		}
+		return htmls;
+	}
+
+	function insu_se_html(response)
+	{
+		var htmls;
+
+		htmls = "";
+
+		for(var i = 0, num = response.length; i < num; i++) {
+
+			var com_cover = response[i].com_cover;
+
+			$(com_cover).each(function(index){
+
+				if(com_cover[index].key == "gc11" || com_cover[index].key == "gc12"
+					|| com_cover[index].key == "gc13" || com_cover[index].key == "gc14") {
+
+					htmls += "	<tr class='insu_cli gview"+ com_cover[index].goods_id +"'>";
+					htmls += "		<td scope='row'>"+ com_cover[index].cover_name +"<br>"+ com_cover[index].cover_name_en +"</td>";
+					htmls += "		<td>"+ com_cover[index].cover_price +"</td>";
+					htmls += "	</tr>";
+				}
+			});
+		}
+
+		return htmls;
+	}
+
+	function insu_th_html(response)
+	{
+		var htmls;
+
+		htmls = "";
+
+		for(var i = 0, num = response.length; i < num; i++) {
+
+			var com_cover = response[i].com_cover;
+
+			$(com_cover).each(function(index){
+
+				if(com_cover[index].key != "gc1" && com_cover[index].key != "gc3"
+					&& com_cover[index].key != "gc4" && com_cover[index].key != "gc5"
+					&& com_cover[index].key != "gc11" && com_cover[index].key != "gc12"
+					&& com_cover[index].key != "gc13" && com_cover[index].key != "gc14") {
+
+					htmls += "	<tr class='insu_cli gview"+ com_cover[index].goods_id +"'>";
+					htmls += "		<td scope='row'>"+ com_cover[index].cover_name +"<br>"+ com_cover[index].cover_name_en +"</td>";
+					htmls += "		<td>"+ com_cover[index].cover_price +"</td>";
+					htmls += "	</tr>";
+				}
+			});
+		}
+
+		return htmls;
+	}
+
+	</script>
+	<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+		var test  = {
+			choiceInsu : function(){
+				$(".choice").on("click", function(){
+					var $a = $("#inbyuContents .in_box").length - 1;
+
+					$(this).hide();//선택완료버튼 hidden
+					$(".fixed_Btn .join").show();
+					$(".choice-Item-Area").attr("tabindex", "0").show().focus();
+					$("#inbyuContents .in_box").eq($a).css({"border-bottom":"1px solid #d8d8d8"});
+				});
+			}
+		}
+		test.choiceInsu();
+
+		function frmSubmit(f_data)
+		{
+			var action = f_data['action'];
+
+			$.ajax({
+				type: "POST",
+				url: action,
+				data: f_data,
+				dataType: 'json',
+				success: function(response) {
+					if(response) {
+
+						if(response.msg) {
+
+							alert(response.msg);
+						}
+						else if(response.url) {
+
+							location.replace(response.url);
+						}
+						else {
+
+							$(".insu_item").html(com_html(response.list));
+							$(".insu_item").css("transform", "translate3d(0px, 0px, 0px)");
+
+							$(".insu_fa").html(insu_fa_html(response.list));
+
+							var insu_se_txt = insu_se_html(response.list);
+							if(insu_se_txt) {
+
+								$(".insu_se").html(insu_se_txt);
+								$(".se_box").show();
+							}
+							else $(".se_box").hide();
+
+							$(".insu_th").html(insu_th_html(response.list));
+							/*
+							mySwiper = new Swiper('.swiper-container', {
+								slidesPerView: "auto",
+								spaceBetween: 0,
+								freeMode: true
+							});
+							*/
+							project.init();
+							project.fullLayerPop();
+						}
+					}
+				}
+			});
+			return false;
+		}
+		$(".search-ok").click(function(){
+
+			$(".insu_item").html("<li class='loading'><img src='img/kakao/loading.gif' alt='로딩중' /></li>");
+
+			//	필수 정보
+			var gcAry = new Array();
+			$("input:radio:checked").each(function(index){
+				gcAry[$(this).attr('class')] = $(this).attr('value');
+			});
+
+			//	추가특약 정보
+			gcAry['gc11'] = '';
+			gcAry['gc12'] = '';
+			gcAry['gc13'] = '';
+			gcAry['gc14'] = '';
+
+			$(".chk-hidden-box").find('.on').each(function(index){
+				gcAry[$(this).children(':input').attr('class')] = $(this).children(':input').attr('value');
+			});
+
+//			console.log("gc1 -> "+ gcAry['gc1']);
+//			console.log("gc3 -> "+ gcAry['gc3']);
+//			console.log("gc4 -> "+ gcAry['gc4']);
+//			console.log("gc5 -> "+ gcAry['gc5']);
+
+//			console.log("gc11 -> "+ gcAry['gc11']);
+//			console.log("gc12 -> "+ gcAry['gc12']);
+//			console.log("gc13 -> "+ gcAry['gc13']);
+//			console.log("gc14 -> "+ gcAry['gc14']);
+
+			var f_data = {
+				action: 'extend.htm',
+				mode: 'kakaopay',
+				mtype: 'step02_proc',
+				gc1: gcAry['gc1'],
+				gc3: gcAry['gc3'],
+				gc4: gcAry['gc4'],
+				gc5: gcAry['gc5'],
+				gc11: gcAry['gc11'],
+				gc12: gcAry['gc12'],
+				gc13: gcAry['gc13'],
+				gc14: gcAry['gc14'],
+			};
+			frmSubmit(f_data);
+
+			return false;
+		});
+		$(".reChoice").click(function(){
+
+			location.replace('/extend.htm?mode=kakaopay&mtype=step02');
+			return false;
+		});
+		$(".chk-ok").click(function(){
+
+			var goods_id = $(".insu_item").find('.on').children('span').text();
+//			console.log(goods_id);
+
+			if(!goods_id) {
+
+				alert("보험사를 선택해주세요");
+				return false;
+			}
+
+			var f_data = {
+				action: 'extend.htm',
+				mode: 'kakaopay',
+				mtype: 'step02_search',
+				goods_id: goods_id
+			};
+			frmSubmit(f_data);
+			return false;
+		});
+
+		$(".radioMdu>p, .chk_Mdu").click(function(){
+
+//			console.log("chk");
+			$(".choice").show();			//선택완료버튼
+			$(".fixed_Btn .join").hide();
+			$(".choice-Item-Area").attr("tabindex", "0").hide();
+//			return false;
+		});
+
+		var $this;
+		$(".pop-ok").click(function(){
+
+			var goods_id = $(".insu_item").find('.on').children('span').text();
+//			console.log(goods_id);
+
+			if(!goods_id) {
+
+				alert("보험사를 선택해주세요");
+				return false;
+			}
+
+			$(".insu_cli").hide();
+			$(".gview"+ goods_id).show();
+			//$(".viewPopup").trigger('click');
+
+			//$($(this).attr("rel")).attr("tabindex","0").css({"visibility":"visible"}).animate({"opacity":"1", "top":"0%", "bottom":"0px"},500, "easeOutExpo").focus();
+			//$this = $(this);
+			return false;
+		});
+	});
+	//]]>
+	</script>
+
+<header id="header">
+    <div class="upper">
+        <h1 class="logo"><a href="/index.htm?mode=main"><img src="img/common/logo.jpg" alt="INBYU" /></a></h1>
+    </div>
+	<div class="downer">
+		<ul class="tab">
+			<li class="in"><a href="#!"><span>보험가입하기</span></a></li>
+			<li><a href="#!"><span>가입내역조회</span></a></li>
+			<li><a href="#!"><span>보험이용안내</span></a></li>
+		</ul>
+	</div>
+</header><!-- end : id : header -->
+
+<div id="inbyuWrap">
+	<div id="inbyuContents">
+
+		<h2 class="hide">컨텐츠</h2>
+		<div class="in_box">
+			<div class="userInfo"><span>여행기간: {$RS.user.ins}일</span><span>나이: {$RS.user.year}세</span></div>
+			<h3 class="h3_title">필요한 보장항목과 금액을 선택하세요.</h3>
+
+{*			<button id="count_check" class="chk-ok">체크확인</button> *}
+
+{* 70세 미만 *}
+{if $RS.user.year < $RS.gubun_year}
+			<div class="opt_Box">
+				<dl>
+					<dt><span>(필수)</span> 상해사망/상해후유장해</dt>
+					<dd>
+						<div class="radioMdu first">
+							<p><span class="on"><label for="chk1_2"></label><input type="radio" class="gc1" value="G1010" id="chk1_2" checked title="(필수)상해사망 1억원 체크" /></span><label for="chk1_2">1억원</label></p>
+							<p><span><label for="chk1_3"></label><input type="radio" class="gc1" value="G1020" id="chk1_3" title="(필수)상해사망 2억원 체크" /></span><label for="chk1_3">2억원</label></p>
+							<p><span><label for="chk1_4"></label><input type="radio" value="G1030" id="chk1_4" class="gc1" title="(필수)상해사망 3억원 체크" /></span><label for="chk1_4">3억원</label></p>
+							<span class="line"></span>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>상해 의료실비<br />(해외)</dt>
+					<dd>
+						<div class="radioMdu">
+							<p><span><label for="chk2_1"></label><input type="radio" class="gc3" value="G3000" id="chk2_1" title="상해 의료실비(해외) 없음 체크" /></span><label for="chk2_1">안함</label></p>
+							<p><span class="on"><label for="chk2_2"></label><input type="radio" class="gc3" value="G3010" checked id="chk2_2" title="상해 의료실비(해외) 1천만원 체크"  /></span><label for="chk2_2">1천만원</label></p>
+							<p><span><label for="chk2_3"></label><input type="radio" class="gc3" value="G3020" id="chk2_3" title="상해 의료실비(해외) 2천만원 체크" /></span><label for="chk2_3">2천만원</label></p>
+							<p><span><label for="chk2_4"></label><input type="radio" value="G3030" id="chk2_4" class="gc3" title="상해 의료실비(해외) 3천만원 체크" /></span><label for="chk2_4">3천만원</label></p>
+							<span class="line"></span>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>질병 의료실비<br />(해외)</dt>
+					<dd>
+						<div class="radioMdu">
+							<p><span><label for="chk3_1"></label><input type="radio" class="gc4" value="G4000" id="chk3_1" title="질병 의료실비(해외) 안함 체크" /></span><label for="chk3_1">안함</label></p>
+							<p><span class="on"><label for="chk3_2"></label><input type="radio" class="gc4" value="G4010" checked id="chk3_2" title="질병 의료실비(해외) 1천만원 체크"  /></span><label for="chk3_2">1천만원</label></p>
+							<p><span><label for="chk3_3"></label><input type="radio" class="gc4" value="G4020" id="chk3_3" title="질병 의료실비(해외) 2천만원 체크" /></span><label for="chk3_3">2천만원</label></p>
+							<p><span><label for="chk3_4"></label><input type="radio" value="G4030" class="gc4" id="chk3_4" title="질병 의료실비(해외) 3천만원 체크" /></span><label for="chk3_4">3천만원</label></p>
+							<span class="line"></span>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>휴대품 손해</dt>
+					<dd>
+						<div class="radioMdu">
+							<p><span><label for="chk4_1"></label><input type="radio" class="gc5" value="G5000" id="chk4_1" title="휴대품 손해 안함 체크 " /></span><label for="chk4_1">안함</label></p>
+							<p><span><label for="chk4_2"></label><input type="radio" class="gc5" value="G5010" id="chk4_2" title="휴대품 손해 40만원 체크" /></span><label for="chk4_2">40만원</label></p>
+							<p><span><label for="chk4_3"></label><input type="radio" class="gc5" value="G5020" id="chk4_3" title="휴대품 손해 70만원 체크" /></span><label for="chk4_3">70만원</label></p>
+							<p><span class="on"><label for="chk4_4"></label><input type="radio" value="G5030" checked class="gc5" id="chk4_4" title="휴대품 손해 1000만원 체크"  /></span><label for="chk4_4">100만원</label></p>
+							<span class="line"></span>
+						</div>
+					</dd>
+				</dl>
+			</div>
+{else}
+{* 70세 이상 *}
+			<!-- /// 70~80세 보장 /// -->
+			<div class="opt_Box old">
+				<div>
+					<p><span>(필수)</span> 상해사망/상해후유장해</p>
+					<div class="radioMdu">
+						<p><span class="focus on"><label for="chked_1"></label><input type="radio" class="gc1" value="G1040" id="chked_1" checked title="(필수)상해사망 5천만원 체크" checked /></span></p>
+						<label for="chked_1">5천만원</label>
+					</div>
+				</div>
+				<div>
+					<p><span>(필수)</span> 상해 의료실비 (해외)</p>
+					<div class="radioMdu">
+						<p><span class="focus on"><label for="chked_2"></label><input type="radio" class="gc3" value="G3010" id="chked_2" checked title="(필수)상해 의료실비 (해외) 1천만원 체크" checked /></span></p>
+						<label for="chked_2">1천만원</label>
+					</div>
+				</div>
+				<div>
+					<p><span>(필수)</span> 질병 치료실비 (해외)</p>
+					<div class="radioMdu">
+						<p><span class="focus on"><label for="chked_3"></label><input type="radio" class="gc4" value="G4020" id="chked_3" checked title="(필수)질병 치료실비 (해외) 2천만원 체크" checked /></span></p>
+						<label for="chked_3">2천만원</label>
+					</div>
+				</div>
+				<div>
+					<p><span>(필수)</span> 휴대품 손해</p>
+					<div class="radioMdu">
+						<p><span class="focus on"><label for="chked_4"></label><input type="radio" class="gc5" value="G5020" id="chked_4" checked title="(필수)휴대품 손해 70만원 체크" checked /></span></p>
+						<label for="chked_4">70만원</label>
+					</div>
+				</div>
+			</div>
+			<!-- /// 70~80세 보장 /// -->
+{/if}
+		</div>
+
+		<div class="in_box">
+			<h3 class="h3_title">추가로 보장 받으실<br />보장항목을 선택하세요.</h3>
+
+			<div class="chk-hidden-box">
+				<p class="chk_Mdu">
+					<span><label for="chk_2"></label><input type="checkbox" name="chk" class="gc11" value="G11010" id="chk_2" title="비행기가 결항되거나 수하물이 늦게 나왔을 때 보장 받고 싶어요.(특약형) 체크" /></span>
+					<label for="chk_2">비행기가 결항되거나 수하물이 늦게 나왔을 때 보장 받고 싶어요.(20만원)</label>
+				</p>
+				<p class="chk_Mdu">
+					<span><label for="chk_3"></label><input type="checkbox" name="chk" class="gc12" value="G12010" id="chk_3" title="여행 중 아파서 불가피하게 돌아오게 되었을 때 취소비용을 보장 받고 싶어요.(특약형) 체크" /></span>
+					<label for="chk_3">여행 중 아파서 불가피하게 돌아오게 되었을 때 취소비용을 보장 받고 싶어요.(20만원)</label>
+				</p>
+				<p class="chk_Mdu">
+					<span><label for="chk_4"></label><input type="checkbox" name="chk" class="gc13" value="G13010" id="chk_4" title="여행 중 전염병에 걸렸을 때 보장 받고 싶어요.(특약형) 체크" /></span>
+					<label for="chk_4">여행 중 식중독에 걸렸을 때 보장 받고 싶어요.(20만원)</label>
+				</p>
+				<p class="chk_Mdu">
+					<span><label for="chk_5"></label><input type="checkbox" name="chk" class="gc14" value="G14010" class="last" id="chk_5" title="여행 중 전염병에 걸렸을 때 보장 받고 싶어요.(특약형) 체크" /></span>
+					<label for="chk_5">여행 중 전염병에 걸렸을 때 보장 받고 싶어요.(20만원)</label>
+				</p>
+			</div>
+		</div>
+
+		<div class="choice-Item-Area">
+			<h3 class="h3_title">
+				{$RS.user.name}님께서 선택한<br /> 맞춤 상품입니다<i>!</i>
+				<span>원하시는 상품을 선택해 주세요.</span>
+			</h3>
+
+			<ul class="insu_item">
+
+			</ul>
+
+			<div class="insuPop_Btn">
+				<a href="#self" class="pop-ok" rel="#pop_0" title="선택보장 팝업보기">선택 보장확인</a>
+				<a href="#self" class="viewPopup" title="선택보장 팝업보기">유의사항 확인</a>
+				<a href="#self" class="reChoice">보장 다시 선택</a>
+			</div>
+		</div>
+
+		<div class="fixed_Btn">
+			<a href="javascript:void(0)" class="btnStyle yellow choice search-ok">보장선택완료</span></a>
+			<a href="#self" class="btnStyle yellow join chk-ok">가입하기</span></a>
+		</div>
+	</div><!-- end : id : inbyuContents -->
+
+	<div class="full_LayerPop">
+		<div class="popH">보장확인</div>
+		<div class="inner" id="top">
+			<div class="scroll">
+				<div class="in_Box">
+					<p class="title">직접 설계하는 기본계약 보장내용</p>
+					<table class="tableType">
+						<caption>직접 설계하는 기본계약 보장내용 테이블</caption>
+						<colgroup>
+							<col style="width:63%" /><col style="width:38%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">담보명</th>
+								<th scope="col">가입금액</th>
+							</tr>
+						</thead>
+						<tbody class="insu_fa">
+						</tbody>
+					</table>
+				</div>
+
+				<div class="in_Box se_box">
+					<p class="title">직접 설계하는 추가 보장내용</p>
+					<table class="tableType">
+						<caption>직접 설계하는 추가 보장내용 테이블</caption>
+						<colgroup>
+							<col style="width:63%" /><col style="width:38%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">담보명</th>
+								<th scope="col">가입금액</th>
+							</tr>
+						</thead>
+						<tbody class="insu_se">
+						</tbody>
+					</table>
+				</div>
+
+				<div class="in_Box">
+					<p class="title">기본 보장내용</p>
+					<table class="tableType">
+						<caption>기본 보장내용 테이블</caption>
+						<colgroup>
+							<col style="width:63%" /><col style="width:38%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">담보명</th>
+								<th scope="col">가입금액</th>
+							</tr>
+						</thead>
+						<tbody class="insu_th">
+						</tbody>
+					</table>
+
+					<ul class="opt_list">
+						<li>상법 제732조에 의해 만 15세 미만은 사망담보가 포함되지 않습니다.</li>
+						<li>배상책임, 휴대품손해는 자기부담금 각 1만원이며, 휴대품손해는
+							각 물품당 20만원 한도에서 보상됩니다.
+						</li>
+						<li>의료비, 배상책임, 휴대품손해, 특별비용은 보험금을 지급할 다수의
+							보험계약이 체결되어 있는 경우, 약관에 따라 비례하여 보상합니다.
+						</li>
+						<li>보험계약 체결 전 반드시 약관 및 유의사항을 읽어보시기 바랍니다.</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="close"><a href="javascript:void(0)" title="레이어팝업 닫기버튼">닫기</a></div>
+	</div><!-- end : class : full_LayerPop -->
+
+
+	<div class="full_LayerPop">
+		<div class="popH">유의사항 확인</div>
+		<div class="inner">
+			<div class="in_Box">
+				<div class="my_List type">
+					<div class="myBox">
+						<div class="top">1. 보험계약 체결 전 유의사항</div>
+						<div class="bottom">
+							<ul class="ul_txt pt15">
+								<li><span>-</span>
+								보험계약을 청약할 때는 보험 상품명, 보험기간, 보험료
+								납입기간, 피보험자 등을 반드시 확인하시고, 인터넷
+								등을 통해 상품설명서와 보험약관을 확인해 보거나
+								설계사, 상담원에게 수령 후 설명을 받으시기 바랍니다.
+								</li>
+								<li><span>-</span>
+								기존 보험계약을 해지하고 새로운 보험계약을 체결하는
+								경우에 보험인수가 거절되거나 보험료가 인상될 수
+								있으며, 보장내용이 달라질 수 있으니 유의하시기
+								바랍니다.
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">2. 보험계약의 무효</div>
+						<div class="bottom">
+							<dl>
+								<dd>
+									다음 중 한 가지에 해당하면 계약을 무효로 하며 이미
+									납입한 보험료는 돌려드립니다.
+									<ul>
+										<li><span>1.</span>타인의 사망을 보험금 지급사유로 하는 계약에서
+										계약을 체결할 때까지 피보험자(보험대상자)의 서면에
+										의한 동의를 얻지 않은 경우
+										</li>
+										<li><span>2.</span>만 15세 미만자, 심신상실자 또는 심신박약자의 사망을
+										보험금 지급사유로 한 경우
+										</li>
+										<li><span>3.</span>계약 체결 시 계약에서 정한 피보험자(보험대상자)의
+										나이에 미달되었거나 초과되었을 경우
+										</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">3. 보험계약자의 자필서명 의무</div>
+						<div class="bottom">
+							<ul class="ul_txt pt15">
+								<li><span>-</span>청약서는 보험계약자 본인이 작성하고 서명란에도
+								보험계약자 본인 및 피보험자가 자필서명을 하셔야
+								합니다. 자필서명을 하지 않으신 경우 보험계약의 효력
+								등과 관련하여 불이익이 있을 수 있습니다.</li>
+								<li><span>-</span>인터넷을 통해 직접 보험에 가입하시는 경우에는
+								공인인증서를 통한 전자서명으로 자필서명을 대신할 수
+								있습니다.</li>
+								<li><span>-</span>전화로 가입할 때는 계약자와 피보험자가 동일하고
+								수익자가 본인이거나 상속인인 경우에 한해 녹취로
+								자필서명을 대신할 수 있습니다.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">4. 가입자의 계약 전후 알릴 의무</div>
+						<div class="bottom">
+							<dl>
+								<dt>가입자의 계약 전 알릴 의무</dt>
+								<dd>
+									계약자 또는 피보험자 등은 보험계약 청약 시 과거의
+									건강 상태, 직업 등 청약서의 기재사항 및 질문사항에
+									대하여 알고 있는 내용을 반드시 사실대로 알려야 하며,
+									그렇지 않은 경우 보험금의 지급이 거절되거나 계약이
+									해지될 수 있습니다.
+								</dd>
+								<dt>가입자의 상해보험계약 후 알릴 의무</dt>
+								<dd>
+									계약자 또는 피보험자는 보험계약을 맺은 후 피보험자의
+									직업 또는 직무변경으로 인한 위험 증가 및 주소 변경 등
+									보험약관에 정한 계약 후 알릴 의무 사항이 발생하였을
+									경우 지체 없이 회사에 알리고 보험증권에 확인을 받아야
+									합니다. 그렇지 않을 경우 보험금의 지급이 거절될 수
+									있습니다.
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">5. 청약의 철회와 품질보증제도</div>
+						<div class="bottom">
+							<dl>
+								<dt>청약의 철회</dt>
+								<dd>
+									계약자는 보험증권을 받은 날로부터 15일 이내에 그
+									계약의 청약을 철회할 수 있으며 이 경우 이미 납입한
+									보험료를 돌려드립니다.
+									다만, 진단계약, 보험기간이 1년 미만인 계약인 계약 또는
+									전문 보험계약자가 체결한 계약의 경우에는 청약을
+									철회할 수 없으며 청약을 한 날로부터 30일이 초과 된
+									계약은 청약을 철회할 수 없습니다.
+								</dd>
+								<dt>품질보증제도</dt>
+								<dd>
+									회사는 계약자가 청약할 때에 계약자에게 약관의 중요한
+									내용을 설명하며, 청약 후에 지체 없이 약관 및 계약자
+									보관용 청약서를 드립니다. 다만, 계약자가 동의하는
+									경우 광기록 매체, 전자우편 등 전자적 방법으로
+									송부할 수 있으며, 계약자 또는 그 대리인이 약관 및
+									계약자 보관용 청약서 등을 수신했을 때에는 해당 문서를
+									드린 것으로 봅니다. 계약자가 청약한 경우 약관과 계약자
+									보관용 청약서를 청약 시 전달받지 못하거나 약관의
+									중요한 내용을 설명 받지 못한 때 또는 청약서에 자필
+									서명을 하지 않은 때에는 계약자는 계약이 성립한 날부터
+									3개월 이내에 계약을 취소할 수 있습니다. 이 경우 이미
+									납입한 보험료에 보험료를 받은 기간에 대해 이 계약의
+									보험계약대출이율을 연단위 복리로 계산한 금액을 더하여
+									지급합니다.
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">6. 해지 환급금이 납입보험료 보다 적은 이유</div>
+						<div class="bottom">
+							<ul class="ul_txt pt15">
+								<li><span>-</span>해지환급금은 보험계약이 중도에 해지될 경우에 지급
+								되는 금액을 말합니다.
+								</li>
+								<li><span>-</span>보험은 은행의 저축과 달리 위험보장과 저축을 겸비한
+								제도로서 보험계약자가 납입한 보험료 중 일부는
+								불의의 사고를 당한 다른 가입자에게 지급되는
+								보험금으로, 또 다른 일부는 보험회사 운영에 필요한
+								경비로 사용되므로 중도 해지 시 지급되는 해지환급금은
+								납입한 보험료보다 적거나 없을 수도 있습니다.
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">7. 보험금을 지급하지 않는 이유</div>
+						<div class="bottom">
+							<dl>
+								<dt>상해보험</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>피보험자, 보험수익자, 보험계약자의 고의</li>
+										<li><span>-</span>피보험자의 임신, 출산(제왕절개 포함), 산후기</li>
+										<li><span>-</span>전쟁, 외국의 무력행사, 혁명, 내란, 사변, 폭동</li>
+										<li><span>-</span>전문암벽 등반 등 직업, 직무, 동호회 활동중 사고</li>
+									</ul>
+								</dd>
+								<dt>화재보험</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>피보험자, 보험계약자(이들의 법정대리인)의 고의 또는
+										중과실 화재(주택의 경우 폭발 파열사고 포함)가 났을
+										때 생긴 도난 또는 분실</li>
+										<li><span>-</span>보험목적의 발효, 자연발열, 자연발화/파열 또는
+										폭발(주택의 경우 제외)</li>
+										<li><span>-</span>동결로 인한 수도관, 수관 또는 수압기의 파열</li>
+										<li><span>-</span>지진, 분화 또는 전쟁, 혁명, 내란, 사변, 폭동, 소요,
+										노동쟁의, 기타 이들과 유사한 사태</li>
+										<li><span>-</span>핵연료물질/방사선을 쬐는 것</li>
+										<li><span>-</span>발전기,여자기, 변류기 등 전기기기 또는 장치의 전기적
+										사고로 생긴 손해</li>
+										<li><span>-</span>국가 및 지방자치단체의 명령에 의한 재산의 소각 등</li>
+									</ul>
+								</dd>
+								<dt>질병입원의료비, 질병통원의료비</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>치과치료, 한방치료에서 발생한 요양급여에 해당하지
+										않는 비급여 의료비</li>
+										<li><span>-</span>요양급여 중 국민건강보험공단 또는 의료급여 중 의료
+										급여기금 등으로부터 사전 또는 사후 환급이 가능한 금액</li>
+										<li><span>-</span>산재보험에서 보상받는 의료비</li>
+										<li><span>-</span>외국에 있는 의료기관에서 발생한 의료비</li>
+										<li><span>-</span>정신 및 행동장애, 임신, 출산, 요실금 등</li>
+										<li><span>-</span>직장 또는 항문질환 중 요양급여에 해당하지 않는 부분<br />
+										* 다만, 약관상 보상하는 내용에 해당하는 부분은
+										보험금을 지급합니다. 자세한 내용은 반드시 약관을
+										참조하시기 바랍니다.</li>
+									</ul>
+								</dd>
+								<dt>상해입원의료비, 상해통원의료비</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>치과치료, 한방치료에서 발생한 요양급여에 해당하지
+										않는 비급여 의료비</li>
+										<li><span>-</span>요양급여 중 국민건강보험공단 또는 의료급여 중 의료
+										급여기금 등으로부터 사전 또는 사후 환급이 가능한
+										금액</li>
+										<li><span>-</span>자동차보험(공제를 포함합니다) 또는 산재보험에서
+										보상받는 의료비</li>
+										<li><span>-</span>외국에 있는 의료기관에서 발생한 의료비<br />
+										*다만, 약관상 보상하는 내용에 해당하는 부분은
+										보험금을 지급합니다. 자세한 내용은 반드시 약관을
+										참조하시기 바랍니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">8. 비용보험의 비례보상에 관한 사항</div>
+						<div class="bottom">
+							<ul class="ul_txt pt15">
+								<li><span>-</span>배상책임, 벌금, 교통사고 처리지원금, 중상해 교통사고
+								처리지원금, 자동차사고 변호사 선임비용 등은 다수
+								계약을 가입한 경우 비례보상이 적용됩니다.</li>
+								<li><span>-</span>이 계약에서 보장하는 위험과 같은 위험을 보장하는
+								다른 계약(공제계약 포함)이 있을 경우에는 각 계약에
+								대하여 다른 계약이 없는 것으로 하여 각각 산출한 보상
+								책임액의 합계액이 손해액을 초과할 때에는 이 계약에
+								의한 보상 책임액의 상기 합계액에 대한 비율에 따라
+								보상하여 드립니다.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">9. 보험료 납입 연체에 대한 납입최고(독촉)과 계약의 해지</div>
+						<div class="bottom">
+							<p class="p_txt pt15">
+								보험료 납입이 연체 중인 경우에 회사는 14일(보험기간이
+								1년 미만인 경우에는 7일) 이상의 기간을 납입최고(독촉)
+								기간으로 정하여 보험계약자(타인을 위한 보험계약의
+								경우 특정된 보험수익자(보험금을 받는 자) 포함)에게
+								납입최고(독촉)기간 내에 연체보험료를 납입하여야
+								한다는 내용과 납입최고(독촉)기간이끝나는 날까지
+								보험료를 납입하지 아니할 경우 납입최고(독촉) 기간이
+								끝나는 날의 다음날에 계약이 해지된다는 내용을 서면
+								(등기우편 등), 전화(음성녹음) 또는 전자문서 등으로
+								알려드립니다.
+							</p>
+
+							<dl>
+								<dt>자동차보험 분할보험료의 납입최고</dt>
+								<dd>
+									<ul>
+										<li><span>①</span>보험계약자가 약정한 납입일자까지 제2회 이후의 분할
+										보험료를 납입하지 않는 때에는 약정한 납입일이 속하는
+										달의 다음 달 말일까지 납입최고기간을 둡니다.
+										회사는 이 납입최고기간 안에 생긴 사고에 대하여는
+										보상합니다.</li>
+										<li><span>②</span>위 ‘①’의 납입최고기간 안에 분할보험료를 납입하지
+										않는 때에는 납입최고기간이 끝나는 날의 24시부터
+										보험계약은 해지됩니다.</li>
+										<li><span>③</span>보험계약자가 약정한 납입일자까지 분할보험료를
+										납입하지 않은 경우,회사는 보험계약자 및 기명피
+										보험자에게 납입최고기간이 끝나는 날 이전에 위 ‘①’
+										및 ‘②’의 내용을 서면으로 최고합니다. 이때 보험계약자
+										또는 피보험자가 보통약관 제45조(계약 후 알릴 의무)에
+										따라 주소변경을 통보하지 않는 한 보험증권에 기재된
+										보험계약자 또는 기명피보험자의 주소를 회사의
+										의사표시를 수령할 지정장소로 합니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">10. 예금자보호 안내</div>
+						<div class="bottom">
+							<ul class="ul_txt pt15">
+								<li><span>-</span>이 보험계약은 예금자보호법에 따라 예금보험공사가
+								보호하되, 보호 한도는 본 보험회사에 있는 귀하의 모든
+								예금보호 대상 금융상품의 해지 환급금(또는 만기 시
+								보험금이나 사고보험금)에 기타 지급금을 합하여 1인당
+								"최고 5천 만원"이며, 5천 만원을 초과하는 나머지
+								금액은 보호하지 않습니다.(단, 보험 계약자 및
+								보험료 납부자가 법인인 보험계약은 보호되지 않습니다.)</li>
+								<li><span>-</span>본 보험회사가 예금 등 채권의 지급정지 후 파산하게
+								되는 경우, 예금보험공사가 보험계약자 1인당 해지
+								환급금(또는 만기 시 보험금이나 사고보험금)에 기타
+								지급금을 합한 금액을 최고5천 만원까지 보호합니다.
+								(단, 보험계약자 및 보험료 납부자가 법인인 보험
+								계약은 보호되지 않습니다.)</li>
+								<li><span>-</span>이 내용은 예금자보호법 및 관련 법령의 개정에 따라
+								달라질 수 있음을 알려드리며, 자세한 내용은 영업점에
+								비치된 예금자보호 안내책자 등을 참고하거나
+								예금보험공사(☎<a href="tel:15880037">1588-0037</a>, www.kdic.or.kr)로
+								문의하시기 바랍니다.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">11. 모집질서 확립 및 신고센터 안내</div>
+						<div class="bottom">
+							<p class="p_txt pt15">
+								보험계약과 관련한 특별이익제공 행위 및 보험모집질서
+								문란행위는 보험업 법에 의해 처벌받을 수 있습니다.
+							</p>
+
+							<dl>
+								<dt>금융감독원 보험모집질서 위반행위 신고센터</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>전화     : <a href="tel:1332">1332</a></li>
+										<li><span>-</span>인터넷  : www.fss.or.kr</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">12. 상담 및 보험분쟁조정 안내</div>
+						<div class="bottom">
+							<p class="p_txt pt15">
+								가입한 보험에 관하여 상담이 필요하거나 불만사항이
+								있을 때에는 먼저 보험사로 연락 주시면 신속히 해결
+								하겠습니다. 보험사의 처리결과에 이의가 있으시면
+								금융감독원 금융소비자보호센터에 민원 또는 분쟁조정
+								등을 신청하실 수 있습니다.
+							</p>
+
+							<dl>
+								<dt>금융감독원 보험모집질서 위반행위 신고센터</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>전화     : 국번 없이 <a href="tel:1332">1332</a>, <a href="tel:0231455114">(02)3145-5114</a></li>
+										<li><span>-</span>인터넷  : www.fss.or.kr</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="myBox">
+						<div class="top">13. 금융감독원 보험범죄 신고센터 안내</div>
+						<div class="bottom">
+							<p class="p_txt pt15">
+								보험범죄는 형법 제347조(사기)에 의거 10년 이하의
+								징역이나 2천만 원 이하의 벌금에 처해지며, 보험범죄를
+								교사한 경우에도 동일한 처벌을 받을 수 있습니다.
+							</p>
+
+							<dl>
+								<dt>금융감독원 보험모집질서 위반행위 신고센터</dt>
+								<dd>
+									<ul>
+										<li><span>-</span>전화     : <a href="tel:15883311">1588-3311</a></li>
+										<li><span>-</span>인터넷  : www.fss.or.kr 인터넷보험범죄신고</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="close"><a href="javascript:void(0)" title="레이어팝업 닫기버튼">닫기</a></div>
+	</div><!-- end : class : full_LayerPop -->
+
+	<div id="inbyuFooter">
+		<div class="top">
+			<p>트리플의 <b>보험친구</b> 인바이유</p>
+		</div>
+		<p class="copy">인바이유 주식회사 <span>|</span> 대리점번호 : 제2018090030호</p>
+		<p class="copy">ⓒ kakaopay corp. <span>|</span> ⓒ Inbyu INC.</p>
+		<p class="copy">손해보험협회 심의필 제11513호(2018.12.17)</p>
+	</div>
+</div><!-- end : id : inbyuWrap -->
+
+</body>
+</html>

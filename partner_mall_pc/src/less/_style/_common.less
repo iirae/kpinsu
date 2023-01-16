@@ -1,0 +1,454 @@
+//* class ================================================================== */
+.set-img-retina (@file-1x; @file-2x; @width-1x; @height-1x) { // retina 이미지 처리, 보강 필요
+    background-image: url("@{file-1x}");
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+}
+
+//* less ================================================================== */
+
+/* 컨텐트 하단 여백 */
+.bottom-spacer {
+    clear: both;
+    margin-top: 120px;
+    margin-bottom: -1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.tab-toggler {
+    .item {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+.section-title {
+    margin-top: 120px;
+    text-align: center;
+    h2 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 400;
+        color: @secondary;
+        line-height: 1.4;
+    }
+    p {
+        margin: 20px 0 0;
+        font-size: 16px;
+        line-height: 1.63;
+    }
+    .tab {
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translate(0, -50%);
+    }
+    .title {
+        &.text-underline {
+            &::after {
+                content: "";
+                display: block;
+                margin-top: 40px;
+                width: 100%;
+                height: 1px;
+                background: #212529;
+            }
+        }
+    }
+}
+
+.tab-content {
+    .item {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+.authentic {
+    display: none;
+    margin-top: 30px;
+    width: 400px;
+    p {
+        margin: 0 0 10px 0 !important;
+        font-size: 13px;
+        line-height: 1.46;
+    }
+    .holder {
+        position: relative;
+    }
+    .text {
+        width: 170px;
+    }
+    .buttons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        a {
+            margin-left: 7px;
+            padding: 0 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    .time {
+        position: absolute;
+        top: 50%;
+        right: 240px;
+        color: @danger;
+        transform: translate(0, -50%);
+    }
+    &.in {
+        display: block;
+    }
+}
+
+.section-form {
+    margin-top: 80px;
+    .title {
+        position: relative;
+        margin-bottom: 20px;
+        h3 {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.42;
+            color: #0e1012;
+            font-weight: 400;
+            line-height: 1.42;
+            span.vertical-middle {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 7px;
+            }
+        }
+        .desc {
+            margin: 10px 0 0;
+            font-size: 16px;
+            line-height: 1.63;
+            color: @info;
+        }
+        .utill {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 16px;
+        }
+    }
+    .no-result {
+        margin-top: 20px;
+        padding: 40px 0;
+        font-size: 16px;
+        text-align: center;
+        border-top: 2px #212529 solid;
+        border-bottom: 1px #ced4da solid;
+    }
+    .action {
+        margin-top: 30px;
+        text-align: right;
+        .button {
+            margin-left: 7px;
+            min-width: 200px;
+        }
+    }
+}
+.section-process + .section-form {
+    margin-top: 0;
+}
+
+.js-tooltip {
+    display: inline-block;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    // margin-top: 6px;
+    width: 300px;
+    color: #636b73;
+    font-size: 13px;
+    line-height: 1.46;
+    border-radius: 2px;
+    border: solid 1px #0070cc;
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translate(-50%, 30px);
+    transition: all .4s;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+    	bottom: 100%;
+    	left: 50%;
+    	height: 0;
+    	width: 0;
+    	pointer-events: none;
+    	border: solid transparent;
+    }
+    &::after {
+        margin-left: -8px;
+    	border-color: rgba(255, 255, 255, 0);
+    	border-bottom-color: #fff;
+    	border-width: 8px;
+    }
+    &::before {
+        margin-left: -9px;
+    	border-color: rgba(0, 112, 204, 0);
+    	border-bottom-color: #0070cc;
+    	border-width: 9px;
+    }
+    .module {
+        position: relative;
+        z-index: 1;
+        padding: 20px !important;
+        margin: 0 !important;
+        background-color: #fff;
+    }
+    &.in {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+.ui-datepicker {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 30px 10px 20px 10px;
+    width: 370px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px #868e96;
+    background-color: #fff;
+    transition:
+        visibility 0s linear 0.4s,
+        z-index 0s linear 0.4s,
+        opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+        transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    .ui-datepicker-current,
+    .ui-datepicker-close {
+        display: none;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        .icon {
+            width: 70px;
+            height: 90px;
+        }
+    }
+    .ui-datepicker-prev {
+        left: 0;
+        .icon {
+            .img('common/icon_calendar_prev');
+        }
+    }
+    .ui-datepicker-next {
+        right: 0;
+        .icon {
+            .img('common/icon_calendar_next');
+        }
+    }
+    .ui-datepicker-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #0e1012;
+    }
+    .ui-datepicker-calendar {
+        margin-top: 10px;
+        width: 100%;
+        table-layout: fixed;
+        th,
+        td {
+            &:first-child,
+            &:first-child a {
+                color: #f50000;
+            }
+            &,
+            & a {
+                color: #48acff;
+            }
+        }
+        th {
+            height: 42px;
+            font-size: 12px;
+            color: #868e96;
+            font-weight: 400;
+        }
+        td {
+            &,
+            a {
+                color: #636b73;
+            }
+            > span {
+                display: block;
+                a,
+                span {
+                    display: block;
+                    height: 34px;
+                    line-height: 34px;
+                }
+                span {
+                    opacity: .5;
+                }
+            }
+            &.ui-datepicker-today > span {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 34px;
+                    height: 34px;
+                    background-color: #3f424a;
+                    border-radius: 100%;
+                }
+                a,
+                span {
+                    position: relative;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// 인바이유몰 공통
+.common-kpinsu { 
+    &.header {
+        margin: 0 auto;
+       .head-logo {
+            margin: 0;
+            text-align: left;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 43px;
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 100px;
+            }
+        }
+    }
+    &.footer {
+        padding-bottom: 24px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            overflow: hidden;
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.8;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+                text-align: left;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                float: right;
+                margin-top: -22px;
+                width: 250px;
+                text-align: right;
+            }
+            .information {
+                float: left;
+                width: calc(100% - 260px);
+            }
+            .details {
+                margin-top: 10px;
+                text-align: left;
+                span {
+                    & + span {
+                        &::before {
+                            content: "";
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #808992;
+            text-align: left;
+        }
+
+        .important {
+            margin: 0 auto; 
+            padding: 20px; 
+            max-width: 1100px; 
+            font-size: 12px;
+            color: #adb5bd; 
+            a {
+                color: #adb5bd;
+            }
+        }
+    }
+}

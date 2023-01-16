@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline"><em>그룹관리</em></h1>
+                    <div class="al-right for-change">
+                        <!-- e-edit, e-save 클래스는 단순 ui 참고용 삭제해도 무방함 -->
+                        <button type="button" class="btn btn-normal small e-edit">수정하기</button>
+                        <button type="button" class="btn btn-prominent small e-save" style="display: none;">저장하기</button>
+                    </div>
+                </header>
+                <div class="contents pt-40" id="contents">
+                    <fieldset>
+                        <!-- 
+                            ** 컬러칩 (기타 페이지에서 tag background 처리 컬러)
+                                #e2f8fa
+                                #fef4da
+                                #dbe0f6
+                                #d3f9f1
+                                #edeef0
+                                #decaae
+                                #f9d3f9
+                                #befffb
+                                #ced4da
+                                #d0c4d8
+                         -->
+                        <ul class="group-wrap">
+                            <li class="one">
+                                <a href="#addGroup" title="그룹 추가하기" class="e-layer"><i class="icon plus"></i></a>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group01"><label for="group01" style="background: #fef4da"><strong>가망고객</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group02"><label for="group02" style="background: #e2f8fa"><strong>보유고객</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group03"><label for="group03" style="background: #dbe0f6"><strong>리쿠르팅</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group04"><label for="group04" style="background: #d0c4d8"><strong>가족</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group05"><label for="group05" style="background: #edeef0"><strong>동창</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group06"><label for="group06" style="background: #decaae"><strong>고향</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group07"><label for="group07" style="background: #f9d3f9"><strong>직장</strong><span>(10)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <input type="checkbox" id="group08"><label for="group08" style="background: #f9d3f9"><strong>최대최대글자입력샘플</strong><span>(0)</span></label>
+                                <div class="edit-wrap">
+                                    <a href="#addGroup" class="btn-trigger e-layer"></a>
+                                    <button type="button" class="btn-icon minus" title="그룹 삭제하기"></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary">저장</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- layer: 그룹추가 -->
+        <section class="layer bottom layer-add-group" id="addGroup">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-headline-6">그룹명 입력 후 컬러를 선택해 주세요</h2>
+                    </header>
+                    <div class="content">
+                        <div class="form-group text-select pb-0">
+                            <span class="f-text">
+                                <input type="text" placeholder="등록할 그룹명을 입력해 주세요" maxlength="10" id="groupName">
+                                <span class="type-select">
+                                    <em class="color" id="pickedColor" style="background: #e2f8fa;"></em>
+                                    <a href="#colorChips" class="btn-trigger e-show-target" title="그룹 컬러 변경하기"></a>
+                                </span>
+                            </span>
+                            <div class="chips-wrap" id="colorChips">
+                                <ul class="chips">
+                                    <li><input type="radio" name="colorChip" id="color01" data-color="e2f8fa" checked><label for="color01" style="background: #e2f8fa"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color02" data-color="fef4da"><label for="color02" style="background: #fef4da"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color03" data-color="dbe0f6"><label for="color03" style="background: #dbe0f6"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color04" data-color="d3f9f1"><label for="color04" style="background: #d3f9f1"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color05" data-color="edeef0"><label for="color05" style="background: #edeef0"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color06" data-color="decaae"><label for="color06" style="background: #decaae"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color07" data-color="f9d3f9"><label for="color07" style="background: #f9d3f9"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color08" data-color="befffb"><label for="color08" style="background: #befffb"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color09" data-color="ced4da"><label for="color09" style="background: #ced4da"></label></li>
+                                    <li><input type="radio" name="colorChip" id="color10" data-color="d0c4d8"><label for="color10" style="background: #d0c4d8"></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-button fixed">
+                    <button type="button" class="btn btn-primary e-close">완료</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 그룹추가 -->
+
+        <!-- layer:   -->
+        <div class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <p>그룹은 최대 10개까지 <br>등록하실 수 있습니다.</p>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </ㅇ><!-- //layer:   -->
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 수정하기 버튼 클릭 시
+                $body.on('click', '.e-edit', function(e) {
+                    let $this = $(e.currentTarget);
+
+                    $this.fadeOut('fast');
+                    $('.e-save').fadeIn('fast');
+                    $('.one').addClass('edit-mode');
+                });
+
+                // 저장하기 버튼 클릭 시
+                $body.on('click', '.e-save', function(e) {
+                    let $this = $(e.currentTarget);
+
+                    $this.fadeOut('fast');
+                    $('.e-edit').fadeIn('fast');
+                    $('.one').removeClass('edit-mode');
+                });
+
+                // 컬러 선택
+                $body.on('click', 'input[name="colorChip"]', function(e) {
+                    let $this = $(e.currentTarget),
+                        selectedColor = $this.data('color'),
+                        $bgEl = $('#pickedColor');
+
+                    console.log( $this.data('color') );
+                    $bgEl.css('background', '#' + selectedColor);
+                    $('#colorChips').removeClass('show');
+                });
+
+            });
+        </script>
+    </body>
+</html>

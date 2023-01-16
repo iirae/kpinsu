@@ -1,0 +1,96 @@
+.button {
+    border: solid 1px #444b52;
+    &,
+    span {
+        color: @secondary;
+    }
+    &.primary {
+        background-color: @primary;
+        border-color: @primary;
+        &,
+        span {
+            color: #001012;
+        }
+    }
+    &.secondary {
+        background-color: #3f424a;
+        border-color: #3f424a;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.info {
+        background-color: @light;
+        border-color: @light;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.disabled,
+    &.light {
+        opacity: 1;
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+    }
+    &.secondary-linear {
+        background-color: #fff;
+        border-color: #0e1012;
+        span, strong {
+            color: #0e1012;
+            vertical-align: middle;
+        }
+        span {
+            font-size: 15px;
+            & + strong {
+                margin-left: 14px;
+            }
+        }
+        strong {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}
+
+.button {
+    box-sizing: content-box;
+    position: relative;
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border-radius: 5px;
+    &.small {
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+    &.large {
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+        border-radius: 0;
+    }
+    &.full {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+.section-button {
+    margin-top: 30px;
+    .button {
+        width: 100%;
+    }
+}

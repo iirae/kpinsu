@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="inbyu" />
+        <title>UI</title>
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="wrap" id="wrap">
+            <div>
+                <fieldset>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">checkbox</label>
+                    </div>
+                    <div class="form-checkbox all">
+                        <input type="checkbox" id="checkboxAll">
+                        <label for="checkboxAll">all checkbox</label>
+                    </div>
+                    <div class="form-radio">
+                        <input type="radio" id="radio" name="name">
+                        <label for="radio">radio</label>
+                    </div>
+                    <div class="form-radio">
+                        <input type="radio" id="radio2" name="name">
+                        <label for="radio2">radio2</label>
+                    </div>
+                </fieldset>
+                <footer class="footer fixed">
+                    <a href="javascript:;" class="btn btn-normal">fixed button</a>
+                </footer>
+            </div>
+
+            <div class="area-button">
+                <a href="#layerCenter" class="btn btn-primary e-layer">Center</a>
+                <a href="#layerBottom" class="btn btn-secondary e-layer">Bottom</a>
+            </div>
+            <div class="area-button">
+                <a href="#layerFull" class="btn btn-normal e-layer">Full</a>
+            </div>
+        </div>
+
+        <!-- center  -->
+        <div class="layer center" id="layerCenter">
+            <div class="container">
+                <div class="content">
+                    <p>사고접수 서비스를 종료하시겠습니까?</p>
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn btn-normal e-close">취소</button>
+                    <button type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom  -->
+        <div class="layer bottom" id="layerBottom">
+            <div class="container">
+                <div class="content">
+                    <p>사고접수 서비스를 종료하시겠습니까?</p>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-normal e-close">취소</button>
+                    <button type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full -->
+        <section class="layer full" id="layerFull">
+            <div class="container">
+                <div class="head-button">
+                    <a href="javascript:;" class="btn btn-close e-close"></a>
+                </div>
+                <div class="contents terms">
+                    <h2>head</h2>
+                    <pre>
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+스
+크
+롤
+                    </pre>
+                </div>
+                <footer class="footer">
+                    <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                </footer>
+            </div>
+        </section>
+
+        <!-- ui관련 js -->
+        <script src="../resources/js/event.js"></script>
+    </body>
+</html>

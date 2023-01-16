@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">회원탈퇴에 대한 안내사항을<br>모두 읽고 확인해 주세요</h1>
+                    <div class="progressbar"><span class="col-3 step-1"></span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <dl class="section-terms_agree e-check_range">
+                            <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">모두 동의</label></dt>
+                            <dd>
+                                <ul>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox1"><label for="termAgreeCheckbox1">회원님은 언제든지 탈퇴를 요청할 수 있으며 "KP보험서비스"는 관련 법령이 정하는 바에 따라 이를 즉시 처리하여야 합니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">탈퇴 후, 미정산 광고 수익이 있는 경우 정해진 일정에 따라 지급되며, karepl을 통해서 정산내역을 확인할 수 없습니다.<br>(내역안내 : 1644-9381)</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">탈퇴처리가 완료되면 Karepl을 통해서 관리했던 회원님의 모든 개인정보 및 서비스 이용정보는 다시 볼 수 없습니다.</label></li>
+                                    <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">서비스 사용 중에 이용하셨던 다양한 혜택과 이벤트 참여기회, 유익한 정보나 소식 등은 모두 받으실 수 없습니다.</label></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">다음</a><!-- 활성 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+    </body>
+</html>

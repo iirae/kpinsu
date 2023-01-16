@@ -1,0 +1,214 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+{literal}
+<script type="text/javascript">
+<!--
+
+function frmSubmit(f_data)
+{
+	var action = f_data['action'];
+
+	$.ajax({
+		type: "POST",
+		url: action,
+		data: f_data,
+		dataType: 'json',
+		success: function(response) {
+			if(response) {
+
+				if(response.msg)
+					alert(response.msg);
+
+				if(response.url)
+					location.replace(response.url);
+			}
+		}
+	});
+	return false;
+}
+
+function inputCheck()
+{
+	if(document.getElementsByTagName) {
+
+		var inputElements = document.getElementsByTagName("input");
+
+		for(i = 0; inputElements[i]; i ++) {
+
+			if(inputElements[i].className && (inputElements[i].className.indexOf("disableAutoComplete") != -1)) {
+
+				inputElements[i].setAttribute("autocomplete", "off");
+			}
+		}
+	}
+}
+
+$(document).ready(function()
+{
+	$(".chk-ok").click(function(){
+
+		if ($("#name").val() == "") {
+			alert("이름을 꼭 입력하세요!");
+			$("#name").focus();
+			$("#name").parent().addClass("on");
+			return false;
+		} else if ($("#rrn1").val() == "") {
+			alert("주민등록 앞자리를 꼭 입력하세요!");
+			$("#rrn1").focus();
+			$("#rrn1").parent().addClass("on");
+			return false;
+		} else if ($("#rrn2").val() == "") {
+			alert("주민등록 뒷자리를 꼭 입력하세요!");
+			$("#rrn2").focus();
+			$("#rrn2").parent().addClass("on");
+			return false;
+		} else if ($('#telecom').length > 0 && $("#telecom").val() == "") {
+			alert("통신사를 꼭 선택하세요!");
+			$("#telecom").focus();
+			return false;
+		} else if ($("#phone").val() == "") {
+			alert("핸드폰번호를 꼭 입력하세요!");
+			$("#phone").focus();
+			$("#phone").parent().addClass("on");
+			return false;
+		} else if ($("#email").val() == "") {
+			alert("이메일을 꼭 입력하세요!");
+			$("#email").focus();
+			$("#email").parent().addClass("on");
+			return false;
+		} else if ($("#emailChk").val() == "" || $("#emailChk").val() != $("#email").val()) {
+			alert("이메일을 꼭 확인하세요!");
+			$("#emailChk").focus();
+			$("#emailChk").parent().addClass("on");
+			return ;
+		}
+
+		var f_data = {
+			action: 'product.htm',
+			mode: 'insu',
+			mtype: 'step04_proc',
+			st_date: $("input[name='st_date']").val(),
+			email: $("input[name='email']").val(),
+			user_name: $("input[name='user_name']").val(),
+			jumin_1: $("input[name='jumin_1']").val(),
+			jumin_2: $("input[name='jumin_2']").val(),
+			user_phone: $("input[name='user_phone']").val(),
+		};
+		frmSubmit(f_data);
+
+		return false;
+	});
+
+	inputCheck();
+});
+
+function maxLengthCheck(object)
+{
+	if (object.value.length > object.maxLength){
+		object.value = object.value.slice(0, object.maxLength);
+	}
+}
+//-->
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+						<div class="step_process">
+							<div><span class="st_1"><b>약관동의</b></span></div>
+							<div><span class="st_2 on"><b>정보입력</b></span></div>
+							<div><span class="st_3"><b>가입내용확인</b></span></div>
+							<div><span class="st_4"><b>결제</b></span></div>
+						</div>
+
+						<div class="step_Area">
+							<h3 class="sub-title line">가입자 정보입력</h3>
+							<form method="post" action="" autocomplete="off">
+								<legend>가입자 정보입력</legend>
+								<div class="joinInput-Area">
+									<div class="in">
+										<div class="join-input first">
+											<dl class="input-zip">
+												<dt><label for="name">가입자 이름</label></dt>
+												<dd>
+													<div class="input inputPlace"><label for="name">이름을 입력하세요.</label><input type="text" id="name" class="user_name" name="user_name" {if $RS.mem.name != ""} readonly{/if} value="{$RS.mem.name}" title="이름을 입력하세요"  /> </div>
+												</dd>
+												<dt><label for="rrn1">주민등록 번호</label></dt>
+												<dd>
+													<div class="rrtInput inputPlace"><label for="rrn1">주민번호 앞자리</label><input type="tel" id="rrn1" maxlength="6" oninput="maxLengthCheck(this)" class="jumin_1" name="jumin_1" value="{$RS.mem.jumin1}"{if $RS.mem.jumin1 != ""} readonly{/if} title="주민등록번호 앞자리를 입력하세요" /> </div>
+													<div class="rrtInput inputPlace"><label for="rrn2">주민번호 뒷자리</label><input type="password" id="rrn2" class="numbersOnly jumin_2" maxlength="7" oninput="maxLengthCheck(this)" name="jumin_2" title="주민등록번호 뒷자리를 입력하세요" /> </div>
+												</dd>
+{if $RS.credif == "1"}
+												<dt><label for="telecom">통신사선택</label></dt>
+												<dd>
+														<select name="telecom" id="telecom" class="select" title="통신사를 선택하세요">
+															<option value=''>통신사 선택</option>
+	{section name=key loop=$RS.telecom}
+															<option value='{$RS.telecom[key].key}'>{$RS.telecom[key].value}</option>
+	{/section}
+													</select>
+												</dd>
+{/if}
+												<dt><label for="phone">휴대폰번호</label></dt>
+												<dd>
+													<div class="input inputPlace"><label for="phone">휴대폰번호 입력</label><input type="tel" id="phone" maxlength="11" oninput="maxLengthCheck(this)" class="user_phone" type="tel" name="user_phone" value="{$RS.mem.mobile}" readonly title="휴대폰번호을 입력하세요" /> </div>
+												</dd>
+												<dt><label for="email">이메일</label></dt>
+												<dd>
+													<div class="input inputPlace"><label for="email">이메일 입력</label><input type="email" id="email" name="email" value="{$RS.mem.email}" title="이메일 주소을 입력하세요" /> </div>
+													<p class="info-1">가입시 입력한 이메일로 가입증명서를 보내드립니다.</p>
+												</dd>
+											</dl>
+										</div>
+									</div><!-- end : class : join-input -->
+								</div><!-- end : class : joinInput-Area -->
+							</form>
+
+							<div class="btn_C_Area">
+								<a href="#none" class="btnStyle blueD chk-ok">확인</a>
+							</div>
+{literal}
+							<script type="text/javascript">
+								//<![CDATA[
+								$(document).ready(function(){
+									project.join();
+									project.addUser();
+								});
+								//]]>
+							</script>
+{/literal}
+						</div><!-- end : class : step_Area -->
+					</div>
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+			<span id="btn_chk" style="display: none;">1</span>
+
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

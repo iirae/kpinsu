@@ -1,0 +1,208 @@
+//* class ================================================================== */
+.set-img-retina (@file-1x; @file-2x; @width-1x; @height-1x) { // retina 이미지 처리, 보강 필요
+    background-image: url("@{file-1x}");
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+}
+
+//* less ================================================================== */
+
+/* 컨텐트 하단 여백 */
+.bottom-spacer {
+    clear: both;
+    margin-top: 100px;
+    margin-bottom: -1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.tab-toggler {
+    .item {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+.section-pagination {
+    margin-top: 40px;
+    text-align: center;
+    em {
+        .sr-only();
+    }
+    .num {
+        display: inline-block;
+        vertical-align: middle;
+        height: 26px;
+        width: 26px;
+        text-align: center;
+        line-height: 26px;
+        font-size: 16px;
+        color: #adb5bd;
+        @media only screen and (max-width: 399px) {
+        }
+    }
+    .nav {
+        margin: 0 -2px;
+        vertical-align: middle;
+    }
+    strong {
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        color: #444b52;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            margin-top: -4px;
+            background-color: #444b52;
+        }
+    }
+    .first .icon {
+        .set-icon(52px, 52px, 'common/icon_page_first', true);
+    }
+    .prev {
+        .icon {
+           .set-icon(52px, 52px, 'common/icon_page_prev', true);
+       }
+    }
+    .next {
+        .icon {
+           .set-icon(52px, 52px, 'common/icon_page_next', true);
+       }
+    }
+    .last .icon {
+        .set-icon(52px, 52px, 'common/icon_page_last', true);
+    }
+}
+
+// 인바이유몰 공통
+.common-kpinsu { 
+    &.header {
+        padding-top: 10px;
+        .head-logo {
+            margin: 0;
+            text-align: center;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 28px;
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 65px;
+            }
+        }
+    }
+    &.footer {
+        padding-bottom: 28px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                font-size: 14px;
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.5;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                span {
+                    & + span {
+                        display: block;
+                    }
+                }
+            }
+            .information {
+                margin-top: 15px;
+            }
+            .details {
+                margin-top: 9px;
+                text-align: left;
+                span {
+                    display: block;
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #808992;
+            line-height: 1.83;
+            text-align: left;
+        }
+
+        .important {
+            padding: 20px; 
+            font-size: 12px;
+            color: #adb5bd; 
+            a {
+                color: #adb5bd;
+            }
+        }
+    }
+}

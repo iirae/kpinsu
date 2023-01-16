@@ -1,0 +1,809 @@
+<?php
+
+	$user_ip = $_SERVER['REMOTE_ADDR'] ; 
+	$access_ip = array("175.113.78.155","175.113.78.156","221.148.188.147","121.166.247.164");  // 강남5호점, 지넥슨
+	if(!in_array($user_ip, $access_ip))
+	{
+		echo "Access Deny";	
+		exit;
+	}
+?>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta content="website" property="og:type">
+        <meta content="" property="og:site_name">
+        <meta content="" property="og:url">
+        <meta content="" property="og:title">
+        <meta content="" property="og:description">
+        <meta name="author" content="김도희_Rony" />
+        <title>IA</title>
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <style>
+            body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+            fieldset,img{border:0 none}
+            dl,ul,ol,menu,li{list-style:none}
+            blockquote, q{quotes:none}
+            blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+            input,select,textarea,button{vertical-align:middle;font-size:100%}
+            button{border:0 none;border-radius:0;background-color:transparent;cursor:pointer}
+            table{border-collapse:collapse;border-spacing:0}
+            body{-webkit-text-size-adjust:none}
+            input:checked[type='checkbox'] {background-color:#666; -webkit-appearance:checkbox}
+            input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html input[type='button'],input[type='reset'],input[type='number'], input[type='datetime-local'] {-webkit-appearance:none;border-radius:0;-webkit-border-radius:0;}
+            input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+            input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+
+            body{background:#fff}
+            body,th,td,input,select,textarea,button{font-size:14px;line-height:1.38;font-family:AppleSDGothicNeo,'Malgun Gothic','맑은 고딕',sans-serif;color:#444b52}
+            html,body{height:100%}
+
+            a{color:#444b52; cursor: pointer; text-decoration:none}
+            address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+            .wrap {padding:20px 30px 100px;}
+            h2 {margin-top: 30px;}
+            h3 {margin-top: 30px;}
+            p, ul {margin-top: 7px;}
+            .text-warn {color:#f50000;}
+            .text_link {text-decoration: underline;}
+            .table-layout {margin-top: 10px;}
+            .table-layout table {table-layout: fixed; width:100%; border-collapse: collapse; border: solid 1px #cdcdcd;}
+            .table-layout th, td {padding: 7px 10px; border: dashed 1px #cdcdcd;}
+            .table-layout th {background: #eaeaea;}
+            .table-layout a {text-decoration: underline;}
+            .table-layout a:hover {color: #008dff;}
+            .table-layout a:visited {color: #a970cc;}
+            .table-layout .center {text-align:center;}
+            .table-layout tbody:nth-of-type(even) {background:#f8f8f8;}
+
+            .tab-layout {display: flex; margin-top: 30px;}
+            .tab-layout li {flex: 0 0 120px; height: 36px; line-height: 36px; text-align:center; border: dashed 1px #dedede;}
+            .tab-layout li + li {margin-left: -1px;}
+            .tab-layout li.on {z-index:10; position: relative; background: rgba(0,0,0,0.03);}
+            .tab-layout li.on a {color: #11bdfb;}
+            .tab-layout a {display: block; font-size: 15px; text-decoration: none;}
+
+            pre {padding: 10px; font-size: 12px; color: #d6d6d6; white-space: pre-wrap; background: #000; border-radius: 10px;}
+
+            .badge::after {display: inline-block; margin: -2px 0 0 7px; padding: 2px 3px; font-size: 0.65em; vertical-align: middle; border-radius: 5px;}
+            .badge.new::after {content: 'NEW'; color: #f50000; background: rgba(245, 0, 0, 0.13);}
+        </style>
+    </head>
+    <body>
+        <div class="wrap" id="wrap">
+            <header class="header">
+                <h1>IA</h1>
+            </header>
+            <main class="content">
+                <ul class="tab-layout">
+                    <li class="on"><a href="#inbyu">inbyu</a></li>
+                    <li><a href="#alliance">제휴</a></li>
+                    <li><a href="#kakaopay">kakaopay</a></li>
+                    <li><a href="#issue">Issue</a></li>
+                </ul>
+
+                <section class="tab-content" id="inbyu">
+                    <h2>Inbyu</h2>
+                    <p>* project naming 규칙: <strong>inbyu_ </strong>를 prifix로 사용</p>
+                    <ul class="desc text-warn">
+                        <li>* 상품몰 & 연계된 제휴 상품의 header, footer는 모두 공통으로 한다. <a href="/ui_temp/guide/" target="_blank" class="text_link">guide</a></li>
+                    </ul>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inbyu_설계사앱</td>
+                                    <td><a href="/inbyu_설계사앱/" target="_blank" class="badge new">inbyu_설계사앱</a></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td><a href="/inbyu_설계사앱/guide.html" target="_blank">UI Guide</a></td>
+                                </tr>
+                                <tr>
+                                    <td>inbyu_청구서비스</td>
+                                    <td><a href="/inbyu_청구서비스/mobile" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/inbyu_청구서비스/pc" target="_blank">PC</a></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>상품몰</td>
+                                    <td><a href="/partner_mall_mobile" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/partner_mall_pc" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2>k'are for</h2>
+                    <p>* project naming 규칙: <strong>kare_for_ </strong>를 prifix로 사용</p>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/kare_for_business" target="_blank">kare_for_business</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kare_for_business_mobile" target="_blank">kare_for_business_mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kare_for_business_mail" target="_blank">kare_for_business_mail</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kare_for_krew" target="_blank">kare_for_krew</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/icare" target="_blank">icare</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Kare for Krew(구버전 백업용)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tab-content" id="alliance" style="display:none;">
+                    <h2>제휴</h2>
+                    <p>* 하기의 프로젝트는 형태별로 분류되어 있음</p>
+                    <p>* project naming 규칙: alliance의 약자 <strong>al_</strong>을 prefix로 사용</p>
+                    <ul class="desc text-warn">
+                        <li>* 상품몰 & 연계된 제휴 상품(DIY운전자보험, 자동차보험, 해외여행자보험)의 header는 모두 공통으로 한다. <a href="/ui_temp/guide/" target="_blank" class="text_link">guide</a></li>
+                        <li>* Footer는 청구서비스, KFB, KFK 모두 통일(단, 약관 유무에 따라 다름) <a href="/ui_temp/guide/" target="_blank" class="text_link">guide</a></li>
+                    </ul>
+
+                    <h3>제휴</h3>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/가입증명서안내메일" target="_blank">가입증명서안내메일</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/서비스이용오류페이지_20191001" target="_blank">서비스이용오류페이지_20191001</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/제휴사header_20191016" target="_blank">제휴사header_20191016</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/lkms" target="_blank">lkms</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>LKMS 홈페이지 - 실제로는 다른데서 관리 백업용</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/al_grayrock/" target="_blank" class="badge new">al_grayrock</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>PC만 제작</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>[TPA] 제휴(가입, 접수)</h3>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/al_cori" target="_blank">꼬리(반려동물)</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/rethink2" target="_blank">rethink2</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/al_jdj마스크" target="_blank">JDJ마스크</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/inbyu_씽씽이" target="_blank">inbyu_씽씽이</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Rony</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>제휴(가입, 접수)</h3>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>al_금호타이어</td>
+                                    <td><a href="/al_금호타이어/mobile/" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td>Rony</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/al_금호타이어/pc/" target="_blank">PC</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>inbyu_diy운전자보험</td>
+                                    <td><a href="/inbyu_diy운전자보험/mobile/" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td>soo</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/inbyu_diy운전자보험/pc/" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td>soo</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/inbyu_diy운전자보험/mail/" target="_blank">mail</a></td>
+                                    <td></td>
+                                    <td>soo</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>inbyu_자동차보험</td>
+                                    <td><a href="/inbyu_자동차보험" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/inbyu_자동차보험_pc" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>교보_입원비</td>
+                                    <td><a href="/교보_입원비_20190926" target="_blank">교보_입원비_20190926</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>보험청구시스템</td>
+                                    <td><a href="/보험청구시스템" target="_blank">보험청구시스템</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/보험청구시스템_카카오" target="_blank">보험청구시스템_카카오</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/자동차보험_카카오" target="_blank">자동차보험_카카오</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/트리플_20190919" target="_blank">트리플_20190919</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>(해외여행보험)신규 디자인은 관리 파일 없음
+                                        <p>보안 관리 이전: FTP 직접 붙어서 수정</p>
+                                        <p>보안 관리 이후: 소스보기로 로컬에서 작업 후 메일로 전송</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/hair_suit" target="_blank">hair_suit</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>sgi서울보증보험</td>
+                                    <td><a href="/보증보험/new" target="_blank">배너형태(반응형)</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>제휴(정보 전달)</h3>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>교보_수술비</td>
+                                    <td><a href="/교보_수술비_Mobile_20190927" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/교보_수술비_PC_20190927" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/롯데카드" target="_blank">롯데카드</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <p>
+                                            <strong>*작업 후 해당파일 + resource 파일 압축하여 메일로 전달*</strong><br>
+                                            html - 컨텐츠만 있음(롯데카드에 전달 시 이부분만 복사해서 담당자가 관리자 등록시 필요)<br>
+                                            html_full - 담당자 및 제휴사에 컨펌 시 상단하단 다 보여지는 풀페이지 제공
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>이지웰</td>
+                                    <td><a href="/이지웰_mobile_201904" target="_blank">Mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/이지웰_PC_201904" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/maeil_pc" target="_blank">maeil_pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/아잇_게이트" target="_blank">아잇_게이트</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/헬스맥스" target="_blank">헬스맥스</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/cu_post" target="_blank">cu_post</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/shilla_mobile" target="_blank">shilla_mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>tourvis</td>
+                                    <td><a href="/tourvis_mobile" target="_blank">mobile</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="/tourvis_pc" target="_blank">pc</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tab-content" id="kakaopay" style="display:none;">
+                    <h2>kakaopay</h2>
+                    <p>* project naming 규칙: <strong>kakaopay_</strong>를 prefix로 사용</p>
+                    <p>* 가장 최근의 프로젝트에는 <strong>class="badge new"</strong>를 추가 하고, 목록 최 상단에 노출되도록 한다.</p>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 220px;">
+                                <col style="width: 150px;">
+                                <col style="width: 120px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">project</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">작업자</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/kakaopay_db암보험" target="_blank" class="badge new">kakaopay_db암보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Soo</td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_ibk연금보험" target="_blank" class="badge">kakaopay_ibk연금보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Soo</td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_3대진단비" target="_blank" class="badge">kakaopay_3대진단비</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Soo</td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_oneday" target="_blank">kakaopay_oneday</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Soo</td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_자동차보험" target="_blank">kakaopay_자동차보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="center">Soo</td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/20191113_삼성운전자보험" target="_blank">20191113_삼성운전자보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_교보_암보험" target="_blank">kakaopay_교보_암보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_교보_연금저축보험" target="_blank">kakaopay_교보_연금저축보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_교보_저축보험" target="_blank">kakaopay_교보_저축보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_금융사기보상보험" target="_blank">kakaopay_금융사기보상보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 있음 preview 없음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_내차팔기" target="_blank">kakaopay_내차팔기</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_보험료조회" target="_blank">kakaopay_보험료조회</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 없음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_생활체육보험" target="_blank">kakaopay_생활체육보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_해외여행보험" target="_blank">kakaopay_해외여행보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_휴대폰보험" target="_blank">kakaopay_휴대폰보험</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 있음 preview 없음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_dental" target="_blank">kakaopay_dental</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>index 없음(별도 IA 없음)</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_gift" target="_blank">kakaopay_gift</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/kakaopay_kb" target="_blank">kakaopay_kb</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/export_mobile_1014" target="_blank">export_mobile_1014</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>별도 IA 및 preview 있음</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tab-content" id="issue" style="display:none;">
+                    <h2>Issue</h2>
+                    <p>* 이슈의 재 발생을 방지하고, 재 발생 시 빠른 대응을 위하여 기록</p>
+                    <div class="table-layout">
+                        <table>
+                            <colgroup>
+                                <col style="width: 220px;">
+                                <col style="width: 120px;">
+                                <col style="width: 250px;">
+                                <col style="width: 350px;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">issue</th>
+                                    <th scope="col">브라우저</th>
+                                    <th scope="col">상세</th>
+                                    <th scope="col">해결 방법</th>
+                                    <th scope="col">참고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>layer 내의 scroll 이슈</td>
+                                    <td>ios</td>
+                                    <td>
+                                        layer 첫 오픈 시에는 문제 없음<br>
+                                        재오픈 시 스크롤이 되지 않는 문제 발생
+                                    </td>
+                                    <td>
+                                        layer 내의 스크롤 영역에 <pre>-webkit-overflow-scrolling: touch;</pre> 추가 한다.
+                                    </td>
+                                    <td><a href="https://github.com/inbyucom/web-publishing/commit/77055be118964b74b2952ab960329ae1ff03a351" target="_blank">github</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script>
+            const tabList = document.querySelectorAll('.tab-layout li');
+
+            Array.prototype.forEach.call(tabList, (tab) => {
+                tab.children[0].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let tabContent = document.querySelectorAll('.tab-content');
+                    let target = tab.children[0].getAttribute('href').substring(1);
+
+                    Array.prototype.forEach.call(tabContent, (content, i) => {
+                        content.style.display = 'none';
+
+                        tabList[i].className = '';
+
+                        if(target == content.id) {
+                            content.style.display = 'block';
+                        }
+
+                    });
+
+                    if(tab.className.indexOf('on') == -1) {
+                        tab.className = 'on';
+                    }
+
+                });
+            });
+        </script>
+
+    </body>
+</html>

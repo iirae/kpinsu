@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+// 노치대응
+$safeAreaMap: (
+  'top': (
+    env: env(safe-area-inset-top),
+    constant: constant(safe-area-inset-top),
+  ),
+  'right': (
+    env: env(safe-area-inset-right),
+    constant: constant(safe-area-inset-right),
+  ),
+  'bottom': (
+    env: env(safe-area-inset-bottom),
+    constant: constant(safe-area-inset-bottom),
+  ),
+  'left': (
+    env: env(safe-area-inset-left),
+    constant: constant(safe-area-inset-left),
+  )
+);
+
+$safe-top:map-get($safeAreaMap,"top");
+$safe-right: map-get($safeAreaMap,"right");
+$safe-bottom: map-get($safeAreaMap,"bottom");
+$safe-left: map-get($safeAreaMap,"left");
+
+/**
+ * safe-area-inset 처리
+ * $dir - 방향(all, top, right, bottom, left, 생략가능)
+ * $ios - env, constant
+ * $value - 더해질 값(생략가능)
+ * $percent - height나 width값 계산 시(예 100%)
+ */
+@function safe($dir: all, $ios: '', $value: 0, $percent: 0) {
+	@if ($dir == all) {
+		@if ($value > 0) {
+			@return calc(#{$value} + #{map-get($safe-top, $ios)}) calc(#{$value} + #{map-get($safe-right, $ios)}) calc(#{$value} + #{map-get($safe-bottom, $ios)}) calc(#{$value} + #{map-get($safe-left, $ios)});
+		}
+		@else if ($value < 0) {
+			@return calc((#{-$value} + #{map-get($safe-top, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-right, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-bottom, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-left, $ios)}) * -1);
+		}
+		@else {
+			@return map-get($safe-top, $ios) map-get($safe-right, $ios) map-get($safe-bottom, $ios) map-get($safe-left, $ios);
+		}
+	}
+	@else {
+        @if ($value > 0) {
+            @if($percent > 0) {
+                @return calc(#{$percent} - #{$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)});
+            } @else {
+                @return calc( #{$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}); 
+            }
+        }
+        @else if ($value < 0) {
+            @if($percent > 0) {
+                @return calc((#{$percent} - #{-$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)}));
+            } @else {
+                @return calc((#{-$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}) * -1);
+            }
+		}
+		@else {
+			@return map-get(map-get($safeAreaMap,$dir), $ios);
+		}
+	}
+}

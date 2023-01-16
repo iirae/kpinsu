@@ -1,0 +1,113 @@
+
+/* slider */
+.slider-wrap {
+	clear: both;
+}
+
+.swiper-control {
+    margin-top: 20px;
+    text-align: center;
+    .swiper-play {
+        display: inline-block;
+        .icon {
+           .set-icon(24px, 24px, 'module/icon_swiper_stop');
+           vertical-align: top;
+        }
+        &.stop .icon {
+            .img('module/icon_swiper_play');
+        }
+    }
+    .swiper-pagination {
+        position: static;
+        display: inline-block;
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            border-radius: 0px;
+            background-color: transparent;
+            opacity: 1;
+            vertical-align: top;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -5px 0 0 -5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                box-sizing: border-box;
+                border: 1px #969696 solid;
+            }
+            &.swiper-pagination-bullet-active::before {
+                background-color: @primary;
+                border: 0;
+            }
+        }
+    }
+}
+.js-slider {
+    .swiper-control {
+        display: none;
+    }
+    .swiper-navigation {
+        position: absolute;
+        top: 50%;
+        display: none;
+        margin-top: -18px;
+        width: 50px;
+        height: 36px;
+        background: none;
+        .icon {
+            width: 50px;
+            height: 36px;
+            background-color: #000;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: 0 0 0 -4px;
+                width: 8px;
+                height: 1px;
+                background-color: #fff;
+            }
+            &::after {
+                margin-top: -1px;
+            }
+        }
+        &.swiper-button-prev {
+            left: 0;
+            .icon::before {
+                transform: rotate(-45deg);
+                transform-origin: left center;
+            }
+            .icon::after {
+                transform: rotate(45deg); 
+                transform-origin: left center;
+            }
+        }
+        &.swiper-button-next {
+            right: 0;
+            .icon::before {
+                transform: rotate(45deg);
+                transform-origin: right center;
+            }
+            .icon::after {
+                transform: rotate(-45deg);
+                transform-origin: right center;
+            }
+        }
+        &:hover .icon {
+            background-color: @primary;
+        }
+    }
+    &.loaded {
+        .swiper-control,
+        .swiper-navigation {
+           display: block;
+       }
+    }
+}

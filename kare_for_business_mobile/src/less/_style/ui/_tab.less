@@ -1,0 +1,119 @@
+ul[class*="table-"] {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: table-cell;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+ul[class*="tab-"] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.section-tab {
+    margin-top: 20px;
+    .holder {
+        margin-left: 18px;
+    }
+    .scroll-x {
+        height: 44px;
+    }
+    a {
+        display: inline-block;
+        margin: 0 -2px;
+        padding: 0 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 16px;
+        text-align: center;
+        span {
+            position: relative;
+            display: inline-block;
+            height: 44px;
+            line-height: 44px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                right: 50%;
+                margin-top: -2px;
+                height: 2px;
+                opacity: 0;
+                background-color: #212529;
+                transition: all .3s;
+            }
+        }
+        &.in {
+            color: #212529;
+            font-weight: 500;
+            span::before {
+                left: 0;
+                right: 0;
+                opacity: 1;
+            }
+        }
+    }
+    .col a {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+ul.tab-a {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-bottom: 1px #ced4da solid;
+    // overflow: hidden;
+    box-sizing: border-box;
+    li {
+        display: table-cell;
+        position: relative;
+        z-index: 1;
+        a {
+            position: relative;
+            display: block;
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+            text-align: center;
+            color: #868e96;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                right: 50%;
+                // margin-top: -1px;
+                height: 1px;
+                opacity: 0;
+                background-color: #212529;
+                transition: all .4s;
+            }
+        }
+        &.in {
+            z-index: 2;
+            a {
+                color: #212529;
+                &::before {
+                    left: 0;
+                    right: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.is-col-2 li {
+        width: 50%;
+    }
+}

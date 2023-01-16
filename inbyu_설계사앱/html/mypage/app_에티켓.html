@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">에티켓 시간</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents p-row-reset pt-0" id="contents">
+                    <div class="section-set-time divide-top">
+                        <div class="module-dl">
+                            <strong>에티켓 시간</strong>
+                            <span class="form-switch"><input type="checkbox" id="etiquetteOn" checked><label for="etiquetteOn"></label></span>
+                        </div>
+                        <div class="set">
+                            <div class="days">
+                                <span class="form-check-day"><input type="checkbox" id="sun" checked><label for="sun"><span>일</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="mon" checked><label for="mon"><span>월</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="tue" checked><label for="tue"><span>화</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="wed" checked><label for="wed"><span>수</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="thur" checked><label for="thur"><span>목</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="fri" checked><label for="fri"><span>금</span></label></span>
+                                <span class="form-check-day"><input type="checkbox" id="sat" checked><label for="sat"><span>토</span></label></span>
+                            </div>
+                            <div class="period">
+                                <a href="javascript:;" class="time" id="startTime" title="에티켓 시작 시간 설정"><span>오후</span><strong>9 : 00</strong></a>
+                                <span>~</span>
+                                <a href="javascript:;" class="time" id="endTime" title="에티켓 끝 시간 설정"><span>오전</span><strong>8 : 00</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- <div class="area-button fixed text">
+                    <a href="javascript:;" class="btn btn-text">저장</a>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/lib/mobileSelect.min.js"></script>
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 알림 허용
+                $body.on('click', '#etiquetteOn', function(e){
+                    let allChk = $(e.target);
+
+                    if( allChk.prop('checked') ) {
+                        $('.set').fadeIn('fast');
+                    } else {
+                        $('.set').fadeOut('fast');
+                    }
+                });
+
+                // 시간 선택(참고: https://github.com/onlyhom/mobile-select)
+                var amPmArr = ['오전', '오후'];
+                var hourArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+                var minArr = ['00', '30'];
+                var startTimeSelect = new MobileSelect({
+                    trigger: '#startTime',
+                    wheels: [{ data: amPmArr }, { data: hourArr }, { data: minArr }],
+                    position: [1, 8, 0],   // open 시 위치 설정
+                    callback: function (indexArr, data) {
+                        let ampm, startTime;
+
+                        ampm = data[0];
+                        startTime = data[1] + " : " + data[2];
+
+                        $('#startTime span').text(ampm);
+                        $('#startTime strong').text(startTime);
+                    },
+                });
+                var endTimeSelect = new MobileSelect({
+                    trigger: '#endTime',
+                    wheels: [{ data: amPmArr }, { data: hourArr }, { data: minArr }],
+                    position: [0, 7, 0],   // open 시 위치 설정
+                    callback: function (indexArr, data) {
+                        let ampm, endTime;
+
+                        ampm = data[0];
+                        endTime = data[1] + " : " + data[2];
+
+                        $('#endTime span').text(ampm);
+                        $('#endTime strong').text(endTime);
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

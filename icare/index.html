@@ -1,0 +1,117 @@
+<?php
+
+	$user_ip = $_SERVER['REMOTE_ADDR'] ; 
+	$access_ip = array("175.113.78.155","175.113.78.156","221.148.188.147","121.166.247.164");  // 강남5호점, 지넥슨
+	if(!in_array($user_ip, $access_ip))
+	{
+		echo "Access Deny";	
+		exit;
+	}
+?>
+
+<!doctype html>
+<html lang="ko" class="os_mac chrome pc version_75_0_3770_100">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<title>Kare for Krew</title>
+	<link rel="stylesheet" type="text/css" href="__css/common.css">
+</head>
+<body>
+	<div id="kakaoWrap" class="wrap_sample ">
+	
+
+<header>
+    <h1 class="screen_out">Kare for Krew</h1>
+</header>
+<hr class="hide">
+	<main id="kakaoContent" class="cont_index">
+		<article id="mArticle">
+							
+
+
+<style>
+  h2{text-align:center}
+  h3{font-size:20px}
+  #kakaoWrap{padding:50px}
+  #kakaoContent{min-width:600px;max-width:100%;margin-right:427px}
+  #sampleBox{position:fixed;top:50px;bottom:50px;right:50px;width:375px;min-height:667px;border:1px solid #000}
+  #sample{width:100%;height:100%;border:0 none}
+  .box{margin-top:20px;padding:20px;border-radius:10px;background-color:#fff;box-shadow:0 5px 10px 0 rgba(0,0,0,.08)}
+  .tbl{margin-top:15px}
+  .tbl table{width:100%;table-layout:fixed}
+  .tbl th,td{padding:10px 20px;border:1px solid rgba(0,0,0,.2)}
+  .tbl th{width:200px;margin-bottom:15px;font-size:16px;background-color:rgba(0,0,0,.02);text-align:left;vertical-align:top}
+  .tbl a{display:block;margin-top:5px;}
+  .tbl a:hover{color:#337ab7}
+  .tbl a.on{font-weight:bold;color:#337ab7}
+  .tbl a:first-child{margin-top:0}
+  .color1{background-color:#ffc4ff}
+  .color2{background-color:#a3ffcf}
+  .color3{background-color:#ffd600}
+  .no_active{text-decoration:line-through}
+</style>
+<h2>INDEX</h2>
+<div class="box">
+  <h3>Kare for Krew</h3>
+  <div class="tbl">
+    <table>
+      <tbody>
+        <tr>
+          <th>페이지</th>
+          <td>
+            <a href="01_login.html" target="_blank">01_로그인.html_구버전</a>
+            <a href="02_login.html" target="_blank">02_로그인.html_구버전</a>
+            <a href="01-1.html" target="_blank">01_로그인.html</a>
+            <a href="02-1.html" target="_blank">02_로그인.html</a>
+            <a href="03_sms1.html" target="_blank">03_sms이메일인증_1</a>
+            <a href="03_sms2.html" target="_blank">03_sms이메일인증_2</a>
+            <a href="04_regist.html" target="_blank">04_처음사용자등록</a>
+            <a href="05_idpw1.html" target="_blank">05_아이디비밀번호찾기_1</a>
+            <a href="05_idpwd2.html" target="_blank">05_아이디비밀번호찾기_2</a>
+            <a href="06_main.html" target="_blank">06_메인</a>
+            <a href="07_bojang.html" target="_blank">07_보장내용확인</a>
+            <a href="07_bojang_detail.html" target="_blank">07_보장내용확인_POP_상세보기</a>
+            <a href="08_bill.html" target="_blank">08_청구시작</a>
+            <a href="09_S1_user_select.html" target="_blank">09_S1_피보험자선택</a>
+            <a href="09_S2_bill_regist.html" target="_blank">09_S2_청구서작성</a>
+            <a href="09_S3_attach.html" target="_blank">09_S3_서류첨부</a>
+            <a href="09_S4_bill_modify.html" target="_blank">09_S4_청구서접수</a>
+            <a href="09_S4_billsign.html" target="_blank">09_S4_청구서접수_정보변경시</a>
+            <a href="10_bill_list.html" target="_blank">10_내청구내역확인</a>
+            <a href="11_insuguide.html" target="_blank">11_보험금지급절차안내</a>
+            <a href="12_user_info.html" target="_blank">12_내정보</a>
+            <a href="13_account.html" target="_blank">13_내계좌관리</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="sampleBox">
+  <iframe src="01_login.html" id="sample"></iframe>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+  var sample = $("#sample");
+  var keydown = false;
+  $(document).keydown(function (e) {
+    keydown = e.which == 91;
+  }).keyup(function (e) {
+    keydown = e.which != 91;
+  });
+  $("a").click(function () {
+    $("a").removeClass("on");
+    if (!keydown) {
+      sample.attr("src", $(this).attr("href"));
+      $(this).addClass("on");
+      return false;
+    }
+  });
+</script>
+
+		</article>
+	</main>
+</div>
+</body>
+</html>

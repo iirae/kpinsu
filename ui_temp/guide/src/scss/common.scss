@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+// @import "_fonts";
+@import "_reset"; 
+// @import "_mixin";
+
+// @import "_layout";
+// @import "_form";
+// @import "_button";
+@import "_icon";
+// @import "_badge";
+// @import "_text";
+// // @import "_datepicker";
+// @import "_mobileSelect";
+// @import "_module";
+// @import "_layer";
+// @import "_page";
+// @import "_circle";
+// @import "_ripple";
+// @import "_indicator";
+// @import "_animation";
+
+$color-wh: #fff;
+$color-text-default: #213434;
+
+body{background: $color-wh;}
+body,th,td,input,select,textarea,button{font-size:16px; line-height:1.5; font-family:"Noto Sans KR", sans-serif;color:$color-text-default;}
+a{color: $color-text-default;}
+img {max-width: 100%; vertical-align: top;}
+
+.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+.notch {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: env(safe-area-inset-bottom);
+    bottom: constant(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+
+.mo {
+    .common-kpinsu { 
+        &.header {
+           .head-logo {
+                span {
+                    &:not([style*="display: none"]) + span {
+                        &::before {
+                            top: 21px;
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                }
+                img {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+// 인바이유몰 공통 
+.common-kpinsu { 
+    &.header {
+       .head-logo {
+            margin: 0;
+            text-align: center;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 43px;
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 100px;
+            }
+        }
+    }
+}

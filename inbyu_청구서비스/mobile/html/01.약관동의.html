@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="title" content="인바이유 청구서비스" />
+        <meta name="author" content="인바이유" />
+        <meta name="copyright" content="인바이유" />
+        <title>인바이유 청구서비스</title>
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../resources/js/lib/jquery-ui.js"></script>
+    </head>
+    <body>
+    <div>
+        <div class="wrap" id="wrap">
+            <header class="header">
+                <h1 class="blind">인바이유 청구서비스</h1>
+                <h2 class="page-head">약관 동의</h2>
+                <p class="text-desc">보험금 청구 서비스를 이용하기 위한<br>약관에 동의해주세요.</p>
+            </header>
+            <main class="contents" id="contents">
+                <fieldset>
+                    <dl class="section-terms_agree e-check_range">
+                        <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">전체동의</label></dt>
+                        <dd>
+                            <ul>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox1"><label for="termAgreeCheckbox1">[필수] 서비스 이용약관</label><a href="#layerTerm01" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">[필수] 단체규약</label><a href="#layerTerm02" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">[필수] 개인(신용)정보 수집·이용에 관한 사항(인바이유)</label><a href="#layerTerm03" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">[필수] 개인(신용)정보 수집·이용에 관한 사항(보험사)</label><a href="#layerTerm04" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox5"><label for="termAgreeCheckbox5">[필수] 개인(신용)정보의 조회에 관한 사항(보험사)</label><a href="#layerTerm05" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox6"><label for="termAgreeCheckbox6">[필수] 개인(신용)정보의 제공에 관한 사항(보험사)</label><a href="#layerTerm06" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" required id="termAgreeCheckbox7"><label for="termAgreeCheckbox7">[필수] 민감정보 및 고유식별정보의 처리에 관한 사항(보험사)</label><a href="#layerTerm07" class="e-layer"> </a></li>
+                                <li class="form-chk"><input type="checkbox" id="termAgreeCheckbox8"><label for="termAgreeCheckbox8">[선택] 보험상품 및 서비스 소개를 위한 정보 활용 동의</label><a href="#layerTerm08" class="e-layer"> </a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </fieldset>
+            </main>
+            <div class="area-button fixed">
+                <a href="javascript:history.back();" class="btn btn-secondary flex-1">이전</a>
+                <button type="submit" class="btn btn-primary disabled btn-agree" onclick="location.href='./02.보험사선택.html'">확인</button>
+            </div>
+
+        </div>
+            <section class="layer full" id="layerTerm01">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>서비스 이용약관</h2>
+                        <pre>
+제1조 (목적) 
+이 약관은 이용자가 인바이유(이하 “INBYU”이라 한다)주식회사가 제공하는 청구서비스를(이하 “서비스”라 칭한다)이용함에 있어 INBYU와 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다. 
+
+제2조 (용어의 정의) 
+이 약관에서 사용되는 용어의 정의는 다음과 같습니다. 
+가. “INBYU”란 인바이유 주식회사가 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 서비스를 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 INBYU를 운영하는 사업자의 의미로도 사용합니다.
+나. “청구서비스”라 함은 "이용자"만이 이용할 수 있는 서비스로, “INBYU”가 요구한 개인정보를 제공하여야 완전한 이용이 가능하며 “INBYU”를 통하여 이용자가 보험금 청구를 하기 위한 청구서비스를 말합니다. 
+다. "이용자"라 함은 본 서비스를 이용하는 자를 말하며, 이용자 중 서비스의 이용을 위하여 “INBYU”가 요구하는 개인정보를 입력하고 이 약관에 동의한 자를 말합니다. 
+
+제3조 (약관 등의 명시와 설명 및 개정) 
+1) “INBYU”는 「전자상거래 등에서의 소비자보호에 관한 법률」, 「약관의 규제에 관한 법률」, 「전자문서 및 전자거래기본법」, 「전자금융거래법」, 「전자서명법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「방문판매 등에 관한 법률」, 「소비자기본법」 등 관련 법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.
+2) “INBYU”는 본 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 INBYU의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지된 사항에 한합니다. 다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 14일 이상의 사전 유예기간을 두고 공지합니다.  이 경우 "INBYU“는 개정 전 내용과 개정 후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다. 
+3) “INBYU”가 본 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용하고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항을 그대로 적용합니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제2항에 의한 개정약관의 공지기간 내에 “INBYU”에 송신하여 “INBYU”의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.
+4) 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 공정거래위원회가 정하는 전자상거래 등에서의 소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.
+
+제4조 (서비스의 내용)
+“INBYU”는 아래와 같은 서비스를 제공하며 그 내용은 다음과 같습니다. 
+가. 서비스에 관한 제반 정보 제공 
+나. 서비스 가입을 위한 상담 
+다. 서비스 가입, 유지에 필요한 제반 사무
+
+제5조 (서비스 이용) 
+이용자들은 제4조의 서비스를 그 용도에 맞추어 이용할 수 있습니다. 그러나, 가입서비스 이용을 위해서는 “INBYU”가 요구하는 이용자가입 절차 또는 이용자가입에 준하는 절차를 따라야 합니다. 
+
+제6조 (이용자가입 및 자격상실) 
+1) 이용자는 “INBYU”가 요구하는 개인정보를 입력하고 본 약관에 대하여 동의 여부를 묻는 박스를 클릭하여 체크표시를 함으로써 가입서비스를 이용할 수 있습니다.
+2) 서비스 가입 이후 세부내용은 보험사가 제공하는 보험약관에 따르며 본 약관에 정하지 않은 사항은 보험사가 정한 약정에 따릅니다.
+3) “INBYU”는 이용자가 다음 각호의 1에 해당하는 경우 자격을 상실케 할 수 있습니다.
+가. 위법하게 서비스를 이용하는 경우 
+나. 가입 신청 시에 허위 내용을 등록한 경우
+다. 다른 사람의 “INBYU” 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우
+라. “INBYU”를 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+3) “INBYU”는 이용자에게 서비스를 제공하기 위한 목적으로 개인정보를 이용할 수 있습니다. 
+
+제7조 (“INBYU” 등의 의무) 
+1) “INBYU”는 안정적인 서비스 제공을 위하여 지속적으로 노력하며, 이용자로부터 민원이 접수되는 경우 성실히 응대합니다. 다만, 필요한 경우 제휴사가 대신 응할 수 있습니다. 
+2) “INBYU”는 다음 각호의 1에 해당하는 경우 서비스의 전부 또는 일부를 제한하거나 중지할 수 있습니다. 
+가. 컴퓨터 등 정보통신설비의 보수점검․교체 및 고장, 통신의 두절 등의 사유가 발생한 경우
+나. 서비스의 근간이 되는 기간통신사업자의 망 서비스 제공 중지 
+다. 국가비상사태, 정전, 이용자의 폭주 기타 불가항력적인 경우 
+라. 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우
+3) “INBYU”가 서비스 제공을 제한하거나 중지한 때에는 그 사유 및 제한기간 등을 제3조 1)항의 방법으로 지체 없이 이용자에게 알립니다. 
+4) 이용자는 이 약관에서 규정하는 사항과 서비스 이용안내 또는 주의사항 등 “INBYU”가 고지하는 사항을 준수합니다. 
+5) 이용자는 개인정보의 부정사용이 발생하지 않도록 유의하여야 하며, 부정사용을 알게 된 경우 즉시 “INBYU”에 알려 피해방지에 협력합니다. 
+6) 이용자는 서비스에 관한 권리의무의 일부 또는 전부를 제3자에게 양도하거나 담보로 제공할 수 없습니다. 
+
+제8조 (개인정보의 위탁)
+"INBYU"는 수집된 개인정보의 취급 및 관리 등의 업무를 스스로 수행함을 원칙으로 하나, 필요한 경우 업무의 일부 또는 전부를 "INBYU"가 선정한 회사에 위탁할 수 있습니다. 개인정보의 위탁에 관한 사항은 관련법령 및 "INBYU"가 정하는 "개인정보취급방침"에 정한 바에 따릅니다.
+
+제9조 (손해배상)
+"INBYU"는 "서비스"의 이용과 관련하여 "이용자"에게 발생한 "회사"측의 중과실에 의한 손해를 제외한 어떠한 손해에 관하여도 책임을 지지 않습니다.
+
+제10조 (분쟁의 해결) 
+1) “INBYU”와 이용자는 서비스와 관련하여 분쟁이 발생한 경우에 이를 원만하게 해결하기 위하여 노력합니다. 
+2) “INBYU”는 이용자로부터 제출되는 불만사항 및 의견을 우선적으로 처리하도록 노력하며 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보합니다.
+2) 전항의 규정에도 불구하고, 당사자간 분쟁으로 인하여 소송이 제기될 경우 서울중앙지방법원을 관할법원으로 합니다.
+3) “INBYU”와 이용자 간에 제기된 전자상거래 소송에는 국내법을 적용합니다.
+
+부칙
+이 약관은 2021년 02월 01일부터 시행합니다.
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm02">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>단체규약</h2>
+                        <pre>
+제1조 목적
+본 규약은 인바이유 주식회사(이하 “INBYU”)가 회원들의 청구서비스 이용에 관하여 “INBYU”와 회원간의 협약사항을 규정함을 그 목적으로 한다.
+
+제2조 내용
+“INBYU”가 본 단체규약에 동의하고 가입한 회원에게 제공하는 서비스의 종류는 청구서비스를 말한다.
+
+제3조 회원자격
+1) “INBYU”는 본 이용약관 및 단체규약에 동의하고 가입한 자들을 회원으로 하여 서비스가입을 위한 단체를 구성하며, 서비스가입에 동의한 각 회원들을 위하여 청구서비스 계약을 체결한다. 
+2) 본 규약에 동의한 회원은 이 규약의 당사자가 된다.
+3) 회원은 “INBYU”가 요구하는 개인정보를 입력하고 본 규약에 대하여 동의 여부를 묻는 박스를 클릭하여 체크표시를 함으로써 청구서비스를 이용 할 수 있는 회원자격을 얻게 된다. 
+4) 청구서비스에 따른 세부내용은 보험사가 제공하는 보험약관에 따르며 본 약관에 정하지 않은 사항은 “INBYU”와 보험사가 정한 약정에 따른다.
+
+제4조 청구서비스의 가입
+1) “INBYU”는 회원을 위하여 계약자로서 보험사와 청구서비스계약을 체결할 수 있다.
+2) 회원은 동의 절차를 거쳐 가입 신청을 한다.
+3) 회원은 본 규약 및 보통약관, 서비스상품 안내사항을 충분히 읽고 숙지한 후 가입 신청을 하며 요구하는 동의사항에 대해서 성실히 답한다.
+4) 회원은 “INBYU”를 계약자로 회원을 위하여 청구서비스계약을 체결함에 있어 회사가 일괄로 가입하는 방식에 동의 한다.
+제5조 기타사항
+1) “INBYU”는 기존 서비스의 변경, 새로운 서비스 출시, 법령의 개폐, 회원요구 사항이 있어 본 규약을 변경할 필요가 있는 경우 회원들을 위하여 이 규약을 즉시 변경 합니다. 그리고 변경된 규약은 즉시 효력을 발휘한다.
+2) “INBYU”는 규약에 직접적으로 영향을 받는 서비스를 이용하는 회원에게는 규약적용에 부 동의 하는지 의견을 구한다. 이때 규약에 부 동의 하는 회원은 해당 서비스를 이용하지 않거나 회원탈퇴를 할 수 있다.
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm03">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>개인(신용)정보 수집·이용에 관한 사항(인바이유)</h2>
+                        <pre>
+인바이유㈜는 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 귀하의 개인(신용) 정보를 다음과 같이 수집, 이용하고자 하며 귀하의 동의가 필요합니다.
+<strong>*개인(신용)정보의 수집•이용에 대한 동의를 거부하실 수 있으며 다만, 동의하지 않은 경우 본 청구서비스를 제공 받을 수 없습니다.</strong>
+
+▣. 개인(신용)정보의 수집 및 이용 목적
+청구서비스 가입 및 관리, 보험금 청구, 청구서비스 관련 민원처리 및 분쟁대응
+
+▣. 수집하는 개인(신용)정보 항목 및 내용
+성명, 생년월일, 성별, 휴대폰번호, 이메일 정보, 암호화된 동일인 식별정보(CI) 
+
+▣. 개인(신용)정보의 보유·이용 기간
+개인(신용)정보, 수집·이용 동의일로부터 거래종료 후 5년까지 보유·이용 (단, 거래종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지·적발, 민원처리 등 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관)
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm04">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>개인(신용)정보 수집·이용에 관한 사항(보험사)</h2>
+                        <pre>
+귀하가 보험금을 청구하는 보험사 및 인바이유㈜의 업무 수탁자는 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 귀하의 개인(신용) 정보를 다음과 같이 수집, 이용하고자 하며 귀하의 동의가 필요합니다.
+▣. 개인(신용)정보의 수집 및 이용 목적
+청구서비스 가입 및 보험사고 조사(보험 사기 조사 포함), 보험금지급관련 민원처리 및 분쟁대응
+
+▣. 수집하는 개인(신용)정보 항목 및 내용
+성명, 고유식별정보, 휴대폰번호, 이메일정보, 직장명, 직무, 금융계좌정보, 질병/상해정보(사고일자, 병원명, 약국명, 사고(발병)경위, 병명 또는 진단명, 청구서)
+고유식별정보는 개인정보보호법 제24조에 규정된(주민등록번호, 여권번호, 운전면허번호, 외국인등록번호)를 의미합니다.
+보험사고 조사(보험사기 조사 포함) 및 손해사정업무 수행과 관련하여 취득한 개인(신용) 정보[경찰, 공공기관, 의료기관 등으로부터 본인의 위임을 받아 취득한 각종 조사서, 증명서, 진료기록 등에 포함된 개인(신용)정보 포함]
+
+▣. 개인(신용)정보의 보유·이용 기간
+개인(신용)정보, 수집·이용 동의일로부터 거래종료 후 5년까지 보유·이용 (단, 거래종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지·적발, 민원처리 등 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관)
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm05">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>개인(신용)정보의 조회에 관한 사항(보험사)</h2>
+                        <pre>
+귀하가 보험금을 청구하는 보험사 및 인바이유㈜의 업무수탁자는 신용정보의 이용 및 보호에 관한 법률에 따라 본 계약과 관련하여 귀하의 개인(신용)정보를 다음과 같이 신용정보집중기관 및 보험요율 산출기관으로부터 조회하고자 합니다.
+▣. 개인(신용)정보의 조회목적
+보험금지급ㆍ심사(보험금청구서류 접수대행 서비스 포함) 및 보험 사고 조사(보험사기 조사 포함)
+
+▣. 조회할 개인(신용)정보
+신용정보집중기관 및 보험요율산출기관에서 수집·관리하는 보험계약정보, 보험금지급 관련 정보 (사고정보 포함)
+신용정보회사 및 통신사의 실명인증 및 본인인증을 위한 정보
+
+▣. 조회동의 유효기간 및 조회자의 개인(신용)정보 보유 이용 기간
+서비스 가입 고객의 개인 정보: 동의일로부터 거래종료 후 5년까지(단, 거래종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지·적발, 민원처리, 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관)
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm06">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>개인(신용)정보의 제공에 관한 사항(보험사)</h2>
+                        <pre>
+귀하가 보험금을 청구하는 보험사는 개인정보보호법 및 신용정보의 제공 및 보호에 관한 법률에 따라 귀하의 개인(신용)정보를 다음과 같이 제3자에게 제공하고자 하며 귀하의 동의가 필요합니다.
+▣. 개인(신용)정보를 제공받는 자 
+신용정보집중기관: 한국신용정보원, 생명보험협회, 손해보험협회 등 신용정보집중기관
+공공기관 등: 금융위원회, 국토해양부, 금융감독원, 보험요율산출기관 등 공공기관, 법령상 업무 수행기관(위탁사업자 포함)
+보험회사 등: 생명보험사, 손해보험사, 국내ㆍ국외 재보험사, 공제사업자 체신관서(우체국보험), 금융거래 관련 계좌개설 금융기관, 금융결제원
+업무수탁자 등: 보험금청구, 보험금지급· 심사 및 보험사고조사 등에 필요한 업무를 위탁 받은 자(보험사고조사업체, 손해사정업체, 의료기관ㆍ의사, 변호사, 위탁 콜센터 등)
+
+▣. 개인(신용)정보를 제공받는 자의 이용목적
+신용정보집중기관: 보험계약 및 보험금지급 관련 정보의 집중관리 및 활용 등 신용정보 집중기관의 업무
+공공기관 등: 보험업법 등 법령에 따른 업무수행(위탁업무 포함)
+보험회사 등: 보험사고조사(보험사기 조사 포함) 및 손해사정서비스 등 계약이행에 필요한 업무, 보험금 청구서류 접수대행 서비스, 진료비심사, 의료심사 및 자문, 금융거래 업무(보험료 및 보험금 등 출·수납)
+업무수탁자 등: 보험금청구, 보험금지급· 심사 및 보험사고조사 등에 필요한 업무
+
+▣. 제공하는 개인(신용)정보의 항목
+성명, 고유식별정보, 휴대폰번호, 이메일정보, 직장명, 직무, 금융계좌정보, 질병/상해정보(사고일자, 병원명, 약국명, 사고(발병)경위, 병명 또는 진단명, 청구서)
+    ※ 고유식별정보는 개인정보보호법 제24조에 규정된(주민등록번호, 여권번호, 운전면허번호, 외국인등록번호)를 의미합니다.
+
+▣. 보유 및 이용기간 
+제공 동의일로부터 개인(신용)정보를 제공받는 자의 목적을 달성할 때까지(최대 거래종료일로부터 5년) 단, 거래종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지·적발, 민원처리, 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm07">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>민감정보 및 고유식별정보의 처리에 관한 사항(보험사)</h2>
+                        <pre>
+귀하가 보험금을 청구하는 보험사는 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 상기의 개인(신용)정보에 대한 개별 동의 사항에 관하여 다음과 같이 귀하의 민감정보(질병·상해처리정보) 및 고유식별정보(주민등록번호·외국인등록번호•운전면허증번호)를 처리(수집·이용, 조회, 제공)하고자 합니다.
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layer full" id="layerTerm08">
+                <div class="container">
+                    <div class="contents terms">
+                        <h2>보험상품 및 서비스 소개를 위한 정보 활용 동의</h2>
+                        <pre>
+인바이유 주식회사는 「개인정보보호법」 및  「신용정보의 이용 및 보호에 관한 법률」에 따라 당사 보험상품 및 서비스 소개, 홍보 등을 위하여 귀하의 개인(신용)정보를 다음과 같이 수집·이용하고자 합니다.
+<strong>*본 동의는 청구서비스 가입에 필수적이지 않으며, 동의 하셨더라도 언제든 철회 가능합니다.</strong>
+
+▣. 수집항목
+이름, 성별, 생년월일, 휴대폰번호, 이메일정보, 서비스가입정보 
+
+▣. 수집·제공 목적
+보험상품 및 서비스 상담신청에 대한 응대, 우편·전화· 인터넷 등을 통한 보험상품 및 서비스에 대한 유익한 정보의 제공, 소개 및 가입 권유, 제공 안내, 이벤트· 행사의 안내 등 회사의 정상적인 영업에 관계된 행위
+
+▣. 보유·이용 기간
+- 동의일로부터 3년
+- “다른 법령에 따라 보존하여야 하는 경우” 또는 “별도의 동의를 받은 경우” 보유 및 이용 기간이 경과한 개인정보를 파기하지 아니하고 보존할 수 있습니다.
+                        </pre>
+                    </div>
+                    <div class="area-button fixed">
+                        <a href="javascript:;" class="btn btn-secondary e-close">닫기</a>
+                    </div>
+                </div>
+            </section>
+
+    </div>
+
+        <script src="../resources/js/event.js"></script>
+    </body>
+</html>

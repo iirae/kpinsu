@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        html, body { margin: 0; padding: 0; }
+        .error-wrap {
+            padding: 0 15px;
+            height: 100vh;
+            text-align: center;
+            word-break: keep-all;
+            background-color: #f0f0f0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        .error-wrap .icon {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: #fff;
+        }
+        .error-wrap .icon::before {
+            content: 'X';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            line-height: 100px;
+            font-family: 'Tahoma', Tahoma, 'Verdana', Verdana, Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 55px;
+            color: #dcdcdc;
+        }
+        .error-wrap .core {
+            margin: 40px 0 0;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a97fc;
+        }
+        .error-wrap .desc {
+            margin: 20px 0 0;
+            font-size: 15px;
+            color: #777;
+            line-height: 1.6;
+        }
+        @media (min-width: 1024px) {
+            .error-wrap .icon {
+                width: 160px;
+                height: 160px;
+            }
+            .error-wrap .icon::before {
+                line-height: 160px;
+                font-size: 80px;
+            }
+            .error-wrap .core {
+                margin: 30px 0 0;
+                font-size: 30px;
+            }
+            .error-wrap .desc {
+                margin: 15px 0 0;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-wrap">
+        <i class="icon"></i>
+        <p class="core">
+            서비스 이용오류
+        </p>
+        <p class="desc">
+            일시적인 오류가 발생하여
+            현재 서비스 이용이 원활하지 않습니다.<br />
+            잠시 후 다시 시도해주세요.
+        </p>
+    </div>
+
+</body>
+</html>

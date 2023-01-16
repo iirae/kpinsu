@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">고객 접촉이력</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents page-contact-history" id="contents">
+                    <!-- data 없을 경우 -->
+                    <div class="section-empty center">
+                        <p>접촉 이력이 없습니다.</p>
+                    </div>
+
+                    <!-- data 있을 경우 -->
+                    <ul class="history-list">
+                        <li class="message">2021.06.22 09:00:11</li>
+                        <li class="call">2021.06.22 09:00:11</li>
+                        <li class="kakaotalk">2021.06.22 09:00:11</li>
+                        <li class="message">2021.06.22 09:00:11</li>
+                        <li class="call">2021.06.22 09:00:11</li>
+                        
+                        <!-- 더보기 시 추가되는 영역 -->
+                    </ul>
+
+                    <div class="area-button more">
+                        <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

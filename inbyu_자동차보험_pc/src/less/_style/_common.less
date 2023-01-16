@@ -1,0 +1,335 @@
+//* class ================================================================== */
+.set-img-retina (@file-1x; @file-2x; @width-1x; @height-1x) { // retina 이미지 처리, 보강 필요
+    background-image: url("@{file-1x}");
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+}
+
+//* less ================================================================== */
+
+/* 컨텐트 하단 여백 */
+.bottom-spacer {
+    clear: both;
+    margin-top: 40px;
+    margin-bottom: -1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.section-title {
+    margin: 0 0 60px 0;
+    overflow: visible;
+    .core {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.38;
+        color: @secondary;
+    }
+    .desc {
+        margin: 10px 0 0;
+        font-size: 16px;
+        line-height: 1.38;
+        color: #636b73;
+    }
+    .action {
+        margin-top: 20px;
+    }
+    .event {
+        position: relative;
+        margin: 15px -5px 0 -5px;
+        a {
+            display: block;
+        }
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #212529;
+        border-radius: 10px;
+        background-color: rgba(72, 172, 255, 0.3);
+        .icon {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            .set-icon(80px, 74px, 'custom/icon_title_event', true);
+            @media (max-width: 349px) {
+                display: none;
+            }
+        }
+
+    }
+}
+
+.modal-container {
+    .md-modal-module {
+        min-height: 100%;
+    }
+    .md-modal-head {
+        text-align: right;
+        .close .icon {
+            position: relative;
+            margin: 10px;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -14px 0 -1px;
+                width: 2px;
+                height: 28px;
+                background-color: #000;
+                border-radius: 2px;
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    .md-modal-body {
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 450px;
+        margin-bottom: 35px;
+        // box-sizing: border-box;
+        // -webkit-overflow-scrolling: touch;
+    }
+    .md-modal-foot {
+        // position: fixed;
+        // bottom: 0;
+        // left: 0;
+        // right: 0;
+        margin-bottom: 35px;
+        padding: 0 24px 0;
+        background-color: #fff;
+    }
+    .modal-title {
+        padding: 10px 0 20px 0;
+        h3 {
+            margin: 0;
+            color: @secondary;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .desc {
+            margin: 10px 0 0;
+            font-size: 15px;
+            color: #444b52;
+            line-height: 1.4;
+        }
+    }
+    @media only screen and (min-device-width:375px) and (min-device-height:812px) and (-webkit-min-device-pixel-ratio:2) {
+        .md-modal-body {
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-bottom: constant(safe-area-inset-bottom);
+        }
+        .md-modal-foot {
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-bottom: constant(safe-area-inset-bottom);
+        }
+    }
+}
+
+.modal-container-up {
+    display: none;
+    position: fixed;
+    z-index: 110;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 16px 16px 0 0;
+    background-color: #fff;
+
+    // visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transform: translate(0, 100%);
+    transition:
+        visibility 0s linear .4s,
+        z-index 0s linear .4s,
+        opacity .4s @base-easing 0s,
+        transform .4s @base-easing 0s;
+    .scroll-holder {
+        margin: 24px 0 0;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 240px;
+        max-height: 43vh;
+         -webkit-overflow-scrolling: touch;
+    }
+    > .holder {
+        margin: 30px;
+    }
+    .section-button {
+        margin: 0 20px 30px 20px;
+    }
+    @media only screen and (min-device-width:375px) and (min-device-height:812px) and (-webkit-min-device-pixel-ratio:2) {
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
+    &.in {
+        display: block;
+    }
+    &.anim {
+        // visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        transform: translate(0, 0);
+        transition:
+            visibility 0s linear 0s,
+            z-index 0s linear 0s,
+            opacity .4s @base-easing 0s,
+            transform .4s @base-easing 0s;
+    }
+}
+
+.is-modal-up {
+    overflow: hidden;
+}
+
+.agreement-view {
+    line-height: 1.43;
+    :first-child {
+        margin-top: 0;
+    }
+}
+
+.toggler {
+    .item {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+// 인바이유몰 공통
+.common-kpinsu { 
+    &.header {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1200px;
+       .head-logo {
+            margin: 0;
+            text-align: left;
+            font-size: 0;
+            a {
+                display: block;
+            }
+            span {
+                display: inline-block;
+                font-size: 1rem;
+                &:not([style*="display: none"]) + span {
+                    &::before {
+                        content: "";
+                        position: relative;
+                        top: 43px;
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        vertical-align: top;
+                        background: url("https://wfs.inbyu.com/images/img_partner/x.png") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            img {
+                height: 100px;
+            }
+        }
+    }
+    &.footer {
+        padding-bottom: 24px;
+        background: #444b52;
+        .terms ul, .company, .copyright {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1150px;
+        }
+        .terms {
+            padding: 14px 0;
+            border-bottom: 1px solid #3c3c3c;
+            ul {
+                overflow: hidden;
+                list-style: none;
+            }
+            li {
+                float: left;
+                & + li {
+                    margin-left: 20px;
+                }
+            }
+            a {
+                color: #cbd3dc;
+            }
+        }
+        .company {
+            overflow: hidden;
+            padding-top: 20px;
+            span, a {
+                font-size: 12px;
+                color: #adb5bd;
+                line-height: 1.8;
+            }
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                color: #cbd3dc;
+                text-align: left;
+            }
+            .tel {
+                display: block;
+                font-size: 26px;
+            }
+            .cs {
+                float: right;
+                margin-top: -22px;
+                width: 250px;
+                text-align: right;
+            }
+            .information {
+                float: left;
+                width: calc(100% - 250px);
+            }
+            .details {
+                margin-top: 10px;
+                text-align: left;
+                span {
+                    & + span {
+                        &::before {
+                            content: "";
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .pipe {
+                display: inline-block;
+                margin: 0 4px;
+                width: 1px;
+                min-width: 0;
+                height: 10px;
+                min-height: 0;
+                background: #797979;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #808992;
+            text-align: left;
+        }
+    }
+}

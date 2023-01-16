@@ -1,0 +1,150 @@
+// .col 크기 구하기
+.col(@size: 640, @full: @base-wrap-width, @important: false) when (@important = true){
+    width: percentage(@size / @full) !important;
+}
+.col(@size: 640, @full: @base-wrap-width, @important: false) when (@important = false){
+    width: percentage(@size / @full);
+}
+.full() {
+    width: 100%;
+}
+.reset() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+}
+.sr-only() {
+    box-sizing: content-box;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    font-family: a;
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    color: transparent;
+}
+.ir() {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    word-break: keep-all;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .em,
+    em {
+        position: absolute;
+        z-index: -1;
+        visibility: hidden;
+        text-indent: -1000px;
+    }
+}
+.focus-only() { // skip to 장치
+    display: block;
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .8);
+    overflow: hidden;
+    text-align: center;
+    &:focus,
+    &:hover,
+    &:active {
+        z-index: 1000;
+    }
+}
+.uppercase() { text-transform: uppercase; }
+.lowercase() { text-transform: lowercase; }
+.capitalize() { text-transform: capitalize; }
+.nowrap() {
+	word-wrap: break-word;
+	word-break: keep-all;
+	white-space: nowrap;
+}
+.pre-line() {
+    white-space: pre-line;
+    *white-space: pre;
+    word-wrap: break-word;
+}
+.break-all() { word-break: break-all; }
+.ellipsis() {
+    display: inline;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal !important;
+    word-break: keep-all;
+    white-space: nowrap;
+    width: 99%;
+    &.block {
+        display: block;
+    }
+}
+.strike() { text-decoration: strike !important; }
+.underline() { text-decoration: underline; }
+.no-select() {
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.clearfix() {
+    clear: both;
+    *zoom: 1;
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+.border-box() { box-sizing: border-box; }
+.content-box() { box-sizing: content-box; }
+.scroll-y() {
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.no-drag() { user-select: none; }
+.pos-relative() { position: relative; }
+.pos-absolute() { position: absolute; }
+.pull-left() { float: left !important; }
+.pull-right() { float: right !important; }
+.text-left() { text-align: left !important; }
+.text-right() { text-align: right !important; }
+.text-center() { text-align: center !important; }
+
+.icon() {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    backface-visibility: hidden;
+    transition: opacity .2s;
+    em {
+        .sr-only();
+        width: 0 !important;
+    }
+}

@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"] {
+  padding: 6px 0;
+  font-size: 16px;
+  color: inherit;
+  font-weight: 500;
+  border: solid #ced4da;
+  border-width: 0 0 1px 0;
+
+  &::placeholder {
+    color: #adb5bd;
+  }
+
+  &.text-security {
+    -webkit-text-security:disc;
+  }
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px; 
+  height: 1px;
+  border: 0 !important;
+  outline-style: none;
+  caret-color: $color-primary;
+  & + label {
+    cursor: pointer;
+  }
+}
+
+input[type="checkbox"] {
+  & + label {
+    display: block;
+    padding-left: 30px;
+    color: #636b73;
+    background: {
+      image: url("../img/ico_chk_sm.svg");
+      repeat: no-repeat;
+      position: 0 center;
+      size: 24px auto;
+    }
+  }
+
+  &:checked + label {
+    color: #212529;
+    background-image: url("../img/ico_chk_sm_on.svg");
+  }
+
+  &.all-check {
+    & + label {
+      padding-left: 38px;
+      font-size: 16px;
+      line-height: 38px;
+      font-weight: 500;
+      background: {
+        image: url("../img/ico_chk.svg");
+        size: 28px auto;
+      }
+    }
+
+    &:checked + label {
+      background-image: url("../img/ico_chk_on.svg");
+    }
+  }
+
+}
+  
+input[type="radio"] {
+  & + label {
+    position: relative;
+    display: block;
+    padding-left: 28px;
+    font-size: 16px;
+    color: #adb5bd;
+    line-height: 20px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      display: block;
+      margin-top: -2px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      width: 20px;
+      height: 20px;
+      border: solid 1px #ced4da;
+    }
+    &::after {
+      opacity: 0;
+      width: 12px;
+      height: 12px;
+      background: #636b73;
+      transition: opacity 0.2s;
+      backface-visibility: hidden;
+    }
+  }
+
+  &:checked + label {
+    color: #444b52;
+    &::before {
+      border-color: #636b73;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.form-file {
+  overflow: hidden;
+  position: relative;
+  width: 94px;
+  height: 94px;
+  border: solid 1px #adb5bd;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  input {
+    & + label {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background: url("../img/ico_add.svg") no-repeat center;
+      background-size: 18px auto;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .btn-delete {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.list-file {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 9px 0 0 9px;
+    width: calc( (100% - 18px) / 3);
+    &:nth-of-type(3n + 1) {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.icon {
+    &.more {
+        .set-icon(48px, 48px, 'common/icon_more', true);
+    }
+}
+
+i {
+    em {
+        &:extend(.sr-only);
+    }
+}
+
+span.pipe {
+    position: relative;
+    em {
+        .sr-only();
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        width: 1px;
+    }
+}
+
+span.pipe {
+    margin: 0 9px 0 7px;
+    &::before {
+        transform: translate(0, -35%);
+        height: 12px;
+        background: #dddedd;
+    }
+}
+
+/* badge */
+// span.badge {
+//     display: inline-block;
+//     padding: 3px 10px;
+//     border: solid 1px #e5e5e5;
+//     // background-color: #fff;
+//     font-size: 14px;
+//     color: @primary;
+//     letter-spacing: -0.5px;
+//     .kor();
+//     &.secondary {
+//         color: #00afff;
+//     }
+// }

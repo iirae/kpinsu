@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">소속된 회사를<br>등록해 주세요</h1>
+                    <div class="progressbar"><span class="col-3 step-2"></span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <div class="form-group">
+                            <strong class="input-label">회사명</strong>
+                            <span class="f-text">
+                                <input type="text" value="KP보험서비스" readonly>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <strong class="input-label">부서명</strong>
+                            <span class="f-text">
+                                <input type="text" placeholder="소속된 부서를 입력해 주세요" maxlength="10">
+                            </span>
+                        </div>
+
+                        <section class="section-document mt-m">
+                            <h2 class="text-caption">증빙 서류 첨부 (명함, 조직도, 임명장 등)</h2>
+                            <p class="text-desc">소속과 부서를 식별할 수 있는 증빙서류<br> (명함, 조직도, 임명장 등) 이미지를 첨부해 주세요.</p>
+                            <div class="file-wrap">
+                                <!-- 첨부 파일이 없을 경우 -->
+                                <div class="empty">
+                                    <input type="file" id="file" class="blind"><label for="file"><i class="icon camera"></i>첨부파일이 없습니다.<br>해당 영역을 터치한 후 이미지를 첨부해 주세요.</label>
+                                </div>
+                                <!-- 첨부 파일이 있을 경우 -->
+                                <div class="has">
+                                    <ul class="list-file">
+                                        <!-- 이미지 첨부시 -->
+                                        <li class="form-file">
+                                            <span class="inner attached"><!-- 파일 추가 시 attached class 추가 -->
+                                                <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                <a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"></a>
+                                            </span>
+                                        </li><!-- // 이미지 첨부시 -->
+                                        <!-- 파일이 pdf일 경우 -->
+                                        <li class="form-file">
+                                            <span class="inner attached pdf"><!-- 파일 추가 시 attached class 추가, pdf 일 경우 pdf 클래스 추가, img 태그 삭제 -->
+                                                <a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"></a>
+                                            </span>
+                                        </li><!-- //파일이 pdf일 경우 -->
+                                        <li class="form-file">
+                                            <span class="inner">
+                                                <input type="file" id="file3" class="blind">
+                                                <label for="file3"><span class="blind">첨부하기</span></label>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="text-info mt-s">
+                                <li>* <em class="text-em">50MB 이하</em>까지 첨부 가능합니다. <span class="sub right">(<em>27</em>/50MB)</span></li>
+                                <!-- 
+                                    <span class="sub right">(0/50MB)</span>
+                                    <span class="sub right">(<em>27</em>/50MB)</span>  0 이상 일 경우에 em 안에 값 넣기
+                                    <span class="sub right">(<em class="text-error">57</em>/50MB)</span>  50 이상 일 경우에 em 에 class text-error 넣기
+                                 -->
+                                <li>* 이미지파일(JPG, PNG, GIF) 최대 3장 등록 가능합니다.</li>
+                            </ul>
+
+                        </section>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary">다음</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+                
+                // 회사 검색
+                $body.on('keyup', '#searchCompany', function(e) {
+                    const $this = $(this),
+                          $result = $($('.result-area'));
+                    let hasValue = $this.val().length > 0;
+                    
+                    hasValue ? $result.addClass('show') : $result.removeClass('show');
+                });
+                $body.on('click', '.e-clear-input', function(e) {
+                    const $this = $(this),
+                          $result = $($('.result-area'));
+                    
+                    $result.removeClass('show');
+                });
+
+                // 회사 선택
+                $body.on('click', 'input[name="chooseCompany"]', function(){
+                    const $this = $(this),
+                          $input = $('#company'),
+                          $findParentLayer = $this.closest('.layer'),
+                          $findParentWrap = $($input.closest('.form-group'));
+                    let checkedCompanyVal = $this.siblings('label').text();
+
+                    $input.val(checkedCompanyVal)
+
+                    closeLayer($findParentLayer);
+                });
+
+                // indicator 호출
+                // showIndicator();
+                // hideIndicator();
+
+            });
+        </script>
+    </body>
+</html>

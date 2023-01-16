@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">설계사님께서<br>등록하신<br><em>고객리스트예요</em></h1>
+                </header>
+                <div class="contents pt-0 pb-0" id="contents">
+                    <div class="section-customer-list">
+                        <div class="area-button mt-40">
+                            <a href="#layerWay" class="btn btn-normal e-layer">신규 고객 등록하기</a>
+                        </div>
+
+                        <div class="addr-book"><!-- 메뉴 상세보기 펼치기 필요 시 expand-detail 클래스 추가 -->
+                            <div class="filter-wrap">
+                                <div class="form-group search filter">
+                                    <span class="f-text"><input type="search" placeholder="고객명 또는 전화번호 검색"></span>
+                                    <a href="#customerList" class="btn-icon filter e-tooltip-layer" title="고객 필터링하기"></a>
+                                    <button class="btn-icon clear e-clear-input" title="입력 문구 삭제"></button>
+                                </div>
+                                <!-- 목록이 있는 경우 노출 -->
+                                <div class="optional">
+                                    <a href="javascript:;" class="text-link">담보, 보장 금액으로 찾기</a>
+                                </div><!-- //목록이 있는 경우 노출 -->
+                            </div>
+                            <div class="status">
+                                <span>등록 고객 <strong>10</strong>명</span>
+                                <div class="buttons">
+                                    <button type="button" class="btn-icon show-type e-expand-detail" title="상세 펼쳐보기"></button>
+                                    <div class="module-tip">
+                                        <button type="button" class="btn-icon additional e-tip" title="정렬방식 더보기"></button>
+                                        <div class="menu">
+                                            <ul>
+                                                <li><button type="button">등록순 정렬</button></li>
+                                                <li><button type="button">이름순 정렬</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- data 없을 경우 -->
+                            <div class="section-empty customer">
+                                <i class="icon send-fail"></i>
+                                <p>등록된 고객이 없습니다.<br>고객 정보를 등록해 주세요.</p>
+                                <div class="area-button">
+                                    <a href="#layerWay" class="btn btn-primary e-layer">고객 정보 등록하기</a>
+                                </div>
+                            </div>
+
+                            <ul class="list mt-s">
+                                <!-- one -->
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(KP보험서비스_서비스KP보험서비스_서비스)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                        <li><button type="button">삭제하기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <em class="badge">보장분석</em>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="manage">
+                                                <div class="tags"><!-- 10개 다 뿌리셔도 최대 2줄만 노출되도록 처리 되었음. bg 컬러값은 그룹 등록 시 전달 예정 -->
+                                                    <em class="tag" style="background: #E2F7F9;">회사</em>
+                                                    <em class="tag" style="background: #FAE6E5;">DB고객</em>
+                                                    <em class="tag" style="background: #DBE0F6;">강남</em>
+                                                </div>
+                                                <span class="date">접촉일 2021.03.03</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li><!-- //one -->
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(KP보험서비스_서비스KP보험서비스_서비스)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                        <li><button type="button">삭제하기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <!-- 보장분석 안되었을 경우 badge만 없으면 됨 -->
+                                        </div>
+                                        <div class="detail">
+                                            <div class="manage">
+                                                <div class="tags">
+                                                </div>
+                                                <span class="date">접촉일 -</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(직장)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                        <li><button type="button">삭제하기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <em class="badge">보장분석</em>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="manage">
+                                                <div class="tags">
+                                                    <em class="tag" style="background: #E2F7F9;">회사</em>
+                                                    <em class="tag" style="background: #FAE6E5;">DB고객</em>
+                                                    <em class="tag" style="background: #DBE0F6;">강남</em>
+                                                    <em class="tag" style="background: #E2F7F9;">가나다라마바사아자차카타파하</em>
+                                                    <em class="tag" style="background: #FAE6E5;">DB고객</em>
+                                                    <em class="tag" style="background: #DBE0F6;">강남</em>
+                                                    <em class="tag" style="background: #E2F7F9;">DB고객</em>
+                                                    <em class="tag" style="background: #FAE6E5;">케이피보험서비스</em>
+                                                    <em class="tag" style="background: #DBE0F6;">강남</em>
+                                                </div>
+                                                <span class="date">접촉일 2021.03.03</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <div class="area-button more">
+                                <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- layer: 등록방법 선택  -->
+        <section class="layer bottom layer-way" id="layerWay">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-headline-6">등록방법을 선택하세요.</h2>
+                    </header>
+                    <div class="content">
+                        <ul class="list">
+                            <li><a href="javascript:;">직접 등록하기</a></li>
+                            <li><a href="javascript:;">주소록에서 불러오기</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 등록방법 선택  -->
+
+        <!-- alert 용 -->
+        <section class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <header class="head">
+                        <h2>사용자 연락처 접근 요청</h2>
+                    </header>
+                    <div> 
+                        <p>접근 허용 시 기기 등록된 연락처를<br>케어플 고객 관리에 추가할 수 있습니다.<br>접근을 허용하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-secondary e-close">취소</button>
+                    <button class="btn btn-primary">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+        <div class="tooltip-layer layer-customer-filter" id="customerList">
+            <div class="inner">
+                <header class="head">
+                    <h2>필터 조건을 선택하세요.</h2>
+                    <button class="btn btn-default small">초기화<i class="icon refresh"></i></button>
+                </header>
+                <div class="content">
+                    <section class="section">
+                        <h3>보장분석</h3>
+                        <ul>
+                            <li><input type="checkbox" id="haveInfo"><label for="haveInfo">정보 있음</label></li>
+                            <li><input type="checkbox" id="dontHaveInfo"><label for="dontHaveInfo">정보 없음</label></li>
+                        </ul>
+                    </section>
+                    <section class="section">
+                        <h3>접촉일</h3>
+                        <ul>
+                            <li><input type="checkbox" id="periodAll"><label for="periodAll">전체</label></li>
+                            <li><input type="checkbox" id="periodWeek"><label for="periodWeek">일주일 이상</label></li>
+                            <li><input type="checkbox" id="periodMonth"><label for="periodMonth">한 달 이상</label></li>
+                            <li><input type="checkbox" id="periodyear"><label for="periodyear">일 년 이상</label></li>
+                        </ul>
+                    </section>
+                    <section class="section">
+                        <h3>그룹</h3>
+                        <ul class="expandable">
+                            <li><input type="checkbox" id="groupNone"><label for="groupNone">그룹없음</label></li>
+                            <li><input type="checkbox" id="group01"><label for="group01">가망고객</label></li>
+                            <li><input type="checkbox" id="group02"><label for="group02">보유고객</label></li>
+                            <li><input type="checkbox" id="group03"><label for="group03">리쿠르팅</label></li>
+                            <li><input type="checkbox" id="group04"><label for="group04">가족</label></li>
+                            <li><input type="checkbox" id="group05"><label for="group05">동창</label></li>
+                            <li><input type="checkbox" id="group06"><label for="group06">고향</label></li>
+                            <li><input type="checkbox" id="group07"><label for="group07">직장</label></li>
+                        </ul>
+                        <div class="area-more">
+                            <button class="btn btn-more e-more">더보기<i class="icon more"></i></button>
+                        </div>
+                    </section>
+                </div>
+                <div class="area-button mt-l">
+                    <button class="btn btn-primary e-sample" type="button">필터적용하기</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 더보기 메뉴 클릭 시 닫기
+                $body.on('click', '.module-tip .menu button', function(e) {
+                    $($(e.currentTarget)).parents('.module-tip').removeClass('show');
+                });
+
+                // 필터 적용하기 클릭 후 ui 처리 참고
+                $body.on('click', '.e-sample', function(e) {
+                    e.preventDefault();
+                    let findParent = $(this).parents('.tooltip-layer');
+
+                    closeLayer(findParent);
+                    $('.e-tooltip-layer').removeClass('on');
+                });
+
+                // 필터 열기
+                $body.off('click', '.e-tooltip-layer').on('click', '.e-tooltip-layer', function(e) {
+                    e.preventDefault();
+                    let $this = $(e.target);
+                    $this.toggleClass('opened');     // 필터 버튼에 컬러 추가 시에는 on 추가/삭제
+                    filterLayer($this);
+                });
+
+            });
+
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

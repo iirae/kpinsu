@@ -1,0 +1,116 @@
+.dimmed {
+    z-index: 110;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-bk, 0.32);
+  
+    &.none-event {
+        pointer-events: none;
+    }
+  
+}
+  
+.layer {
+    display: none;
+    z-index:100;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+
+    &.show {
+        display: block;
+    }
+  
+    &-container {
+        z-index: 120;
+        position: relative;
+        margin: 0 auto;
+        background:$color-wh;
+        box-sizing: border-box;
+    }
+
+    &-contents {
+
+    }
+
+    .btn-area {
+        overflow: hidden;
+        border-radius: 0 0 6px 6px;
+        .btn {
+            border-radius: 0;
+        }
+    }
+
+    &.center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .layer-container {
+            width: calc(100% - 48px);
+            max-width: 500px;
+            border-radius: 6px;
+            box-shadow: 0 6px 10px 2px rgba(0, 0, 0, 0.14);
+        }
+        .layer-contents {
+            padding: 30px;
+            text-align: center;
+        }
+        .title {
+            margin-bottom: $spacing-s;
+            @include textStyle(17px, 1.53, 500);
+            color: $color-bk;
+        }
+        .form-group {
+            &.close {
+                position: absolute;
+                bottom: -44px;
+                left: 0;
+            }
+        }
+    }
+
+    &.bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+  
+        &.show {
+            .layer-container {
+            transform: translate3d(0, 0, 0);
+            transition: transform .35s;
+            }
+        }
+  
+        .layer-container {
+            transform: translate3d(0, 100%, 0);
+            padding: {
+                top: $spacing-r;
+                bottom: safe(bottom);
+            }
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px 10px 0 0;
+        }
+        .layer-contents {
+            padding: 0 $spacing-layout $spacing-m;
+        }
+        .layer-head {
+            padding: 10px $spacing-layout;
+            @include textStyle(22px, 1.64, 500);
+        }
+        .btn-area {
+            padding: 0 $spacing-layout;
+            .btn {
+                border-radius: 6px;
+            }
+        }
+    }
+}

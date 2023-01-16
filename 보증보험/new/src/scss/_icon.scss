@@ -1,0 +1,24 @@
+i.icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  line-height: 1;
+  text-align:center;
+  vertical-align: middle;
+  background: {
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+  backface-visibility: hidden;
+
+  &.umbrella {
+    width: 34px;
+    height: 50px;
+    background-image: url("../images/ico_umbrella.png");
+    @media screen and (min-width: 1024px) {
+      width: 74px;
+      height: 106px;
+    }
+  }
+
+}

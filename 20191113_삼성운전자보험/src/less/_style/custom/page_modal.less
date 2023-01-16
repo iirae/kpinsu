@@ -1,0 +1,199 @@
+.modal-container  {
+    .md-modal {
+        transform: translate(100%, 0);
+        transition:
+            visibility 0s linear .4s,
+            z-index 0s linear .4s,
+            opacity .4s base-easing 0s,
+            transform .4s base-easing 0s;
+    }
+    &.anim .md-modal {
+        visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        transform: translate(0, 0);
+        color: #cfcfcf;
+        transition:
+            visibility 0s linear 0s,
+            z-index 0s linear 0s,
+            opacity .4s base-easing 0s,
+            transform .4s base-easing 0s;
+    }
+}
+
+.md-modal-head {
+    text-align: right;
+    .back,
+    .close {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 56px;
+        height: 56px;
+    }
+    .back .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -1px 0 0 -9px;
+        width: 18px;
+        height: 2px;
+        background-color: #2e3338;
+        border-radius: 2px;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin: -1px 0 0;
+            width: 12px;
+            height: 2px;
+            transform-origin: left center;
+            background-color: #2e3338;
+            border-radius: 2px;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+    .close .icon {
+        position: relative;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 -1px;
+            width: 2px;
+            height: 20px;
+            background-color: #2e3338;
+            border-radius: 2px;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.md-modal-body {
+    padding: 0 24px 30px 24px;
+    overflow: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 86px);
+    -webkit-overflow-scrolling: auto;
+    // -webkit-overflow-scrolling:initial;
+}
+
+.modal-title {
+    margin: 20px 0 30px 0;
+    color: #0e1012;
+    .title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+    .is-dark & {
+        color: #e7e7e7;
+    }
+    @media (prefers-color-scheme: dark) {
+        color: #e7e7e7;
+    }
+}
+
+.table-md {
+    border-top: 1px #ced4da solid;
+    th,
+    td {
+        padding: 10px 8px;
+        font-sizE: 12px;
+        border-left: 1px #ced4da solid;
+        border-bottom: 1px #ced4da solid;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+    th {
+        color: #212529;
+    }
+    td {
+        color: #444b52;
+    }
+    thead th {
+        color: #212529;
+        background-color: #f1f3f5;
+    }
+    tbody {
+        th {
+            text-align: left;
+            font-weight: 400;
+        }
+    }
+    &.table-col {
+        th {
+            vertical-align: middle;
+        }
+    }
+    .is-dark & {
+        border-color: #595959;
+        th,
+        td {
+            border-color: #595959;
+        }
+        th {
+            color: #cfcfcf;
+        }
+        td {
+            color: #b8b8b8;
+        }
+        thead th {
+            color: #cfcfcf;
+            background-color: #000;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        border-color: #595959;
+        th,
+        td {
+            border-color: #595959;
+        }
+        th {
+            color: #cfcfcf;
+        }
+        td {
+            color: #b8b8b8;
+        }
+        thead th {
+            color: #cfcfcf;
+            background-color: #000;
+        }
+    }
+}
+
+.modal-high-class {
+    p {
+        margin: 0 0 12px 0;
+        font-size: 15px;
+        line-height: 1.47;
+        color: #636b73;
+    }
+    @media (prefers-color-scheme: dark) {
+        p {
+            color: #a0a0a0;
+        }
+    }
+}
+
+.is-modal {
+    overflow: hidden;
+}

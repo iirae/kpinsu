@@ -1,0 +1,23 @@
+/* mediaqueries */
+@sm               : ~"(max-width: 767px)";
+@md               : ~"(min-width : 768px) and (max-width: 1023px)";
+@lg               : ~"(min-width : 1024px)"; // xl을 포함
+@xl               : ~"(min-width : 1921px)";
+
+@phone            : ~"(min-width : 1px)";
+@tablet           : ~"(min-width : 768px)";
+@desktop          : ~"(min-width : 1024px)";
+@wide             : ~"(min-width : 1221px)";
+@largescreen      : ~"(min-width : 1921px)";
+
+@phone-only       : @sm;
+@phone-portrait   : ~"(min-width : 1px) and (orientation: portrait)";
+@phone-landscape  : ~"(min-width : 1px) and (orientation: landscape)";
+
+@tablet-only      : @md;
+@tablet-portrait  : ~"(min-width : 768px) and (orientation: portrait)";
+@tablet-landscape : ~"(min-width : 768px) and (orientation: landscape)";
+
+@mobile-only      : ~"(max-width: 1024px)";
+
+@desktop-only     : ~"(min-width: 1025px)";

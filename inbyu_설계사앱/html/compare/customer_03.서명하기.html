@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="icon" href="../../resources/img/favicon_32_32.ico">
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div>
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="logo"><img src="../../resources/img/h1_logo.png" alt="케어플"
+                    srcset="../../resources/img/h1_logo.png 1x,
+                    ../../resources/img/h1_logo_2x.png 2x"></h1>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">상품비교설명확인서<br>서명하기</h1>
+                </header>
+                <div class="contents" id="contents">
+                    <div class="section-confirmation">
+                        <p class="text-desc">본인은 상기 보험상품에 청약하면서 3가지 이상의 동종 또는 유사상품에 대하여</p>
+                        <ol class="list">
+                            <li>① 보험금 및 지급사유</li>
+                            <li>② 보험기간</li>
+                            <li>③ 보험료</li>
+                            <li>④ 보험금을 지급하지 아니하는 사유</li>
+                            <li>⑤ 해지환급금에 관한 사항</li>
+                            <li>⑥ 갱신 등 재계약에 관한 사항</li>
+                            <li>⑦ 해당 보험상품의 차별화된 특징 등에 대하여 비교설명 들었음</li>
+                        </ol>
+                    </div>
+                    <section class="mt-m section-sign">
+                        <header>
+                            <h2 class="text-sub-head">'설명 들었음'을 동일하게 써주세요.</h2>
+                            <button type="button" class="btn btn-normal small">지우기</button>
+                        </header>
+                        <div class="sign-box text"><!-- sign --></div>
+                    </section>
+                    <section class="mt-m section-sign">
+                        <header>
+                            <h2 class="text-sub-head">서명란에 '본인사인'을 해주세요.</h2>
+                            <button type="button" class="btn btn-normal small">지우기</button>
+                        </header>
+                        <div class="sign-box"><!-- sign --></div>
+                    </section>
+                </div>
+                <div class="area-button">
+                    <a href="javascript:;" class="btn btn-primary">상품비교설명확인서 작성완료</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- alert 용 title 포함 -->
+        <section class="layer center layer-alert" id="layerAlert">
+            <div class="container">
+                <div class="content p-reset">
+                    <header class="head">
+                        <h2>인증실패</h2>
+                    </header>
+                    <div> 
+                        <p>설계사님께서 지정한 고객님의 정보와<br>고객님께서 인증한 성함, 휴대폰번호가 일치하지 않습니다.</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+        <!-- alert 용 title 미포함 / 첫 화면에 열려있어야 할 경우 show 클래스 추가 -->
+        <section class="layer center layer-alert" id="layerAlert">
+            <div class="container">
+                <div class="content p-reset">
+                    <div> 
+                        <p>상품비교설명서에 서명할 수 있는 유효시간이 초과되었습니다.<br>담당 설계사님께 새로운 링크를 요청해 주세요.</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+        <!-- alert 용 하단 버튼 2개 -->
+        <section class="layer center layer-alert" id="layerAlert">
+            <div class="container">
+                <div class="content p-reset">
+                    <div> 
+                        <p>상품비교설명확인서.pdf<br>파일을 여시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-secondary e-close">아니요</button>
+                    <button class="btn btn-primary e-close">네</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // mounted 시 실행
+                let winHeight = window.innerHeight;
+                setHeight(winHeight);
+
+                // layer open 참고
+                $body.on('click', '.e-layer', function (e) {
+                    e.preventDefault();
+                    let targetLayer = $($(e.currentTarget).attr('href'));
+
+                    openLayer(targetLayer);
+                });
+
+            });
+        </script>
+    </body>
+</html>

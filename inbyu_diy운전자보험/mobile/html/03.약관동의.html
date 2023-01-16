@@ -1,0 +1,211 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="inbyu : soo" />
+<meta name="copyright" content="inbyu" />
+<title>DIY운전자보험</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20210101" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20210101" />
+<script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<h1 class="sr-only">DIY운전자보험</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-step"><!-- section-step -->
+                    <div class="wrap is-full">
+                        <p>
+                            <span class="total">4</span> <em>단계 중 현재</em>
+                            <span class="current">2</span> <em>단계</em>
+                        </p>
+                    </div>
+                </div><!-- // section-step -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">보험가입 및 결제를 위해<br /> 약관에 동의해주세요</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-agreement"><!-- section-agreement -->
+                    <div class="wrap">
+                        <div class="core">
+                            <div class="checks">
+                                <input type="checkbox" name="all" id="all" />
+                                <label for="all">전체동의</label>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <ul class="list">
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc1" />
+                                        <label for="desc1">[필수] 서비스 이용약관</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.01.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc2" />
+                                        <label for="desc2">[필수] 단체보험 규약</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.02.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc3" />
+                                        <label for="desc3">[필수] 개인(신용)정보 수집·이용에 관한 사항</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.03.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc4" />
+                                        <label for="desc4">[필수] 개인(신용)정보의 조회에 관한 사항</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.04.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc5" />
+                                        <label for="desc5">[필수] 개인(신용)정보의 제공에 관한 사항</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.05.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc6" />
+                                        <label for="desc6">[필수] 단체보험계약 관련 사항</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.06.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc7" />
+                                        <label for="desc7">[필수] 민감정보 및 고유식별정보의 처리에 관한 사항</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.07.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                                <li>
+                                    <div class="checks is-simple">
+                                        <input type="checkbox" name="desc" id="desc8" />
+                                        <label for="desc8">[선택] 보험상품 및 서비스 소개를 위한 정보 활용 동의</label>
+                                    </div>
+                                    <a href="#modalAgreement" class="js-modal more" data-url="../html_ajax/agreement.08.html"><i class="icon"><em>약관 상세 보기</em></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bottom-spacer" aria-hidden="true"></div>
+                </div><!-- // section-agreement -->
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <div class="grid">
+                    <div class="col col-1-3">
+                        <a href="javascript:;" class="button large secondary"><span>이전</span></a>
+                    </div>
+                    <div class="col col-2-3">
+                        <a href="javascript:;" class="button large disabled submit"><span>다음</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<div id="modalAgreement" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-body">
+                <div class="modal-agreement"><!-- modal-agreement -->
+                    <h3 class="title">이용약관</h3>
+
+                    <h4 class="title">내용 작성</h4>
+
+                    <p>
+                        내용 작성
+                    </p>
+                </div><!-- // modal-agreement -->
+            </div>
+            <div class="md-modal-foot">
+                <a href="javascript:;" class="js-modal-close button full large secondary"><span>닫기</span></a>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 전체 동의
+    $document.on('change', '#all', function(e){
+        e.preventDefault();
+        var $this = $(this),
+            $item = $('.section-agreement .desc li'),
+            $submit = $('.submit');
+
+        if ($this.is(':checked')) {
+            $submit.removeClass('disabled').addClass('primary');
+            $item.find('input[type=checkbox]').prop('checked', true);
+        } else {
+            $item.find('input[type=checkbox]').prop('checked', false);
+            $submit.removeClass('primary').addClass('disabled');
+        }
+    });
+
+    // checkbox
+    $document.on('change', '.desc input[type=checkbox]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $target = $('.section-agreement .desc'),
+            $submit = $('.submit'),
+            $all = $('#all');
+
+        if( $target.find('li').length === $target.find('input[type=checkbox]:checked').length) {
+            $submit.removeClass('disabled').addClass('primary');
+            $all.prop('checked', true);
+        } else {
+            $submit.removeClass('primary').addClass('disabled');
+            $all.prop('checked', false);
+        }
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

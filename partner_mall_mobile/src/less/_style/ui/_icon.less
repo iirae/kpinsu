@@ -1,0 +1,38 @@
+i {
+    em {
+        &:extend(.sr-only);
+    }
+}
+
+span.pipe {
+    position: relative;
+    em {
+        .sr-only();
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        width: 1px;
+    }
+}
+
+.label {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    &.company {
+        color: @info;
+        background-color: #f1f3f5;
+    }
+    &.relationship {
+        color: @primary-text;
+        background-color: rgba(72, 172, 255, .15);
+    }
+}

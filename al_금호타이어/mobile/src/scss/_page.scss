@@ -1,0 +1,64 @@
+.article-info {
+  margin-top: 40px;
+  padding: 40px $spacer-row;
+  word-break: keep-all;
+  background: #f1f3f5;
+
+  .article-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.42;
+  }
+  .title {
+    margin: 30px 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .table-layout {
+    border-top: 1px solid #ced4da;
+    table {
+
+    }
+    th, td {
+      padding: 6px 10px 7px;
+      font-size: 14px;
+      color: #444b52;
+      border-bottom: 1px solid #ced4da;
+    }
+    th {
+      font-weight: 500;
+      background: #fff;
+    }
+    td {
+      border-left: 1px solid #ced4da;
+    }
+  }
+  ul {
+    li {
+      position: relative;
+      padding-left: 10px;
+      line-height: 1.6;
+      word-break: keep-all;
+      &::before {
+        content: "-";
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.section-bypass {
+  padding: 36px 0 0;
+  h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444b52;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="인바이유 자동차보험료 조회" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu 인바이유 자동차보험료 조회" />
+<meta property="og:title" content="인바이유 자동차보험료 조회" id="ogTitle" />
+<meta property="og:description" content="인바이유 자동차보험료 조회" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">인바이유 자동차보험료 조회</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">인바이유 자동차보험료 조회</h1>
+
+<div id="container"><!-- container -->
+
+    <div id="header"><!-- header : 투명 배경일때 is-transparent -->
+        <div class="container">
+            <div class="wrap">
+
+                <!-- include: common header -->
+                <div data-include-path="./include/header.html"></div>
+
+            </div>
+        </div>
+    </div><!-- // header -->
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="core">본인인증</h2>
+                        <p class="desc">
+                            다이렉트 자동차 보험료를 알아보기 위해<br />
+                            휴대전화 본인인증을 진행해주세요.
+                        </p>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-phone"><!-- section-phone -->
+                    <div class="wrap">
+                        <div class="item">
+                            <p class="subject">이름</p>
+                            <input type="text" class="text" placeholder="홍길동" />
+                        </div>
+                        <div class="item resident-number">
+                            <p class="subject">주민등록번호</p>
+                            <div class="grid">
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <input type="text" class="text" placeholder="앞 6자리" />
+                                    </div>
+                                </div>
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <input type="text" class="text" placeholder="뒤 7자리" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item phone">
+                            <p class="subject">휴대폰전화번호</p>
+                            <div class="grid">
+                                <div class="col core">
+                                    <div class="module">
+                                        <select class="select" required>
+                                            <option value="">통신사 선택</option>
+                                            <option value="1">SKT</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col desc">
+                                    <div class="module">
+                                        <input type="text" class="text" placeholder="010-1234-4567 " />
+                                        <a href="javascript:;" class="button small"><span>인증요청</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item code">
+                            <p class="subject">인증번호</p>
+                            <input type="text" class="text" placeholder="인증번호 입력" />
+                            <span class="time">03:00</span>
+                            <a href="javascript:;" class="button small"><span>재요청</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-phone -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <a href="javascript:;" class="button large disabled"><span>확인</span></a>
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+
+    // 인증번호
+    $document.on('click', '.phone .button', function(e){
+        e.preventDefault();
+
+        $('.code').addClass('in');
+        $(this).closest('.item').addClass('in');
+    });
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

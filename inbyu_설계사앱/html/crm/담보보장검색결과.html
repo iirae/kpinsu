@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <span class="al-right">
+                    <a href="javascript:;" class="btn-icon close"></a>
+                </span>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">설계사님께서<br>담보, 보장 금액으로 검색한<br><em>고객리스트예요</em></h1>
+                </header>
+                <div class="contents pt-0 pb-0" id="contents">
+                    <div class="section-customer-list">
+                        <div class="addr-book search-result">
+                            <div class="status">
+                                <span>등록 고객 <strong>10</strong>명</span>
+                            </div>
+
+                            <!-- data 없을 경우 -->
+                            <div class="section-empty customer">
+                                <i class="icon send-fail"></i>
+                                <p>검색 결과가 없습니다.</p>
+                            </div>
+
+                            <ul class="list mt-s">
+                                <!-- one -->
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(KP보험서비스_서비스KP보험서비스_서비스)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <em class="badge">보장분석</em>
+                                        </div>
+                                    </a>
+                                </li><!-- //one -->
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(KP보험서비스_서비스KP보험서비스_서비스)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <!-- 보장분석 안되었을 경우 badge만 없으면 됨 -->
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="module-customer">
+                                    <a href="javascript:;">
+                                        <div class="core">
+                                            <div class="personal">
+                                                <strong class="name"><span>김나박(직장)</span></strong>
+                                                <div class="info">1984. 09. 18(만 34세)</div>
+                                            </div>
+                                            <div class="sub module-tip">
+                                                <button class="btn-icon more e-tip" type="button" title="메뉴 더보기"></button>
+                                                <div class="menu">
+                                                    <ul>
+                                                        <li><button type="button">전화하기</button></li>
+                                                        <li><button type="button">카톡보내기</button></li>
+                                                        <li><button type="button">문자보내기</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-wrap">
+                                            <em class="badge">보장분석</em>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <div class="area-button more">
+                                <button class="btn btn-more">더보기<i class="icon more"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- alert 용 -->
+        <section class="layer center layer-alert" id="layerAlert"><!-- open 시 class show 추가 -->
+            <div class="container">
+                <div class="content p-reset">
+                    <header class="head">
+                        <h2>사용자 연락처 접근 요청</h2>
+                    </header>
+                    <div> 
+                        <p>접근 허용 시 기기 등록된 연락처를<br>케어플 고객 관리에 추가할 수 있습니다.<br>접근을 허용하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button class="btn btn-secondary e-close">취소</button>
+                    <button class="btn btn-primary">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+    </div>
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 더보기 메뉴 클릭 시 닫기
+                $body.on('click', '.module-tip .menu button', function(e) {
+                    $($(e.currentTarget)).parents('.module-tip').removeClass('show');
+                });
+
+            });
+
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

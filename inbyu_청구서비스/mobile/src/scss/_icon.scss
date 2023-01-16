@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+i.icon {
+  display: inline-block;
+  line-height: 1;
+  text-align:center;
+  vertical-align: middle;
+  background: {
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+  backface-visibility: hidden;
+
+  &.coin01 {
+    width: 70px;
+    height: 69px;
+    background-image: url("../img/img_coin01.png");
+  }
+
+  &.coin02 {
+    width: 49px;
+    height: 49px;
+    background-image: url("../img/img_coin02.png");
+  }
+
+  &.coin03 {
+    width: 52px;
+    height: 52px;
+    background-image: url("../img/img_coin03.png");
+  }
+
+  &.coin04 {
+    width: 25px;
+    height: 15px;
+    background-image: url("../img/img_coin04.png");
+  }
+
+  &.coin05 {
+    width: 15px;
+    height: 13px;
+    background-image: url("../img/img_coin05.png");
+  }
+
+  &.coin06 {
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/img_coin06.png");
+  }
+
+  &.scroll {
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/ico_main_arrow_down.svg");
+  }
+
+  &.check {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/ico_main_check.svg");
+  }
+
+  &.tel {
+    width: 22px;
+    height: 22px;
+    background-image: url("../img/ico_tel.svg");
+  }
+
+  &.headphone {
+    width: 22px;
+    height: 22px;
+    background-image: url("../img/ico_headphone.svg");
+  }
+
+  &.kakaopay {
+    margin: -2px 8px 0 0;
+    width: 39px;
+    height: 16px;
+    background-image: url("../img/img_logo_kakaopay.png");
+  }
+
+}
+
+i.insu-logo {
+  display: inline-block;
+  margin: 0 auto;
+  width: 60px;
+  height: 30px;
+  line-height: 1;
+  text-align:center;
+  vertical-align: middle;
+  background: {
+    image: url("../img/img_logo_insu_company.png");
+    repeat: no-repeat;
+    size: 180px auto;
+  }
+  backface-visibility: hidden;
+
+  &.samsung {
+    background-position: 0 0;
+  }
+  &.hyundai {
+    background-position: -60px 0;
+  }
+  &.db {
+    background-position: -120px 0;
+  }
+  &.kb {
+    background-position: 0 -30px;
+  }
+  &.meritz {
+    background-position: -60px -30px;
+  }
+  &.hanhwa {
+    background-position: -120px -30px;
+  }
+  &.nonghyup {
+    background-position: 0 -60px;
+  }
+  &.heungkuk {
+    background-position: -60px -60px;
+  }
+  &.lotte {
+    background-position: -120px -60px;
+  }
+  &.mg {
+    background-position: 0 -90px;
+  }
+  &.thek {
+    background-position: -60px -90px;
+  }
+  &.aig {
+    background-position: -120px -90px;
+  }
+  &.axa {
+    background-position: 0 -120px;
+  }
+  &.chubb {
+    background-position: -60px -120px;
+  }
+  &.bnp {
+    background-position: -120px -120px;
+  }
+
+  &.kyobo {
+    background-position: -120px -180px;
+  }
+  &.dongyang {
+    background-position: -60px -210px;
+  }
+  &.shinhan {
+    background-position: -120px -210px;
+  }
+  &.orange {
+    background-position: 0 -240px;
+  }
+  &.kdb {
+    background-position: -120px -240px;
+  }
+  &.lina {
+    background-position: 0 -270px;
+  }
+  &.life-planet {
+    background-position: -60px -270px;
+  }
+  &.metlife {
+    background-position: -120px -270px;
+  }
+  &.mirae {
+    background-position: 0 -300px;
+  }
+  &.prudential {
+    background-position: -120px -300px;
+  }
+  &.fubon {
+    background-position: 0 -330px;
+  }
+  &.hana {
+    background-position: -60px -330px;
+  }
+  &.abl {
+    background-position: -120px -330px;
+  }
+  &.aia {
+    background-position: 0 -360px;
+  }
+  &.dgb {
+    background-position: 0 -390px;
+  }
+  &.ibk {
+    background-position: -60px -390px;
+  }
+  &.epost {
+    background-position: 0 -450px;
+  }
+  &.ktculife {
+    background-position: -60px -450px;
+  }
+  &.cu {
+    background-position: 0 -480px;
+  }
+  &.suhyup {
+    background-position: -60px -480px;
+  }
+}
+
+.icon.insu {
+  display: inline-block;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  text-align:center;
+  vertical-align: middle;
+  background: {
+    image: url("../img/img_logo_insu_company_cir.png");
+    repeat: no-repeat;
+    size: 180px auto;
+  }
+  backface-visibility: hidden;
+
+  &.samsung {
+    background-position: 0 0;
+  }
+  &.hyundai {
+    background-position: -30px 0;
+  }
+  &.db {
+    background-position: -60px 0;
+  }
+  &.kb {
+    background-position: -90px 0;
+  }
+  &.meritz {
+    background-position: -120px 0;
+  }
+  &.hanhwa {
+    background-position: -150px 0;
+  }
+  &.nonghyup {
+    background-position: 0 -30px;
+  }
+  &.heungkuk {
+    background-position: -30px -30px;
+  }
+  &.lotte {
+    background-position: -60px -30px;
+  }
+  &.mg {
+    background-position: -90px -30px;
+  }
+  &.thek {
+    background-position: -120px -30px;
+  }
+  &.aig {
+    background-position: -150px -30px;
+  }
+  &.axa {
+    background-position: 0 -60px;
+  }
+  &.chubb {
+    background-position: -30px -60px;
+  }
+  &.bnp {
+    background-position: -60px -60px;
+  }
+
+  &.kyobo {
+    background-position: -60px -120px;
+  }
+  &.dongyang {
+    background-position: -60px -120px;
+  }
+  &.shinhan {
+    background-position: -150px -120px;
+  }
+  &.orange {
+    background-position: 0 -150px;
+  }
+  &.kdb {
+    background-position: -60px -150px;
+  }
+  &.lina {
+    background-position: -90px -150px;
+  }
+  &.life-planet {
+    background-position: -120px -150px;
+  }
+  &.metlife {
+    background-position: -150px -150px;
+  }
+  &.mirae {
+    background-position: 0 -180px;
+  }
+  &.prudential {
+    background-position: -60px -180px;
+  }
+  &.fubon {
+    background-position: -90px -180px;
+  }
+  &.hana {
+    background-position: -120px -180px;
+  }
+  &.abl {
+    background-position: -150px -180px;
+  }
+  &.aia {
+    background-position: 0 -210px;
+  }
+  &.dgb {
+    background-position: -90px -210px;
+  }
+  &.ibk {
+    background-position: -120px -210px;
+  }
+  &.epost {
+    background-position: 0 -270px;
+  }
+  &.ktculife {
+    background-position: -30px -270px;
+  }
+  &.cu {
+    background-position: -90px -270px;
+  }
+  &.suhyup {
+    background-position: -120px -270px;
+  }
+}

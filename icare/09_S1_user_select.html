@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>인바이유-보험금청구</title>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+      <a href="#" class="back"></a>
+      <a href="#" class="home">홈</a>
+    </div>
+
+    <div id="container" class="mb70">
+
+     <div class="termswrap">
+        <div class="terms">
+          <!-- <a href="" class="terms_checked"><i class="fa fa-check"></i></a> -->
+          <a href="" class="terms_sel"><span>1</span><p class="tp1 tp_sel">피보험자선택</p></a>
+          <a href="" class="terms_dis"><span>2</span><p class="tp2">청구서작성</p></a>
+          <a href="" class="terms_dis"><span>3</span><p class="tp3">서류첨부</p></a>
+          <a href="" class="terms_dis mr0"><span>4</span><p class="tp4">청구서접수</p></a>
+
+        </div>
+
+      </div><!-- //class="termswrap" -->
+
+
+      <h4>피보험자를 선택해주세요.</h4>
+
+      <ul class="form_1">
+        <li>
+
+          <div class="field-wrapper">
+            <label for="state">이름</label>
+            <select name="State" placeholder="State000">
+               <option value="" selected="selected">김길동(본인)</option>
+                <option value="AL">김자녀</option>
+            </select>
+          </div>
+
+        </li>
+
+        <li>
+          <div class="field-wrapper">
+            <label for="fname">휴대전화 번호</label>
+            <input name="fname" placeholder="피보험자 휴대전화 번호를 입력해주세요" />
+          </div>
+        </li>
+      </ul>
+
+      <h4>청구 사유를 선택해주세요.</h4>
+
+      <ul class="t_sum_2">
+        <li><input type="radio" class="radio_sty01"> 상해</li>
+        <li><input type="radio" class="radio_sty01"> 질병</li>
+        <li><input type="radio" class="radio_sty01"> 출산</li>
+      </ul>
+
+      <h4>입원/통원 선택 <br /><span>(입원과 통원을 함께 청구하실 경우 입원을 선택해주세요.)</span></h4>
+
+      <ul class="t_sum_2">
+        <li><input type="radio" class="radio_sty01"> 입원</li>
+        <li><input type="radio" class="radio_sty01"> 통원</li>
+      </ul>
+
+      <h4>치료기간을 선택해주세요.</h4>
+
+      <ul class="form_1">
+
+
+        <li>
+          <div class="field-wrapper" style="width: 50%;float: left">
+            <label for="fname"></label>
+            <input type="text" name="fname" placeholder="2020-02-01" /><input type="submit" class="cal">
+          </div>
+          <div class="field-wrapper" style="width: 50%;float: right">
+            <label for="fname"></label>
+            <input type="text" name="fname" placeholder="2020-02-01" /><input type="submit" class="cal">
+          </div>
+
+        </li>
+      </ul>
+
+		</div><!-- //id="container" -->
+
+    <button class="f_btn01">청구서 작성으로 이동</button>
+
+	</div>
+
+</body>
+
+</html>

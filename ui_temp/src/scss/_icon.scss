@@ -1,0 +1,20 @@
+i.icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    line-height: 1;
+    text-align:center;
+    vertical-align: middle;
+    background: {
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+    backface-visibility: hidden;
+  
+    &.arrow-r {
+        margin-left: $spacing-s;
+        width: 8px;
+        height: 14px;
+        background-image: url($bg_addr + "ico_arrow_r.svg");
+    }
+}

@@ -1,0 +1,136 @@
+
+.btn {
+    position: relative;
+    display: inline-block;
+    text-align:center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background 0.35s;
+
+    // default
+    padding: 0 24px;
+    height: 60px;
+    font-size: 17px;
+    line-height: 60px;
+    & + .btn {
+        margin-left: 10px;
+    }
+
+    &.lg {
+        height: 66px;
+        line-height: 66px;
+    }
+
+    &.small {
+        height: 40px;
+        line-height: 40px;
+        & + .btn.lg {
+            margin-left: 8px;
+        }
+    }
+
+    &.tiny {
+        padding: 0 12px;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+        & + .btn.lg {
+            margin-left: 6px;
+        }
+    }
+  
+    &.disabled {
+      pointer-events: none;
+      color: $color-gray-650 !important;
+      background:  $color-gray-500 !important;
+    }
+  
+    // &:not(.btn-radio) {
+    //   &:active {
+    //     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    //   }
+    
+    //   &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-position: center;
+    //     transition: background 0.8s;  
+    //   }
+    //   &:hover::after {
+    //     background: transparent radial-gradient(circle, transparent 1%, rgba(255,255,255,0.2) 1%) center/15000%;
+    //   }
+    //   &:active::after{
+    //     background-color: rgba(255,255,255,0.1);
+    //     background-size: 100%;
+    //     transition: background 0s;
+    //   }
+    // }
+
+    &.btn-primary {
+        background: $color-primary;
+
+        &:hover {
+            background: $color-primary-600;
+        }
+    }
+
+    &.btn-secondary {
+        color: $color-wh;
+        background: $color-gray-700;
+    }
+
+    &.btn-normal {
+        color: $color-gray-900;
+        border: 1px solid $color-gray-900;
+        background: transparent;
+    }
+
+    &.btn-basic {
+      color: $color-bk;
+      background:  $color-gray-500;
+    }
+}
+
+.btn-icon {
+    display: inline-block;
+    text-align:center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: {
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  
+}
+
+.btn-area {
+  display: flex;
+  &:not(.fixed) {
+    .btn {
+      flex: 1;
+      border-radius: 6px;
+    }
+  }
+  .btn {
+    & + .btn {
+      margin-left: 0;
+    }
+  }
+  .btn-basic {
+    & + .btn-basic {
+      border-left: 1px solid $color-gray-600;
+    }
+  }
+  .col-1 {
+    flex: 1;
+  }
+  .col-2 {
+    flex: 2;
+  }
+}

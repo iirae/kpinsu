@@ -1,0 +1,101 @@
+.button {
+    border: solid 1px #ced4da;
+    &,
+    span {
+        color: #212529;
+    }
+    @media (prefers-color-scheme: dark) {
+        border-color: #595959;
+        &,
+        span {
+            color: #cfcfcf;
+        }
+    }
+    &.primary {
+        background-color: @primary;
+        border-color: @primary;
+        &,
+        span {
+            color: @secondary;
+        }
+    }
+    &.secondary {
+        background-color: #3f424a;
+        border-color: #3f424a;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.info {
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+    }
+    &.disabled {
+        opacity: 1;
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+    }
+    &.total {
+        height: 70px;
+        span {
+            font-size: 18px;
+        }
+    }
+}
+
+.button {
+    display: block;
+    box-sizing: content-box;
+    position: relative;
+    padding: 0 20px;
+    height: 56px;
+    // line-height: 56px;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    &.large {
+        height: 60px;
+        font-size: 17px;
+        border-radius: 0;
+        small {
+            margin-top: 3px;
+            display: block;
+            font-size: 13px;
+            color: #5a5a5c;
+        }
+    }
+}
+
+.section-button {
+    margin-top: 30px;
+    .button {
+        width: 100%;
+    }
+    .notice {
+        margin: 10px 0 0;
+        font-size: 13px;
+    }
+}

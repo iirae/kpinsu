@@ -1,0 +1,127 @@
+@charset "utf-8";
+@import "mixin.scss";
+
+.btn {
+  display: inline-block;
+  text-align:center;
+  box-sizing: border-box;
+
+  &-back {
+    width: 24px;
+    height: 24px;
+    background: {
+      image: url("../img/btn_back.svg");
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  }
+
+  &-close {
+    width: 24px;
+    height: 24px;
+    background: {
+      image: url("../img/btn_close.svg");
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  }
+  
+  &-delete {
+    width: 18px;
+    height: 18px;
+    background: {
+      image: url("../img/btn_delete.svg");
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  }
+  
+  &-primary, &-secondary, &-normal, &-static, &-cancel {
+    padding: 0 8px;
+    width: auto;
+    height:28px;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 4px;
+  }
+
+  &-primary {
+    color: #0e1012;
+    background: $color-primary;
+
+    &.disabled {
+      color: #adb5bd;
+      background: #e9ecef;
+    }
+  }
+
+  &-secondary {
+    color: #fff;
+    background: $color-info;
+  }
+
+  &-normal {
+    color: #212529;
+    border: solid 1px #ced4da;
+    background: #f8f9fa;
+  }
+
+  &-static {
+    color: #212529;
+    border: solid 1px #ced4da;
+    background: #fff;
+  }
+
+  &-cancel {
+    color: #868e96;
+    border-top: solid 1px #e9ecef;
+    background: #fff;
+  }
+}
+
+.area-button {
+  display: flex;
+
+  .btn {
+    &-primary, &-secondary, &-normal, &-static, &-cancel {
+      width: 100%;
+      height:50px;
+      line-height: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+  }
+  &.fixed {
+    .btn {
+      &-primary, &-secondary, &-normal, &-static, &-cancel {
+        height:60px;
+        line-height: 60px;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.layer {
+  .area-button {
+    .btn {
+      &-static {
+        color: #212529;
+        border-top: solid #e9ecef;
+        border-width: 1px 0 0 0;
+        background: #fff;
+      }
+
+      & + .btn {
+        border-left: solid 1px #e9ecef;
+      }
+    }
+  }
+}

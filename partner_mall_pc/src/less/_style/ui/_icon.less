@@ -1,0 +1,90 @@
+i {
+    em {
+        &:extend(.sr-only);
+    }
+    &.guide {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: solid 1px #0070cc;
+        border-radius: 100%;
+        &::before {
+            content: '?';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            line-height: 20px;
+            color: #0070cc;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+    &.brand-logo {
+        margin-right: 3px;
+        width: 30px;
+        height: 30px;
+        border: 1px #e9ecef solid;
+        border-radius: 100%;
+        box-sizing: border-box;
+        background-size: 30px 30px;
+        &.hd {
+            .img('custom/icon_brand_hyundai');
+        }
+        &.samsung {
+            .img('custom/icon_brand_samsung');
+        }
+        &.meritz {
+            .img('custom/icon_brand_meritz');
+        }
+        &.axa {
+            .img('custom/icon_brand_axa');
+        }
+    }
+}
+
+i.pipe {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1px;
+        height: 10px;
+        margin-top: -5px;
+        background-color: #e9ecef;
+    }
+}
+
+.label {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    &.company {
+        color: @info;
+        background-color: #f1f3f5;
+    }
+    &.relationship {
+        color: @primary-text;
+        background-color: rgba(72, 172, 255, .15);
+    }
+    &.day {
+        margin-left: 3px;
+        color: @danger;
+        background-color: rgba(245, 0, 0, .1);
+    }
+    &.danger {
+        color: @danger;
+        background-color: rgba(245, 0, 0, .1);
+    }
+    &.end {
+        margin-left: 3px;
+        min-width: 49px;
+        color: #636b73;
+        background-color: rgba(33, 37, 41, .1);
+    }
+}

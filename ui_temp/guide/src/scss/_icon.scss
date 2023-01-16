@@ -1,0 +1,75 @@
+.icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    line-height: 1;
+    text-align:center;
+    vertical-align: middle;
+    background: {
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+    backface-visibility: hidden;
+  
+    // 보험사 목록
+    $insuCompanys:
+    "kyobolifeplanet" 0 0,
+    "kyobo" -30px 0,
+    "ktcu" -60px 0,
+    "nhlife" -90px 0,
+    "dongyanglife" -120px 0,
+    "lina" -150px 0,
+    "metlife" -180px 0,
+    "miraeasset" -210px 0,
+    "samsunglife" -240px 0,
+    "shinhan" -270px 0,
+    "orangelife" 0 -50px,
+    "chubblife" -30px -50px,
+    "prudential" -60px -50px,
+    "fubon" -90px -50px,
+    "hanhwalife" -120px -50px,
+    "heungkuk" -150px -50px,
+    "abl" -180px -50px,
+    "aia" -210px -50px,
+    "bnp" -240px -50px,
+    "dblife" -270px -50px,
+    "dgblife" 0 -100px,
+    "ibklife" -30px -100px,
+    "kdb" -60px -100px,
+    "hanalife" -90px -100px,
+    "kblife" -120px -100px,     // 생명보험
+
+    "nh" 0 -150px,
+    "thek" -30px -150px,
+    "lotte" -60px -150px,
+    "meritz" -90px -150px,
+    "samsung" -120px -150px,
+    "axa" -150px -150px,
+    "chubb" -180px -150px,
+    "carrot" -210px -150px,
+    "hana" -240px -150px,
+    "hanwha" -270px -150px,
+    "hyundai" 0 -200px,
+    "heungkukfire" -30px -200px,
+    "aig" -60px -200px,
+    "directdb" -90px -200px,
+    "kbinsure" -120px -200px,
+    "mg" -150px -200px,         // 손해보험
+
+    "epost" 0 -250px,
+    "kpinsu" -30px -250px,      // 기타보험
+    ;
+
+    &.insu-company {
+        width: 60px; 
+        height: 60px;
+        background-image: url(../img/img_logo_insu.png);
+        background-size: 600px auto;
+
+        @each $insuCompany, $x, $y in $insuCompanys {
+            &.#{$insuCompany} {
+                background-position: ($x * 2) ($y * 2);
+            }
+        }
+    }
+}

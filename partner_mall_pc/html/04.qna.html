@@ -1,0 +1,207 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="inbyu" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">inbyu</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">inbyu</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap text-center">
+                        <h2 class="title">고객지원</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-customer-tab"><!-- section-customer-tab -->
+                    <div class="wrap">
+                        <ul class="tab tab-b">
+                            <li><a href="javascript:;"><span>자주하는 질문</span></a></li>
+                            <li class="in"><a href="javascript:;"><span>1:1문의</span></a></li>
+                        </ul>
+                    </div>
+                </div><!-- // section-customer-tab -->
+
+                <div class="container section-qna"><!-- section-qna -->
+                    <div class="wrap">
+                        <h3 class="title">1:1 상담문의</h3>
+                        <div class="form">
+                            <div class="item">
+                                <span class="subject">문의 유형</span>
+                                <select class="select" required>
+                                    <option value="">문의 유형 선택</option>
+                                    <option value="1"></option>
+                                </select>
+                            </div>
+                            <div class="item">
+                                <span class="subject">제목</span>
+                                <input type="text" class="text full" placeholder="제목 입력" />
+                            </div>
+                            <div class="item">
+                                <span class="subject">문의 내용</span>
+                                <textarea class="textarea" placeholder="구체적인 상담(문의) 내용 입력"></textarea>
+                            </div>
+                        </div>
+
+                        <h3 class="title">상담 신청자</h3>
+
+                        <div class="form">
+                            <div class="item">
+                                <span class="subject">문의 내용에 대한<br /> 회신 방법 선택</span>
+                                <div class="way">
+                                    <span class="checks">
+                                        <input type="radio" id="way1" name="way" checked="checked" />
+                                        <label for="way1">이메일</label>
+                                    </span>
+                                    <span class="checks">
+                                        <input type="radio" id="way2" name="way" />
+                                        <label for="way2">전화번호</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="subject">이름</span>
+                                <input type="text" class="text" placeholder="이름 입력" />
+                            </div>
+                            <div class="item mail"><!-- 이메일 선택일때 노출 -->
+                                <span class="subject">이메일</span>
+                                <input type="text" class="text" placeholder="이메일 입력" />
+                            </div>
+                            <div class="item tel"><!-- 전화번호 선택일때 노출 -->
+                                <span class="subject">전화번호</span>
+                                <input type="text" class="text" placeholder="전화번호 입력" />
+                            </div>
+                            <div class="item">
+                                <div class="agreement">
+                                    <p class="reset">
+                                        개인정보 수집 및 이용에 대한 동의가 필요합니다.
+                                    </p>
+                                    <ul class="list list-a">
+                                        <li>수집항목: 이름, 이메일 주소, 전화 번호</li>
+                                        <li>목적: 문의 접수 및 고객 불만 해결</li>
+                                        <li>보유기간: 문의접수 후 3년간 보관</li>
+                                        <li>보유근거 : 소비자의 불만 또는 분쟁처리에 관한 기록</li>
+                                    </ul>
+                                </div>
+                                <div class="check">
+                                    <span class="checks">
+                                        <input type="radio" id="agreement1" name="agreement" checked="checked" />
+                                        <label for="agreement1">동의함</label>
+                                    </span>
+                                    <span class="checks">
+                                        <input type="radio" id="agreement2" name="agreement" />
+                                        <label for="agreement2">동의하지 않음</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action">
+                            <!-- <a href="javascript:;" class="button large disabled"><span>문의 접수</span></a> 조건 미충족시-->
+                            <a href="#modalMessage" class="js-modal button large primary"><span>문의 접수</span></a> 
+                        </div>
+                    </div>
+                </div><!-- // section-qna -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<div id="modalMessage" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="container modal-message"><!-- modal-message -->
+                <div class="wrap">
+                    <p class="core">
+                        문의가 정상 접수되었습니다.
+                    </p>
+                    <p class="desc">
+                        담당부서 확인 후<br />
+                        신속하게 답변 드리겠습니다.
+                    </p>
+                    <div class="action">
+                        <a href="javascript:;" class="button info"><span>확인</span></a>
+                    </div>
+                </div>
+            </div><!-- // modal-message -->
+        </div>
+        <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

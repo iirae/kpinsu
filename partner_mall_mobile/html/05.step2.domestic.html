@@ -1,0 +1,204 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="inbyu" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">inbyu</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">inbyu</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header_simple.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap text-center">
+                        <h2 class="title">국내여행자보험 가입</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-process"><!-- section-process -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4">
+                                <i class="icon step-a"></i>
+                                <span>약관동의</span>
+                            </div>
+                            <div class="col col-1-4 in">
+                                <i class="icon step-b"><em>현재위치</em></i>
+                                <span>정보입력</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-c"></i>
+                                <span>가입내용확인</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-d"></i>
+                                <span>결제</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-process -->
+
+                <div class="container section-info-form"><!-- section-info-form -->
+                    <div class="wrap">
+                        <h2 class="title">가입자 정보 입력</h2>
+
+                        <div class="item-form-desc first">
+                            <div class="item-form">
+                                <span class="subject">여행시작 예정일시</span>
+                                <div class="grid date-time">
+                                    <div class="col col-2-3">
+                                        <div class="module">
+                                            <div class="js-datepicker-from datepicker">
+                                                <input type="text" class="text" placeholder="연도-월-일" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1-3">
+                                        <div class="module">
+                                            <select class="select" required>
+                                                <option value="">선택</option>
+                                                <option value="1">00시</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">여행시작 여행종료</span>
+                                <div class="grid date-time">
+                                    <div class="col col-2-3">
+                                        <div class="module">
+                                            <div class="js-datepicker-to datepicker">
+                                                <input type="text" class="text" placeholder="연도-월-일" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1-3">
+                                        <div class="module">
+                                            <select class="select" required>
+                                                <option value="">선택</option>
+                                                <option value="1">00시</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-form-desc">
+                            <div class="item-form">
+                                <span class="subject">가입자 이름</span>
+                                <input type="text" class="text" placeholder="이름을 입력하세요"/>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">주민등록 번호</span>
+                                <div class="grid registration-number">
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text" placeholder="주민번호 앞자리" />
+                                        </div>
+                                    </div>
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text danger" placeholder="주민번호 뒷자리" /><!-- 에러시 danger 추가 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">휴대폰 번호</span>
+                                <input type="text" class="text" value="01012345678" disabled/>
+                            </div>
+                        </div>
+
+                        <div class="action">
+                            <a href="javascript:;" class="button full"><span><i class="icon add"></i> 동행자 추가</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-info-form -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <a href="javascript:;" class="button large full disabled"><span>다음</span></a>
+                        <!-- <a href="javascript:;" class="button large full secondary"><span>다음</span></a> 모든 조건 충족시 -->
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header -->
+    <div data-include-path="./include/header.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-product-title"><!-- section-product-title -->
+                    <div class="wrap">
+                        <h2 class="title">재난배상책임보험</h2>
+                        <h3 class="title">가입 기본 설문 작성</h3>
+                        <div class="step">
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in ing"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div><!-- // section-product-title -->
+
+                <div class="container section-facility-info"><!-- section-facility-info -->
+                    <div class="wrap">
+                        <div class="holder">
+                            <p class="company"><i class="icon brand-logo hyundai"></i> <span>현대해상</span></p>
+                            <p class="core">하이랜드호텔</p>
+                            <p class="desc">일련번호 : <em class="number">C1806018144</em></p>
+                            <p class="desc">총 면적 : <em class="extent">1,044.91㎡</em></p>
+                            <p class="desc">서울특별시 강남구 도산대로 166 (논현동)</p>
+                            <div class="total">
+                                <span class="subject">보험료</span>
+                                <span class="price"><span>(일시납)</span> <strong>11,200원</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-facility-info -->
+
+                <div class="container section-insurance-form is-top-line"><!-- section-insurance-form -->
+                    <div class="wrap">
+                        <div class="item"><!-- item -->
+                            <h4 class="title">보험가입 시작일 <span class="essential">(필수)</span></h4>
+                            <div class="grid">
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <div class="js-datepicker">
+                                            <input type="text" class="text datepicker" placeholder="날짜 선택" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-1-2">
+                                    <div class="module">
+                                        <span class="day">00시부터 1년 (365일)간 </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="notice">
+                                보험 기간은 <span class="info">보험가입 시작일 기준 00시</span>부터 입니다.
+                            </p>
+                        </div>
+                        <div class="item"><!-- item -->
+                            <h4 class="title">과거 사고 이력이 있나요?</h4>
+                            <div class="checks-wrap accident-history">
+                                <span class="checks is-radio">
+                                    <input type="radio" name="accident" id="accident1" />
+                                    <label for="accident1">예</label>
+                                </span>
+                                <span class="checks is-radio">
+                                    <input type="radio" name="accident" id="accident2" />
+                                    <label for="accident2">아니오</label>
+                                </span>
+                            </div>
+
+                            <div class="accident-wrap">
+                                <div class="accident-item"><!-- item -->
+                                    <h5 class="title">사고 내용 <span class="essential">(필수)</span></h5>
+                                    <div class="grid">
+                                        <div class="col col-1-2">
+                                            <div class="module">
+                                                <div class="js-datepicker">
+                                                    <input type="text" class="text datepicker" placeholder="사고일자" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-1-2">
+                                            <div class="module">
+                                                <input type="text" class="text" placeholder="ex) 1천만원" />
+                                            </div>
+                                        </div>
+                                        <div class="col col-1-1">
+                                            <div class="module">
+                                                <input type="text" class="text" placeholder="사고내용을 간략하게 입력해 주세요." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="js-accident-delete"><i class="icon delete"><em>사고내용 삭제</em></i></a>
+                                </div><!-- // item -->
+
+                                <div class="action">
+                                    <a href="javascript:;" class="button full"><span><i class="icon add"></i> 사고 내용 추가</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item"><!-- item -->
+                            <h4 class="title">아래 항목 중 해당하는 것이 있나요?</h4>
+                            <p class="notice">
+                                해당 사항이 없으면 선택하지 않고 다음 단계로<br />
+                                진행해 주세요. <span class="info">(중복선택 가능)</span>
+                            </p>
+                            <ul class="reset">
+                                <li>
+                                    <div class="checks">
+                                        <input type="checkbox" name="detail" id="detail1" />
+                                        <label for="detail1">
+                                            <span class="nowrap">전년도 사고 3회 이상</span>
+                                            <span class="nowrap">또는 손해율</span>
+                                            <span class="nowrap">100% 이상 계약</span>
+                                            <span class="nowrap">(화재,폭발,붕괴 사고 포함)</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checks">
+                                        <input type="checkbox" name="detail" id="detail2" />
+                                        <label for="detail2">과거 3년간 손해율 100% 이상 계약<br /> (화재,폭발,붕괴 사고 포함) </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checks">
+                                        <input type="checkbox" name="detail" id="detail3" />
+                                        <label for="detail3">전계약 손해액 100만원 이상<br /> (화재,폭발,붕괴 사고 포함)</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- // section-insurance-form -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <!-- <a href="javascript:;" class="button large primary"><span>피보험자 기본 정보 등록</span></a> -->
+                <a href="javascript:;" class="button large disabled"><span>피보험자 기본 정보 등록</span></a>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 과거 사고이력 유무
+    $document.on('change', '.accident-history input[type=radio]', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            $target = $('.accident-wrap');
+
+        if($this.is(':checked') && $this.closest('.checks').index() === 0) {
+            $target.addClass('in');
+        } else {
+            $target.removeClass('in');
+        }
+    });
+
+    // 사고이력 삭제
+    $document.on('click', '.js-accident-delete', function(e){
+        e.preventDefault();
+
+        $(this).closest('.accident-item').remove();
+    });
+
+
+});
+</script>
+</body>
+</html>

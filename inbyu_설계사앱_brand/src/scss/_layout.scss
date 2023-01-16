@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+body.overlay, body.is-layer-opened {
+    overflow: hidden;
+    height: 100%;
+}
+
+.wrap {
+    @include width-max_min(280px, none);
+    padding: {
+        // top: 56px;
+        top: 0;
+        right: safe(right, env);
+        right: safe(right, constant);
+        left: safe(left, env);
+        left: safe(left, constant);
+    }
+    // min-width: 320px;
+    min-height: 100vh;
+    background: $color-wh;
+    box-sizing: border-box;
+
+    .header {
+        h1 {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer {
+        // common.scss 에 공통 있음
+        
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+}
+@media screen and (min-width: 700px) and (max-width: 1025px) {
+
+}
+@media screen and (max-width: 1023px) {
+    .PC, .PC-IB {
+        display: none !important;
+    }
+    .MO {
+        display: block !important;
+    }
+    .header {
+        margin-top: -40px;
+        padding: 0 24px;
+    }
+    .contents {
+        padding-bottom: 50px;
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    .PC {
+        display: block !important;
+    }
+    .PC-IB {
+        display: inline-block !important;
+    }
+    .MO {
+        display: none !important;
+    }
+
+    .container {
+        height: calc(100vh - 234px);
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .header {
+        h1 {
+            padding: 0 100px;
+        }
+    }
+    .container {
+        height: calc(100vh - 214px);
+    }
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+            </div>
+            <div class="container" id="container">
+                <header class="header">
+                    <h1 class="text-headline">보험마켓 광고수익 정산을 위한<br>본인 명의 계좌를 등록해 주세요</h1>
+                    <div class="progressbar"><span class="col-3 step-2"></span></div>
+                </header>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <h2 class="text-caption">계좌 정보 등록</h2>
+                        <div class="form-group pb-0">
+                            <span class="f-text kr"><input type="text" maxlength="10" placeholder="예금주명을 입력해 주세요" title="예금주명 입력"></span>
+                        </div>
+                        <div class="form-group select pb-0">
+                            <span class="f-text">
+                                <input type="text" id="bank" readonly placeholder="은행 또는 증권사를 선택해 주세요" title="은행/증권사 선택">
+                                <a href="#layerChooseBank" class="btn-trigger e-layer"></a>
+                            </span>
+                        </div>
+                        <div class="form-group pb-0">
+                            <span class="f-text"><input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="25" placeholder="계좌번호를 입력해 주세요(-없이)" title="계좌번호 입력" id="bankAccount"></span>
+                        </div>
+
+                        <h2 class="text-caption mt-l">주민등록번호</h2>
+                        <div class="form-group jumin"><!-- input error 시 class error 추가 -->
+                            <div class="f-text">
+                                <span class="first"><input type="tel" pattern="[0-9]*" inputmode="numeric" placeholder="주민번호 앞자리" maxlength="6"></span>
+                                <span class="text">ㅡ</span>
+                                <span class="masking text-security">
+                                    <input type="tel" pattern="[0-9]*" inputmode="numeric" placeholder="주민번호 뒷자리" maxlength="7">
+                                </span>
+                                <button type="button" class="btn-icon masking e-jumin-masking" title="가려진 뒷자리 보기"></button>
+                            </div>
+                            <p class="text-error"></p>
+                        </div>
+                        <section class="box-info">
+                            <h2 class="text-caption">주민번호를 왜 입력하나요?</h2>
+                            <p class="text-info">광고수익 지급 및 세무 처리를 위하여 조세 관련 법령에서 규정된 바와 같이
+                                개인식별정보(예, 주민번호)를 요청할 수 있으며, 설계사가 이에 동의하지 않거나
+                                작성을 하지 않은 경우 지급할 수 없습니다.</p>
+                        </section>
+                    </fieldset>
+                </div>
+                <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary disabled">등록</a><!-- 활성 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 은행 선택  -->
+        <section class="layer bottom layer-choose_bank" id="layerChooseBank">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-title">은행 또는 증권사 선택</h2>
+                    </header>
+                    <div class="content">
+                        <div class="form-group search">
+                            <span class="f-text"><input type="text" placeholder="placeholder" id="searchBank"></span>
+                            <button class="btn-icon clear e-clear-input"></button>
+                        </div>
+                        <div class="inner-scroll">
+                            <!-- 검색결과 -->
+                            <div class="result-area">
+                                <ul class="list-radio">
+                                    <li><input type="radio" id="kakaobank" name="chooseBank"><label for="kakaobank"><i class="icon bank kakaobank"></i>카카오뱅크</label></li>
+                                    <li><input type="radio" id="nh" name="chooseBank"><label for="nh"><i class="icon bank nh"></i>농협</label></li>
+                                    <li><input type="radio" id="shinhan" name="chooseBank"><label for="shinhan"><i class="icon bank shinhan"></i>신한은행</label></li>
+                                    <li><input type="radio" id="ibk" name="chooseBank"><label for="ibk"><i class="icon bank ibk"></i>IBK기업</label></li>
+                                </ul>
+                            </div><!-- //검색결과 -->
+                            <!-- 
+                                * bank
+                                카카오뱅크: kakaobank
+                                BOA은행: boa
+                                HSBC은행: hsbc
+                                KB국민은행: kb
+                                NH농협은행: nh
+                                SC제일은행: sc
+                                경남은행: kyungnam
+                                광주은행: gwangju
+                                기업은행: ibk
+                                대구은행: daegu
+                                도이치은행: deutsche
+                                모간스탠리은행: jp
+                                부산은행: busan
+                                비엔피파리바은행: bnp
+                                산림조합중앙회: nfcf
+                                산업은행: kdb
+                                새마을금고: mg
+                              * 수출입은행: koreaexim
+                                수협은행: suhyup
+                                신한은행: shinhan
+                                신한저축은행: shinhan
+                                신협: cu
+                                우리은행: woori
+                                우체국: post
+                              * 웰컴저축은행: welcomebank
+                                저축은행: mutual
+                                전북은행: jeonbuk
+                              * 제이피모간체이스은행: jpmorganchase
+                                제주은행: jeju
+                                중국공상은행: icbc
+                                케이뱅크: kbank
+                                하나은행: hana
+                                한국씨티은행: citi
+                              * 한국은행: bok
+                             -->
+                            <section class="section show">
+                                <h3 class="title-section">은행</h3>
+                                <ul class="list-radio col-2">
+                                    <li><input type="radio" id="kakaobank" name="chooseBank"><label for="kakaobank"><i class="icon bank kakaobank"></i>카카오뱅크</label></li>
+                                    <li><input type="radio" id="boa" name="chooseBank"><label for="boa"><i class="icon bank boa"></i>BOA은행</label></li>
+                                    <li><input type="radio" id="hsbc" name="chooseBank"><label for="hsbc"><i class="icon bank hsbc"></i>HSBC은행</label></li>
+                                    <li><input type="radio" id="kb" name="chooseBank"><label for="kb"><i class="icon bank kb"></i>KB국민은행</label></li>
+                                    <li><input type="radio" id="nh" name="chooseBank"><label for="nh"><i class="icon bank nh"></i>NH농협은행</label></li>
+                                    <li><input type="radio" id="sc" name="chooseBank"><label for="sc"><i class="icon bank sc"></i>SC제일은행</label></li>
+                                    <li><input type="radio" id="kyungnam" name="chooseBank"><label for="kyungnam"><i class="icon bank kyungnam"></i>경남은행</label></li>
+                                    <li><input type="radio" id="gwangju" name="chooseBank"><label for="gwangju"><i class="icon bank gwangju"></i>광주은행</label></li>
+                                    <li><input type="radio" id="ibk" name="chooseBank"><label for="ibk"><i class="icon bank ibk"></i>기업은행</label></li>
+                                    <li><input type="radio" id="daegu" name="chooseBank"><label for="daegu"><i class="icon bank daegu"></i>대구은행</label></li>
+                                    <li><input type="radio" id="deutsche" name="chooseBank"><label for="deutsche"><i class="icon bank deutsche"></i>도이치은행</label></li>
+                                    <li><input type="radio" id="jp" name="chooseBank"><label for="jp"><i class="icon bank jp"></i>모간스탠리은행</label></li>
+                                    <li><input type="radio" id="busan" name="chooseBank"><label for="busan"><i class="icon bank busan"></i>부산은행</label></li>
+                                    <li><input type="radio" id="bnp" name="chooseBank"><label for="bnp"><i class="icon bank bnp"></i>비엔피파리바은행</label></li>
+                                    <li><input type="radio" id="nfcf" name="chooseBank"><label for="nfcf"><i class="icon bank nfcf"></i>산림조합중앙회</label></li>
+                                    <li><input type="radio" id="kdb" name="chooseBank"><label for="kdb"><i class="icon bank kdb"></i>산업은행</label></li>
+                                    <li><input type="radio" id="mg" name="chooseBank"><label for="mg"><i class="icon bank mg"></i>새마을금고</label></li>
+                                    <li><input type="radio" id="koreaexim" name="chooseBank"><label for="koreaexim"><i class="icon bank koreaexim"></i>수출입은행</label></li>
+                                    <li><input type="radio" id="suhyup" name="chooseBank"><label for="suhyup"><i class="icon bank suhyup"></i>수협은행</label></li>
+                                    <li><input type="radio" id="shinhan" name="chooseBank"><label for="shinhan"><i class="icon bank shinhan"></i>신한은행</label></li>
+                                    <li><input type="radio" id="shinhan2" name="chooseBank"><label for="shinhan2"><i class="icon bank shinhan"></i>신한저축은행</label></li>
+                                    <li><input type="radio" id="cu" name="chooseBank"><label for="cu"><i class="icon bank cu"></i>신협</label></li>
+                                    <li><input type="radio" id="woori" name="chooseBank"><label for="woori"><i class="icon bank woori"></i>우리은행</label></li>
+                                    <li><input type="radio" id="post" name="chooseBank"><label for="post"><i class="icon bank post"></i>우체국</label></li>
+                                    <li><input type="radio" id="welcomebank" name="chooseBank"><label for="welcomebank"><i class="icon bank welcomebank"></i>웰컴저축은행</label></li>
+                                    <li><input type="radio" id="mutual" name="chooseBank"><label for="mutual"><i class="icon bank mutual"></i>저축은행</label></li>
+                                    <li><input type="radio" id="jeonbuk" name="chooseBank"><label for="jeonbuk"><i class="icon bank jeonbuk"></i>전북은행</label></li>
+                                    <li><input type="radio" id="jpmorganchase" name="chooseBank"><label for="jpmorganchase"><i class="icon bank jpmorganchase"></i>제이피모간체이스은행</label></li>
+                                    <li><input type="radio" id="jeju" name="chooseBank"><label for="jeju"><i class="icon bank jeju"></i>제주은행</label></li>
+                                    <li><input type="radio" id="icbc" name="chooseBank"><label for="icbc"><i class="icon bank icbc"></i>중국공상은행</label></li>
+                                    <li><input type="radio" id="kbank" name="chooseBank"><label for="kbank"><i class="icon bank kbank"></i>케이뱅크</label></li>
+                                    <li><input type="radio" id="hana" name="chooseBank"><label for="hana"><i class="icon bank hana"></i>하나은행</label></li>
+                                    <li><input type="radio" id="citi" name="chooseBank"><label for="citi"><i class="icon bank citi"></i>한국씨티은행</label></li>
+                                    <li><input type="radio" id="bok" name="chooseBank"><label for="bok"><i class="icon bank bok"></i>한국은행</label></li>
+                                </ul>
+                            </section>
+                            <!-- 
+                                * bank
+                                카카오페이증권: kakaopay
+                                DB금융투자: db
+                                IBK투자증권: ibk
+                                KB증권: kbsec
+                                KTB투자증권: ktb
+                                NH투자증권: nhqv
+                                SK증권: sks
+                                교보증권: kyobo
+                                대신증권: daishin
+                                메리츠증권: meritz
+                                미래에셋대우: miraeassetdaewoo
+                                부국증권: bookook
+                                삼성증권: samsung
+                                신영증권: shinyoung
+                                신한금융투자: shinhan
+                                유안타증권: yuanta
+                                유진투자증권: eugenefn
+                                이베스트투자증권: ebest
+                                케이프투자증권: cape
+                                키움증권: kiwoom
+                                하나금융투자: hanaw
+                                하이투자증권: hiib
+                              * 한국증권금융: ksfc
+                                한국투자증권: truefriend
+                                한국포스증권: fosskorea
+                                한화투자증권: hanwhawm
+                                현대차증권: hmsec
+                            -->
+                            <section class="section show">
+                                <h3 class="title-section">증권사</h3>
+                                <ul class="list-radio col-2">
+                                    <li><input type="radio" id="kakaopay" name="chooseBank"><label for="kakaopay"><i class="icon bank kakaopay"></i>카카오페이증권</label></li>
+                                    <li><input type="radio" id="db" name="chooseBank"><label for="db"><i class="icon bank db"></i>DB금융투자</label></li>
+                                    <li><input type="radio" id="ibk" name="chooseBank"><label for="ibk"><i class="icon bank ibk"></i>IBK투자증권</label></li>
+                                    <li><input type="radio" id="kbsec" name="chooseBank"><label for="kbsec"><i class="icon bank kbsec"></i>KB증권</label></li>
+                                    <li><input type="radio" id="ktb" name="chooseBank"><label for="ktb"><i class="icon bank ktb"></i>KTB투자증권</label></li>
+                                    <li><input type="radio" id="nhqv" name="chooseBank"><label for="nhqv"><i class="icon bank nhqv"></i>NH투자증권</label></li>
+                                    <li><input type="radio" id="sks" name="chooseBank"><label for="sks"><i class="icon bank sks"></i>SK증권</label></li>
+                                    <li><input type="radio" id="kyobo" name="chooseBank"><label for="kyobo"><i class="icon bank kyobo"></i>교보증권</label></li>
+                                    <li><input type="radio" id="daishin" name="chooseBank"><label for="daishin"><i class="icon bank daishin"></i>대신증권</label></li>
+                                    <li><input type="radio" id="meritz" name="chooseBank"><label for="meritz"><i class="icon bank meritz"></i>메리츠증권</label></li>
+                                    <li><input type="radio" id="miraeassetdaewoo" name="chooseBank"><label for="miraeassetdaewoo"><i class="icon bank miraeassetdaewoo"></i>미래에셋대우</label></li>
+                                    <li><input type="radio" id="bookook" name="chooseBank"><label for="bookook"><i class="icon bank bookook"></i>부국증권</label></li>
+                                    <li><input type="radio" id="samsung" name="chooseBank"><label for="samsung"><i class="icon bank samsung"></i>삼성증권</label></li>
+                                    <li><input type="radio" id="shinyoung" name="chooseBank"><label for="shinyoung"><i class="icon bank shinyoung"></i>신영증권</label></li>
+                                    <li><input type="radio" id="shinhan3" name="chooseBank"><label for="shinhan3"><i class="icon bank shinhan"></i>신한금융투자</label></li>
+                                    <li><input type="radio" id="yuanta" name="chooseBank"><label for="yuanta"><i class="icon bank yuanta"></i>유안타증권</label></li>
+                                    <li><input type="radio" id="eugenefn" name="chooseBank"><label for="eugenefn"><i class="icon bank eugenefn"></i>유진투자증권</label></li>
+                                    <li><input type="radio" id="ebest" name="chooseBank"><label for="ebest"><i class="icon bank ebest"></i>이베스트투자증권</label></li>
+                                    <li><input type="radio" id="cape" name="chooseBank"><label for="cape"><i class="icon bank cape"></i>케이프투자증권</label></li>
+                                    <li><input type="radio" id="kiwoom" name="chooseBank"><label for="kiwoom"><i class="icon bank kiwoom"></i>키움증권</label></li>
+                                    <li><input type="radio" id="hanaw" name="chooseBank"><label for="hanaw"><i class="icon bank hanaw"></i>하나금융투자</label></li>
+                                    <li><input type="radio" id="hiib" name="chooseBank"><label for="hiib"><i class="icon bank hiib"></i>하이투자증권</label></li>
+                                    <li><input type="radio" id="ksfc" name="chooseBank"><label for="ksfc"><i class="icon bank ksfc"></i>한국증권금융</label></li>
+                                    <li><input type="radio" id="truefriend" name="chooseBank"><label for="truefriend"><i class="icon bank truefriend"></i>한국투자증권</label></li>
+                                    <li><input type="radio" id="fosskorea" name="chooseBank"><label for="fosskorea"><i class="icon bank fosskorea"></i>한국포스증권</label></li>
+                                    <li><input type="radio" id="hanwhawm" name="chooseBank"><label for="hanwhawm"><i class="icon bank hanwhawm"></i>한화투자증권</label></li>
+                                    <li><input type="radio" id="hmsec" name="chooseBank"><label for="hmsec"><i class="icon bank hmsec"></i>현대차증권</label></li>
+
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 메일 선택  -->
+
+        <!-- layer: alert / 텍스트만 변경하면 어디서든 사용 가능 open 시 show 클래스 추가 -->
+        <section class="layer center" id="layerAlert">
+            <div class="container">
+                <div class="content">
+                    <div class="desc">
+                        <p class="text">계좌정보와 예금주가<br>일치하지 않습니다.<br>다시 확인해 주세요.</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // 계좌번호 복붙 시
+                $('#bankAccount').on('paste', function() {
+                    let str, returnStr;
+
+                    setTimeout(function(){
+                        str = $('#bankAccount').val();
+                        returnStr = onlyNum(str);
+
+                        $('#bankAccount').val(returnStr);
+                    },100);
+                });
+
+                // 은행/증권사 검색
+                $body.on('keyup', '#searchBank', function(e) {
+                    const $this = $(this),
+                          $result = $($('.result-area'));
+                    let hasValue = $this.val().length > 0;
+                    
+                    hasValue ? $result.addClass('show').siblings('.section').removeClass('show') : $result.removeClass('show').siblings('.section').addClass('show');
+                });
+                $body.on('click', '.e-clear-input', function(e) {
+                    const $this = $(this),
+                          $result = $($('.result-area'));
+                    
+                    $result.removeClass('show').siblings('.section').addClass('show');
+                });
+
+                // 은행/증권사 선택
+                $body.on('click', 'input[name="chooseBank"]', function(){
+                    const $this = $(this),
+                          $input = $('#bank'),
+                          $findParentLayer = $(this).closest('.layer'),
+                          $findParentWrap = $($input.closest('.form-group'));
+                    let checkedBankVal = $this.siblings('label').text();
+
+                    $input.val(checkedBankVal);
+
+                    closeLayer($findParentLayer);
+                });
+
+            });
+
+            function onlyNum(str){
+                return str.replace(/[^0-9]/g, '');
+            }
+        </script>
+    </body>
+</html>

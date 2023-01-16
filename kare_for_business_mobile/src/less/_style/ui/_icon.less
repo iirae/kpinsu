@@ -1,0 +1,177 @@
+.icon {
+    &.brand-logo {
+        width: 28px;
+        height: 28px;
+        border: solid 1px #e9ecef;
+        background-color: #fff;
+        border-radius: 100%;
+        background-size: 30px 30px;
+        &.inbyu {
+            .img('common/icon_brand_kpinsu');
+        }
+        &.hyundai {
+            .img('common/icon_brand_hyundai');
+        }
+        &.samsung {
+            .img('common/icon_brand_samsung');
+        }
+    }
+    &.search {
+        .set-icon(48px, 48px, 'common/icon_search', true);
+    }
+    &.delete {
+        .set-icon(52px, 52px, 'common/icon_delete', true);
+    }
+    &.bank {
+        width: 18px;
+        height: 18px;
+        border: solid 1px #e9ecef;
+        background-color: #fff;
+        background-size: 20px 20px;
+        border-radius: 100%;
+        &.ibk {
+            .img('common/icon_bank_ibk');
+        }
+        &.kakaopay {
+            width: 36px;
+            height: auto;
+            border-radius: 0;
+            border-width: 0;
+            .img('common/icon_payment_kakaopay');
+            background-size: cover;
+        }
+    }
+    &.icon-payment {
+        margin-top: -2px;
+        background-size: cover;
+        &.kakaopay {
+            width: 36px;
+            height: 15px;
+            .img('common/icon_payment_kakaopay');
+        }
+        // &.credit {
+        //     width: 20px;
+        //     height: 15px;
+        //     .img('common/icon_payment_credit', 'svg');
+        // }
+        // &.transfer {
+        //     width: 26px;
+        //     height: 16px;
+        //     .img('common/icon_payment_transfer', 'svg');
+        // }
+    }
+    &.download {
+        margin-right: 5px;
+        .set-icon(36px, 30px, 'common/icon_download', true);
+    }
+    &.insu-detail {
+        width: 60px;
+        height: 60px;
+        background-color: #ffdb00;
+        background-size: 60px auto;
+        border-radius: 50%;
+        &.guarantee {
+            .img('custom/icon_insudetail_guarantee');
+        }
+        &.penalty {
+            .img('custom/icon_insudetail_penalty');
+        }
+        &.target01 {
+            .img('custom/icon_insudetail_target01');
+        }
+        &.goverment {
+            .img('custom/icon_insudetail_goverment');
+        }
+    }
+}
+
+//
+// a.download {
+//     letter-spacing: .2em;
+//     color: @primary;
+//     .eng();
+//     .font-bold-eng();
+//     font-size: 12px;
+//     .icon {
+//         .set-icon(20px, 20px, 'common/icon_download');
+//         margin-right: 4px;
+//     }
+//     &:hover {
+//         text-decoration: none;
+//         // .icon {
+//         //     .img('common/icon_download_on');
+//         // }
+//     }
+// }
+//
+// a.view-more {
+//     letter-spacing: .2em;
+//     color: @primary;
+//     .eng();
+//     .font-bold-eng();
+//     font-size: 12px;
+//     .icon {
+//         .set-icon(20px, 20px, 'common/icon_view_more');
+//         margin-left: 4px;
+//     }
+//     &:hover {
+//         text-decoration: none;
+//     }
+// }
+//
+// i {
+//     em {
+//         &:extend(.sr-only);
+//     }
+// }
+//
+.pipe {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    em {
+        .sr-only();
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -5px 0 0 -1px;
+        overflow: hidden;
+        width: 1px;
+        height: 10px;
+        background-color: #ced4da;
+    }
+}
+
+// /* badge */
+span.badge {
+    display: inline-block;
+    box-sizing: border-box;
+    &.state {
+        padding: 0 8px;
+        height: 23px;
+        line-height: 23px;
+        font-size: 13px;
+        color: #008dff;
+        border-radius: 15px;
+        background-color: rgba(72, 172, 255, .1);
+        min-width: 60px;
+        text-align: center;
+        &.danger {
+            color: #f50000;
+            background-color: rgba(245, 0, 0, 0.1);
+        }
+        &.finish {
+            color: #212529;
+            background-color: #f1f3f5;
+        }
+        &.end {
+            color: #868e96;
+            background-color: #f1f3f5;
+        }
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>인바이유-보험금청구</title>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+      <a href="#" class="back"></a>
+      <a href="#" class="home">홈</a>
+    </div>   
+    
+    <div id="container" class="mb70">
+
+     <div class="termswrap">
+        <div class="terms">
+          <!-- <a href="" class="terms_checked"><i class="fa fa-check"></i></a> -->
+         <a href="" class="terms_checked"><i class="fa fa-check"></i><p class="tp1">피보험자선택</p></a>
+          <a href="" class="terms_sel"><span>2</span><p class="tp2 tp_sel">청구서작성</p></a>
+          <a href="" class="terms_dis"><span>3</span><p class="tp3">서류첨부</p></a>
+          <a href="" class="terms_dis mr0"><span>4</span><p class="tp4">청구서접수</p></a>
+        </div>
+      </div><!-- //class="termswrap" -->
+
+
+      <h4>사고 내용을 입력해주세요</h4>
+
+      <textarea>예) 회사 앞 계단에서 미끄러짐</textarea>
+     
+      <h4>진단명을 입력해주세요</h4>
+
+      <textarea>예) 골절</textarea>
+
+      <h4>사고일시를 선택해주세요</h4>
+
+      <ul class="form_1">
+
+        <li>
+          <div class="field-wrapper" style="width: 50%;float: left">
+            <label for="fname"></label>
+            <input name="fname" placeholder="2020-02-01" /><input type="submit" class="cal">
+          </div>
+
+        </li>
+      </ul>
+
+      <h4>보험금을 지급 받을 계좌를 입력해주세요</h4>
+
+      <button class="m_btn01" data-js="open">등록한 계좌 불러오기 </button>
+
+      <ul class="form_1">        
+        <li>  
+
+          <div class="field-wrapper">
+            <label for="state">은행명</label>
+            <select name="State" placeholder="State000"> 
+               <option value="" selected="selected">은행을 선택해주세요</option>
+                <option value="AL">국민은행</option>
+            </select>
+          </div>
+
+        </li>
+
+        <li>
+          <div class="field-wrapper">
+            <label for="fname">계좌번호</label>
+            <input name="fname" placeholder="계좌번호를 입력해주세요.(숫자만 입력)" />
+          </div>
+        </li>
+
+        <li>
+          <div class="field-wrapper" style="width: 65%; float: left">
+            <label for="fname">예금주</label>
+            <input name="fname" placeholder="예금주 성명을 입력해주세요">
+          </div>
+          <button class="btn_form fr">등록계좌로저장</button>
+        </li>
+      </ul>
+
+      <h4>예금주 주민등록번호입력해주세요 <div class="txt10"><input type="checkbox"> 외국인</div></h4>
+
+      <ul class="form_1">        
+        <li>
+          <div class="field-wrapper" style="width: 46%; float: left">
+            <label for="fname">주민등록 앞번호</label>
+            <input name="fname" placeholder="주민등록 앞번호" />
+          </div>
+          <b class="txt11">-</b>
+          <div class="field-wrapper" style="width: 46%; float: right">
+            <label for="fname">주민등록 뒷번호</label>
+            <input name="fname" placeholder="주민등록 뒷번호" />
+          </div>
+        </li>
+      </ul>
+
+      <h4>피보험자 서명 <button class="btn_form fr" style="margin-top:-10px;">서명하기</button></h4>
+
+      <textarea style="height: 150px"></textarea>
+
+      <h4>피보험자가 다른 보험회사의 의료실비 상품에 가입 하셨나요?</h4>
+
+      <ul class="t_sum_2">
+        <li><input type="radio" class="radio_sty01"> 아니오</li>
+        <li><input type="radio" class="radio_sty01"> 예</li>
+      </ul>
+
+		</div><!-- //id="container" -->   
+
+    <button class="f_btn01">증빙서류 첨부하기</button>
+
+	</div>
+
+  <!-- 보험금 지급 계좌 선택 팝업 -->
+  <div class="popup" >
+    <div class="pop_1">
+      <button name="close" class="pop_close">닫기</button>
+      <h3 class="pop_tit">보험금 지급 계좌 선택</h3>
+      <div class="pop_st01"> 
+        
+        <table class="table_st1">
+          <colgroup>
+            <col width="">
+            <col width="">
+            <col width="">
+            <col width="">
+          </colgroup>
+          <thead>
+            <tr>
+              <th></th>
+              <th>은행</th>
+              <th>예금주</th>
+              <th class="br0">계좌번호</th>
+            </tr>
+          </thead>       
+          <tbody>
+            <tr>
+              <td><input type="radio" class="radio_sty01"></td>
+              <td>카카오</td>
+              <td>이지은</td>
+              <td>123456789</td>
+            </tr>
+            <tr>
+              <td><input type="radio" class="radio_sty01"></td>
+              <td>카카오</td>
+              <td>이지은</td>
+              <td>123456789</td>
+            </tr>  
+            <tr>
+              <td><input type="radio" class="radio_sty01"></td>
+              <td>카카오</td>
+              <td>이지은</td>
+              <td>123456789</td>
+            </tr>           
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="f_sty" style="display: contents;">
+        <button class="f_btn01_1">취소</button>
+        <button class="f_btn01_2">확인 </button>
+      </div>
+
+    </div>
+  </div>
+ <!-- //보험금 지급 계좌 선택 팝업 -->
+
+</body>
+
+</html>

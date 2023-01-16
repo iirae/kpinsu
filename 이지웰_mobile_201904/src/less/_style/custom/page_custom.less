@@ -1,0 +1,223 @@
+
+.section-button {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.section-product {
+    margin-top: 30px;
+    overflow: visible;
+    h2.title {
+        margin: 0;
+        font-size: 27px;
+        color: #2e3338;
+        text-align: center;
+    }
+    .item-list {
+        .module {
+            position: relative;
+            margin: 15px 0 0;
+            padding: 20px 100px 50px 15px;
+            border: 1px #ddd solid;
+            border-radius: 3px;
+        }
+        .more {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+            color: #1a97fc;
+            font-weight: bold;
+            span {
+                position: absolute;
+                left: 15px;
+                bottom: 20px;
+                padding-right: 20px;
+                &::before {
+                    content: '→';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+        .subject {
+            margin: 0;
+            font-size: 19px;
+            font-weight: bold;
+            color: #2e3338;
+        }
+        .label {
+            display: inline-block;
+            margin: 10px 0 0;
+            padding: 0 10px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #222;
+            background-color: #ffdf00;
+            border-radius: 22px;
+        }
+        .summary {
+            margin-top: 20px;
+            .name {
+                margin: 0;
+                font-size: 14px;
+                color: #222;
+                font-weight: bold;
+            }
+            .desc {
+                margin: 10px 0 0;
+                font-size: 14px;
+                color: #666;
+            }
+        }
+        .icon {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 90px;
+            height: 105px;
+            background-size: 100%;
+        }
+    }
+    &.service {
+        margin-top: 40px;
+    }
+}
+
+.section-about {
+    margin-top: 50px;
+    .title {
+        margin: 0;
+        width: 260px;
+    }
+    .desc {
+        width: 100%;
+        margin-top: 15px;
+        &,
+        span {
+            font-size: 14px;
+            color: #222;
+            line-height: 1.6;
+        }
+    }
+    .core {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .has-line {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 100%;
+            left: -2px;
+            right: -2px;
+            margin-top: -6px;
+            height: 6px;
+            background-color: #ffdf00;
+        }
+        > span {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.section-process {
+    margin-top: 50px;
+    h2.title {
+        margin: 0;
+        width: 217px;
+    }
+    .process-wrap {
+        margin-top: 20px;
+        text-align: center;
+        border: 1px #ddd solid;
+        background-color: #f5f5f5;
+        .step {
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #2e3338;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -1px;
+                .set-icon(14px, 60px, 'custom/process_arrow', true);
+            }
+        }
+        .cell {
+            width: 33.333333%;
+            vertical-align: top;
+            padding-bottom: 13px;
+            border-left: 1px #ddd solid;
+            box-sizing: border-box;
+            &:first-child {
+                .module {
+                    border-left: 0;
+                }
+                .step::before {
+                    display: none;
+                }
+            }
+        }
+        p {
+            margin: 0;
+        }
+        .core img {
+            width: 90px;
+        }
+        .desc {
+            margin-top:  10px;
+            font-size: 12px;
+            color: #444;
+        }
+    }
+}
+
+.section-customer {
+    margin: 30px 0;
+    .wrap {
+        position: relative;
+        padding-left: 150px;
+    }
+    .title {
+        margin: 0;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 135px;
+    }
+    .name {
+        margin: 0;
+        width: 97px;
+    }
+    .tel {
+        margin: 10px 0 0;
+        line-height: 1.2;
+        letter-spacing: -.025em;
+        strong {
+            display: block;
+            font-weight: bold;
+            font-size: 26px;
+            color: @primary;
+        }
+        .time {
+            display: block;
+            color: #444;
+            font-size: 11px;
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@table-line-height: 1.4;
+
+table {
+    &.table-col,
+    &.table-row {
+        width: 100%;
+        th, td {
+            line-height: @table-line-height;
+        }
+        th {
+            vertical-align: top;
+            label, span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+        }
+    }
+    &.table-row {
+        th, td {
+            text-align: left;
+        }
+        th {
+            label, span {
+                display: inline-block;
+            }
+        }
+    }
+    &.table-col {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-center {
+        th, td {
+            text-align: center;
+        }
+    }
+    &.text-left {
+        th, td {
+            text-align: left;
+        }
+    }
+    &.eng {
+        th, td {
+            .eng();
+        }
+    }
+}
+
+table {
+    &.table-a {
+        border-top: 1px #ced4da solid;
+        th,
+        td {
+            padding: 10px 0;
+            font-size: 13px;
+            border-left: 1px #ced4da solid;
+            border-bottom: 1px #ced4da solid;
+            &:first-child {
+                border-left: 0;
+            }
+            &,
+            p {
+                color: #444b52;
+            }
+            p {
+                margin: 10px 0 0;
+                &:first-child {
+                    margin: 0;
+                }
+            }
+        }
+        thead {
+            th {
+                padding: px 0;
+                .font-bold();
+                color: #212529;
+                text-align: center;
+                background-color: #f1f3f5;
+            }
+        }
+        .text-left {
+            padding-left: 10px;
+        }
+        .text-right {
+            padding-right: 10px;
+        }
+        &.table-row {
+            tbody tr:first-child th,
+            tbody tr:first-child td {
+                border-top: 0;
+            }
+            th {
+                padding-left: 40px;
+                text-align: left;
+            }
+            td {
+                text-align: left;
+            }
+        }
+    }
+}

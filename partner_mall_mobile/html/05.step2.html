@@ -1,0 +1,363 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="subject" content="inbyu" id="metaSubject" />
+<meta name="title" content="inbyu" id="metaTitle" />
+<meta name="keywords" content="inbyu" id="metaKeywords" />
+<meta name="description" content="inbyu" id="metaDescription" />
+<meta name="author" content="inbyu" />
+<meta name="copyright" content="inbyu" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="inbyu" />
+<meta property="og:title" content="inbyu" id="ogTitle" />
+<meta property="og:description" content="inbyu" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">inbyu</title>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="publisher" href="http://inbyu.co.kr" />
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<script src="../resources/js/lib/modernizr-3.5.0.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<script src="../resources/js/browser.js"></script><!-- browser -->
+<script src="../resources/js/app-dist.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">inbyu</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: common header -->
+    <div data-include-path="./include/header_simple.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap text-center">
+                        <h2 class="title">전국민생활체육보험 가입</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-process"><!-- section-process -->
+                    <div class="wrap">
+                        <div class="grid">
+                            <div class="col col-1-4">
+                                <i class="icon step-a"></i>
+                                <span>약관동의</span>
+                            </div>
+                            <div class="col col-1-4 in">
+                                <i class="icon step-b"><em>현재위치</em></i>
+                                <span>정보입력</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-c"></i>
+                                <span>가입내용확인</span>
+                            </div>
+                            <div class="col col-1-4">
+                                <i class="icon step-d"></i>
+                                <span>결제</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-process -->
+
+                <div class="container section-info-form"><!-- section-info-form -->
+                    <div class="wrap">
+                        <h2 class="title">가입자 정보 입력</h2>
+                        <div class="item-form-core">
+                            <div class="item-form">
+                                <strong class="subject">기간 선택<span>(가입 후 익일 00시 부터)</span></strong>
+                                <ul class="bundle-radio type-tab">
+                                    <li><input type="radio" id="period03" name="period" /><label for="period03">3개월</label></li>
+                                    <li><input type="radio" id="period12" name="period" checked /><label for="period12">1년</label></li>
+                                </ul>
+                                <strong class="subject">플랜 선택<span>(1인 기준)</span></strong>
+                                <ul class="bundle-radio plan">
+                                    <li><input type="radio" name="choosePlan" id="basicPlan" checked><label for="basicPlan"><strong>기본운동플랜 <span>(36개 종목 보장 / <em id="basicPlanPrice">12,210</em>원)</span></strong></label><a href="#modalGuaranteedItemsA" class="js-modal button info small">보장 종목 보기</a></li><!-- 3개월: 4,880원, 1년 12,210원 -->
+                                    <li><input type="radio" name="choosePlan" id="wholePlan"><label for="wholePlan"><strong>종합운동플랜 <span>(67개 종목 보장 / <em id="wholePlanPrice">24,200</em>원)</span></strong></label><a href="#modalGuaranteedItemsB" class="js-modal button info small">보장 종목 보기</a></li><!-- 3개월: 9,680원, 1년 24,200원 -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="item-form-desc">
+                            <div class="item-form">
+                                <span class="subject">가입자 이름</span>
+                                <input type="text" class="text" value="가입자 이름" readonly/>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">주민등록 번호</span>
+                                <div class="grid registration-number">
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text" value="901105" readonly/>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text danger" placeholder="주민번호 뒷자리" /><!-- 에러시 danger 추가 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">휴대폰 번호</span>
+                                <input type="text" class="text" value="01012345678" readonly/>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">이메일</span>
+                                <input type="email" class="text" placeholder="이메일" />
+                                <p class="text-info">* 입력한 이메일로 보험증서를 보내드립니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="item-form-desc">
+                            <div class="pos-relative">
+                                <h3 class="title">동행자 정보입력</h3>
+                                <a href="javascript:;" class="delete"><i class="icon"><em>삭제</em></i></a>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">동행자 이름</span>
+                                <input type="text" class="text" placeholder="이름을 입력하세요"/>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">주민등록 번호</span>
+                                <div class="grid registration-number">
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text" value="901105" disabled/>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1-2">
+                                        <div class="module">
+                                            <input type="text" class="text" placeholder="주민번호 뒷자리" /><!-- 에러시 danger 추가 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <span class="subject">휴대폰 번호</span>
+                                <input type="text" class="text" value="01012345678" disabled/>
+                            </div>
+                        </div>
+
+                        <div class="action">
+                            <a href="javascript:;" class="button full"><span><i class="icon add"></i> 인원 추가</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-info-form -->
+
+                <div class="container section-button"><!-- section-button -->
+                    <div class="wrap">
+                        <a href="javascript:;" class="button large full disabled"><span>다음</span></a>
+                        <!-- <a href="javascript:;" class="button large full secondary"><span>다음</span></a> 모든 조건 충족시 -->
+                    </div>
+                </div><!-- // section-button -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: common footer -->
+    <div data-include-path="./include/footer.html"></div>
+
+</div><!-- // container -->
+
+<div id="modalGuaranteedItemsA" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="sports-plan-wrap">
+                <h2 class="head">기본운동 플랜<br></h2>
+                <h3 class="title">약관상 위험 3급 운동종목</h3>
+                <ul class="list">
+                    <li><span>검도</span></li>
+                    <li><span>게이트볼</span></li>
+                    <li><span>골프/그라운드<br>골프/파크골프</span></li>
+                    <li><span>국학기공</span></li>
+                    <li><span>궁도</span></li>
+                    <li><span>단전호흡</span></li>
+                    <li><span>단학기공체조</span></li>
+                    <li><span>당구/포켓볼</span></li>
+                    <li><span>댄스스포츠</span></li>
+                    <li><span>라인댄스</span></li>
+                    <li><span>레크리에이션</span></li>
+                    <li><span>론볼</span></li>
+                    <li><span>리권</span></li>
+                    <li><span>바둑</span></li>
+                    <li><span>배구</span></li>
+                    <li><span>배드민턴</span></li>
+                    <li><span>밸리댄스</span></li>
+                    <li><span>사격</span></li>
+                    <li><span>생활체조</span></li>
+                    <li><span>석궁</span></li>
+                    <li><span>수구</span></li>
+                    <li><span>스케이트</span></li>
+                    <li><span>양궁</span></li>
+                    <li><span>연식야구</span></li>
+                    <li><span>요가/필라테스</span></li>
+                    <li><span>우드볼</span></li>
+                    <li><span>육상경기</span></li>
+                    <li><span>자전거/사이클</span></li>
+                    <li><span>전통무용</span></li>
+                    <li><span>전통선술<br>(한방기공체조)</span></li>
+                    <li><span>청구</span></li>
+                    <li><span>줄넘기/줄다리기</span></li>
+                    <li><span>짐볼</span></li>
+                    <li><span>탁구</span></li>
+                    <li><span>플라잉디스크</span></li>
+                    <li><span>플로어볼</span></li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+    </div>
+</div><!-- // modal -->
+
+<div id="modalGuaranteedItemsB" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="sports-plan-wrap">
+                <h2 class="head">기본운동 플랜<br></h2>
+                <h3 class="title">약관상 위험 2급 운동종목</h3>
+                <ul class="list">
+                    <li><span>걷기/트레킹</span></li>
+                    <li><span>경식야구</span></li>
+                    <li><span>넷볼</span></li>
+                    <li><span>농구</span></li>
+                    <li><span>눈썰매/썰매</span></li>
+                    <li><span>등산</span></li>
+                    <li><span>라켓볼</span></li>
+                    <li><span>라크로스</span></li>
+                    <li><span>리듬체조/기계체조</span></li>
+                    <li><span>마술</span></li>
+                    <li><span>발야구</span></li>
+                    <li><span>보디빌딩/헬스</span></li>
+                    <li><span>볼링</span></li>
+                    <li><span>비보이댄스</span></li>
+                    <li><span>소프트볼</span></li>
+                    <li><span>수영(실내)/핀수영 </span></li>
+                    <li><span>스쿼시</span></li>
+                    <li><span>스키/스노우보드</span></li>
+                    <li><span>야구</span></li>
+                    <li><span>에어로빅</span></li>
+                    <li><span>유도</span></li>
+                    <li><span>육상/조깅(마라톤 포함)</span></li>
+                    <li><span>족구/축구/풋살</span></li>
+                    <li><span>체조</span></li>
+                    <li><span>컬링</span></li>
+                    <li><span>테니스</span></li>
+                    <li><span>티볼</span></li>
+                    <li><span>프리테니스</span></li>
+                    <li><span>피구</span></li>
+                    <li><span>필드하키</span></li>
+                    <li><span>핸드볼</span></li>
+                </ul>
+                <h3 class="title">약관상 위험 3급 운동종목</h3>
+                <ul class="list">
+                    <li><span>검도</span></li>
+                    <li><span>게이트볼</span></li>
+                    <li><span>골프/그라운드<br>골프/파크골프</span></li>
+                    <li><span>국학기공</span></li>
+                    <li><span>궁도</span></li>
+                    <li><span>단전호흡</span></li>
+                    <li><span>단학기공체조</span></li>
+                    <li><span>당구/포켓볼</span></li>
+                    <li><span>댄스스포츠</span></li>
+                    <li><span>라인댄스</span></li>
+                    <li><span>레크리에이션</span></li>
+                    <li><span>론볼</span></li>
+                    <li><span>리권</span></li>
+                    <li><span>바둑</span></li>
+                    <li><span>배구</span></li>
+                    <li><span>배드민턴</span></li>
+                    <li><span>밸리댄스</span></li>
+                    <li><span>사격</span></li>
+                    <li><span>생활체조</span></li>
+                    <li><span>석궁</span></li>
+                    <li><span>수구</span></li>
+                    <li><span>스케이트</span></li>
+                    <li><span>양궁</span></li>
+                    <li><span>연식야구</span></li>
+                    <li><span>요가/필라테스</span></li>
+                    <li><span>우드볼</span></li>
+                    <li><span>육상경기</span></li>
+                    <li><span>자전거/사이클</span></li>
+                    <li><span>전통무용</span></li>
+                    <li><span>전통선술<br>(한방기공체조)</span></li>
+                    <li><span>청구</span></li>
+                    <li><span>줄넘기/줄다리기</span></li>
+                    <li><span>짐볼</span></li>
+                    <li><span>탁구</span></li>
+                    <li><span>플라잉디스크</span></li>
+                    <li><span>플로어볼</span></li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+    </div>
+</div><!-- // modal -->
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+        // UI확인용: 기간 선택 시 가격 변경
+        var price = {
+            "basic": {
+                "03": "4,880",
+                "12": "12,210"
+            },
+            "whole": {
+                "03": "9,680",
+                "12": "24,200"
+            },
+        };
+
+        $('body').on('click', 'input[name="period"]', function() {
+            var $this = $(this);
+            var period = $this.attr('id').slice(-2);
+
+            $('#basicPlanPrice').text(price['basic'][period]);
+            $('#wholePlanPrice').text(price['whole'][period]);
+        });
+});
+</script>
+
+<!-- ui참고: include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+{literal}
+<script type="text/javascript">
+<!--
+
+$(document).ready(function(){
+
+	$(".chk-ok").click(function(){
+
+		var cname = "을(를) 확인해주시기 바랍니다.";
+		var i = 0;
+
+		$(".chkCustomNo").each(function(index){
+
+			if($(this).hasClass('active') == false){
+
+				alert($(this).attr('title') + cname);
+				return false;
+			}
+			else i++;
+		});
+
+		if(($(".chkCustomNo").length) == i) {
+
+			location.href = "/product.htm?mode="+ $("input[name='mode']").val() +"&mtype=step06";
+		}
+		return false;
+	});
+});
+//-->
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+						<div class="step_process">
+							<div><span class="st_1"><b>약관동의</b></span></div>
+							<div><span class="st_2 on"><b>정보입력</b></span></div>
+							<div><span class="st_3"><b>가입내용확인</b></span></div>
+							<div><span class="st_4"><b>결제</b></span></div>
+						</div>
+
+						<div class="step_Area">
+							<div class="terms">
+								<div class="total-Chk no">
+									<b>계약전 질문사항</b>
+									<p class="desc">질문의 답변이 사실과 다를 시에는 보험유지
+									또는 보험금 지급에 영향을 미칠 수 있습니다.<br />
+									모두 ‘아니오’에 해당하실 경우에만
+									가입이 가능한 상품입니다.</p>
+									<span class="chkCustom all">모두 {$RS.list[0].chk_title}</span><!-- addClass : active -->
+								</div>
+
+{section name=key loop=$RS.list}
+								<div class="terms-block">
+									<div class="terms-box">
+										<p class="title type">
+	{if $RS.list[key].open_fg == 'O'}
+											<span class="open" id="copen"></span>
+	{/if}
+											<b>{$RS.list[key].agree_title}</b>
+											<span class="chkZip">
+												<i class="chkCustom yes">예</i>
+												<i class="chkCustom chkCustomNo" title="{$RS.list[key].agree_title}">{$RS.list[key].chk_title}</i><!-- addClass : active -->
+											</span>
+										</p>
+	{if $RS.list[key].open_fg == 'O'}
+										<div class="terms-see" {if $RS.list[key].open_fg == 'O'}style="display: none;"{/if}>
+											{$RS.list[key].agree_content|nl2br}
+										</div>
+	{/if}
+									</div>
+								</div><!-- end : class : terms-block -->
+{/section}
+
+							</div><!-- end : class : terms -->
+
+							<div class="btn_C_Area">
+								<!--a href="step_4.html" class="btnStyle greyHalf">이전으로</a-->
+								<a href="#none" class="btnStyle blue chk-ok">다음</a>
+							</div>
+						</div><!-- end : class : step_Area -->
+					</div>
+					
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+			<input type="hidden" name="mode" value="{$_GET.mode}">
+
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

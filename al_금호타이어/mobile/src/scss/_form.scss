@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="search"] {
+  // padding: 6px 0;
+  height: 40px;
+  font-size: 16px;
+  color: inherit;
+  font-weight: 500;
+  line-height: 39px;
+  border: solid #ced4da;
+  border-width: 0 0 1px 0;
+  box-sizing: border-box;
+  outline: none;
+  // -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &::placeholder {
+    color: #adb5bd;
+  }
+  &:read-only {
+    color: #868E96;
+    background: #f8f9fa;
+  }
+
+  &.text-security {
+    -webkit-text-security:disc;
+  }
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px; 
+  height: 1px;
+  border: 0 !important;
+  outline-style: none;
+  caret-color: $color-primary;
+  & + label {
+    cursor: pointer;
+  }
+}
+
+input[type="checkbox"] {
+  & + label {
+    display: block;
+    padding-left: 30px;
+    color: #636b73;
+    background: {
+      image: url("../img/ico_chk_sm.svg");
+      repeat: no-repeat;
+      position: 0 center;
+      size: 24px auto;
+    }
+  }
+
+  &:checked + label {
+    color: #212529;
+    background-image: url("../img/ico_chk_sm_on.svg");
+  }
+
+  &.all-check {
+    & + label {
+      padding-left: 38px;
+      font-size: 16px;
+      line-height: 38px;
+      font-weight: 500;
+      background: {
+        image: url("../img/ico_chk.svg");
+        size: 28px auto;
+      }
+    }
+
+    &:checked + label {
+      background-image: url("../img/ico_chk_on.svg");
+    }
+  }
+
+}
+  
+input[type="radio"] {
+  & + label {
+    position: relative;
+    display: block;
+    padding-left: 28px;
+    font-size: 16px;
+    color: #adb5bd;
+    line-height: 22px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      display: block;
+      border-radius: 50%;
+      box-sizing: border-box;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      width: 22px;
+      height: 22px;
+      border: solid 1px #ced4da;
+    }
+    &::after {
+      opacity: 0;
+      width: 12px;
+      height: 12px;
+      background: #636b73;
+      transition: opacity 0.2s;
+      backface-visibility: hidden;
+    }
+  }
+
+  &:checked + label {
+    color: #444b52;
+    &::before {
+      border-color: #636b73;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+
+}
+.form-radio {
+  margin-top: 9px;
+  &.readonly {
+    input:checked + label {
+      &::before {
+        border-color: #ced4da;
+      }
+      &::after {
+        opacity: 1;
+        background: #ced4da;
+      }
+    }
+  }
+}
+
+.form-select {
+  position: relative;
+  display: block;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 39px;
+  border-bottom: 1px solid #ced4da;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    background: url("../img/ico_arrow_down.svg") no-repeat center;
+  }
+
+  select {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    line-height: 39px;
+    vertical-align: top;
+    border: none;
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+
+    &::placeholder {
+      color: #adb5bd;
+    }
+
+    &:invalid {
+      color:  #adb5bd;
+    }
+    
+    [disabled] {
+      color: #adb5bd;
+    }
+
+  }
+
+}
+
+.form-group {
+  margin-top: 40px;
+  .form-label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="email"],
+  input[type="search"] {
+    width: 100%;
+  }
+
+  &.type-unit {
+    position: relative;
+    input {
+      padding-right: 40px;
+    }
+    .unit {
+      position: absolute;
+      right: 0;
+      bottom: 6px;
+    }
+  }
+
+  .form-radio {
+    display: inline-block;
+    & + .form-radio {
+      margin-left: 60px;
+    }
+  }
+}

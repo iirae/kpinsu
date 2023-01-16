@@ -1,0 +1,234 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header with nav button -->
+    <div data-include-path="./include/header_nav.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-product-title"><!-- section-product-title -->
+                    <div class="wrap">
+                        <h2 class="title">회원가입</h2>
+                        <h3 class="title">회원 정보 입력</h3>
+                        <div class="step">
+                            <span class="in"></span>
+                            <span class="in"></span>
+                            <span class="in ing"></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div><!-- // section-product-title -->
+
+                <div class="container section-form"><!-- section-form -->
+                    <div class="wrap">
+                        <h4 class="title">[필수] 회원 정보</h4>
+
+                        <div class="form">
+                            <div class="item">
+                                <p class="subject">아이디</p>
+                                <input type="text" class="text" placeholder="사용할 아이디를 입력해 주세요." />
+                            </div>
+                            <div class="item">
+                                <p class="subject">비밀번호</p>
+                                <input type="password" class="text" placeholder="비밀번호를 입력해 주세요." />
+                            </div>
+                            <div class="item">
+                                <p class="subject">비밀번호 확인</p>
+                                <input type="password" class="text" placeholder="비밀번호를 다시 한번 입력해 주세요." />
+                            </div>
+                        </div>
+
+                        <p class="notice">8자 이상 16자 미만</p>
+                        <p class="notice info">영문, 숫자, 특수문자(!,@,#,$,%,^,&,*,_,!) 포함</p>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="container section-form is-top-line"><!-- section-form -->
+                    <div class="wrap">
+                        <h4 class="title">[필수] 회사 기본 정보</h4>
+
+                        <div class="type-way">
+                            <span class="checks is-radio">
+                                <input type="radio" name="type" id="type1" />
+                                <label for="type1">법인 사업자</label>
+                            </span>
+                            <span class="checks is-radio">
+                                <input type="radio" name="type" id="type2" />
+                                <label for="type2">개인 사업자</label>
+                            </span>
+                        </div>
+
+                        <div class="form">
+                            <div class="item"><!-- item -->
+                                <p class="subject">회사명(상호)</p>
+                                <input type="text" class="text" placeholder="회사명을 입력해주세요." />
+                            </div>
+                        </div>
+
+                        <div class="check-wrap">
+                            <div class="checks">
+                                <input type="checkbox" id="license" />
+                                <label for="license">사업자등록번호 미발급</label>
+                            </div>
+                            <p class="desc">
+                                사업자등록번호나 사업자등록증이 없는 경우 체크하세요.
+                            </p>
+                        </div>
+
+                        <div class="form">
+                            <div class="item"><!-- item -->
+                                <p class="subject">사업자등록번호</p>
+                                <input type="text" class="text" placeholder="숫자만 입력해주세요." />
+                            </div>
+                            <div class="item"><!-- item -->
+                                <p class="subject">사업자등록증</p>
+                                <p class="notice info">
+                                    사업자등록증 업로드가 불가능한 경우, 보험계약 시 추가 해주시면 됩니다.
+                                </p>
+
+                                <div class="photo-list in"><!-- 이미지 등록시 in 클래스 제거 -->
+                                    <div class="item">
+                                        <a href="javascript:;"><i class="icon direct"></i><span>직접 사진 촬영</span></a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><i class="icon gallery"></i><span>앨범 사진 선택</span></a>
+                                    </div>
+                                </div>
+
+                                <div class="thumb in"><!-- 이미지 등록시 in 클래스 추가 -->
+                                    <div class="obj"><img src="../resources/img/temp/@bill.png" alt="" /></div>
+                                    <a href="javascript" class="js-thumb-delete"><i class="icon delete"><em>사업자 등록증 이미지 삭제</em></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // section-form -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <div id="footer"><!-- footer -->
+        <div class="container">
+            <div class="wrap is-full">
+                <!-- <a href="javascript:;" class="button large primary"><span>회원 가입 신청</span></a> -->
+                <a href="javascript:;" class="button large disabled"><span>회원 가입 신청</span></a>
+            </div>
+        </div>
+    </div><!-- // footer -->
+
+</div><!-- // container -->
+
+<div id="modalLicenseError" class="modal-container"><!-- modal -->
+    <div class="md-modal">
+        <div class="md-modal-module">
+            <div class="md-modal-head">
+                <a href="javascript:;" class="js-modal-close close"><i class="icon"><em>팝업 닫기</em></i></a>
+            </div>
+            <div class="md-modal-body">
+
+                <div class="container modal-title"><!--  modal-title -->
+                    <div class="wrap">
+                        <h3 class="title">사업자 등록번호 중복 안내 </h3>
+                    </div>
+                </div><!-- // modal-title -->
+
+                <div class="container modal-license-message"><!--  modal-license-message -->
+                    <div class="wrap">
+                        <p class="core">
+                            입력하신 사업자 등록번호<br />
+                            (113-86-68645)로<br />
+                            <span class="info">이미 등록된 담당자 정보가 존재</span>합니다.
+                        </p>
+                        <p class="notice">
+                            서비스 운영정책에 따라 한 사업체 당, 한 명의 담당자 등록을 승인하고 있습니다.<br />
+                            담당자 변경 등의 사유로 추가 등록이 필요한 경우, 아래 추가 등록 사유를 작성하여 전송 바랍니다.
+                        </p>
+                    </div>
+                </div><!-- // modal-license-message -->
+
+                <div class="container modal-license-reason is-top-line"><!-- modal-license-reason -->
+                    <div class="wrap">
+                        <div class="form">
+                            <textarea class="textarea" placeholder="추가 등록사유를 간단히 작성해 주세요."></textarea>
+                        </div>
+                    </div>
+                </div><!-- // modal-license-reason -->
+
+            </div>
+            <div class="md-modal-foot">
+                <div class="grid">
+                    <div class="col col-1-3">
+                        <a href="javascript:;" class="js-modal-close button secondary full large"><span>취소</span></a>
+                    </div>
+                    <div class="col col-2-3">
+                        <a href="javascript:;" class="button primary full large"><span>추가 등록 사유 제출</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<!-- include: nav -->
+<div data-include-path="./include/nav.html"></div>
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+    // 사업자 등록번호 중복 안내 팝업
+    modalOpen('modalLicenseError');
+
+});
+</script>
+
+<!-- include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

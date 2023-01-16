@@ -1,0 +1,1224 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="김도희_Rony" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <link rel="stylesheet" href="../resources/css/guide.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"> -->
+        <!-- <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/base16/atelier-estuary-light.css"> -->
+        <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/base16/atelier-seaside-light.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous"/>
+        <script src="./resources/js/jquery-3.3.1.min.js"></script>
+        <script src="//cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="g-wrap" id="wrap">
+            <header class="g-header" id="header">
+                <h1 class="logo">Convention</h1>
+            </header>
+            <main class="content" id="content">
+                <ul class="g-tab">
+                    <li><a href="#basic"><i class="fas fa-user-cog"></i> 기본</a></li>
+                    <li><a href="#default"><i class="fas fa-magic"></i> Default Set</a></li>
+                    <li class="on"><a href="#components"><i class="fas fa-clone"></i> Components</a></li>
+                </ul>
+
+                <div class="tab-content" id="basic" style="display:none;">
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> 시작하기 전에..</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>공통</th>
+                                        <td>
+                                            <ul class="g-desc">
+                                                <li>header, footer 등 공통 처리 필요한 페이지는 include를 이용한다.</li>
+                                                <li>로컬 서버를 돌려야 하므로 레이아웃 제대로 확인하고픈 페이지 샘플만 한페이지 제공한다.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> 지원 환경</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>PC</th>
+                                        <td>Chrome, Safari, Edge, IE11</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile</th>
+                                        <td>AOS 5.0 ~(for App), AOS 6.0(for Web), IOS 12 ~, Chrome, safari, 삼성모바일웹브라우저</td>
+                                    </tr>
+                                    <tr>
+                                        <th>해상도</th>
+                                        <td>디자인 기준 360, 375 최적 320도 깨져 보이지 않도록 처리한다.(갤럭시 폴드? 깨지지 않게만..)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> 기본</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>전처리기</th>
+                                        <td>SCSS (기존 LESS는 서비스 리뉴얼 시 전환)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> naming 규칙</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: 150px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>folder, file</th>
+                                        <td>
+                                            <strong>snake_case</strong>
+                                        </td>
+                                        <td>
+                                            <div class="g-table">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 150px;">
+                                                        <col style="width: auto;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>배포용</th>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>- <strong>resources</strong> 폴더에서 관리한다.</li>
+                                                                    <li>- 하위에 scss, js, img 폴더를 필요 시 추가할 수 있다.</li>
+                                                                    <li>- 상용에 배포한다.</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>UI개발 작업용</th>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>- <strong>src</strong> 폴더에서 관리한다.</li>
+                                                                    <li>- 하위에 scss, js, img 폴더를 필요 시 추가할 수 있다.(Sprite를 위한 psd 파일 등)</li>
+                                                                    <li>- 사용에 배포하지 않는다.</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>image</th>
+                                        <td>
+                                            <strong>snake_case</strong>
+                                        </td>
+                                        <td>
+                                            <div class="g-table">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:150px;">
+                                                        <col style="width:150px;">
+                                                        <col style="width:auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">prefix</th>
+                                                            <th scope="col">비고</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">logo</th>
+                                                            <td>logo_</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">icon</th>
+                                                            <td>ico_</td>
+                                                            <td>svg 사용 권장</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">btn</th>
+                                                            <td>btn_</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">image</th>
+                                                            <td>img_</td>
+                                                            <td>배너 등, jpg 사용 권장</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">배경</th>
+                                                            <td>bg_</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">숫자</th>
+                                                            <td>_01</td>
+                                                            <td>2자리수로 입력한다.</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>id</th>
+                                        <td>
+                                            <strong>camelCase</strong>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>- id 사용은 지양하되, 레이아웃을 위한 id는 허용한다.</li>
+                                                <li>- wrap, container, header, contents, footer, aside, layer</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>class</th>
+                                        <td>
+                                            <strong>kebab-case</strong>
+                                        </td>
+                                        <td>
+                                            <div class="g-table">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:150px;">
+                                                        <col style="width:150px;">
+                                                        <col style="width:auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">prefix</th>
+                                                            <th scope="col">비고</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">section</th>
+                                                            <td>section-</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">navigation</th>
+                                                            <td>nav-</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">button</th>
+                                                            <td>btn-</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">icon</th>
+                                                            <td>ico-</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">숫자</th>
+                                                            <td>-1</td>
+                                                            <td>클래스는 숫자 1자리 입력 허용</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>js용</th>
+                                                            <td>e-</td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>CSS</th>
+                                        <td> </td>
+                                        <td>
+                                            <ul>
+                                                <li>- 기본적으로는 OOCSS 방식을 따르되 BEM을 혼용하여 사용한다.</li>
+                                                <li>- 재사용 가능한 객체들은 OOCSS, 그 외에는 BEM으로 변형하여 사용한다.</li>
+                                            </ul>
+                                            <div class="g-table">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:150px;">
+                                                        <col style="width:150px;">
+                                                        <col style="width:auto;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">버튼</th>
+                                                            <td>btn </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">아이콘</th>
+                                                            <td>icon</td>
+                                                            <td>tag는 &lt;i&gt;&lt;/i&gt; 를 사용한다.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">아이콘형 버튼</th>
+                                                            <td>btn-icon</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">뱃지</th>
+                                                            <td>badge</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">단락</th>
+                                                            <td>section</td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <section class="g-section">
+                            <h3>서비스 별</h3>
+                            <ul>
+                                <li>* snake_case로 명명한다.</li>
+                                <li>* 각각의 서비스별로 prefix를 사용하여 구분한다.</li>
+                                <li>* PC와 Mobile이 함께 있는 프로젝트의 경우 프로젝트 안에 'pc / mobile' 폴더로 구분하여 사용한다.</li>
+                            </ul>
+                            <div class="g-table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:150px;">
+                                        <col style="width:150px;">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">prefix</th>
+                                            <th scope="col">비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">제휴 서비스</th>
+                                            <td>al_</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">kare for 서비스</th>
+                                            <td>kare_for_</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">카카오페이</th>
+                                            <td>kakaopay_</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+    
+                    </section>
+
+                </div>
+
+                <div class="tab-content" id="default" style="display:none;">
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> layout</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">모바일</th>
+                                        <td><a href="./temp/mobile/html/layout_for_mobile.html" target="_blank">layout</a></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">pc</th>
+                                        <td><a href="./temp/pc/html/layout_for_pc.html" target="_blank">layout</a></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> common variable</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">bg url</th>
+                                        <td>이미지 url 변수 처리</td>
+                                        <td>
+<pre><code class="css">background-image: url($bg_addr + "ico_arrow_r.svg");</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">pseudo 클래스 사용 시</th>
+                                        <td>
+                                            <div class="g-table auto">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:120px;">
+                                                        <col style="width:auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Default 값</th>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>position : relative</li>
+                                                                    <li>display : inline-block</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>필수값</th>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>width</li>
+                                                                    <li>height</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="css">@include pseudo($width, $height, $display, $position)</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td>
+<pre><code></code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td>
+<pre><code></code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td>
+<pre><code></code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> color</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Primary</th>
+                                        <th>Gray</th>
+                                        <th>Interaction</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="color-wrap">
+                                                <div class="color-set" style="background: #ffeb00;"><strong>$color-primary</strong><em>yellow500 <span>#ffeb00</span></em></div>
+                                                <div class="color-set" style="background: #ffdb00;"><strong>$color-primary-600</strong><em>yellow600 <span>#ffdb00</span></em></div>
+                                                <div class="color-set" style="background: #febd00;"><strong>$color-primary-700</strong><em>yellow700 <span>#febd00</span></em></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="color-wrap">
+                                                <div class="color-set" style="background: #000; color: #fff;"><strong>$color-bk</strong><em>bk <span>#000</span></em></div>
+                                                <div class="color-set" style="background: #0e1012; color: #fff;"><strong>$color-gray-900</strong><em><span>gray900<br>(text-basic)</span> <span>#0e1012</span></em></div>
+                                                <div class="color-set" style="background: #212529; color: #fff;"><strong>$color-gray-800</strong><em><span>gray800<br>(text-default)</span> <span>#212529</span></em></div>
+                                                <div class="color-set" style="background: #444b52; color: #fff;"><strong>$color-gray-700</strong><em><span>gray700<br>(text-sub)</span> <span>#444b52</span></em></div>
+                                                <div class="color-set" style="background: #9299a1; color: #fff;"><strong>$color-gray-600</strong><em><span>gray600<br>(text-disabled)</span> <span>#9299a1</span></em></div>
+                                                <div class="color-set" style="background: #ced4da;"><strong>$color-gray-500</strong><em><span>gray900<br>(text-hint)</span> <span>#ced4da</span></em></div>
+                                                <div class="color-set" style="background: #e9ecef;"><strong>$color-gray-550</strong><em><span>gray550<br>(btn-disabled)</span> <span>#e9ecef</span></em></div>
+                                                <div class="color-set" style="background: #edeef0;"><strong>$color-gray-400</strong><em>gray400 <span>#edeef0</span></em></div>
+                                                <div class="color-set" style="background: #f5f5f5;"><strong>$color-gray-300</strong><em>gray300 <span>#f5f5f5</span></em></div>
+                                                <div class="color-set" style="background: #f8f9fa;"><strong>$color-gray-200</strong><em>gray200 <span>#f8f9fa</span></em></div>
+
+
+                                                <div class="color-set" style="background: #fff;"><strong>$color-wh</strong><em>wh <span>#fff</span></em></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="color-wrap">
+                                                <div class="color-set" style="background: #ff3c3c; color: #fff;"><strong>$color-danger</strong><em>red500 <span>#ff3c3c</span></em></div>
+                                                <div class="color-set" style="background: #008dff; color: #fff;"><strong>$color-info</strong><em>blue600 <span>#008dff</span></em></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <th scope="row">Primary</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gray</th>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Interaction</th>
+                                        <td>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> text</h2>
+                        <p>* 웹은 모바일 기준으로 통용해서 사용하되, 예외 케이스는 별도 세팅한다.</p>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">font-family</th>
+                                        <td>Notosans CJK KR</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Large Title</th>
+                                        <td>
+                                            <h1 class="txt-title-lg">txt-title-lg</h1>
+                                            <h1 class="txt-title-lg fw-700">txt-title-lg fw-700</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Title</th>
+                                        <td>
+                                            <h2 class="txt-title-1">txt-title-1</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Headline</th>
+                                        <td>
+                                            <h3 class="txt-headline">txt-headline</h3>
+                                            <h3 class="txt-headline fw-500">txt-headline fw-500</h3>
+                                            <h3 class="txt-headline fw-700">txt-headline fw-700</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sub Header</th>
+                                        <td>
+                                            <h1 class="txt-subheader">txt-subheader</h1>
+                                            <h1 class="txt-subheader fw-500">txt-subheader fw-500</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Body</th>
+                                        <td>
+                                            <p class="txt-body-16">txt-body-16</p>
+                                            <p class="txt-body-16 fw-500">txt-txt-body-16 fw-500</p>
+                                            <p class="txt-body-14">txt-body-14</p>
+                                            <p class="txt-body-14 fw-500">txt-txt-body-14 fw-500</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Footnote</th>
+                                        <td>
+                                            <h2 class="txt-footnote">txt-footnote</h2>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> spacing</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">variable</th>
+                                        <td>
+                                            <ul>
+                                                <li>6px</li>
+                                                <li>8px</li>
+                                                <li>10px</li>
+                                                <li>16px</li>
+                                                <li>20px</li>
+                                                <li>44px</li>
+                                                <li>60px</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+<pre><code class="css">$spacing-t: 6px;
+$spacing-xs: 8px;
+$spacing-s: 10px;
+$spacing-r: 16px;
+$spacing-m: 20px;
+$spacing-l: 44px;
+$spacing-xl: 60px;
+</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">표기법</th>
+                                        <td colspan="2">
+                                            <ul class="g-text-info">
+                                                <li>아래의 표기법에는 !important가 포함되어있다</li>
+                                            </ul>
+                                            <div class="g-table">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:150px;">
+                                                        <col style="width:150px;">
+                                                        <col style="width:150px;">
+                                                        <col style="width:auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>property</th>
+                                                            <th>sides</th>
+                                                            <th>size</th>
+                                                            <th>example</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>m - margin</li>
+                                                                    <li>p - padding</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>t - top</li>
+                                                                    <li>b - bottom</li>
+                                                                    <li>l - left</li>
+                                                                    <li>r - right</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>t - 6px</li>
+                                                                    <li>xs - 8px</li>
+                                                                    <li>s - 10px</li>
+                                                                    <li>r - 16px</li>
+                                                                    <li>m - 20px</li>
+                                                                    <li>l - 44px</li>
+                                                                    <li>xl - 60px</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+<pre><code class="html">&lt;div class="mt-m"&gt;contents&lt;/div&gt;
+&lt;div class="pb-xs"&gt;contents&lt;/div&gt;
+</code></pre>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- <section class="g-section">
+                        <h2>kakaopay</h2>
+                        <ul>
+                            <li>* 가장 최근의 작업분을 템플릿화 하여 사용한다.(현재는 자동차보험)</li>
+                            <li>* 이슈 수정 시 템플릿도 동시에 수정 하여야 한다.</li>
+                            <li>* <span class="text-primary">dark Mode</span> 처리 필수</li>
+                        </ul>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section> -->
+
+                </div>
+
+
+<!-- components -->
+                <div class="tab-content" id="components">
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> button</h2>
+                        <ul>
+                            <li>버튼은 button, a, label(form) 태그만을 허용한다.</li>
+                            <li>각 사이즈별 버튼 사이의 간격은 spacing 기준에 맞춰서 적용된 상태이므로 따로 적용하지 않는다. (예외: fixed btn-area)</li>
+                        </ul>
+                        <h3>btn</h3>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">type</th>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">btn-primary</button> <br>
+                                            <button type="button" class="btn btn-secondary">btn-secondary</button> <br>
+                                            <button type="button" class="btn btn-normal">btn-normal</button> <br>
+                                            <button type="button" class="btn btn-basic">btn-basic</button> <br>
+                                            <button type="button" class="btn btn-primary disabled">disabled</button>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;button type="button" class="btn btn-primary"&gt;btn-primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;btn-secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-normal"&gt;btn-normal&lt;/button&gt;
+&lt;button type="button" class="btn btn-basic"&gt;btn-basic&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary disabled"&gt;disabled&lt;/button&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">size</th>
+                                        <td>
+                                            <button type="button" class="btn btn-primary lg">lg 66</button> 
+                                            <button type="button" class="btn btn-primary">deafult 60</button> 
+                                            <button type="button" class="btn btn-primary small">small 40</button> 
+                                            <button type="button" class="btn btn-primary tiny">tiny 30</button>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;button type="button" class="btn btn-primary lg"&gt;lg 66&lt;/button&gt; 
+&lt;button type="button" class="btn btn-primary"&gt;deafult 60&lt;/button&gt; 
+&lt;button type="button" class="btn btn-primary small"&gt;small 40&lt;/button&gt; 
+&lt;button type="button" class="btn btn-primary tiny"&gt;tiny 30&lt;/button&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3>btn-area</h3>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">btn-area (CTA)</th>
+                                        <td>
+                                            <div class="btn-area">
+                                                <button type="button" class="btn btn-primary">lg</button> 
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;div class="btn-area"&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;lg&lt;/button&gt; 
+&lt;/div&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">btn-area fixed</th>
+                                        <td>
+                                            <div class="btn-area fixed">
+                                                <button type="button" class="btn btn-secondary col-1">col-1</button>
+                                                <button type="button" class="btn btn-primary col-2">col-2</button> 
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;div class="btn-area fixed"&gt;
+    &lt;button type="button" class="btn btn-secondary col-1"&gt;col-1&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary col-2"&gt;col-2&lt;/button&gt; 
+&lt;/div&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3>btn-icon</h3>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>
+                                            <button class="btn-icon favorite" title="title에 버튼의 기능을 적는다."></button>
+                                        </td>
+                                        <td>
+                                            <pre><code></code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> form</h2>
+                        <p>* page의 layout은 아래를 참고한다.</p>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">주민등록번호 처리</th>
+                                        <td>
+                                            (모바일)숫자 키패드 + 보안 + maxlength 동시 처리<br>
+                                            (2020-12-01 UI/UX팀 내부 협의)
+                                        </td>
+                                        <td>
+                                            <pre><code>&lt;div&gt;
+    &lt;input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="앞 6자리"&gt;
+    &lt;span&gt;-&lt;/span&gt;
+    &lt;input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="7" placeholder="뒤 7자리" class="security"&gt;
+&lt;/div&gt;
+
+
+.security { -webkit-text-security: disc; }
+                                            </code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> tab</h2>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">탭 기본 형태</th>
+                                        <td>
+                                            <div class="tab e-tab">
+                                                <ul>
+                                                    <li class="on"><a href="#">tab1</a></li>
+                                                    <li><a href="#">tab2</a></li>
+                                                    <li><a href="#">tab3</a></li>
+                                                </ul>
+                                                <span class="tab-point"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;div class="tab e-tab"&gt;
+    &lt;ul&gt;
+        &lt;li class="on"&gt;&lt;a href="#"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">페이지 중간에 탭이 위치했을 경우</th>
+                                        <td>
+                                            <div class="tab md e-tab">
+                                                <ul>
+                                                    <li class="on"><a href="#">tab1</a></li>
+                                                    <li><a href="#">tab2</a></li>
+                                                    <li><a href="#">tab3</a></li>
+                                                </ul>
+                                                <span class="tab-point"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;div class="tab e-tab"&gt;
+    &lt;ul&gt;
+        &lt;li class="on"&gt;&lt;a href="#"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;span class="tab-point"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">이중 탭일 경우</th>
+                                        <td>
+                                            <div class="tab upper e-tab">
+                                                <ul>
+                                                    <li class="on"><a href="#">tab1</a></li>
+                                                    <li><a href="#">tab2</a></li>
+                                                    <li><a href="#">tab3</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab e-tab">
+                                                <ul>
+                                                    <li class="on"><a href="#">tab1</a></li>
+                                                    <li><a href="#">tab2</a></li>
+                                                    <li><a href="#">tab3</a></li>
+                                                </ul>
+                                                <span class="tab-point"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;div class="tab upper e-tab"&gt;
+    &lt;ul&gt;
+        &lt;li class="on"&gt;&lt;a href="#"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="tab e-tab"&gt;
+    &lt;ul&gt;
+        &lt;li class="on"&gt;&lt;a href="#"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;span class="tab-point"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="g-section">
+                        <h2><i class="far fa-caret-square-right"></i> layer</h2>
+                        <p></p>
+                        <div class="g-table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">alert 기본형</th>
+                                        <td>
+                                            <p class="mb-s">* 타이틀이 없을 경우 타이틀만 삭제하여 사용한다.</p>
+                                            <section class="layer center show" id="layerCommon" style="position: relative; padding: 30px 0;">
+                                                <div class="layer-container">
+                                                    <div class="layer-contents">
+                                                        <h3 class="title">레이어 타이틀</h3>
+                                                        <p class="txt-body-16">문구는 이 곳에 넣으면 됩니다.</p>
+                                                    </div>
+                                                    <div class="btn-area">
+                                                        <button class="btn btn-primary">확인</button>
+                                                    </div>
+                                                </div>
+                                                <div class="dimmed"></div>
+                                            </section>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;section class="layer center" id="layerCommon"&gt;
+    &lt;div class="layer-container"&gt;
+        &lt;div class="layer-contents"&gt;
+            &lt;h3 class="title"&gt;레이어 타이틀&lt;/h3&gt;
+            &lt;p class="txt-body-16"&gt;문구는 이 곳에 넣으면 됩니다.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="btn-area"&gt;
+            &lt;button class="btn btn-primary"&gt;확인&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dimmed"&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>
+                                            <p class="mb-s">* [다시보지 않기] [오늘만 보지 않기] 추가의 경우에는 아래를 참고 한다.</p>
+                                            <section class="layer center show" id="layerCommon2" style="position: relative; padding: 30px 0 60px;">
+                                                <div class="layer-container">
+                                                    <div class="layer-contents">
+                                                        <h3 class="title">레이어 타이틀</h3>
+                                                        <p class="txt-body-16">문구는 이 곳에 넣으면 됩니다.</p>
+                                                    </div>
+                                                    <div class="btn-area">
+                                                        <button class="btn btn-basic">취소</button>
+                                                        <button class="btn btn-primary">확인</button>
+                                                    </div>
+                                                    <div class="form-group close">
+                                                        <input type="checkbox" id="notToday">
+                                                        <label for="notToday">오늘만 보지 않기</label>
+                                                    </div>
+                                                </div>
+                                                <div class="dimmed"></div>
+                                            </section>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;section class="layer center" id="layerCommon"&gt;
+    &lt;div class="layer-container"&gt;
+        &lt;div class="layer-contents"&gt;
+            &lt;h3 class="title"&gt;레이어 타이틀&lt;/h3&gt;
+            &lt;p class="txt-body-16"&gt;문구는 이 곳에 넣으면 됩니다.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="btn-area"&gt;
+            &lt;button class="btn btn-primary"&gt;확인&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group close"&gt;
+            &lt;input type="checkbox" id="notToday"&gt;
+            &lt;label for="notToday">오늘만 보지 않기&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dimmed"&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">bottom up</th>
+                                        <td>
+                                            <p class="mb-s">* [다시보지 않기] [오늘만 보지 않기] 추가의 경우에는 아래를 참고 한다.</p>
+                                            <section class="layer bottom show" id="layerCommon3" style="position: relative; height:400px;">
+                                                <div class="layer-container">
+                                                    <h2 class="layer-head">레이어 타이틀</h2>
+                                                    <div class="layer-contents">
+                                                        <ul>
+                                                            <li>list</li>
+                                                            <li>list</li>
+                                                            <li>list</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btn-area">
+                                                        <button class="btn btn-primary">확인</button>
+                                                    </div>
+                                                </div>
+                                                <div class="dimmed"></div>
+                                            </section>
+                                        </td>
+                                        <td>
+<pre><code class="html">&lt;section class="layer bottom" id="layerCommon"&gt;
+    &lt;div class="layer-container"&gt;
+        &lt;div class="layer-contents"&gt;
+            &lt;h3 class="title"&gt;레이어 타이틀&lt;/h3&gt;
+            &lt;p class="txt-body-16"&gt;문구는 이 곳에 넣으면 됩니다.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="btn-area"&gt;
+            &lt;button class="btn btn-primary"&gt;확인&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group close"&gt;
+            &lt;input type="checkbox" id="notToday"&gt;
+            &lt;label for="notToday">오늘만 보지 않기&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dimmed"&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+        </div>
+
+        <script src="resources/js/event.js"></script>
+        <script>
+
+            // tab decoration: 페이지 로딩 시 필수 추가, vue의 경우 mounted 시
+            $(window).on('load', function(e) {
+                let tabWraps = $('.tab');
+
+                $.each(tabWraps, function(index, tabWrap) {
+                    let tabs = $(tabWrap).find('a');
+
+                    $.each(tabs, function(index, tab) {
+                        if($(tab).closest('li').hasClass('on')) {
+                            let tabItemWidth = $(tab).width(),
+                                tabItemPositionLeft = $(tab).closest('li').position().left;
+
+                            tabDeco(tabWrap, tabItemWidth, tabItemPositionLeft);
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            const tabList = document.querySelectorAll('.g-tab li');
+
+            Array.prototype.forEach.call(tabList, (tab) => {
+                tab.children[0].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let tabContent = document.querySelectorAll('.tab-content');
+                    let target = tab.children[0].getAttribute('href').substring(1);
+
+                    Array.prototype.forEach.call(tabContent, (content, i) => {
+                        content.style.display = 'none';
+
+                        tabList[i].className = '';
+
+                        if(target == content.id) {
+                            content.style.display = 'block';
+                        }
+
+                    });
+
+                    if(tab.className.indexOf('on') == -1) {
+                        tab.className = 'on';
+                    }
+
+                });
+            });
+        </script>
+
+    </body>
+</html>

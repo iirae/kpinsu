@@ -1,0 +1,272 @@
+@charset "utf-8";
+@import "mixin.scss";
+
+.dimmed {
+  z-index: 110;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.layer {
+  display: none;
+  z-index:100;
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .container {
+    z-index: 110;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    padding: 40px 30px;
+    width: 400px;
+    background: #fff;
+    box-sizing: border-box;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  .head {
+    z-index: 120;
+    padding: 0 0 20px 0;
+    background: #fff;
+
+    &.with-btn {
+      padding-right: 54px;
+    }
+
+    .btn {
+      position: absolute;
+      top: 32px;
+      right:30px;
+      z-index:110;
+    }
+
+    &.align-left {
+      text-align: left;
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    color: #0e1012;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+
+    &.page-head {
+      font-size: 26px;
+      color: #0e1012;
+      line-height: 1.38;
+      font-weight: 600;
+    }
+  }
+
+  .contents {
+    position: relative;
+    overflow-y: auto;
+    max-height: 500px;
+    line-height: 1.43;
+    box-sizing: border-box;
+
+    &.pt-10 {
+      padding-top: 10px;
+    }
+
+  }
+  .area-button {
+    margin: 0 -10px -20px;
+    padding:20px 0 0;
+  }
+
+  // full 
+  &.full {
+    .footer {
+      z-index: 110;
+      position: absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: 0 auto;
+      max-width: 720px;
+      width: 100%;
+    }
+  }
+
+  // center
+  &.center {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      right: 20px;
+      padding: 0;
+      width: 400px;
+      height: auto;
+      transform: translate(0, -50%);
+      border-radius: 5px;
+
+      p {
+        padding: 32px 10px;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+
+    .area-button {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      .btn {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+
+  }
+
+  // bottom
+  &.bottom {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right:0;
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .content {
+      padding:20px 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: $color-secondary;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .area-button {
+      padding:10px 0 0;
+    }
+  }
+
+}
+
+// 서류 정보
+.layer-document {
+  .container {
+    width: 448px;
+    border-radius: 8px;
+  }
+  .contents {
+    max-height: 800px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+  .table {
+    margin-top: 30px;
+    padding: 0 25px 16px;
+    background: #f8f9fa;
+    border-radius:10px;
+    th {
+      padding: 16px 0 10px;
+      color: #212529;
+      font-weight: 500;
+      text-align: left;
+    }
+    td {
+      padding: 10px 0;
+    }
+    tr + tr {
+      td {
+        border-top: solid 1px #e9ecef;
+      }
+    }
+  }
+
+  .text-info {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.31;
+    &.point {
+      color: $color-point;
+    }
+  }
+}
+
+@media screen and (max-height : 899px) {
+  .layer-document {
+    .contents {
+      max-height: 500px;
+    }
+  }
+}
+
+.layer-bank-list {
+  input[type="radio"] {
+    & + label {
+      padding: 0;
+      height: 55px;
+      font-size: 13px;
+      color: #444b52;
+      line-height: 55px;
+      text-align: center;
+      border: solid 1px #f1f3f5;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+      &::before, &::after {
+        display: none;
+      }
+    }
+    &:checked + label {
+      border-color: #48acff;
+    }
+  }
+  .bundle-kakaopay {
+
+  }
+  .section-bank-list {
+    margin-top: 40px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      margin: 9px 0 0 9px;
+      width: calc((100% - 18px) / 3);
+      &:nth-of-type(3n+1) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.layer-insu-list {
+  .section-insu_com {
+    .icon {
+      & + span {
+        margin: 8px 0 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML><html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="title" content="kare for business" id="metaTitle" />
+<meta name="author" content="soo" />
+<meta name="copyright" content="inbyu kare for business" />
+<meta property="og:title" content="kare for business" id="ogTitle" />
+<meta property="og:description" content="kare for business" id="ogDescription" />
+<meta property="og:image" content="../resources/img/tile.png" id="ogImage" />
+<title id="title">kare for business</title>
+<link rel="stylesheet" href="../resources/css/base.css?ver=20181111" />
+<link rel="stylesheet" href="../resources/css/style.css?ver=20181111" />
+<!--[if (gte IE 6)&(lte IE 9)]>  <script src="../resources/js/lib/jquery-1.12.4.min.js"></script> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <script src="../resources/js/lib/jquery-3.3.1.min.js"></script> <!--<![endif]-->
+<script>
+window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
+</script>
+<script src="../resources/js/lib/TweenMax-2.1.2.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">kare for business</h1>
+
+<div id="container"><!-- container -->
+
+    <!-- include: header with nav button -->
+    <div data-include-path="./include/header_nav.html"></div>
+
+    <div id="wrapper"><!-- wrapper -->
+
+        <div id="inner"><!-- inner -->
+
+            <div id="content" class="content"><!-- content -->
+
+                <div class="container section-title"><!-- section-title -->
+                    <div class="wrap">
+                        <h2 class="title">가입 내역 조회</h2>
+                    </div>
+                </div><!-- // section-title -->
+
+                <div class="container section-tab"><!-- section-tab -->
+                    <div class="scroll-x">
+                        <div class="holder">
+                            <a href="javascript:;" class="in"><span>전체</span></a>
+                            <a href="javascript:;"><span>심사중</span></a>
+                            <a href="javascript:;"><span>계약완료</span></a>
+                            <a href="javascript:;"><span>인수거절</span></a>
+                            <a href="javascript:;"><span>계약종료</span></a>
+                            <a href="javascript:;"><span>중도해지</span></a>
+                            <a href="javascript:;"><span>계약취소</span></a>
+                        </div>
+                    </div>
+                </div><!-- // section-tab -->
+
+                <div class="container section-history-list is-top-line"><!-- section-history-list -->
+                    <div class="wrap">
+                        <h3 class="title">전체 <span class="count">총 23건</span></h3>
+
+                        <div class="list">
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state danger">인수거절</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">처리일 <em>2020-08-15</em></span>
+                                </a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state ing">심사중</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">신청일 <em>2020-08-14</em> <span class="pipe"><em>|</em></span> 입금마감 <em>11일 남음</em></span>
+                                </a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state finish">계약완료</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">시작일 <em>2020-08-14</em> <span class="pipe"><em>|</em></span> 종료일 <em>2021-08-15</em></span>
+                                </a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state end">계약종료</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">시작일 <em>2020-08-14</em> <span class="pipe"><em>|</em></span> 종료일 <em>2020-08-15</em></span>
+                                </a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state danger">중도해지</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">시작일 <em>2020-08-14</em> <span class="pipe"><em>|</em></span> 해지일 <em>2020-08-15</em></span>
+                                </a>
+                            </div>
+                            <div class="item"><!-- item -->
+                                <a href="javascript:;">
+                                    <span class="badge state danger">계약취소</span>
+                                    <span class="core"><i class="icon brand-logo samsung"><em>삼성화재</em></i> <span>재난배상책임보험</span></span>
+                                    <span class="desc price">보험료 <em>10,000원 (일시납)</em></span>
+                                    <span class="desc">취소일 <em>2020-08-15</em></span>
+                                </a>
+                            </div>
+
+                            <div class="no-result">
+                                <i class="icon"></i>
+                                <p>
+                                    보험가입 내역이 존재하지 않습니다
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- // section-history-list -->
+
+                <div class="bottom-spacer" aria-hidden="true"></div>
+
+            </div><!-- // content -->
+
+        </div><!-- // inner -->
+
+    </div><!-- // wrapper -->
+
+    <!-- include: copyright -->
+    <div data-include-path="./include/copyright.html"></div>
+
+</div><!-- // container -->
+
+<div id="sticky"><!-- sticky -->
+    <ul class="reset">
+        <li><a href="javascript:;" class="corporate"><span>기업보험 문의</span><i class="icon"></i></a></li>
+        <li><a href="javascript:;" class="inquiry"><span>상담 문의</span><i class="icon"></i></a></li>
+    </ul>
+    <a href="javascript:;" class="more"><i class="icon"><em>sticky menu</em></i></a>
+</div><!-- // sticky -->
+
+<div id="pageUp"><!-- pageUp -->
+    <a href="javascript:;"><i class="icon top"><em>페이지 스크롤 상단으로 이동</em></i></a>
+</div><!-- // pageUp -->
+
+<!-- include: nav -->
+<div data-include-path="./include/nav.html"></div>
+
+<script src="../resources/js/plugin-dist.js?ver=20181111"></script>
+<script src="../resources/js/module-dist.js?ver=20181111"></script>
+<script src="../resources/js/jquery-ui.js?ver=20181111"></script>
+<script src="../resources/js/main.js?ver=20181111"></script>
+<script src="../resources/js/event.js?ver=20181111"></script>
+
+<script>
+$(function() {
+
+    var $window = $window || $(window),
+        $document = $document || $(document),
+        $html = $html || $('html');
+
+});
+</script>
+
+<!-- include 용 -->
+<script src="../src/javascript/include.js"></script>
+</body>
+</html>

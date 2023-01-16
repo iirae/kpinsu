@@ -1,0 +1,445 @@
+@charset "utf-8";
+html {
+    -webkit-text-size-adjust: 100%;
+}
+body {
+  width: 100%;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    border: 0;
+    background-color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+a {
+    color: #444b52;
+    text-decoration: none;
+}
+#container {
+    position: relative;
+    overflow: hidden;
+}
+#container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    right: 0;
+    margin-left: 240px;
+    background-color: #f8f9fa;
+}
+#container::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 430px;
+    height: 296px;
+    margin-left: 405px;
+    background-image: url('../../resources/img/bg.png');
+}
+
+#wrapper { max-width: 1100px; margin: 0 auto; }
+
+#content { width: 750px; }
+
+#footer {
+    margin-top: 80px;
+    padding: 35px 0 40px 0;
+    border-top: 5px #e9ecef solid;
+}
+#footer .logo {
+    width: 299px;
+    height: 23px;
+    background-image: url('../../resources/img/icon_footer_logo.png');
+}
+#footer p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #868e96;
+    line-height: 1.83;
+}
+#footer .pipe {
+    position: relative;
+}
+#footer .pipe::before {
+    content: '|';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -9px);
+    font-style: normal;
+}
+
+#sticky {
+    position: absolute;
+    z-index: 10;
+    top: 140px;
+    left: 50%;
+    margin-left: 270px;
+    width: 280px;
+}
+@media (min-height: 870px) {
+    #sticky {
+        position: fixed;
+    }
+}
+@media (max-height: 1000px) {
+    #sticky {
+        top: 50px;
+    }
+}
+
+#sticky .process h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #0e1012;
+}
+#sticky .process h2 span {
+    color: #e26a34;
+}
+#sticky .process ul {
+    margin: 40px 0 0;
+    padding: 0;
+    list-style: none;
+}
+#sticky .process li {
+    position: relative;
+    padding-left: 35px;
+    padding-bottom: 25px;
+}
+#sticky .process li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 14px;
+    bottom: 0;
+    border-left: 2px #e26a34 dashed;
+}
+#sticky .process li:last-child {
+    padding-bottom: 0;
+}
+#sticky .process li:last-child::after {
+    display: none;
+}
+#sticky .process .step {
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: 0;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #e26a34;
+    border-radius: 100%;
+}
+#sticky .process strong {
+    display: block;
+    font-size: 18px;
+    color: #e26a34;
+    font-weight: 500;
+}
+#sticky .process p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #636b73;
+}
+#sticky .guide {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px #ced4da solid;
+}
+#sticky .guide h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #0e1012;
+    font-weight: 500;
+}
+#sticky .guide h3 {
+    margin: 15px 0 0;
+    font-size: 15px;
+    color: #e26a34;
+    font-weight: 500;
+}
+#sticky .guide ol.list-a {
+    margin-top: 5px;
+}
+#sticky .action {
+    margin-top: 20px;
+}
+#sticky .action .button {
+    padding: 0;
+}
+ol.list-a {
+    margin: 0 0 0 15px;
+    padding: 0;
+    list-style: decimal;
+    color: #444b52;
+    font-size: 15px;
+    line-height: 1.7;
+}
+ul.list-a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #636b73;
+    font-size: 14px;
+    line-height: 1.7;
+}
+ul.list-a li {
+    position: relative;
+    padding-left: 10px;
+}
+ul.list-a li::before {
+    content: '-';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    min-width: 14px;
+    min-height: 14px;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+    transition: opacity 0.2s;
+}
+.icon em {
+    box-sizing: content-box;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    font-family: a;
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    color: transparent;
+    width: 0 !important;
+}
+.icon.essential {
+    position: relative;
+    font-size: 18px;
+    color: #e53312;
+    font-weight: 500;
+}
+.icon.essential::before {
+    content: '*';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input.text,
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+    font-size: 15px;
+    color: #444b52;
+    border: solid 1px #ced4da;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+input.text,
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select {
+    padding: 0 0 0 10px;
+    height: 40px;
+}
+input.text {
+    -webkit-appearance: none;
+}
+
+input.text::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="text"]::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #868e96;
+}
+select:not(:focus):invalid {
+  color: #868e96;
+}
+select {
+    min-width: 70px;
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 0 65px;
+    font-size: 15px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    background-color: #e26a34;
+}
+.button:hover {
+    text-decoration: none;
+}
+.button.full {
+    display: block;
+}
+.button.large {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+.button.info {
+    background-color: #00559d;
+}
+
+.section-button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.table-a {
+    width: 100%;
+    border-top: 2px #003770 solid;
+}
+.table-a th {
+    padding: 25px 0;
+    font-weight: 400;
+    color: #212529;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px #ced4da solid;
+}
+.table-a td {
+    padding: 15px 0;
+    color: #444b52;
+    font-size: 15px;
+    height: 40px;
+    text-align: left;
+    border-bottom: 1px #ced4da solid;
+}
+.vertical-top {
+    vertical-align: top;
+}
+
+.section-form {
+    margin-top: 40px;
+}
+.section-form .title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    color: #0e1012;
+}
+.section-form .table-a {
+    margin-top: 15px;
+}
+.section-form .text {
+    width: 220px;
+}
+.section-form .pipe {
+    margin-right: 20px;
+}
+.price-ex {
+    margin-top: 20px;
+}
+.price-ex p {
+    margin: 0;
+    font-size: 15px;
+    color: #48acff;
+    font-weight: bold;
+}
+.price-ex .grid::after {
+    content: '';
+    display: table;
+    width: 100%;
+    height: 0;
+}
+.price-ex .grid .col {
+    float: left;
+    margin-top: 5px;
+    width: 25%;
+    font-size: 13px;
+    color: #868e96;
+}
+.price-ex .after {
+    position: relative;
+}
+.price-ex .after::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    margin-top: -2px;
+    transform: translate(-50%, -50%);
+    background-image: url('../../resources/img/icon_after.png');
+}
+
+.section-title {
+    position: relative;
+    margin-top: 50px;
+}
+.section-title h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #00559d;
+    font-weight: 500;
+}
+.section-title p {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #636b73;
+    transform: translate(0, -50%);
+}
+h1.title {
+    margin: 50px 0 0;
+}
+h1.title .icon {
+    width: 466px;
+    height: 36px;
+    background-image: url('../../resources/img/icon_logo.png');
+}

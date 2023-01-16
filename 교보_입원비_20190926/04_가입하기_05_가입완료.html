@@ -1,0 +1,80 @@
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlMobHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlMobBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlMobTop.inc"}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+					<h3 class="sub_Title">
+						<a href="javascript:history.back()" class="back"><img src="img/v3/btn/btn_back.jpg" alt="이전페이지 가기" /></a>
+						{$RS.data.goods_name}
+					</h3>
+
+					<div class="in_box">
+
+						<div class="step_Area">
+							<div class="end_step">
+								<div class="top">
+									<div class="obj"><img src="img/v3/contents/success_obj_pet.gif" alt="" /></div>
+
+									<p class="thk_txt">
+										(무)e입원비보험 가입완료
+									</p>
+									<p class="info_txt">
+										고객님께서 입력하신 이메일주소로<br />
+										가입증명서를 발송해드렸습니다.<br />
+										자세한 가입내역확인은
+										가입내역조회에서 확인해주시기 바랍니다.
+									</p>
+								</div>
+
+								<div class="btn_C_Area">
+									<a href="mypage.htm?mode=mylist&mode=list" class="btnStyle blueD">가입내역확인</a>
+								</div>
+							</div>
+						</div><!-- end : class : step_Area -->
+					</div>
+
+				</div><!-- end : class : sub_contents -->
+			</div><!-- end : id : contents -->
+
+{literal}
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+var _nasa={};
+_nasa["cnv"] = wcs.cnv("4","100000");
+</script>
+
+
+
+<script>
+fbq('track', 'Lead', {
+value: 10.00,
+currency: 'USD'
+});
+</script>
+
+
+{/literal}
+
+
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlMobCopyright.inc"}
+
+{* BOTTOM *}
+{include file = "../include/inbyu_v3/htmlMobBottom.inc"}

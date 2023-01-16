@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>인바이유-보험금청구</title>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+$(function() {
+	var onResize = function() {
+	  //var docHeight = window.innerHeight;
+	  var _height = $(window).outerHeight();
+	  $('.section-login').css({ height : _height - 64 });
+	};
+	$(window).on('resize', onResize);
+	onResize();
+});
+</script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- <div id="header">
+      <a href="#" class="back">로그인화면으로 돌아가기</a>
+      <a href="#" class="home">홈</a>
+    </div> -->
+
+
+		<div class="section-login"><!-- section-login -->
+			<div class="module">
+				<h1><i class="icon kare-for-krew"><em>Kare for Krew</em></i></h1>
+
+				<div class="form">
+					<p>
+						<input type="text" class="text" placeholder="아이디" />
+						<span class="save">
+							<input type="checkbox" id="idSave" />
+							<label for="idSave">ID저장</label>
+						</span>
+					</p>
+					<p>
+						<input type="password" class="text" placeholder="비밀번호" />
+					</p>
+				</div>
+
+				<div class="message">
+					<p class="danger">
+						틀린 비밀번호 입니다.
+					</p>
+					<p>
+						9자 이상 영문,숫자,특수문자 포함해 주세요.
+					</p>
+				</div>
+
+				<div class="action">
+					<a href="javascript:;"><span>로그인</span></a>
+				</div>
+
+				<div class="utii">
+					<p>
+						<a href="javascript:;">아이디/비밀번호를 잊으셨나요?</a>
+					</p>
+					<p>
+						<a href="javascript:;">처음 사용자 등록하기</a>
+					</p>
+				</div>
+			</div>
+		</div><!-- // section-login -->
+
+		<div class="login-footer"><!-- login-footer -->
+			<div class="module">
+				<div class="logo">
+					<i class="icon"><em>inbyu. kakao company</em></i>
+				</div>
+				<div class="copy">
+					&copy; INBYU INC.
+				</div>
+			</div>
+		</div><!-- // login-footer -->
+
+	</div><!-- //id="wrap" -->
+</body>
+
+</html>

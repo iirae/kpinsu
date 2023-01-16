@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="wrap" id="wrap">
+            <header class="header" id="header">
+                <h1><img src="../resources/img/logo.svg" alt="금호타이어"></h1>
+            </header>
+            <div class="container" id="container">
+                <h2 class="page-title">금호타이어<br>1+1 기업비용 보상보험</h2>
+                <div class="contents" id="contents">
+                    <fieldset>
+                        <section class="section">
+                            <h3 class="blind">기본 정보</h3>
+                            <div class="form-group">
+                                <strong class="form-label">패턴</strong>
+                                <input type="text" readonly value="HP91">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">일련번호</strong>
+                                <input type="text" readonly value="일련번호">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">수량/위치</strong>
+                                <div for="select" class="form-select">
+                                    <select name="" id="select" required>
+                                        <option value="" disabled selected hidden>수량과 위치 선택</option>
+                                        <option value="">option</option>
+                                        <option value="">option</option>
+                                        <option value="">option</option>
+                                        <option value="">option</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">DOT</strong>
+                                <input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="숫자만 입력">
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h3 class="section-title">고객정보</h3>
+                            <div class="form-group">
+                                <strong class="form-label">성명</strong>
+                                <input type="text" readonly value="배수지">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">생년월일</strong>
+                                <input type="number" readonly value="19991111">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">성별</strong>
+                                <span class="form-radio readonly">
+                                    <input type="radio" id="male" name="sex" onClick="return false;">
+                                    <label for="male">남</label>
+                                </span>
+                                <span class="form-radio readonly">
+                                    <input type="radio" id="female" name="sex" checked onClick="return false;">
+                                    <label for="female">여</label>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">휴대폰번호</strong>
+                                <input type="text" readonly value="010-7714-4555">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">보험기간</strong>
+                                <input type="text" readonly value="2021.03.07~2021.06.06">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">차량번호</strong>
+                                <input type="text" readonly value="41우 7740">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">차종</strong>
+                                <input type="text" placeholder="차종 입력">
+                            </div>
+                            <div class="form-group type-unit">
+                                <strong class="form-label">주행거리(교체 시)</strong>
+                                <input type="tel" pattern="[0-9]*" inputmode="numeric" maxlength="6" placeholder="주행거리 입력">
+                                <span class="unit">Km</span>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h3 class="section-title">대리점 정보</h3>
+                            <div class="form-group">
+                                <strong class="form-label">타이어프로 점포명</strong>
+                                <input type="text" readonly value="타이어프로 강남지점">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">대리점 전화번호</strong>
+                                <input type="text" readonly value="02-222-3655">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">대리점프로 코드</strong>
+                                <input type="text" readonly value="A56222Vddd">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">점장확인</strong>
+                                <input type="text" readonly value="홍길동">
+                            </div>
+                            <div class="form-group">
+                                <strong class="form-label">가입유형</strong>
+                                <input type="text" readonly value="rental">
+                            </div>
+                        </section>
+                    </fieldset>
+                </div>
+
+                <article class="article-info">
+                    <h2 class="article-title">타이어 교체 보상 프로그램</h2>
+                    <section>
+                        <h3 class="title">프로그램 안내(고객 혜택)</h3>
+                        <p class="text-desc">타이어프로 고객을 대상으로 구매/렌탈로 새로 교체한 타이어가 주행 중 파손되어 수리가 불가한 경우 새 타이어로 무료로 교체해드리는 VIP고객 서비스.<br>(프리미엄 등급 구매 4본, 렌탈 2본 기준)</p>
+                    </section>
+                    <section>
+                        <h3 class="title">담보내역 상세</h3>
+                        <div class="table-layout">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 28%;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>담보명</th>
+                                        <td>타이어 프로에서 구매한 타이어가 도로상의 위험요소에 의해 사용 불가능해 질 경우</td>
+                                    </tr>
+                                    <tr>
+                                        <th>보장내용</th>
+                                        <td>타이어프로에서 타이어 교체(동일한 사양기준)시 타이어 교체비용 1본 파손 시 반대편 타이어도 PAIR 교체<br>타이어 보상가격은 대리점 매입가격을 기준으로 함</td>
+                                    </tr>
+                                    <tr>
+                                        <th>보상한도</th>
+                                        <td>차량 당 1백만원, 차량 당 1회(최대 타이어 2 PAIR 보상)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>자기부담금</th>
+                                        <td>교체비용의 10%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h3 class="title">유의사항</h3>
+                        <ul>
+                            <li>가입자별 차량에 대한 담보기간은 서비스 가입일로 부터 1년 또는 12,000Km로 기간과 주행거리 중 먼저 도달하는 것을 기준으로 함</li>
+                            <li>타이어 구매일로부터 3개월 이내 또는 주행거리 3,000Km 이하인 경우, 파손된 타이어만 교체(Pair 교체 불가)</li>
+                            <li>주행거리를 식별 할 수 없을 경우 보상하지 않습니다.</li>
+                            <li>사고 발생 시 최초 장착되어 있던 타이어를 기준으로 보상합니다.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="title">주요 면책사항</h3>
+                        <ul>
+                            <li>사기행위, 고의 또는 부정직으로 인한 행위</li>
+                            <li>보험금청구 과정에서 피보험자(보험대상자) 또는 대리인에 의해 발생된 비용</li>
+                            <li>차대차 사고로 인한 교체 및 수리</li>
+                            <li>차량제작자의 생산물 리콜로 부품의 수리 및 교환을 이행한 경우</li>
+                            <li>상업적인 목적으로 사용된 차량(배달 서비스, 셔틀, 운반, 견인, 도로 수리 서비스, 건설 서비스, 딜러 서비스, 제설 차량 등)</li>
+                            <li>레이싱에서 사용된 차량, 렌트카, 딜러의 대차용 차량, 리무진, 택시, 경찰차 및 기타 응급용 차량</li>
+                            <li>얼라인먼트, 마모, 찢어짐에 의한 교체</li>
+                            <li>관리자에 의해 사전승인 되지 않은 수리 또는 교체</li>
+                        </ul>
+                    </section>
+                </article>
+            </div>
+
+            <div class="area-button fixed">
+                <a href="javascript:;" class="btn btn-primary">가입하기</a>
+            </div>
+        </div>
+
+    </body>
+</html>

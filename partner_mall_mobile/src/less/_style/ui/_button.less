@@ -1,0 +1,86 @@
+.button {
+    border: solid 1px #444b52;
+    &,
+    span {
+        color: #212529;
+    }
+    &.primary {
+        background-color: @primary;
+        border-color: @primary;
+        &,
+        span {
+            color: @secondary;
+            font-weight: bold;
+        }
+    }
+    &.secondary {
+        background-color: #3f424a;
+        border-color: #3f424a;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.info {
+        background-color: #636b73;
+        border-color: #636b73;
+        &,
+        span {
+            color: #fff;
+        }
+    }
+    &.disabled {
+        opacity: 1;
+        background-color: #f1f3f5;
+        border-color: #e9ecef;
+        &,
+        span {
+            color: #adb5bd;
+        }
+        &.large {
+            border-color: #f1f3f5;
+        }
+    }
+}
+
+.button {
+    box-sizing: content-box;
+    position: relative;
+    padding: 0 25px;
+    height: 40px;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:hover {
+        text-decoration: none;
+    }
+    &.small {
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+    }
+    &.large {
+        height: 60px;
+        line-height: 60px;
+        font-size: 17px;
+        border-radius: 0;
+    }
+}
+
+.section-button {
+    margin-top: 40px;
+    text-align: right;
+    .grid {
+        margin: 0 -10px;
+        .module {
+            margin: 0 10px;
+        }
+    }
+}
+.section-history-list + .section-button {
+    margin-top: 20px;
+}

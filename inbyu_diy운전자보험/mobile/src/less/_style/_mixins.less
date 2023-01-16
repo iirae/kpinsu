@@ -1,0 +1,79 @@
+@base-input-focus-color        : @primary;
+
+.img(@file, @type: png) {
+    background-image: url('@{base-path-images}/@{file}.@{type}');
+}
+
+.set-icon-size(@x, @y, @retina: true) when (@retina = false) {
+    width: @x;
+    height: @y;
+    background-size: @x @y;
+}
+
+.set-icon-size(@x, @y, @retina: true) when (@retina = true) {
+    @width: @x / 2;
+    @height: @y / 2;
+    width: @width;
+    height: @height;
+    background-size: @width @height;
+}
+
+.set-icon(@x, @y, @file, @retina: false, @type: png) {
+    content: '';
+    .img(@file, @type);
+    .set-icon-size(@x, @y, @retina);
+}
+
+// ==========================================================================
+// Base – Mixins
+// ==========================================================================
+
+// Background Color with Opacity
+// Example Usage: @include bg-rgba(#111, 50%);
+.set-background-alpha(@color,@alpha) {
+    @rgba: rgba(red(@color), green(@color), blue(@color), @alpha);
+    @argb: argb(@rgba);
+    background-color: @color;
+    background-color: @rgba;
+}
+
+// Arrows
+// Example Usage .arrow(4px, #000, up);
+.arrow(@size:5px, @color: #333, @direction: right) {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: @size solid transparent;
+        z-index: -1;
+
+        & when (@direction = right) {
+            top: 50%;
+            left: 100%;
+            border-left-color: @color;
+            transform: translate3d(0, -50%, 0);
+        }
+
+        & when (@direction = left) {
+            top: 50%;
+            left: 0;
+            border-right-color: @color;
+            transform: translate3d(-100%, -50%, 0);
+        }
+
+        & when (@direction = down) {
+            top: 100%;
+            left: 50%;
+            border-top-color: @color;
+            transform: translate3d(-50%, 0, 0);
+        }
+
+        & when (@direction = up) {
+            top: 0;
+            left: 50%;
+            border-bottom-color: @color;
+            transform: translate3d(-50%, -100%, 0);
+        }
+    }
+}

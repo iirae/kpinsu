@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="inbyu" />
+        <title>청구서비스 UI Component</title>
+        <link rel="stylesheet" href="./resources/css/common.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
+        <script src="./resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="./resources/js/lib/mobileSelect.min.js"></script>
+        <script src="//cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <style>
+            .guide {height: 100vh; background: #f9fafc;}
+            .guide .container {display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; height: calc(100vh - 56px);}
+            .nav {overflow-y: auto; padding-bottom: 30px; flex: 0 0 300px; max-height: 100%; border-right: solid 1px #e7eaf3;background: #fff; box-sizing: border-box;}
+            .nav > ul > li {margin-top: 1.5rem;}
+            .nav li span,
+            .nav li a {padding: 0 30px; height: 36px; line-height: 36px; font-size: 16px;}
+            .nav li a {display: block;}
+            .nav li a:hover {background: rgba(0, 0, 0, 0.02);}
+            .nav li span {font-size: .9em; color: #9299a1;}
+            /* .nav ul ul li {padding-left: 16px;} */
+            .card {padding: 1.5rem; border: 0.0625rem solid rgba(231,234,243,.7); border-radius: 0.75em; background: #fff; background-clip: border-box; box-shadow: 0 6px 12px rgb(140 152 164 / 8%);}
+            .guide .container .contents {position:relative; overflow-y: auto; display: flex; flex-direction: column; padding-top: 0; flex: 1 0 auto; width: calc(100% - 300px); height: 100%; box-sizing: border-box;}
+            .guide.contents > .inner {position: absolute; top:0; right:0; left:0; bottom:0;}
+            .section {margin: 0 auto 0; width: 80%; max-width: 700px;}
+            .section > h2 {margin-top: 3.5rem; margin-bottom: 1rem; font-size: 26px; font-weight: 700;}
+            .section > h2 span {font-size: .7em;}
+            h3 {margin-top: 1.5rem; margin-bottom: .8rem; font-size: 20px; font-weight: 500;}
+            h2 + .desc,
+            h3 + .desc {font-size: 0.89rem;}
+            .code {margin-top: 1rem;}
+            .desc {margin-bottom: 1rem;font-size: 1.09375rem;}
+            .table-layout {margin-top: 10px;}
+            .table-layout table {table-layout: fixed; width:100%; border-collapse: collapse; border: dotted 1px #e8e8e8;}
+            .table-layout th, .table-layout td {padding: 7px 5px; font-size: 14px; border: dotted 1px #e8e8e8;}
+            .table-layout th {background: #f5f5f5;}
+            .table-layout tbody th {font-weight:500;}
+            .table-layout .center {text-align:center;}
+            .table-layout .left {text-align:left;}
+            .table-layout tbody:nth-of-type(even) {background:#f8f8f8;}
+
+            .hljs {font-size: 14px; border-radius: 6px;}
+
+            .wrap .header h1 {width: auto; font-size: 18px;}
+            .guide.wrap .container {margin: 0; padding: 0;}
+        </style>
+    </head>
+    <body>
+        <div class="wrap guide" id="wrap">
+            <header class="header">
+                <h1>청구서비스 UI Guide</h1>
+            </header>
+            <div class="container" id="container">
+                <nav class="nav">
+                    <ul>
+                        <li><span>Layout</span>
+                            <ul>
+                                <li><a href="#layout">layout</a></li>
+                                <li><a href="#layer">layer</a></li>
+                            </ul>
+                        </li>
+                        <li><span>common</span>
+                            <ul>
+                                <li><a href="#color">color</a></li>
+                                <li><a href="#text">text</a></li>
+                                <li><a href="#button">button</a></li>
+                                <li><a href="#icon">icon</a></li>
+                                <li><a href="#form">form</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="contents" id="contents">
+                    <div class="inner">
+                        <section id="layout" class="section">
+                            <h2>Layout</h2>
+                            <div class="card">
+                                <pre><code class="html">&lt;div class="wrap" id="wrap"&gt;
+    &lt;header class="header" id="header"&gt;
+        &lt;h1 class="logo"&gt;&lt;a href="00.index.html"&gt;&lt;img src="../resources/img/h1_logo_inbyu.png"
+            srcset="../resources/img/h1_logo_inbyu.png,
+            ../resources/img/h1_logo_inbyu_2x.png 2x"
+            alt="INBYU kakao company"&gt;&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div class="container" id="container"&gt;
+        &lt;header class="area-title"&gt;
+            &lt;h2 class="page-head"&gt;약관 동의&lt;/h2&gt;
+            &lt;p class="text-desc"&gt;보험금 청구 서비스를 이용하기 위한&lt;br&gt;약관에 동의해주세요.&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;div class="contents" id="contents"&gt;
+            @contents
+        &lt;/div&gt;
+        &lt;div class="area-button"&gt;
+            &lt;button type="submit" class="btn btn-primary disabled"&gt;버튼&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;footer class="footer" id="footer"&gt;
+        &lt;div class="inner"&gt;
+            &lt;h2&gt;&lt;img src="../resources/img/h2_logo_inbyu.png"
+                    srcset="../resources/img/h2_logo_inbyu.png,
+                    ../resources/img/h2_logo_inbyu_2x.png 2x"
+                    alt="INBYU kakao company"&gt;&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;span&gt;인바이유 주식회사&lt;/span&gt;&lt;span&gt;대리점번호 : 제201890030호&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;span&gt;© kakaopay corp.&lt;/span&gt;&lt;span&gt;© Inbyu INC&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </section>
+
+                        <section id="layer" class="section">
+                            <h2>Layer</h2>
+                            <p class="desc">layer는 full, bottom, center 3가지가 존재한다.</p>
+                            <div class="card">
+                                <pre><code class="html">&lt;section class="layer full layer-*****" id="layer****"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="head with-btn"&gt; &lt;!-- 닫기 버튼 없을 경우 with-btn 삭제 --&gt;
+            &lt;h2&gt;Head&lt;/h2&gt;
+            &lt;a href="javascript:;" class="btn btn-close e-close"&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="contents"&gt;
+            &lt;div&gt; 
+                @content
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="area-button"&gt;
+            &lt;a href="#" class="btn btn-secondary e-close"&gt;닫기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                            </div>
+                        </section>
+
+                        <section id="color" class="section">
+                            <h2>color <span>(variable)</span></h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td style="color: #ffeb00">#ffeb00</td>
+                                                <td><pre><code class="css">$color-primary</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #444b52">#444b52</td>
+                                                <td><pre><code class="css">$color-secondary</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #48acff">#48acff</td>
+                                                <td><pre><code class="css">$color-point</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #636b73">#636b73</td>
+                                                <td><pre><code class="css">$color-info</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #ced4da">#ced4da</td>
+                                                <td><pre><code class="css">$color-border</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #ff3c3c">#ff3c3c</td>
+                                                <td><pre><code class="css">$color-danger</code></pre></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="text" class="section">
+                            <h2>text</h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td><h2 class="page-head">page-head</h2></td>
+                                                <td><pre><code class="html">&lt;h2 class="page-head"&gt;page-head&lt;/h2&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h2 class="text-noti">text-noti</h2></td>
+                                                <td><pre><code class="html">&lt;p class="text-noti"&gt;text-noti&lt;/p&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><ul class="row-list"><li>bla</li><li>bla</li></ul></td>
+                                                <td><pre><code class="html">&lt;ul class="row-list"&gt; &lt;li&gt;bla&lt;/li&gt;&lt;li&gt;bla&lt;/li&gt; &lt;/ul&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p class="text-desc">text-desc</p></td>
+                                                <td><pre><code class="html">&lt;p class="text-desc"&gt;text-desc&lt;/p&gt;</code></pre></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="icon" class="section">
+                            <h2>Icon</h2>
+                            <p class="desc">class="icon *****" 추가</p>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:120px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="icon scroll"></i></td>
+                                                <td><pre><code class="html">&lt;i class="icon scroll"&gt;scroll&lt;/i&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="icon check"></i></td>
+                                                <td><pre><code class="html">&lt;i class="icon check"&gt;check&lt;/i&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="icon tel"></i></td>
+                                                <td><pre><code class="html">&lt;i class="icon tel"&gt;tel&lt;/i&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="icon headphone"></i></td>
+                                                <td><pre><code class="html">&lt;i class="icon headphone"&gt;headphone&lt;/i&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="icon kakaopay"></i></td>
+                                                <td><pre><code class="html">&lt;i class="icon kakaopay"&gt;kakaopay&lt;/i&gt;</code></pre></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="button" class="section">
+                            <h2>button</h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-primary">btn-primary</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-primary"&gt;btn-secondary&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-primary disabled">disabled</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-primary disabled"&gt;disabled&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-secondary">btn-secondary</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-secondary"&gt;btn-secondary&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-static">btn-static</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-static"&gt;btn-static&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-normal">btn-normal</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-normal"&gt;btn-normal&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-cancel">btn-cancel</a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-cancel"&gt;btn-cancel&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-top"></a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-top"&gt;btn-top&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-claim"></a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-claim"&gt;btn-claim&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-back"></a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-back"&gt;btn-back&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-close"></a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-close"&gt;btn-close&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="javascript:;" class="btn btn-delete"></a></td>
+                                                <td><pre><code class="html">&lt;a href="javascript:;" class="btn btn-delete"&gt;btn-delete&lt;/a&gt;</code></pre></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <h3>area-button &gt; btn</h3>
+                            <p class="desc">하단 고정 시 fixed 추가, 디바이스 하단에 위치 시키고 싶을 경우 bottom 추가</p>
+                            <div class="card">
+                                <div class="area-button">
+                                    <a href="javascript:;" class="btn btn-secondary">btn-secondary</a>
+                                    <a href="javascript:;" class="btn btn-primary">btn-primary</a>
+                                </div>
+                                <div class="code">
+                                    <pre><code class="html">&lt;div class="area-button"&gt;
+        &lt;a href="javascript:;" class="btn btn-secondary"&gt;btn-secondary&lt;/a&gt;
+        &lt;a href="javascript:;" class="btn btn-primary"&gt;btn-primary&lt;/a&gt;
+    &lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="form" class="section">
+                            <h2>form</h2>
+                            <div class="card">
+                                <div class="table-layout">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span><input type="text" placeholder="placeholder"></span>
+                                                </td>
+                                                <td><pre><code class="html">&lt;input type="text" placeholder="placeholder"&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="type" id="1"><label for="1">라디오</label>
+                                                </td>
+                                                <td><pre><code class="html">&lt;input type="radio" name="" id="disease"&gt;&lt;label for="disease"&gt;라디오&lt;/label&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" id="2"><label for="2">checkbox</label>
+                                                </td>
+                                                <td><pre><code class="html">&lt;input type="checkbox" id="2"&gt;&lt;label for="2"&gt;라디오&lt;/label&gt;</code></pre></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group select">
+                                                        <span class="f-text">
+                                                            <input type="text" placeholder="placeholder" id="mailDomain" readonly>
+                                                            <a href="#layerChooseDomain" class="btn-trigger e-layer"></a>
+                                                        </span>
+                                                    </div></td>
+                                                <td><pre><code class="html">&lt;div class="form-group select"&gt;
+    &lt;span class="f-text"&gt;
+        &lt;input type="text" placeholder="placeholder" id="mailDomain" readonly&gt;
+        &lt;a href="#layerChooseDomain" class="btn-trigger e-layer"&gt;&lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h2>file-wrap</h2>
+                            <div class="card">
+                                <div class="file-wrap">
+                                    <!-- 첨부 파일이 없을 경우 -->
+                                    <div class="empty">
+                                        <input type="file" id="file" class="blind"><label for="file"><i class="icon camera"></i>첨부파일이 없습니다.<br>해당 영역을 터치한 후 이미지를 첨부해주세요.</label>
+                                    </div>
+                                    <!-- 첨부 파일이 있을 경우 -->
+                                    <div class="has">
+                                        <ul class="list-file">
+                                            <!-- 이미지 첨부시 -->
+                                            <li class="form-file">
+                                                <span class="inner attached"><!-- 파일 추가 시 attached class 추가 -->
+                                                    <img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt="">
+                                                    <a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"></a>
+                                                </span>
+                                            </li><!-- // 이미지 첨부시 -->
+                                            <!-- 파일이 pdf일 경우 -->
+                                            <li class="form-file">
+                                                <span class="inner attached pdf"><!-- 파일 추가 시 attached class 추가, pdf 일 경우 pdf 클래스 추가, img 태그 삭제 -->
+                                                    <a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"></a>
+                                                </span>
+                                            </li><!-- //파일이 pdf일 경우 -->
+                                            <li class="form-file">
+                                                <span class="inner">
+                                                    <input type="file" id="file3" class="blind">
+                                                    <label for="file3"><span class="blind">첨부하기</span></label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <pre><code class="html">&lt;div class="file-wrap"&gt;
+    &lt;!-- 첨부 파일이 없을 경우 --&gt;
+    &lt;div class="empty"&gt;
+        &lt;input type="file" id="file" class="blind"&gt;&lt;label for="file"&gt;&lt;i class="icon camera"&gt;&lt;/i&gt;첨부파일이 없습니다.&lt;br&gt;해당 영역을 터치한 후 이미지를 첨부해주세요.&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;!-- 첨부 파일이 있을 경우 --&gt;
+    &lt;div class="has"&gt;
+        &lt;ul class="list-file"&gt;
+            &lt;!-- 이미지 첨부시 --&gt;
+            &lt;li class="form-file"&gt;
+                &lt;span class="inner attached"&gt;&lt;!-- 파일 추가 시 attached class 추가 --&gt;
+                    &lt;img src="https://i.pinimg.com/originals/f0/d3/c4/f0d3c4a2f421044f0fe6ade7bec2b9ab.png" alt=""&gt;
+                    &lt;a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"&gt;&lt;/a&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;&lt;!-- // 이미지 첨부시 --&gt;
+            &lt;!-- 파일이 pdf일 경우 --&gt;
+            &lt;li class="form-file"&gt;
+                &lt;span class="inner attached pdf"&gt;&lt;!-- 파일 추가 시 attached class 추가, pdf 일 경우 pdf 클래스 추가, img 태그 삭제 --&gt;
+                    &lt;a href="#layerDeleteFile" class="btn-icon delete-file" title="첨부 파일 삭제"&gt;&lt;/a&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;&lt;!-- //파일이 pdf일 경우 --&gt;
+            &lt;li class="form-file"&gt;
+                &lt;span class="inner"&gt;
+                    &lt;input type="file" id="file3" class="blind"&gt;
+                    &lt;label for="file3"&gt;&lt;span class="blind"&gt;첨부하기&lt;/span&gt;&lt;/label&gt;
+                &lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+                <!-- <div class="area-button fixed">
+                    <a href="javascript:;" class="btn btn-primary">fixed &gt; btn-primary</a>
+                </div> -->
+            </div>
+
+        </div>
+
+        <!-- Bottom  -->
+        <section class="layer bottom layer-choose_domain" id="layerChooseDomain">
+            <div class="container">
+                <div class="wrapping">
+                    <header class="head">
+                        <h2 class="text-headline-6">회사를 선택해주세요.</h2>
+                    </header>
+                    <div class="content">
+                        <ul class="list-radio">
+                            <li><input type="radio" id="kakao" name="chooseDomain"><label for="kakao">kakao.com</label></li>
+                            <li><input type="radio" id="hanmail" name="chooseDomain"><label for="hanmail">hanmail.net</label></li>
+                            <li><input type="radio" id="gmail" name="chooseDomain"><label for="gmail">gmail.com</label></li>
+                            <li><input type="radio" id="naver" name="chooseDomain"><label for="naver">naver.com</label></li>
+                            <li><input type="radio" id="nate" name="chooseDomain"><label for="nate">nate.com</label></li>
+                            <li><input type="radio" id="directly" name="chooseDomain"><label for="directly">기타(직접입력)</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-text e-close">닫기</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section><!-- //layer: 메일 선택  -->
+
+        <!-- Center  -->
+        <section class="layer center" id="layerCenter">
+            <div class="container">
+                <div class="content">
+                    <header class="head">
+                        <h2>안내문구</h2>
+                    </header>
+                    <div>
+                        <p>본 서비스를 이용하려면<br>알림설정을 허용해야합니다.<br>이동하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="area-button">
+                    <button type="button" class="btn btn-secondary e-close">닫기</button>
+                    <button type="button" class="btn btn-primary e-close">확인</button>
+                </div>
+            </div>
+            <div class="dimmed"></div>
+        </section>
+
+<!-- 
+        <div class="table-layout">
+            <table>
+                <colgroup>
+                    <col style="width:200px">
+                    <col style="width:auto">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td><pre><code></code></pre></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><pre><code></code></pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    -->
+
+        <!-- ui관련 js -->
+        <script src="./resources/js/event.js"></script>
+        <!-- <script src="./resources/js/event_vanilla.js"></script> -->
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+                // hljs.highlightAll();
+
+                // indicator 호출
+                // showIndicator();
+                // hideIndicator();
+
+                // custom password
+                // const $passwordInput = $('#password');
+                // countValueLength($passwordInput);
+
+                // $body.on('click', '.module-keypad .delete button', function(e) {
+                //     const $this = $(this);
+
+                //     $this.hasClass('btn-delete_all') ? clearLetters($passwordInput) : deleteOneLetter($passwordInput);
+                //     countValueLength($passwordInput);
+                // });
+
+                // $body.on('click', '.module-keypad .key', function(e) {
+                //     const num = $(this).data('number');
+                //     const maxLength = $passwordInput.attr('maxlength');
+                //     let currentValue = $passwordInput.val();
+                //     currentValue.length + 1 <= maxLength ?  $($passwordInput).val(currentValue + num) : $($passwordInput).val(currentValue);
+                    
+                //     countValueLength($passwordInput);
+                // });
+
+                // // 주민번호 뒷자리 마스킹
+                // $body.on('keydown', '.jumin .masking input', function(e) {
+                //     const thisInput = $(e.target);
+                //     const num = $(this).data('number');
+                //     const maxLength = thisInput.attr('maxlength');
+                //     let currentValue = thisInput.val(),
+                //         valLength = currentValue.length,
+                //         dots = $('.form-group.jumin .dots');
+                //     const dot = "<span class='dot'></span>";
+
+                //     valLength >= maxLength ? valLength = valLength - 1 : '';
+
+                //     if(e.keyCode == 8 || e.keyCode == 46) {
+                //         $(dots).find('.dot').last().remove();
+                //     } else {
+                //         $(dots).find('.dot').remove();
+                //         for(let i = 0; i < valLength ; i ++) {
+                //             $(dots).append(dot);
+                //         }
+                //     }
+                //     // valLength <= 0 ? valLength = 0 : valLength - 1;
+                    
+                //     // if(e.keyCode == 8 || e.keyCode == 46) {
+                //     //     for(let i = 1; i < valLength; i ++) {
+                //     //         $(dots).append(dot);
+                //     //     }
+                //     // } else {
+                //     //     for(let i = 1; i < valLength; i ++) {
+                //     //         $(dots).append(dot);
+                //     //     }
+                //     // }
+                //     console.log(valLength);
+                //     // for(let i = 1; i < valLength; i ++) {
+                //     //     $(dots).append(dot);
+                //     // }
+                    
+                // });
+
+                // // 회사 검색
+                // $body.on('keyup', '#searchCompany', function(e) {
+                //     const $this = $(this),
+                //           $result = $($('.result-area'));
+                //     let hasValue = $this.val().length > 0;
+                    
+                //     hasValue ? $result.addClass('show') : $result.removeClass('show');
+                // });
+
+                // // 메일 도메인 직접 입력
+                // $body.on('click', 'input[name="chooseDomain"]', function(){
+                //     const $this = $(this),
+                //           $input = $('#mailDomain'),
+                //           $findParentLayer = $(this).closest('.layer'),
+                //           $findParentWrap = $($input.closest('.form-group'));
+                //     let checkedMailVal = $this.siblings('label').text();
+                //     let isDirectly = ($this.attr('id') == 'directly');
+
+                //     if(!isDirectly) {
+                //         $findParentWrap.removeClass('over');
+                //         $input.val(checkedMailVal).prop('readonly', true);
+                //     } else {
+                //         $findParentWrap.addClass('over');
+                //         $input.val('').attr('placeholder', checkedMailVal).prop('readonly', false).focus();
+                //     }
+
+                //     closeLayer($findParentLayer);
+                // });
+
+                // // 년/월 선택
+                // var yearArr = ['2020', '2021'];
+                // var monthArr = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+                // var mobileSelect2 = new MobileSelect({
+                //     trigger: '#trigger2',
+                //     title: '',
+                //     wheels: [{ data: yearArr }, { data: monthArr }],
+                //     position: [1, 2],
+                //     transitionEnd: function (indexArr, data) {
+                //         //console.log(data);
+                //     },
+                //     callback: function (indexArr, data) {
+                //         // console.log(data);
+                //     },
+                // });
+            });
+
+            // tab decoration: 페이지 로딩 시 필수 추가
+            $(window).on('load', function(e) {
+                // let tabWraps = $('.module-tab');
+
+                // $.each(tabWraps, function(index, tabWrap) {
+                //     let tabs = $(tabWrap).find('.tab a');
+
+                //     $.each(tabs, function(index, tab) {
+                //         if($(tab).closest('li').hasClass('on')) {
+                //             let tabItemWidth = $(tab).width(),
+                //                 tabItemPositionLeft = $(tab).closest('li').position().left + $(tab).scrollLeft();
+
+                //             tabDeco(tabWrap, tabItemWidth, tabItemPositionLeft);
+                //         }
+                //     });
+                // });
+            });
+        </script>
+
+        <script>// guide page scroll memory
+
+        $(function() {
+            let guideScrollTop;
+            $('#contents').on('scroll', function() {
+                guideScrollTop = $('#contents').scrollTop();
+                localStorage.setItem('guideScrollTop', guideScrollTop);
+            });
+        });
+
+        window.onload = function() {
+            setTimeout (function () {
+                let localStorageGuideScrollTop = localStorage.getItem('guideScrollTop');
+                $('#contents').scrollTop(localStorageGuideScrollTop);
+            },0);
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,299 @@
+{* 반려견보험의 경우 *}
+
+
+{* 최상단 HEAD *}
+{include file = "../include/inbyu_v3/htmlHead.inc"}
+
+{* BODY *}
+{include file = "../include/inbyu_v3/htmlBody.inc"}
+
+{* TOP *}
+{include file = "../include/inbyu_v3/htmlTop.inc"}
+{literal}
+<script type="text/javascript">
+	<!--
+
+	function popup(width, height, left, top, url, name, scroll, resizable)
+	{
+		window.open(url,name,'height='+ height +', width ='+ width +',left='+ left +',top='+ top +', scrollbars='+ scroll +',resizable='+ resizable +',menubar=no,toolbar=no,location=no,status=yes');
+	}
+
+	function comma(str)
+	{
+		str = String(str);
+		str = (str == '0') ? '0' : str;
+		return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+	}
+
+	function uncomma(str)
+	{
+		str = String(str);
+		return str.replace(/[^\d-]+/g, '');
+	}
+
+	function fSubmit(f_data)
+	{
+		var action = f_data['action'];
+
+		$.ajax({
+			type: "POST",
+			url: action,
+			data: f_data,
+			dataType: 'json',
+			success: function(response) {
+				if(response) {
+
+					if(response.msg) {
+
+						alert(response.msg);
+					}
+					else {
+
+						console.log("PETINFO:"+ response.petInfo.pet_num +","+ response.petInfo.pet_race);
+
+						if(response.petInfo.pet_num) {
+
+							$('.optionBox>a>b').html(response.petInfo.pet_sex);
+							$('.optionBox>a>b.nb3').html(response.petInfo.pet_asexal);
+							$('.optionBox>a>b:first').html(response.petInfo.pet_name);
+							$('.optionBox>a>b:last').html(response.petInfo.pet_race);
+							//$('.calculate_Box .check').hide();
+							$('.result1').show();
+
+							$("input[name='pet_chk']").val(response.petInfo.pet_chk);
+
+							/*
+                                                    $("input[name='pet_num']").val(response.petInfo.pet_num);
+                                                    $("input[name='pet_name']").val(response.petInfo.pet_name);
+                                                    $("input[name='pet_sex']").val(response.petInfo.pet_sex);
+                                                    $("input[name='pet_race']").val(response.petInfo.pet_race);
+                                                    $("input[name='pet_asexal']").val(response.petInfo.pet_asexal);
+                            */
+
+						}
+					}
+				}
+			}
+		});
+		return false;
+	}
+
+	function frmSubmit(f_data)
+	{
+		var action = f_data['action'];
+
+		$.ajax({
+			type: "POST",
+			url: action,
+			data: f_data,
+			dataType: 'json',
+			success: function(response) {
+				if(response) {
+
+					if(response.msg) {
+
+						alert(response.msg);
+					}
+					else if(response.url) {
+
+						location.replace(response.url);
+					}
+				}
+			}
+		});
+		return false;
+	}
+
+	$(document).ready(function()
+	{
+		$(".chk-ok").click(function(){
+			location.href = "/productpet.htm?mode=insu&mtype=step01&goods_id="+$("input[name='goods_id']").val();
+			return false;
+		});
+
+
+	});
+	//-->
+</script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type='text/javascript'>
+	//<![CDATA[
+	// 사용할 앱의 JavaScript 키를 설정해 주세요.
+	/*
+      Kakao.init('YOUR APP KEY');
+      function shareStory(url, text) {
+        Kakao.Story.open({
+          url: url,
+          text: text
+        });
+      }
+      */
+	//]]>
+</script>
+{/literal}
+
+			<div id="visual">
+				<h2 class="hide">비쥬얼</h2>
+
+				{* NAVI *}
+				{include file = "../include/inbyu_v3/htmlTopNavi.inc"}
+
+				<!-- <div class="sub-visual">
+
+				</div> -->
+			</div><!-- end : id : visual -->
+
+			<div id="contents">
+				<h2 class="hide">컨텐츠</h2>
+				<div class="sub_contents">
+
+					<div class="subTop-Area" style="background:#F6F4FD url('{$RS.data.images[0]}') 50% 50% no-repeat;">
+						<div class="inLayer">
+							<div class="left-Box">
+
+								<h3 class="insName">{$RS.data.goods_name} {if $RS.data.insu.logo_url}<span class="logo"><img src="{$RS.data.insu.logo_url}" alt="" /></span>{/if}</h3>
+								<span class="text-Box">
+									<span class="">
+									{$RS.data.goods_detail_txt1}<br />
+									{$RS.data.goods_detail_txt2}<br />
+									{$RS.data.goods_detail_txt3}<br />
+									{$RS.data.goods_detail_txt4}
+									</span>
+								</span>
+
+								<p class="insPrice">{$RS.data.ex_price}</p>
+								<div class="bottomBox">
+									<div class="hashTag2">
+										{$RS.hash_tag}
+									</div>
+
+									<div class="yaks">
+										<li><a href="#self" onClick="location.href='/?mode=download&savedir={$RS.data.imgs[10].path}&filename={$RS.data.imgs[10].img_name}&vfile={$RS.data.imgs[10].img_name}';">상품약관&nbsp;&nbsp;▶</a></li>
+										<li><a href="#self" class="lyPopM_btn">가입시유의사항&nbsp;&nbsp;▶</a></li>
+										<li><a href="#self" class="lyPopK_btn">면책사항안내&nbsp;&nbsp;▶</a></li>
+										<li><a href="#self" class="js-example">1~3종 수술분류표 예시&nbsp;&nbsp;▶</a></li>
+									</div>
+
+									<div class="btn">
+										<a href="#self" class="join-btn chk-ok">보험료 확인 / 가입</a>
+									</div>
+								</div>
+							</div><!-- end : class : left-Box -->
+						</div><!-- end : class : inLayer -->
+					</div><!-- end : class : subTop-Area -->
+
+					<div class="item-cont">
+						<div class="subTab-Area">
+							<ul class="subTab">
+								<li><a href="#self">상품특징</a></li>
+								<li><a href="#self">보장내용</a></li>
+								<li><a href="#self">이용안내</a></li>
+							</ul>
+						</div>
+
+						<div class="subTab_view">
+							<img src="img/kyobo_surgery_1.jpg">
+						</div>
+						<div class="subTab_view">
+							<img src="img/kyobo_surgery_2.jpg">
+						</div>
+						<div class="subTab_view">
+							<img src="img/kyobo_surgery_3.jpg">
+						</div>
+
+						<!-- *** start : quick *** -->
+						<script type="text/javascript" src="js/v3/quick.js"></script>
+						<div id="quick-Layer">
+							<div class="quick" id="quick">
+								<p class="name">{$RS.data.goods_name}<!-- <br />(현대해상 화재보험) -->
+									<span>{$RS.data.goods_detail_txt3}<br>{$RS.data.goods_detail_txt4}</span>
+								</p>
+								<p>&nbsp;</p>
+								<div class="btn">
+									<a href="#self" class="sidebtn chk-ok">보험료 확인 / 가입</a>
+								</div>
+								<div class="info">
+									<span>고객센터<b>1644-9381</b></span>
+								</div>
+
+								<div class="sns-Box">
+									<a href="#self" onClick="popup(500, 500, 10, 10, 'http://share.naver.com/web/shareView.nhn?url='+ encodeURI(encodeURIComponent($(location).attr('href'))) +'&title='+ encodeURI('{$RS.data.goods_name}'), 'naver', 'yes', 'yes')"><img src="img/v3/btn/btn_sns_1.png" alt="네이버 공유하기" /></a>
+									<a href="#self" onClick="popup(400, 400, 10, 10, 'http://www.facebook.com/sharer.php?u='+ $(location).attr('href') +'&t={$RS.data.goods_name}', 'facebook', 'yes', 'yes')"><img src="img/v3/btn/btn_sns_2.png" alt="페이스북  공유하기" /></a>
+									<a href="javascript:alert('준비중 입니다.')" onClick="shareStory($(location).attr('href'), '{$RS.data.goods_name}')"><img src="img/v3/btn/btn_sns_3.png" alt="카카오톡" /></a>
+								</div>
+							</div>
+						</div>
+						<!-- *** end : quick *** -->
+					</div><!-- end : class : item-cont -->
+				</div><!-- end : class : sub_contents -->
+
+
+			</div><!-- end : id : contents -->
+			<input type="hidden" name="name" value="{$RS.chk}">
+			<input type="hidden" name="goods_id" value="{$RS.data.goods_id}">
+
+			<!-- 가입시유의사항 layerPopup -->
+			<div class="view_lyPopupM">
+				<div class="close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></div>
+				<div class="pic scroll">
+					<img src="img/pop_kyobo_surgery_note.jpg">
+				</div>
+			</div>
+
+			<div class="view_lyPopupK">
+				<div class="close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></div>
+				<div class="pic scroll">
+					<img src="img/pop_kyobo_surgery_immunity.jpg">
+				</div>
+			</div>
+			<!-- 면책사항안내 layerPopup -->
+
+			<div class="view_lyPopup">
+				<div class="js-modal-close close"><img src="img/v3/btn/btn_popClose.jpg" alt="닫기 버튼" /></div>
+				<div class="pic scroll">
+					<img src="img/pop_kyobo_surgery_example.jpg">
+				</div>
+			</div>
+
+			<div class="layer_bg"></div>
+
+			<script>
+			$(function() {
+
+				var $window = $window || $(window),
+					$document = $document || $(document),
+					$html = $html || $('html');
+
+				$document.on('click', '.js-example', function(e) { // modal open
+					e.preventDefault();
+
+					$('.view_lyPopup').css({ opacity: '1', visibility: 'visible' });
+					$('.layer_bg').show().addClass('js-modal-close');
+					$(".scroll").mCustomScrollbar({
+						setLeft: "0px",
+						autoHideScrollbar : true
+					});
+				});
+
+				$document.on('click', '.js-modal-close', function(e) { // modal close
+					e.preventDefault();
+					$('.view_lyPopup').removeAttr('style');
+					$('.layer_bg').hide().removeClass('js-modal-close');
+				});
+			});
+			</script>
+
+
+{literal}
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	project.layerPopup_M();
+	project.layerPopup_K();
+});
+//]]>
+</script>
+{/literal}
+
+{* COPYRIGHT *}
+{include file = "../include/inbyu_v3/htmlCopyright.inc"}

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="KP보험서비스" />
+        <meta name="author" content="KP보험서비스" />
+        <meta name="copyright" content="KP보험서비스" />
+        <title>KP보험서비스</title>
+        <link rel="stylesheet" href="../../resources/css/common.css" />
+        <script src="../../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div><!-- vue 작업용 무의미 div -->
+        <div class="wrap" id="wrap">
+            <div class="head-button">
+                <a href="javascript:history.back();" class="btn-icon back"></a>
+                <h1 class="title">공지사항</h1>
+            </div>
+            <div class="container" id="container">
+                <div class="contents p-row-reset pt-0" id="contents">
+                    <div class="section-search divide-top fixed">
+                        <div class="form-group search">
+                            <span class="f-text"><input type="search" placeholder="검색어를 2자 이상 입력해 주세요"></span>
+                            <button class="btn-icon clear e-clear-input"></button>
+                        </div>
+                    </div>
+
+                    <!-- data 없을 경우 -->
+                    <div class="section-empty notice">
+                        <i class="icon empty-mailbox"></i>
+                        <p>공지내역이 없습니다.</p>
+                    </div>
+
+                    <div class="module-accordion section-board">
+                        <!-- 반복 
+                            검색어 highlight 처리는 strong 태그로 감싸기
+                        -->
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">새로운 <strong>보험상품</strong>에 대한 수수료는 어떻게 확인 할 수 있나요?</h2>
+                                <time datetime="2021-05-22">2021.05.22 23:00:11</time>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article><!-- //반복 -->
+                        <article class="accordion">
+                            <header class="sub-head e-accordion">
+                                <h2 class="title">새로운 보험상품에 대한 수수료는 어떻게 확인 할 수 있나요?</h2>
+                                <time datetime="2021-05-22">2021.05.22 23:00:11</time>
+                                <i class="icon arrow-down-16 gray"></i>
+                            </header>
+                            <div class="collapse">
+                                <div>
+                                    <p>@content</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        <!-- ui관련 js -->
+        <script src="../../resources/js/event.js"></script>
+        <script>
+            $(function() {
+                const $window = window.$window || $(window);
+                const $body = $('body');
+
+            });
+        </script>
+
+        <!-- include 용 -->
+        <script src="../../src/js/include.js"></script>
+    </body>
+</html>

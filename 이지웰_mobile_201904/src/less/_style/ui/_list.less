@@ -1,0 +1,46 @@
+ol.list,
+ul.list {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+ul.list-a {
+    li {
+        padding-left: 14px;
+        &::before {
+            content: '-';
+        }
+    }
+}
+ul.list-b {
+    li {
+        padding-left: 10px;
+        &::before {
+            content: '・';
+        }
+    }
+}
+ol.list-a {
+    list-style: none;
+    li {
+        padding-left: 14px;
+        &:nth-child(1)::before {
+            content: '①';
+        }
+        &:nth-child(2)::before {
+            content: '②';
+        }
+    }
+}
